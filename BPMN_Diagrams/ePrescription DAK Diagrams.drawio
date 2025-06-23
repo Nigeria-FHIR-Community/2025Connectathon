@@ -1,5 +1,84 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.1.6">
-  <diagram name="Page-1" id="IQBv178opMSk4eNjKWvH">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.1.6" pages="2">
+  <diagram name="Patient Registration and Data Collection" id="IQBv178opMSk4eNjKWvH">
+    <mxGraphModel dx="1342" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="f09ycsGXhL4b5DDycxK3-3" value="&lt;span id=&quot;docs-internal-guid-90e6494d-7fff-451f-3478-2fb641c76356&quot; style=&quot;font-weight:normal;&quot;&gt;&lt;p style=&quot;line-height:1.2;margin-top:0pt;margin-bottom:0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height:1.2;margin-top:0pt;margin-bottom:0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Patient Registration and Data Collection&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=40;horizontalStack=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="1100" height="310" as="geometry">
+            <mxRectangle x="200" y="120" width="300" height="70" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-4" value="Lane 1" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-3">
+          <mxGeometry y="40" width="1100" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f09ycsGXhL4b5DDycxK3-4" source="f09ycsGXhL4b5DDycxK3-8" target="f09ycsGXhL4b5DDycxK3-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-8" value="&lt;span id=&quot;docs-internal-guid-97fdecff-7fff-e0fe-d06b-f9a8b906b332&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Collect patient information (name, contact, DOB).&lt;/span&gt;&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="140" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="f09ycsGXhL4b5DDycxK3-4" source="f09ycsGXhL4b5DDycxK3-9" target="f09ycsGXhL4b5DDycxK3-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-9" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="40" y="70" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f09ycsGXhL4b5DDycxK3-4" source="f09ycsGXhL4b5DDycxK3-11" target="f09ycsGXhL4b5DDycxK3-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-11" value="&lt;span id=&quot;docs-internal-guid-c965c15d-7fff-02ff-38ee-e83769f90e56&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&amp;nbsp;Verify insurance details.&lt;/span&gt;&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="290" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f09ycsGXhL4b5DDycxK3-4" source="f09ycsGXhL4b5DDycxK3-13" target="f09ycsGXhL4b5DDycxK3-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-13" value="&lt;span id=&quot;docs-internal-guid-c2e35e0a-7fff-4c2f-d769-fb44d6611233&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Obtain consent forms.&lt;/span&gt;&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="450" y="55" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="f09ycsGXhL4b5DDycxK3-4" source="f09ycsGXhL4b5DDycxK3-19" target="f09ycsGXhL4b5DDycxK3-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-25" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="f09ycsGXhL4b5DDycxK3-24">
+          <mxGeometry x="0.1899" y="5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-19" value="Is the&lt;div&gt;&amp;nbsp;registration form complete?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="621" y="35" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="f09ycsGXhL4b5DDycxK3-4" source="f09ycsGXhL4b5DDycxK3-23" target="f09ycsGXhL4b5DDycxK3-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-23" value="&lt;span id=&quot;docs-internal-guid-db767dfe-7fff-6d9c-efa3-dca05ea8bd85&quot;&gt;&lt;p style=&quot;line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height:1.3800000000000001;margin-top:0pt;margin-bottom:0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Proceed to Prescription Generation.&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="800" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.425;entryY=1.05;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="f09ycsGXhL4b5DDycxK3-4" source="f09ycsGXhL4b5DDycxK3-19" target="f09ycsGXhL4b5DDycxK3-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="676" y="200" />
+              <mxPoint x="191" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-27" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="f09ycsGXhL4b5DDycxK3-26">
+          <mxGeometry x="0.099" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-28" value="Start" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="30" y="115" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-29" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=1;strokeWidth=5;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="970" y="66" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f09ycsGXhL4b5DDycxK3-31" value="End" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="f09ycsGXhL4b5DDycxK3-4">
+          <mxGeometry x="970" y="140" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="oHZ_9J3tuAULzgb9ACX9" name="Page-2">
     <mxGraphModel dx="872" dy="465" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
