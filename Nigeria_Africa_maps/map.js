@@ -328,6 +328,7 @@ function loadNigeriaMap() {
         'kebbi': 'kebbi',
         'adamawa': 'adamawa',
         'ebonyi': 'ebonyi',
+        'niger': 'niger',
         
         
         
@@ -386,16 +387,17 @@ function loadStateMap(stateId) {
         'abuja': 'Abuja-map',
         'lagos': 'Lagos-map',
         'adamawa': 'Adamawa-map',
-        'ekiti': 'ekiti-map',
+        'ekiti': 'Ekiti-map',
         'kano': 'kano-map',
         'rivers': 'Rivers-map',
         'kaduna': 'kaduna-map',
         'enugu': 'Enugu-map',
         'oyo': 'Oyo-map',
-        'delta': 'delta-map',
-        'yobe': 'yobe-map',
-        'kebbi': 'kebbi-map',
-        'ebonyi': 'Ebonyi-map'
+        'delta': 'Delta-map',
+        'yobe': 'Yobe-map',
+        'kebbi': 'Kebbi-map',
+        'ebonyi': 'Ebonyi-map',
+        'niger': 'Niger-map'
         
     };
 
