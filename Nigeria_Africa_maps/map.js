@@ -329,6 +329,14 @@ function loadNigeriaMap() {
         'adamawa': 'adamawa',
         'ebonyi': 'ebonyi',
         'niger': 'niger',
+        'sokoto': 'sokoto',
+        'taraba': 'taraba',
+        'bayelsa': 'bayelsa',
+        'gombe': 'gombe',
+        'plateau': 'plateau',
+        'zamfara': 'zamfara',
+        'nasarawa': 'nasarawa',
+        'ondo': 'ondo',
         
         
         
@@ -397,7 +405,17 @@ function loadStateMap(stateId) {
         'yobe': 'Yobe-map',
         'kebbi': 'Kebbi-map',
         'ebonyi': 'Ebonyi-map',
-        'niger': 'Niger-map'
+        'niger': 'Niger-map',
+        'sokoto': 'Sokoto-map',
+        'taraba': 'Taraba-map',
+        'bayelsa': 'Bayelsa-map',
+        'gombe': 'Gombe-map',
+        'plateau': 'Plateau-map',
+        'zamfara': 'Zamfara-map',
+        'nasarawa': 'Nasarawa-map',
+        'ondo': 'Ondo-map',
+        
+        
         
     };
 
