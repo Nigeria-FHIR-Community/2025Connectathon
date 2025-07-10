@@ -337,6 +337,10 @@ function loadNigeriaMap() {
         'zamfara': 'zamfara',
         'nasarawa': 'nasarawa',
         'ondo': 'ondo',
+        'kogi': 'kogi',
+        'osun': 'osun',
+        
+        
         
         
         
@@ -414,6 +418,10 @@ function loadStateMap(stateId) {
         'zamfara': 'Zamfara-map',
         'nasarawa': 'Nasarawa-map',
         'ondo': 'Ondo-map',
+        'kogi': 'Kogi-map',
+        'osun': 'Osun-map',
+        
+        
         
         
         
