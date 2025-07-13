@@ -1,0 +1,64 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "NgePCapabilityStatementClient",
+  "url": "https://dhin-hie.org/ePrescription/CapabilityStatement/NgePCapabilityStatementClient",
+  "title": "NG-eP Client CapabilityStatement",
+  "description": "Describes expected behavior of clients consuming immunization services using the Nigerian profiles.",
+  "format": [
+    "xml"
+  ],
+  "rest": [
+    {
+      "resource": [
+        {
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "patch"
+            }
+          ],
+          "type": "Patient",
+          "profile": "https://dhin-hie.org/ePrescription/StructureDefinition/NgePPatient"
+        },
+        {
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "patch"
+            }
+          ],
+          "type": "Immunization",
+          "profile": "http://hl7.org/fhir/StructureDefinition/Immunization"
+        }
+      ],
+      "mode": "client",
+      "documentation": "Client that searches, retrieves and submits immunization records using Nigerian profiles."
+    }
+  ],
+  "status": "active",
+  "date": "2025-06-22",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1"
+}

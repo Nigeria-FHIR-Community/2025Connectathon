@@ -1,0 +1,103 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "measure-report-profile",
+  "url": "https://dhin-hie.org/ePrescription/StructureDefinition/measure-report-profile",
+  "name": "NgePMeasureReport",
+  "title": "NG-ep MeasureReport",
+  "status": "draft",
+  "description": "Nigeria ePrescription Measure Report Profile",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MeasureReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MeasureReport",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MeasureReport.identifier.value",
+        "path": "MeasureReport.identifier.value",
+        "short": "A unique identifier for the instance of the report that has been generated",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.status",
+        "path": "MeasureReport.status",
+        "short": "The status of the report (e.g, initial, complete, etc)",
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.type",
+        "path": "MeasureReport.type",
+        "short": "The type of report which has been generated (i.e. is the report a list of individuals, a summary, etc)",
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.measure",
+        "path": "MeasureReport.measure",
+        "short": "The measure that was calculated",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "https://dhin-hie.org/ePrescription/StructureDefinition/ng-ep-measure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.date",
+        "path": "MeasureReport.date",
+        "short": "The date and time on which the report was generated",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.reporter",
+        "path": "MeasureReport.reporter",
+        "short": "Indicates the organization, or location which is generating or producing the report",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://dhin-hie.org/ePrescription/StructureDefinition/NgePPractitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MeasureReport.period",
+        "path": "MeasureReport.period",
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.period.start",
+        "path": "MeasureReport.period.start",
+        "short": "The start date of the reporting period for which data in the report has been included",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.period.end",
+        "path": "MeasureReport.period.end",
+        "short": "The end date of the reporting period for which data in the report has been included",
+        "min": 1
+      },
+      {
+        "id": "MeasureReport.group.measureScore",
+        "path": "MeasureReport.group.measureScore",
+        "mustSupport": true
+      },
+      {
+        "id": "MeasureReport.group.measureScore.value",
+        "path": "MeasureReport.group.measureScore.value",
+        "short": "The calculated score of the measure / indicator which is being reported on"
+      },
+      {
+        "id": "MeasureReport.group.measureScore.unit",
+        "path": "MeasureReport.group.measureScore.unit",
+        "short": "The unit of  calculated score of the measure / indicator which is being reported on"
+      }
+    ]
+  }
+}

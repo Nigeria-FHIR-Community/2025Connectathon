@@ -1,32 +1,19 @@
-Alias: V3ActCode = http://terminology.hl7.org/CodeSystem/v3-ActCode
-
-Profile: NEIREncounter
+Profile: NgePEncounter
 Parent: Encounter
-Id: neir-encounter 
-Description: "A profile for encounters in the Nigerian Electronic Immunization Registry (NEIR), used to document immunization visits and related healthcare interactions."
-* ^url = "http://nigerian.org/fhir/StructureDefinition/neir-encounter"
+Title: "NG-eP Encounter"
+Id: ng-ep-encounter 
+Description: "A profile for encounters in the Nigerian  prescription guide, used to document prescription visits and related healthcare interactions."
 * ^version = "1.0.0"
 * ^status = #active
-* ^publisher = "Nigerian Ministry of Health"
-* status ^short = "Status of the immunization encounter"
-* class ^short = "Type of encounter (e.g., ambulatory, home visit)"
-* class from EncounterClassVS (required)
+* ^publisher = "DHIN"
+* status ^short = "Status of the prescription encounter"
 * subject 1..1 MS
-* subject only Reference(Patient)
+* subject only Reference(NgePPatient)
 * participant 1..* MS
-* participant.individual only Reference(Practitioner) 
+* participant.individual only Reference(NgePPractitioner) 
 * location 1..1 MS
-* location.location only Reference(Location)
+* location.location only Reference(NgePLocation)
 * serviceProvider 1..1 MS
-* serviceProvider only Reference(Organization)
+* serviceProvider only Reference(NgePOrganization)
 
-Instance: encounter-example
-InstanceOf: NEIREncounter 
-Usage: #example
-Description: "An example encounter in the Nigerian Electronic Immunization Registry (NEIR) for an outreach immunization visit."
-* status = #completed
-* class = V3ActCode#HH
-* subject.reference = "Patient/patient-example" 
-* participant.individual.reference = "Practitioner/practitioner-example"
-* location.location.reference = "Location/location-example"
-* serviceProvider.reference = "Organization/organization-example"
+

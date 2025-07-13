@@ -1,0 +1,113 @@
+{
+  "resourceType": "Patient",
+  "id": "ExampleNgePPatient",
+  "meta": {
+    "lastUpdated": "2025-05-29T14:30:00Z",
+    "profile": [
+      "https://dhin-hie.org/ePrescription/StructureDefinition/NgePPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://hospital.org/mrn",
+      "value": "123456"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Ada"
+      ],
+      "family": "Okonkwo"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "10 Akintola Street"
+      ],
+      "city": "Enugu",
+      "district": "Enugu North",
+      "state": "Enugu"
+    }
+  ],
+  "contact": [
+    {
+      "name": {
+        "given": [
+          "Nkechi"
+        ],
+        "family": "Okonkwo"
+      },
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+2348031234567"
+        }
+      ],
+      "relationship": [
+        {
+          "text": "mother"
+        }
+      ],
+      "address": {
+        "line": [
+          "15 Ogui Road"
+        ],
+        "city": "New Heaven",
+        "district": "Enugu Central",
+        "state": "Enugu"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "ageInMonths",
+      "valueInteger": 24
+    },
+    {
+      "url": "ageInYears",
+      "valueInteger": 2
+    },
+    {
+      "url": "birthWeight",
+      "valueDecimal": 3.4
+    },
+    {
+      "url": "hivStatus",
+      "valueString": "negative"
+    },
+    {
+      "url": "pregnancyStatus",
+      "valueString": "pregnant"
+    },
+    {
+      "url": "administrativeWard",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Yaba"
+          }
+        ]
+      }
+    },
+    {
+      "url": "siblingSurname",
+      "valueString": "Okonkwo"
+    },
+    {
+      "url": "siblingGivenName",
+      "valueString": "Chinedu"
+    },
+    {
+      "url": "siblingBirthYear",
+      "valueDate": "2012"
+    },
+    {
+      "url": "siblingGender",
+      "valueString": "male"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "2021-07-15"
+}

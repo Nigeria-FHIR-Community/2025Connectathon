@@ -1,0 +1,115 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "NGLanguagesCS",
+  "id": "nigeria-languages",
+  "title": "NG‑eP Languages in Nigeria CS",
+  "description": "This CodeSystem defines codes for major languages spoken across Nigeria.",
+  "url": "https://dhin-hie.org/ePrescription/CodeSystem/nigeria-languages",
+  "concept": [
+    {
+      "code": "English",
+      "display": "English"
+    },
+    {
+      "code": "Pidgin",
+      "display": "Nigerian Pidgin"
+    },
+    {
+      "code": "Hausa",
+      "display": "Hausa"
+    },
+    {
+      "code": "Yoruba",
+      "display": "Yoruba"
+    },
+    {
+      "code": "Igbo",
+      "display": "Igbo"
+    },
+    {
+      "code": "Fulfulde",
+      "display": "Fulfulde"
+    },
+    {
+      "code": "Ibibio",
+      "display": "Ibibio"
+    },
+    {
+      "code": "Kanuri",
+      "display": "Kanuri"
+    },
+    {
+      "code": "Tiv",
+      "display": "Tiv"
+    },
+    {
+      "code": "Nupe",
+      "display": "Nupe"
+    },
+    {
+      "code": "Igala",
+      "display": "Igala"
+    },
+    {
+      "code": "Efik",
+      "display": "Efik"
+    },
+    {
+      "code": "Ijaw",
+      "display": "Ijaw"
+    },
+    {
+      "code": "Urhobo",
+      "display": "Urhobo"
+    },
+    {
+      "code": "Itsekiri",
+      "display": "Itsekiri"
+    },
+    {
+      "code": "Bini-Edo",
+      "display": "Bini (Edo)"
+    },
+    {
+      "code": "Ogoni",
+      "display": "Ogoni"
+    },
+    {
+      "code": "Esan",
+      "display": "Esan"
+    },
+    {
+      "code": "Ikwerre",
+      "display": "Ikwerre"
+    },
+    {
+      "code": "Idoma",
+      "display": "Idoma"
+    },
+    {
+      "code": "Ebira",
+      "display": "Ebira"
+    },
+    {
+      "code": "Hausa-Fulani",
+      "display": "Hausa-Fulani"
+    }
+  ],
+  "caseSensitive": true,
+  "hierarchyMeaning": "grouped-by",
+  "publisher": "NPHCDA",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "NG",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Nigeria"
+        }
+      ]
+    }
+  ],
+  "count": 22
+}

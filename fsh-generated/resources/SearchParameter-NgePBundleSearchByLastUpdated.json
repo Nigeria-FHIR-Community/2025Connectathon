@@ -1,0 +1,14 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "NgePBundleSearchByLastUpdated",
+  "url": "https://dhin-hie.org/ePrescription/SearchParameter/NgePBundleSearchByLastUpdated",
+  "description": "Search for bundles that were last updated on or after a given date",
+  "base": [
+    "Bundle"
+  ],
+  "name": "searchBundleByLastUpdated",
+  "status": "active",
+  "code": "_lastUpdated",
+  "type": "date",
+  "expression": "Bundle.meta.lastUpdated"
+}

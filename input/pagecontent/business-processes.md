@@ -1,223 +1,8 @@
+
+#### Overview of Business Processes
 A business process, or process, is a set of related activities or tasks performed together to achieve the objectives of the health Programme area, such as registration, counseling, and referrals. 
 Workflows are a visual representation of the progression of activities (tasks, events, and interactions) that are performed within the business process. The workflow provides a story for the business process being diagrammed and is used to enhance communication and collaboration among users, stakeholders, and engineers.
 
-
-The business processes here have been informed by <a href="https://www.who.int/publications/i/item/9789240099456"> WHO Digital adaptation kit for immunizations.</a>
-
-### Business Processes
-
-#### Table 2: Overview of Business Processes
-
-<table border="1" class="dataframe table table-striped table-bordered">
-  <thead>
-
-    <tr>
-      <th>#</th>
-      <th>Process Name</th>
-      <th>Process ID</th>
-      <th>Personas</th>
-      <th>Objectives</th>
-      <th>Task Set</th>
-    </tr>
-
-  </thead>
-  <tbody>
-   <tr>
-
-      <td></td>
-      <td>Title</td>
-      <td>ID used to reference this process throughout the DAK</td>
-      <td>Individuals interacting to complete the process</td>
-      <td>A concrete statement describing what the process seeks to achieve</td>
-      <td>The general set of activities performed within the process</td>
-    </tr>
-
-   <tr>
-
-    <td>A</td>
-    <td>Health Facility Registration
-    <br>
-      <img src="icon-a-facility-registration.png" alt="icon-a-facility-registration" style="width:85%"/></td>
-    <td>IMMZ.A</td>
-    <td>System administrator</td>
-    <td>All vaccinator locations (public and private facilities) able to administer vaccines should be registered and uniquely identified to allow appropriate tracking of vaccine coverage and stock.</td>
-    <td>
-        <p>Starting point: The system administrator registers a new vaccination location (e.g, a PHC).</p>
-      <ul>
-        <li>Validate against the National Master Facility List/Health Facility Registry (MFL/HFR).</li>
-        <li>Notify NMFL of changes/updates.</li>
-        <li>Request and submit additional information.</li>
-        <li>Create and update vaccination location record.</li>
-        <li>Generate EIR Unique identifier for vaccination.</li>
-        <li>Send vaccination location registration notification.</li>
-      </ul>
-    </td>
-
-  </tr> 
-  <tr>
-
-      <td>B</td>
-      <td>Plan immunization session
-      <br>
-      <img src="icon-b-plan-session.png" alt="icon-b-plan-session" style="width:85%"/></td>
-      <td>IMMZ.B</td>
-      <td>Health worker </td>
-      <td>In preparation for a vaccination session, ensure sufficient supply and plan their workload.</td>
-      <td>
-        <p>Starting point: The health worker reviews vaccination records to determine vaccine needs estimates.</p>
-        <ul>
-          <li>Record details on the planning sheet.</li>
-          <li>Order additional stock.</li>
-          <li>Record stock received.</li>
-          <li>Assemble all needed materials for vaccination.</li>
-        </ul>
-      </td>
-  </tr>
-    <tr>
-      <td>C</td>
-      <td>Client Registration
-      <br>
-      <img src="icon-c-client-registration.png" alt="icon-c-client-registration" style="width:85%"/></td>
-      <td>IMMZ.C</td>
-      <td>Health worker</td>
-      <td>To create, retrieve and/or update a Client's lifelong vaccine record in the EIR (or Immunization module in EMR) to support future vaccine administration.</td>
-      <td>
-      <p>Starting point: The Client arrives at the vaccination point  and the health worker locates the client’s immunization history.</p>
-        <ul>
-          <li>Search for the Client’s record via the EIR or Immunization module in EMR.</li>
-          <li>Review and update the Client’s record.</li>
-          <li>Create new Client records as required.</li>
-          <li>Save the record.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>D</td>
-      <td>Administer Vaccine
-      <br>
-      <img src="icon-d-vaccine-administration.png" alt="icon-d-vaccine-administration" style="width:85%"/></td>
-      <td>IMMZ.D</td>
-      <td>Health worker</td>
-      <td>To determine what vaccines a Client needs, administer those and record the data both in the system and the client’s home-based vaccination record.</td>
-      <td>
-        <p>Starting point: The Client has been registered in the system.</p>
-        <ul>
-          <li>Capture or query Client’s record.</li>
-          <li>Determine Client’s vaccination eligibility (also check contraindication).</li>
-          <li>Prepare and administer vaccines.</li>
-          <li>Record the appropriate data.</li>
-          <li>Monitor the Client for any adverse effects following vaccination.</li>
-          <li>Inform the Client when to return for vaccination/set Client reminder.</li>
-          <li>Provide Client with vaccination card</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>E</td>
-      <td>Manage and Report AEFI
-      <br>
-      <img src="icon-e-manage-report-aefi.png" alt="icon-e-manage-report-aefi" style="width:85%"/></td>
-      <td>IMMZ.E</td>
-      <td>Health worker</td>
-      <td>To monitor, record, and report AEFI.</td>
-      <td>
-       <p>Starting point: The Client reports AEFI or present with AEFI complaint at health facility</p>
-        <ul>
-          <li>The health worker searches the record and records the AEFI against the vaccine administered.</li>
-          <li>Monitor and Report any AEFI as appropriate</li>
-          <li>Counsels the Client and treats them appropriately.</li>
-          <li>Advises Client on when to come for the next vaccine.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>F</td>
-      <td>Client reminder
-      <br>
-      <img src="icon-f-client-reminder.png" alt="icon-f-client-reminder" style="width:85%"/></td>
-      <td>IMMZ.F</td>
-      <td>Health worker</td>
-      <td>This is to remind clients that it is time to return for vaccination.</td>
-      <td>
-        <p>Starting point: The Client’s records are evaluated to determine if they meet the defined criteria to recieve reminders.</p>
-        <ul>  
-          <li>Select notification method.</li>
-          <li>Generate a list of clients.</li>
-          <li>Send reminder notifications.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>G</td>
-      <td>Defaulter tracking
-      <br>
-      <img src="icon-g-defaulter-tracking.png" alt="icon-g-defaulter-tracking" style="width:85%"/></td>
-      <td>IMMZ.G</td>
-      <td>Community health worker</td>
-      <td>To identify clients that are overdue for follow-up.</td>
-      <td>
-        <p>Starting point: Clients are overdue for vaccination.</p>
-        <ul>
-          <li>Determine if and which vaccines were missed.</li>
-          <li>Generate a list of cCients and their contact information.</li>
-          <li>Send the Client’s info to the respective CHPs.</li>
-          <li>Plan for and conduct follow-up.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>H</td>
-      <td>Report generation
-      <br>
-      <img src="icon-h-report-generation.png" alt="icon-h-report-generation" style="width:85%"/></td>
-      <td>IMMZ.H</td>
-      <td>Health worker</td>
-      <td>To provide data access and analysis for decision-making.</td>
-      <td>
-        <p>Starting point: Define the reporting parameters.</p>
-        <ul>
-          <li>Generate report.</li>
-          <li>High-level review and analyze.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>I</td>
-      <td>Resolve duplicate Client records
-      <br>
-      <img src="icon-i-resolve-duplicate-client.png" alt="icon-i-resolve-duplicate-client" style="width:85%"/></td>
-      <td>IMMZ.I</td>
-      <td>Health Facility Systems Administrator</td>
-      <td>To ensure accurate and unified client data by identifying and merging duplicate records.</td>
-      <td>
-        <p>Starting point: Flag duplicate client records for evaluation and resolution.</p>
-        <ul>
-          <li>Review duplicate Client records.</li>
-          <li>Determine if the duplicate records can be merged.</li>
-          <li>Merge records.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>J</td>
-      <td>Resolve duplicate vaccination events
-      <br>
-      <img src="icon-i-resolve-duplicate-event.png" alt="icon-i-resolve-duplicate-event" style="width:85%"/></td>
-      <td>IMMZ.J</td>
-      <td>Routine immunization service provider</td>
-      <td>To maintain reliable immunization records by detecting and resolving duplicate vaccination entries.</td>
-      <td>
-        <p>Starting point: Identify groups of vaccination events for evaluation and resolution.</p>
-        <ul>
-          <li>Review duplicate events</li>
-          <li>Select the most accurate/suitable event record.</li>
-          <li>Update vaccination event.</li>
-        </ul>
-      </td>
-    </tr>
-
-  </tbody>
-  </table>
 
 #### Table 3: Business process symbols used in workflows
 
@@ -295,85 +80,127 @@ The overview of the business processes in this DAK captures all business process
 
 ### Workflows
 
-#### Health Facility Registration 
+#### Self Registration 
 
 <b> Objective: </b> To register and uniquely identify vaccination locations in order to administer vaccines and enable appropriate tracking of vaccine coverage and stock.
  
  <div> 
-<img src="workflow-a-facility-registration.png" alt="health_facility_registration.png" style="width:85%"/>
+<img src="workflow-a-self-registration.png" alt="workflow-a-self-registration.png" style="width:85%"/>
 </div>
 <br>
 
-#### Plan Service delivery
+#### Client Registration
 
 <b> Objective: </b> To prepare for an immunization session, either at the vaccination location or done at an outreach site.
  
  <div> 
-<img src="workflow-b-plan-immunization.png" alt="plan-service-delivery.png" style="width:85%"/>
+<img src="workflow-b-client-registration.png" alt="workflow-b-client-registration.png" style="width:85%"/>
 </div>
 <br>
 
-#### Client registration
+#### Prescription Generation
 
 <b> Objective: </b> To start the client’s lifelong immunization record.
  
  <div> 
-<img src="workflow-c-client-registration.png" alt="client-registration" style="width:85%"/>
+<img src="workflow-c-prescription-generation.png" alt="workflow-c-prescription-generation.png" style="width:85%"/>
 </div>
 <br>
 
-#### Vaccine administration
+#### Prescription Processing
 <b> Objective: </b> To determine what vaccines a client needs, administer those, and record the data both in the system and on the client’s vaccination card.
  <div> 
-<img src="workflow-d-administer-vaccine.png" alt="administer-vaccine.png" style="width:85%"/>
+<img src="workflow-d-prescription-processing.png" alt="workflow-d-prescription-processing.png" style="width:85%"/>
 </div>
 <br>
 
-#### Manage AEFIs
+#### Billing
 <b> Objective: </b> To manage caregiver reports or client presenting at health facilities with cases of AEFI based on set triggers.
  
  <div> 
-<img src="workflow-e-manage-report-aefi.png" alt="manage-and-report-aefi.png" style="width:85%"/>
+<img src="workflow-e-billing.png" alt="workflow-e-billing.png" style="width:85%"/>
 </div>
 <br>
 
-#### Client reminder 
+#### Medication Preparation and Dispensing
 <b> Objective: </b> To send vaccination reminders to community health workers that certain clients are due for vaccination.
  
  <div> 
-<img src="workflow-f-client-reminder.png" alt="client-reminder.png" style="width:85%"/>
+<img src="workflow-f-medication-dispensing.png" alt="workflow-f-medication-dispensing.png" style="width:85%"/>
 </div>
 <br>
 
-#### Defaulter tracing
+#### Medication Delivery
 <b> Objective: </b> To identify clients that are overdue for follow-up
  
  <div> 
-<img src="workflow-g-defaulter-tracking.png" alt="defaulter-tracking.png" style="width:85%"/>
+<img src="workflow-g-medication-delivery.png" alt="workflow-g-medication-delivery.png" style="width:85%"/>
 </div>
 <br>
 
-#### Report generation
+#### Patient Counseling and Education
+<b> Objective: </b> To identify clients that are overdue for follow-up
+ 
+ <div> 
+<img src="workflow-h-counseling-education.png" alt="workflow-h-counseling-education.png" style="width:85%"/>
+</div>
+<br>
+
+
+#### Medication Followup and Monitoring
+<b> Objective: </b> To identify clients that are overdue for follow-up
+ 
+ <div> 
+<img src="workflow-i-medication-follow-up.png" alt="workflow-i-medication-follow-up.png" style="width:85%"/>
+</div>
+<br>
+
+#### Adverse Drug Reaction and management
 <b> Objective: </b> To provide data access and analysis for decision-making
  
  <div> 
-<img src="workflow-h-report-generation.png" alt="report-generation.png" style="width:85%"/>
+<img src="workflow-h-adverse-drug-management.png" alt="workflow-h-adverse-drug-management.png" style="width:85%"/>
 </div>
 <br>
 
-#### Resolve duplicate client record
+#### Medication Preparation and Dispensing
 <b> Objective: </b> To ensure accurate and unified client data by identifying and merging duplicate records.
  
  <div> 
-<img src="workflow-i-resolve-duplicate-client.png" alt="resolve-duplicate-client-records.png" style="width:85%"/>
+<img src="workflow-i-medication-dispensing.png" alt="workflow-i-medication-dispensing.png" style="width:85%"/>
 </div>
 <br>
 
-#### Resolve duplicate vaccination events
+#### Process Payment
 <b> Objective: </b> To maintain reliable immunization records by detecting and resolving duplicate vaccination entries.
  
  <div> 
-<img src="workflow-i-resolve-duplicate-event.png" alt="resolve-duplicate-vaccination-event.png" style="width:85%"/>
+<img src="workflow-e-billing.png" alt="workflow-j-process-payment.png" style="width:85%"/>
+</div>
+<br>
+
+
+#### Medication Delivery
+<b> Objective: </b> To maintain reliable immunization records by detecting and resolving duplicate vaccination entries.
+ 
+ <div> 
+<img src="workflow-k-medication-delivery.png" alt="workflow-k-medication-delivery.png" style="width:85%"/>
+</div>
+<br>
+
+#### Medication Delivery
+<b> Objective: </b> To maintain reliable immunization records by detecting and resolving duplicate vaccination entries.
+ 
+ <div> 
+<img src="workflow-l-record-compliance.png" alt="workflow-l-record-compliance.png" style="width:85%"/>
+</div>
+<br>
+
+#### Update Drug Catalogue
+<b> Objective: </b> To maintain reliable immunization records by detecting and resolving duplicate vaccination entries.
+ 
+ <div> 
+<img src="workflow-l-record-compliance.png" alt="workflow-m-drug-catalogue.png" style="width:85%"/>
 </div>
 <br>
  

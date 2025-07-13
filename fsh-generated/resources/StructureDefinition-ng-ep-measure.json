@@ -1,0 +1,129 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ng-ep-measure",
+  "url": "https://dhin-hie.org/ePrescription/StructureDefinition/ng-ep-measure",
+  "name": "NgePMeasure",
+  "title": "NG-eP Measure",
+  "status": "draft",
+  "description": "A profile on the Measure resource used to define indicators within prescription program.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Measure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Measure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Measure.identifier",
+        "path": "Measure.identifier",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.identifier.value",
+        "path": "Measure.identifier.value",
+        "short": "A unique identifier for the indicator definition (e.g. dropout-rate, bcg-coverage).",
+        "min": 1
+      },
+      {
+        "id": "Measure.name",
+        "path": "Measure.name",
+        "short": "A machine-friendly name for the measure (e.g., DropoutRate).",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.title",
+        "path": "Measure.title",
+        "short": "A human-readable title for the measure (e.g., 'Penta1 to Measles Dropout Rate').",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.status",
+        "path": "Measure.status",
+        "short": "Indicates the status of the measure (e.g., draft, active, retired).",
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.date",
+        "path": "Measure.date",
+        "short": "The date this measure profile or version was published.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.publisher",
+        "path": "Measure.publisher",
+        "short": "The organization or person responsible for publishing the measure.",
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.description",
+        "path": "Measure.description",
+        "short": "Detailed description of what this measure represents.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.purpose",
+        "path": "Measure.purpose",
+        "short": "Explains the reason this measure exists and what it is intended to support.",
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.topic",
+        "path": "Measure.topic",
+        "short": "A code or text indicating the domain/topic of the measure (e.g., Immunization Coverage).",
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.library",
+        "path": "Measure.library",
+        "short": "Reference to the logic library (e.g., CQL or ELM) defining computation rules for the measure.",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.scoring",
+        "path": "Measure.scoring",
+        "short": "How the measure is scored (e.g., proportion, ratio, continuous-variable).",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.improvementNotation",
+        "path": "Measure.improvementNotation",
+        "short": "Indicates whether an increase or decrease in the score is desirable.",
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.group",
+        "path": "Measure.group",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.group.population",
+        "path": "Measure.group.population",
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Measure.group.population.code",
+        "path": "Measure.group.population.code",
+        "short": "The type of population for the measure (e.g., numerator, denominator, initial-population).",
+        "min": 1
+      },
+      {
+        "id": "Measure.group.population.description",
+        "path": "Measure.group.population.description",
+        "short": "Description of the population involved in the indicator.",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

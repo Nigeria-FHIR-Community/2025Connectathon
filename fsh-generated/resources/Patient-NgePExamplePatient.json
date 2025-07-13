@@ -1,0 +1,109 @@
+{
+  "resourceType": "Patient",
+  "id": "NgePExamplePatient",
+  "meta": {
+    "lastUpdated": "2025-07-04T08:30:00+01:00",
+    "profile": [
+      "https://dhin-hie.org/ePrescription/StructureDefinition/NgePPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://nimc.gov.ng",
+      "value": "NIN98765432100"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Zainab"
+      ],
+      "family": "Abdulraheem"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "No. 10, Igalamela Compound, Ankpa"
+      ],
+      "extension": [
+        {
+          "url": "https://dhin-hie.org/ePrescription/StructureDefinition/nigeria-administrative-ward",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "amac-01",
+                "display": "Enjema"
+              }
+            ]
+          }
+        }
+      ],
+      "city": "Ankpa",
+      "district": "ko-ankpa",
+      "state": "KO"
+    }
+  ],
+  "contact": [
+    {
+      "name": {
+        "given": [
+          "Aisha"
+        ],
+        "family": "Abdulraheem"
+      },
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+2348031234567"
+        }
+      ],
+      "relationship": [
+        {
+          "text": "mother"
+        }
+      ],
+      "address": {
+        "line": [
+          "No. 10, Igalamela Compound"
+        ],
+        "extension": [
+          {
+            "url": "https://dhin-hie.org/ePrescription/StructureDefinition/nigeria-administrative-ward",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "KO0802",
+                  "display": "Enjema"
+                }
+              ]
+            }
+          }
+        ],
+        "city": "Ankpa",
+        "district": "ko-ankpa",
+        "state": "KO"
+      }
+    }
+  ],
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "code": "ibo",
+            "display": "Igbo"
+          }
+        ]
+      }
+    }
+  ],
+  "photo": [
+    {
+      "url": "https://personal_server.org/photos/zainab-abdulraheem.jpg"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "2024-02-20",
+  "active": true
+}

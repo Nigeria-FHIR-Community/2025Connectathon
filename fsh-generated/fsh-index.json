@@ -1,0 +1,442 @@
+[
+  {
+    "outputFile": "CapabilityStatement-NgePCapabilityStatementClient.json",
+    "fshName": "NgePCapabilityStatementClient",
+    "fshType": "Instance",
+    "fshFile": "otherfiles/capability-statement-client.fsh",
+    "startLine": 1,
+    "endLine": 32
+  },
+  {
+    "outputFile": "CapabilityStatement-NgePCapabilityStatementServer.json",
+    "fshName": "NgePCapabilityStatementServer",
+    "fshType": "Instance",
+    "fshFile": "otherfiles/capability-statement-server.fsh",
+    "startLine": 1,
+    "endLine": 76
+  },
+  {
+    "outputFile": "CodeSystem-NGStockReportCS.json",
+    "fshName": "NGStockReportCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/nigeria-stock-data.fsh",
+    "startLine": 1,
+    "endLine": 50
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-facility-type.json",
+    "fshName": "NGFacilityTypeCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/other-code-systems.fsh",
+    "startLine": 3,
+    "endLine": 17
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-gender.json",
+    "fshName": "NGGenderCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/other-code-systems.fsh",
+    "startLine": 19,
+    "endLine": 30
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-languages.json",
+    "fshName": "NGLanguagesCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/nigeria-languages.fsh",
+    "startLine": 1,
+    "endLine": 36
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-lgas.json",
+    "fshName": "NGLGAsCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/nigeria-lga.fsh",
+    "startLine": 1,
+    "endLine": 897
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-location-owner-cs.json",
+    "fshName": "NGOrganizationOwnerCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/nigeria-location-owner.fsh",
+    "startLine": 1,
+    "endLine": 13
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-relationship.json",
+    "fshName": "NGRelationshipsCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/nigeria-relationships.fsh",
+    "startLine": 2,
+    "endLine": 30
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-states.json",
+    "fshName": "NGStatesCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/nigeria-states.fsh",
+    "startLine": 1,
+    "endLine": 51
+  },
+  {
+    "outputFile": "CodeSystem-nigeria-wards.json",
+    "fshName": "NGWardsCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/nigeria-wards.fsh",
+    "startLine": 1,
+    "endLine": 23
+  },
+  {
+    "outputFile": "Location-location-example.json",
+    "fshName": "location-example",
+    "fshType": "Instance",
+    "fshFile": "examples/ng-example-ep-location.fsh",
+    "startLine": 1,
+    "endLine": 16
+  },
+  {
+    "outputFile": "MeasureReport-ExampleNgePMeasureReport.json",
+    "fshName": "ExampleNgePMeasureReport",
+    "fshType": "Instance",
+    "fshFile": "examples/ng-example-measurereport-ep-full.fsh",
+    "startLine": 1,
+    "endLine": 21
+  },
+  {
+    "outputFile": "Organization-NgImmExampleOrganization.json",
+    "fshName": "NgImmExampleOrganization",
+    "fshType": "Instance",
+    "fshFile": "examples/ngImmExampleOrganization.fsh",
+    "startLine": 1,
+    "endLine": 23
+  },
+  {
+    "outputFile": "Organization-organization-example.json",
+    "fshName": "organization-example",
+    "fshType": "Instance",
+    "fshFile": "examples/ng-organization-example.fsh",
+    "startLine": 1,
+    "endLine": 18
+  },
+  {
+    "outputFile": "Patient-ExampleNgePPatient.json",
+    "fshName": "ExampleNgePPatient",
+    "fshType": "Instance",
+    "fshFile": "examples/ng-example-patient-ep.fsh",
+    "startLine": 1,
+    "endLine": 62
+  },
+  {
+    "outputFile": "Patient-ExampleNgePPatientAdminWard.json",
+    "fshName": "ExampleNgePPatientAdminWard",
+    "fshType": "Instance",
+    "fshFile": "examples/ng-example-patient-with-ward.fsh",
+    "startLine": 1,
+    "endLine": 20
+  },
+  {
+    "outputFile": "Patient-FullExampleNgImmPatient.json",
+    "fshName": "FullExampleNgImmPatient",
+    "fshType": "Instance",
+    "fshFile": "examples/ng-example-patient-ep-full.fsh",
+    "startLine": 1,
+    "endLine": 73
+  },
+  {
+    "outputFile": "Patient-NgePExamplePatient.json",
+    "fshName": "NgePExamplePatient",
+    "fshType": "Instance",
+    "fshFile": "examples/ngIePExamplePatient.fsh",
+    "startLine": 1,
+    "endLine": 37
+  },
+  {
+    "outputFile": "Practitioner-ng-practitioner-example.json",
+    "fshName": "ng-practitioner-example",
+    "fshType": "Instance",
+    "fshFile": "examples/ng-practitioner-example.fsh",
+    "startLine": 2,
+    "endLine": 13
+  },
+  {
+    "outputFile": "SearchParameter-NgePBundleSearchByBirthDate.json",
+    "fshName": "NgePBundleSearchByBirthDate",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 127,
+    "endLine": 138
+  },
+  {
+    "outputFile": "SearchParameter-NgePBundleSearchByFacilityIdentifier.json",
+    "fshName": "NgePBundleSearchByFacilityIdentifier",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 167,
+    "endLine": 178
+  },
+  {
+    "outputFile": "SearchParameter-NgePBundleSearchByLastUpdated.json",
+    "fshName": "NgePBundleSearchByLastUpdated",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 181,
+    "endLine": 192
+  },
+  {
+    "outputFile": "SearchParameter-NgePBundleSearchByPatientIdentifier.json",
+    "fshName": "NgePBundleSearchByPatientIdentifier",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 140,
+    "endLine": 152
+  },
+  {
+    "outputFile": "SearchParameter-NgePBundleSearchByState.json",
+    "fshName": "NgePBundleSearchByState",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 154,
+    "endLine": 165
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngeP-lga.json",
+    "fshName": "SearchParameter-ngeP-lga",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 87,
+    "endLine": 97
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-birthdate.json",
+    "fshName": "SearchParameter-ngep-birthdate",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 38,
+    "endLine": 48
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-city.json",
+    "fshName": "SearchParameter-ngep-city",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 99,
+    "endLine": 109
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-firstname.json",
+    "fshName": "SearchParameter-ngep-firstname",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 14,
+    "endLine": 24
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-identifier.json",
+    "fshName": "SearchParameter-ngep-identifier",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 1,
+    "endLine": 11
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-lastname.json",
+    "fshName": "SearchParameter-ngep-lastname",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 26,
+    "endLine": 36
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-patient.json",
+    "fshName": "SearchParameter-ngep-patient",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 111,
+    "endLine": 121
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-state.json",
+    "fshName": "SearchParameter-ngep-state",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 75,
+    "endLine": 85
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngep-telecom.json",
+    "fshName": "SearchParameter-ngep-telecom",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 62,
+    "endLine": 72
+  },
+  {
+    "outputFile": "SearchParameter-SearchParameter-ngimm-gender.json",
+    "fshName": "SearchParameter-ngimm-gender",
+    "fshType": "Instance",
+    "fshFile": "profiles/search-operation.fsh",
+    "startLine": 50,
+    "endLine": 60
+  },
+  {
+    "outputFile": "StructureDefinition-NgePPatient.json",
+    "fshName": "NgePPatient",
+    "fshType": "Profile",
+    "fshFile": "profiles/patient.fsh",
+    "startLine": 2,
+    "endLine": 87
+  },
+  {
+    "outputFile": "StructureDefinition-NgePPractitioner.json",
+    "fshName": "NgePPractitioner",
+    "fshType": "Profile",
+    "fshFile": "profiles/practitioner.fsh",
+    "startLine": 2,
+    "endLine": 35
+  },
+  {
+    "outputFile": "StructureDefinition-birth-weight.json",
+    "fshName": "NGBirthWeight",
+    "fshType": "Extension",
+    "fshFile": "extension/PatientExtensions.fsh",
+    "startLine": 19,
+    "endLine": 25
+  },
+  {
+    "outputFile": "StructureDefinition-ep-medication-request.json",
+    "fshName": "NgePMedicationRequest",
+    "fshType": "Profile",
+    "fshFile": "profiles/ePmedicationRequest.fsh",
+    "startLine": 1,
+    "endLine": 26
+  },
+  {
+    "outputFile": "StructureDefinition-ep-medication.json",
+    "fshName": "NgePMedication",
+    "fshType": "Profile",
+    "fshFile": "profiles/ePmedication.fsh",
+    "startLine": 1,
+    "endLine": 11
+  },
+  {
+    "outputFile": "StructureDefinition-measure-report-profile.json",
+    "fshName": "NgePMeasureReport",
+    "fshType": "Profile",
+    "fshFile": "profiles/measurereport.fsh",
+    "startLine": 1,
+    "endLine": 32
+  },
+  {
+    "outputFile": "StructureDefinition-ng-ep-encounter.json",
+    "fshName": "NgePEncounter",
+    "fshType": "Profile",
+    "fshFile": "profiles/encounter.fsh",
+    "startLine": 1,
+    "endLine": 17
+  },
+  {
+    "outputFile": "StructureDefinition-ng-ep-measure.json",
+    "fshName": "NgePMeasure",
+    "fshType": "Profile",
+    "fshFile": "profiles/measure.fsh",
+    "startLine": 2,
+    "endLine": 40
+  },
+  {
+    "outputFile": "StructureDefinition-ng-ep-organization.json",
+    "fshName": "NgePOrganization",
+    "fshType": "Profile",
+    "fshFile": "profiles/organization.fsh",
+    "startLine": 1,
+    "endLine": 42
+  },
+  {
+    "outputFile": "StructureDefinition-nigeria-administrative-ward.json",
+    "fshName": "NGAdministrativeWard",
+    "fshType": "Extension",
+    "fshFile": "extension/PatientExtensions.fsh",
+    "startLine": 6,
+    "endLine": 15
+  },
+  {
+    "outputFile": "StructureDefinition-nigeria-location.json",
+    "fshName": "NgePLocation",
+    "fshType": "Profile",
+    "fshFile": "profiles/location.fsh",
+    "startLine": 1,
+    "endLine": 32
+  },
+  {
+    "outputFile": "StructureDefinition-organozation-owner.json",
+    "fshName": "NGOrganizationOwner",
+    "fshType": "Extension",
+    "fshFile": "extension/OrganizationExtension.fsh",
+    "startLine": 1,
+    "endLine": 9
+  },
+  {
+    "outputFile": "ValueSet-nigeria-facility-types.json",
+    "fshName": "NGFacilityTypeVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 51,
+    "endLine": 57
+  },
+  {
+    "outputFile": "ValueSet-nigeria-gender.json",
+    "fshName": "NGGenderVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 2,
+    "endLine": 8
+  },
+  {
+    "outputFile": "ValueSet-nigeria-languages.json",
+    "fshName": "NGLanguagesVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 34,
+    "endLine": 40
+  },
+  {
+    "outputFile": "ValueSet-nigeria-lgas.json",
+    "fshName": "NGLGAsVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 18,
+    "endLine": 24
+  },
+  {
+    "outputFile": "ValueSet-nigeria-location-owner.json",
+    "fshName": "NGOrganizationOwnerVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 61,
+    "endLine": 67
+  },
+  {
+    "outputFile": "ValueSet-nigeria-relationship.json",
+    "fshName": "NGRelationshipsVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 43,
+    "endLine": 49
+  },
+  {
+    "outputFile": "ValueSet-nigeria-states.json",
+    "fshName": "NGStatesVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 26,
+    "endLine": 32
+  },
+  {
+    "outputFile": "ValueSet-nigeria-wards.json",
+    "fshName": "NGWardsVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/NgImmValuesets.fsh",
+    "startLine": 10,
+    "endLine": 16
+  }
+]

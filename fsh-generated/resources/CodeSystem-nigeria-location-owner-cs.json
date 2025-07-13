@@ -1,0 +1,37 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "NGOrganizationOwnerCS",
+  "id": "nigeria-location-owner-cs",
+  "title": "NG-eP Location Owner CS",
+  "description": "This CodeSystem defines Immunization Location Owner.",
+  "url": "https://dhin-hie.org/ePrescription/CodeSystem/nigeria-location-owner-cs",
+  "concept": [
+    {
+      "code": "public",
+      "display": "Public Health Institution Location"
+    },
+    {
+      "code": "private",
+      "display": "Private Health Institution Location"
+    },
+    {
+      "code": "faith-based",
+      "display": "Faith-based Institution Locations such as churches, musques, and traditional homes"
+    }
+  ],
+  "publisher": "NPHCDA",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "NG",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Nigeria"
+        }
+      ]
+    }
+  ],
+  "count": 3
+}

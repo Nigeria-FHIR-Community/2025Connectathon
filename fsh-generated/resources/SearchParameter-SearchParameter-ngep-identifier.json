@@ -1,0 +1,14 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "SearchParameter-ngep-identifier",
+  "url": "https://dhin-hie.org/ePrescription/SearchParameter/SearchParameter-ngep-identifier",
+  "base": [
+    "Patient"
+  ],
+  "name": "identifier",
+  "status": "active",
+  "code": "identifier",
+  "type": "token",
+  "expression": "Patient.identifier",
+  "description": "Search by patient identifier"
+}

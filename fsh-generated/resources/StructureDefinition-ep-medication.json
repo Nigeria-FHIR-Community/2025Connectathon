@@ -1,0 +1,44 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ep-medication",
+  "url": "https://dhin-hie.org/ePrescription/StructureDefinition/ep-medication",
+  "name": "NgePMedication",
+  "title": "NG-eP Medication Profile",
+  "status": "draft",
+  "description": "A Medication profile with some core elements for demonstration purposes.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Medication",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Medication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Medication.identifier",
+        "path": "Medication.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Medication.code",
+        "path": "Medication.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Medication.form",
+        "path": "Medication.form",
+        "mustSupport": true
+      },
+      {
+        "id": "Medication.ingredient",
+        "path": "Medication.ingredient",
+        "mustSupport": true
+      },
+      {
+        "id": "Medication.batch",
+        "path": "Medication.batch",
+        "mustSupport": true
+      }
+    ]
+  }
+}

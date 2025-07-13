@@ -3,22 +3,22 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: fhir.nigeriaImmunization
-canonical: https://nphcda.gov.ng/immunizationIG
-name: Nigeria-immunization-FHIR-IG
-title: Nigeria Immunization FHIR IG
-description: Nigeria Immunization FHIR IG
+id: fhir.dhinePrescription
+canonical: https://dhin-hie.org/ePrescription
+name: DHIN-ePrescription-FHIR-IG
+title: DHIN ePrescription FHIR IG
+description: DHIN ePrescription FHIR IG
 status: draft # draft | active | retired | unknown
-version: 0.2.0
+version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: https://nphcda.gov.ng
-  url: https://nphcda.gov.ng
-  # email: ig@nphcda.gov.ng
+  name: https://dhin-hie.org/ig
+  url: https://dhin-hie.org/ig
+  email: info@dhin-hie.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
@@ -47,19 +47,19 @@ pages:
   index.md:
     title: Home
   business-requirements.md:
-    title: Business Requirements (DAKs)-(L2)
+    title: Requirement Specifications
   generic-personas.md:
-    title: Generic Personas
+    title: Personas
   user-scenarios.md:
     title: User Scenarios
   business-processes.md:
-    title: Business Processes
-  decision-support-logic.md:
-    title: Decision Support Logic
+    title: Workflows
   functional-requirements.md:
     title: Functional Requirements
   non-functional-requirements.md:
     title: Non-Functional Requirements
+  privacy-security.md:
+    title: Privacy and Security
 
 # dependancies.md:
 #   title: Dependancies
@@ -100,64 +100,15 @@ pages:
 # ContactDetail.
 #
 contact:
-  - name: Nigeria Primary Healthcare Development Agency.
+  - name: Digital Health Interoperability Network.
     telecom:
       - system: email # phone | fax | email | pager | url | sms | other
-        value: ig@nphcda.gov.ng
+        value: info@dhin-hie.org
         use: work
         
-jurisdiction: urn:iso:std:iso:3166#NG "Nigeria"        
+#jurisdiction: urn:iso:std:iso:3166#NG "Nigeria"        
 #
-#
-# The global property corresponds to the IG.global property, but it
-# uses the type as the YAML key and the profile as its value. Since
-# FHIR does not explicitly disallow more than one profile per type,
-# neither do we; the value can be a single profile URL or an array
-# of profile URLs. If a value is an id or name, SUSHI will replace
-# it with the correct canonical when generating the IG JSON.
-#
-# global:
-#   Patient: http://example.org/fhir/StructureDefinition/neir-patient-profile
-#   Encounter: http://example.org/fhir/StructureDefinition/neir-encounter-profile
-#
-#
-# The resources property corresponds to IG.definition.resource.
-# SUSHI can auto-generate all of the resource entries based on
-# the FSH definitions and/or information in any user-provided
-# JSON or XML resource files. If the generated entries are not
-# sufficient or complete, however, the author can add entries
-# here. If the reference matches a generated entry, it will
-# replace the generated entry. If it doesn't match any generated
-# entries, it will be added to the generated entries. The format
-# follows IG.definition.resource with the following differences:
-#   * use IG.definition.resource.reference.reference as the YAML key.
-#   * if the key is an id or name, SUSHI will replace it with the
-#     correct URL when generating the IG JSON.
-#   * specify "omit" to omit a FSH-generated resource from the
-#     resource list.
-#   * if the exampleCanonical is an id or name, SUSHI will replace
-#     it with the correct canonical when generating the IG JSON.
-#   * groupingId can be used, but top-level groups syntax may be a
-#     better option (see below).
-# The following are simple examples to demonstrate what this might
-# look like:
-#
-# resources:
-#   Patient/neir-example-patient:
-#     name: My Example Patient
-#     description: An example Patient
-#     exampleBoolean: true
-#   Patient/bad-example: omit
-#
-#
-# Groups can control certain aspects of the IG generation.  The IG
-# documentation recommends that authors use the default groups that
-# are provided by the templating framework, but if authors want to
-# use their own instead, they can use the mechanism below.  This will
-# create IG.definition.grouping entries and associate the individual
-# resource entries with the corresponding groupIds. If a resource
-# is specified by id or name, SUSHI will replace it with the correct
-# URL when generating the IG JSON.
+
 #
 # groups:
 #   GroupA:

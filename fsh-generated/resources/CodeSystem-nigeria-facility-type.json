@@ -1,0 +1,51 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "NGFacilityTypeCS",
+  "id": "nigeria-facility-type",
+  "title": "NG-eP Facility Type CS",
+  "description": "A standardized classification system used to describe the type or level of health facility within a healthcare delivery system, based on the scope of services provided, staffing, infrastructure, and administrative role.",
+  "url": "https://dhin-hie.org/ePrescription/CodeSystem/nigeria-facility-type",
+  "concept": [
+    {
+      "code": "clinic",
+      "display": "Clinic",
+      "definition": "The Health facility is a primary health facility"
+    },
+    {
+      "code": "hospital",
+      "display": "Hospital",
+      "definition": "The Health facility is a Secondary health facilities and General Hospitals"
+    },
+    {
+      "code": "health-post",
+      "display": "Health Post",
+      "definition": "The Health facility is a primary health facility in category of dispensories"
+    },
+    {
+      "code": "chc",
+      "display": "Comprehensive Health Centers",
+      "definition": "The Health facility is a comprehensive primary health center owned by the government"
+    },
+    {
+      "code": "tertiary",
+      "display": "Tertiary facility",
+      "definition": "These are Higher level facilities and referal centers)"
+    }
+  ],
+  "hierarchyMeaning": "is-a",
+  "publisher": "NPHCDA",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "NG",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Nigeria"
+        }
+      ]
+    }
+  ],
+  "count": 5
+}

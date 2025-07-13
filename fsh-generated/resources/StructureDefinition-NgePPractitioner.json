@@ -1,0 +1,108 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "NgePPractitioner",
+  "url": "https://dhin-hie.org/ePrescription/StructureDefinition/NgePPractitioner",
+  "name": "NgePPractitioner",
+  "title": "NG-ep Practitioner",
+  "status": "draft",
+  "description": "Profile for a Nigerian Practitioner",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Practitioner",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Practitioner.identifier",
+        "path": "Practitioner.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier.system",
+        "path": "Practitioner.identifier.system",
+        "short": "The namespace for the identifier value e.g a MDCN URL",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.identifier.value",
+        "path": "Practitioner.identifier.value",
+        "short": "The value that is unique from the identity provider",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.active",
+        "path": "Practitioner.active",
+        "short": "A boolean indicating that this practitioner is active"
+      },
+      {
+        "id": "Practitioner.name",
+        "path": "Practitioner.name",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.name.use",
+        "path": "Practitioner.name.use",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.name.family",
+        "path": "Practitioner.name.family",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.name.given",
+        "path": "Practitioner.name.given",
+        "short": "The surname of the practitioner e.g. of the Routine Immunization officer",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Practitioner.telecom",
+        "path": "Practitioner.telecom",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.telecom.system",
+        "path": "Practitioner.telecom.system",
+        "short": "The contact communication information e.g. nkiru@test.com | 08092299999",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.telecom.value",
+        "path": "Practitioner.telecom.value",
+        "min": 1
+      },
+      {
+        "id": "Practitioner.birthDate",
+        "path": "Practitioner.birthDate",
+        "short": "The date of birth of the healthcare professional",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.qualification.code.text",
+        "path": "Practitioner.qualification.code.text",
+        "short": "The public certificate number"
+      },
+      {
+        "id": "Practitioner.qualification.period",
+        "path": "Practitioner.qualification.period",
+        "short": "The time duration this qualification is valid"
+      },
+      {
+        "id": "Practitioner.qualification.issuer",
+        "path": "Practitioner.qualification.issuer",
+        "short": "The regulating organization that issue the qualification",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://dhin-hie.org/ePrescription/StructureDefinition/ng-ep-organization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

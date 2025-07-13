@@ -1,0 +1,87 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "NGRelationshipsCS",
+  "id": "nigeria-relationship",
+  "title": "NG-eP Relationships CS",
+  "description": "This CodeSystem defines list of persons related to a patient, but who is not a direct target of care",
+  "url": "https://dhin-hie.org/ePrescription/CodeSystem/nigeria-relationship",
+  "concept": [
+    {
+      "code": "BROTHER",
+      "display": "Brother"
+    },
+    {
+      "code": "SISTER",
+      "display": "Sister"
+    },
+    {
+      "code": "SON",
+      "display": "Son"
+    },
+    {
+      "code": "DAUGHTER",
+      "display": "Daughter"
+    },
+    {
+      "code": "MOTHER",
+      "display": "Mother"
+    },
+    {
+      "code": "FATHER",
+      "display": "Father"
+    },
+    {
+      "code": "AUNT",
+      "display": "Aunt"
+    },
+    {
+      "code": "COUNSN",
+      "display": "Cousin"
+    },
+    {
+      "code": "GRDSON",
+      "display": "Grand Son"
+    },
+    {
+      "code": "GRDDAU",
+      "display": "Grand Daughter"
+    },
+    {
+      "code": "INLAW",
+      "display": "Inlaw"
+    },
+    {
+      "code": "NEPHEW",
+      "display": "Nephew"
+    },
+    {
+      "code": "NIECE",
+      "display": "Niece"
+    },
+    {
+      "code": "UNCLE",
+      "display": "Uncle"
+    },
+    {
+      "code": "FRND",
+      "display": "Friend"
+    }
+  ],
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "publisher": "NPHCDA",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "NG",
+          "system": "urn:iso:std:iso:3166",
+          "display": "Nigeria"
+        }
+      ]
+    }
+  ],
+  "count": 15
+}

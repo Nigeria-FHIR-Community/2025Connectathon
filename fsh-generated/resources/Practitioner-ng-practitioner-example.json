@@ -1,0 +1,30 @@
+{
+  "resourceType": "Practitioner",
+  "id": "ng-practitioner-example",
+  "meta": {
+    "profile": [
+      "https://dhin-hie.org/ePrescription/StructureDefinition/NgePPractitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://nursing-midwifery-council/",
+      "value": "123456"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Damola"
+      ],
+      "family": "Bello"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0722000000"
+    }
+  ],
+  "birthDate": "1980-01-01"
+}

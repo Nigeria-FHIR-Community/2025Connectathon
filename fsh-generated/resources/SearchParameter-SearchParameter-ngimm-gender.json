@@ -1,0 +1,14 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "SearchParameter-ngimm-gender",
+  "url": "https://dhin-hie.org/ePrescription/SearchParameter/SearchParameter-ngimm-gender",
+  "base": [
+    "Patient"
+  ],
+  "name": "gender",
+  "status": "active",
+  "code": "gender",
+  "type": "token",
+  "expression": "Patient.gender",
+  "description": "Search by patient gender"
+}

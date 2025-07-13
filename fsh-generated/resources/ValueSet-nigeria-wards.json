@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "NGWardsVS",
+  "id": "nigeria-wards",
+  "title": "NG-eP Wards VS",
+  "description": "The administrative Ward (within an LGA) where a person or a facility is.",
+  "url": "https://dhin-hie.org/ePrescription/ValueSet/nigeria-wards",
+  "compose": {
+    "include": [
+      {
+        "system": "https://dhin-hie.org/ePrescription/CodeSystem/nigeria-wards"
+      }
+    ]
+  }
+}

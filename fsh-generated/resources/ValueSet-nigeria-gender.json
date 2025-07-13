@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "NGGenderVS",
+  "id": "nigeria-gender",
+  "title": "NG-eP Gender or Sex VS",
+  "description": "Subset of HL7 administrative-gender limited to 'male' and 'female'.",
+  "url": "https://dhin-hie.org/ePrescription/ValueSet/nigeria-gender",
+  "compose": {
+    "include": [
+      {
+        "system": "https://dhin-hie.org/ePrescription/CodeSystem/nigeria-gender"
+      }
+    ]
+  }
+}

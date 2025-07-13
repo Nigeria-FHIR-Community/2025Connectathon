@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "NGLGAsVS",
+  "id": "nigeria-lgas",
+  "title": "NG-eP LGAs VS",
+  "description": "The administrative Local Government Areas where a person or a facility is.",
+  "url": "https://dhin-hie.org/ePrescription/ValueSet/nigeria-lgas",
+  "compose": {
+    "include": [
+      {
+        "system": "https://dhin-hie.org/ePrescription/CodeSystem/nigeria-lgas"
+      }
+    ]
+  }
+}

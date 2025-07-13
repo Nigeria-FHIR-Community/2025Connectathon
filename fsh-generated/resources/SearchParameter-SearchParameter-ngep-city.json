@@ -1,0 +1,14 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "SearchParameter-ngep-city",
+  "url": "https://dhin-hie.org/ePrescription/SearchParameter/SearchParameter-ngep-city",
+  "base": [
+    "Patient"
+  ],
+  "name": "city",
+  "status": "active",
+  "code": "city",
+  "type": "token",
+  "expression": "Patient.city",
+  "description": "Search patient records by city, town or settlement"
+}
