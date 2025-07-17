@@ -339,6 +339,14 @@ function loadNigeriaMap() {
         'ondo': 'ondo',
         'kogi': 'kogi',
         'osun': 'osun',
+        'jigawa': 'jigawa',
+        'akwa-ibom': 'akwa-ibom',
+        'cross-river': 'cross-river',
+        'imo': 'imo',
+        'abia': 'abia',
+        
+        
+        
         
         
         
@@ -420,6 +428,11 @@ function loadStateMap(stateId) {
         'ondo': 'Ondo-map',
         'kogi': 'Kogi-map',
         'osun': 'Osun-map',
+        'jigawa': 'Jigawa-map',
+        'akwa-ibom': 'Akwa-Ibom-map',
+        'cross-river': 'Cross-River-map',
+        'imo': 'Imo-map',
+        'abia': 'Abia-map',
         
         
         

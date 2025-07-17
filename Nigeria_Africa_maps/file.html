@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHIN - Health Application Development</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .logo-circle {
+            width: 75px;
+            height: 85px;
+            object-fit: cover;
+        }
+        
+        .nav-link {
+            color: #333 !important;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+
+        
+        .btn-login {
+            background: white;
+            border: 1px solid #ddd;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        
+        .btn-signup {
+            background: #D1CDFA;
+            color: #130B70;
+            padding: 8px 20px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25),
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25);
+        }
+        
+        .btn-signup:hover {
+            background: #C7C2F7;
+            color: #130B70;
+            box-shadow: 
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25),
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25);
+        }
+        
+        .btn-learn-more {
+            background: transparent;
+            color: #130B70;
+            padding: 12px 24px;
+            border: 2px solid #130B70;
+            border-radius: 8px;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .btn-learn-more:hover {
+            background: #130B70;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-start-testing {
+            background: #D1CDFA;
+            color: #130B70;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25),
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25);
+        }
+        
+        .btn-start-testing:hover {
+            background: #C7C2F7;
+            color: #130B70;
+            text-decoration: none;
+            box-shadow: 
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25),
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25);
+        }
+        
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .hero-title {
+            font-size: 63px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-text {
+            font-size: 20px;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        
+        .custom-navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-text {
+                font-size: 18px;
+            }
+            
+            .hero-image {
+                height: 300px;
+                margin-top: 2rem;
+            }
+            
+            .btn-learn-more {
+                margin-bottom: 10px;
+                margin-right: 0;
+                display: block;
+                text-align: center;
+            }
+            
+            .btn-start-testing {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        .features-section {
+    background: #f8f9fa;
+}
+
+.features-title {
+    font-size: 48px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: #D1CDFA;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #130B70;
+    box-shadow: 
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25),
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25);
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.feature-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .features-title {
+        font-size: 32px;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .feature-title {
+        font-size: 18px;
+    }
+    
+    .feature-description {
+        font-size: 14px;
+    }
+}
+
+        .dashboard-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding: 4rem 0;
+        }
+        
+        .dashboard-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .dashboard-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #e8eaf6 0%, #d1c4e9 100%);
+            border: 0.5px solid #BDB8EE;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            width: 210px;
+            box-shadow: 
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25),
+                inset 1px -3px 4px rgba(19, 11, 112, 0.25);
+            
+            
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #9575cd;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0;
+        }
+        
+        .filter-section {
+            margin-bottom: 3rem;
+        }
+        
+        .custom-dropdown {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            color: #495057;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .custom-dropdown:hover {
+            border-color: #9575cd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .custom-dropdown:focus {
+            outline: none;
+            border-color: #9575cd;
+            box-shadow: 0 0 0 3px rgba(149, 117, 205, 0.2);
+        }
+        
+        .dropdown-arrow {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            pointer-events: none;
+        }
+        
+        .dropdown-wrapper {
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-title {
+                font-size: 2rem;
+            }
+            
+            .metric-value {
+                font-size: 2rem;
+            }
+            
+            .filter-section .col-md-6 {
+                margin-bottom: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="C:\Users\user\Downloads\Frame 1171275833.png" alt="DHIN Logo" class="logo-circle me-2">
+                DHIN
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">API Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Capability Statement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Implementation Guide</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex">
+                    <button class="btn btn-login me-2">Log In</button>
+                    <button class="btn btn-signup">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">
+                        DHIN Testing Sandbox
+                    </h1>
+                    <p class="hero-text">
+                        A FHIR-compliant testing sandbox to accelerate your health application development
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-learn-more">Learn More</a>
+                        <a href="#" class="btn btn-start-testing">Start Testing</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="C:\Users\user\Downloads\Image_fx (1) 3.png" alt="Healthcare Technology Illustration" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- What is DHIN FHIR Sandbox Section -->
+<section class="features-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="features-title">What is DHIN FHIR Sandbox?</h2>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Feature 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Open Source FHIR Conformance Testing for Digital Health</h3>
+                    <p class="feature-description">
+                        The DHIN FHIR Testing Sandbox is an open-source platform for building, running, and sharing automated tests for FHIR conformance. Designed to support real-world digital health use cases, the DHIN Sandbox empowers health IT developers, vendors, and innovators to test their systems against core FHIR standards and interoperability requirements.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 7L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Get Started with Testing</h3>
+                    <p class="feature-description">
+                        The DHIN Sandbox includes curated test kits built to validate FHIR R4's against leading implementation guides and digital health interoperability standards. These kits simulate various care scenarios, supporting validation of clinical resources such as Patient, Observation, and Encounter.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Build and Share Custom Tests</h3>
+                    <p class="feature-description">
+                        DHIN's FHIR Sandbox is as adaptable as FHIR itself. Developers can design and deploy custom test scripts tailored to unique digital health use cases. The platform supports flexible test creation using modular tools and standardized testing workflows.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 10H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 6H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 18H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 14H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Run DHIN Test Kits Locally or Remotely</h3>
+                    <p class="feature-description">
+                        The DHIN Sandbox supports both cloud-hosted and local deployments. Each DHIN Test Kit is a standalone application that targets specific FHIR implementation guides or interoperability goals. You can download and run test kits within your local environment, or deploy them securely within enterprise systems.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Feature 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Integrate into Your CI/CD Workflow</h3>
+                    <p class="feature-description">
+                        With a full-featured API, the DHIN Sandbox allows integration into existing development workflows, testing environments, or CI/CD pipelines. Automate FHIR conformance checks as part of your software lifecycle.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Feature 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M19.4 15C19.3 15.6 19.2 16.2 19 16.8L21.4 18.4C21.7 18.6 21.8 19.1 21.6 19.4L19.6 22.6C19.4 22.9 19 23 18.6 22.8L15.8 21.5C15.2 21.9 14.6 22.2 14 22.4L13.6 25.4C13.5 25.8 13.2 26 12.8 26H8.8C8.4 26 8.1 25.8 8 25.4L7.6 22.4C7 22.2 6.4 21.9 5.8 21.5L3 22.8C2.6 23 2.2 22.9 2 22.6L0 19.4C-0.2 19.1 -0.1 18.6 0.2 18.4L2.6 16.8C2.4 16.2 2.3 15.6 2.2 15L0.2 14.6C-0.2 14.5 -0.4 14.2 -0.4 13.8V9.8C-0.4 9.4 -0.2 9.1 0.2 9L2.2 8.6C2.3 8 2.4 7.4 2.6 6.8L0.2 5.2C-0.1 5 -0.2 4.5 0 4.2L2 1C2.2 0.7 2.6 0.6 3 0.8L5.8 2.1C6.4 1.7 7 1.4 7.6 1.2L8 -1.8C8.1 -2.2 8.4 -2.4 8.8 -2.4H12.8C13.2 -2.4 13.5 -2.2 13.6 -1.8L14 1.2C14.6 1.4 15.2 1.7 15.8 2.1L18.6 0.8C19 0.6 19.4 0.7 19.6 1L21.6 4.2C21.8 4.5 21.7 5 21.4 5.2L19 6.8C19.2 7.4 19.3 8 19.4 8.6L21.4 9C21.8 9.1 22 9.4 22 9.8V13.8C22 14.2 21.8 14.5 21.4 14.6L19.4 15Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">More Than Just Tests</h3>
+                    <p class="feature-description">
+                        The DHIN Sandbox includes additional tools and utilities—such as reference FHIR applications, test data generators, and patient simulators—to support end-to-end testing. These tools help you go beyond conformance and ensure your health IT system behaves as expected in real-world scenarios.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Monitoring Dashboard -->
+<div class="dashboard-container">
+        <div class="container">
+            <!-- Header Section -->
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="dashboard-title">Monitoring Dashboard</h1>
+                    <p class="dashboard-subtitle">
+                        The Monitoring Dashboard provides real-time insights into key performance indicators
+                    </p>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="row filter-section">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <h2 class="section-title mb-0">FHIR transaction summary</h2>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="dropdown-wrapper">
+                                        <select class="form-select custom-dropdown">
+                                            <option selected>Select IG</option>
+                                            <option value="1">US Core</option>
+                                            <option value="2">CARIN Blue Button</option>
+                                            <option value="3">Da Vinci PDex</option>
+                                            <option value="4">SMART App Launch</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="dropdown-wrapper">
+                                        <select class="form-select custom-dropdown">
+                                            <option selected>Wednesday, 1th July, 2025</option>
+                                            <option value="1">Tuesday, 30th June, 2025</option>
+                                            <option value="2">Monday, 29th June, 2025</option>
+                                            <option value="3">Sunday, 28th June, 2025</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="row g-4">
+                <!-- First Row -->
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Encounter</div>
+                        <div class="metric-value">36</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Bundle</div>
+                        <div class="metric-value">07</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Location</div>
+                        <div class="metric-value">21</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Immunization</div>
+                        <div class="metric-value">23</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Measure</div>
+                        <div class="metric-value">52</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <!-- Empty space for balance -->
+                </div>
+
+                <!-- Second Row -->
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Related person</div>
+                        <div class="metric-value">38</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Measure report</div>
+                        <div class="metric-value">23</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Organization</div>
+                        <div class="metric-value">43</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Patient</div>
+                        <div class="metric-value">59</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="metric-card">
+                        <div class="metric-label">Practitioner</div>
+                        <div class="metric-value">21</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
