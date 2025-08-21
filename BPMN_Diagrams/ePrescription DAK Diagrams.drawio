@@ -1,37 +1,20 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15" version="28.1.0" pages="12">
   <diagram id="z58UkMzLvxZ88Zd8A9Be" name="Overview">
-    <mxGraphModel dx="2610" dy="1524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="527" dy="569" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="MFc8TwEXoFbTMnEmnhHI-1" value="Home" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=0;startSize=20;horizontalStack=0;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="130" y="50" width="1470" height="210" as="geometry" />
-        </mxCell>
-        <mxCell id="MFc8TwEXoFbTMnEmnhHI-2" value="Patient" style="swimlane;html=1;startSize=20;horizontal=0;dashed=1;dashPattern=8 8;" parent="MFc8TwEXoFbTMnEmnhHI-1" vertex="1">
-          <mxGeometry x="20" width="1450" height="210" as="geometry" />
-        </mxCell>
-        <mxCell id="LoFIVnIxgqHAPjGkEJDm-20" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="MFc8TwEXoFbTMnEmnhHI-2" vertex="1">
-          <mxGeometry x="35" y="60" width="40" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="rbwfsHjghB3MCF1E4nQx-2" value="&lt;p style=&quot;line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;B: Self Registration&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="MFc8TwEXoFbTMnEmnhHI-2" vertex="1">
-          <mxGeometry x="380" y="50" width="130" height="80" as="geometry" />
+          <mxGeometry x="130" y="99" width="1470" height="160" as="geometry" />
         </mxCell>
         <mxCell id="LoFIVnIxgqHAPjGkEJDm-10" value="Pharmacy" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=0;startSize=20;horizontalStack=0;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="130" y="460" width="1470" height="380" as="geometry" />
+          <mxGeometry x="130" y="460" width="1470" height="430" as="geometry" />
         </mxCell>
         <mxCell id="LoFIVnIxgqHAPjGkEJDm-11" value="Pharmacist" style="swimlane;html=1;startSize=20;horizontal=0;" parent="LoFIVnIxgqHAPjGkEJDm-10" vertex="1">
           <mxGeometry x="20" width="1450" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="xxmfTIlvp9sonFma-9C1-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="LoFIVnIxgqHAPjGkEJDm-11" target="pY2IG1z-wTK03OjL8tBm-11" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="610" y="87.5" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="SL9IZBJ_y124oKuT5V4R-40" value="End" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" parent="LoFIVnIxgqHAPjGkEJDm-11" vertex="1">
           <mxGeometry x="1400" y="110" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="pY2IG1z-wTK03OjL8tBm-11" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;Is payment&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;confimed?&lt;/font&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="LoFIVnIxgqHAPjGkEJDm-11" vertex="1">
-          <mxGeometry x="630" y="30" width="150" height="115" as="geometry" />
         </mxCell>
         <mxCell id="pY2IG1z-wTK03OjL8tBm-23" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" parent="LoFIVnIxgqHAPjGkEJDm-11" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -43,18 +26,10 @@
           <mxGeometry x="1400" y="53.5" width="39" height="39" as="geometry" />
         </mxCell>
         <mxCell id="rbwfsHjghB3MCF1E4nQx-14" value="&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 17px; font-weight: 700;&quot;&gt;D. Prescription Processing&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-11" vertex="1">
-          <mxGeometry x="250" y="65" width="130" height="75" as="geometry" />
+          <mxGeometry x="500" y="65" width="130" height="75" as="geometry" />
         </mxCell>
         <mxCell id="rbwfsHjghB3MCF1E4nQx-15" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;E. Billing&lt;/font&gt;&lt;/b&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-11" vertex="1">
-          <mxGeometry x="430" y="62.5" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="rbwfsHjghB3MCF1E4nQx-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="LoFIVnIxgqHAPjGkEJDm-11" source="pY2IG1z-wTK03OjL8tBm-11" target="rbwfsHjghB3MCF1E4nQx-15" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="rbwfsHjghB3MCF1E4nQx-17" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rbwfsHjghB3MCF1E4nQx-16" vertex="1" connectable="0">
-          <mxGeometry x="-0.1824" y="4" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
+          <mxGeometry x="665" y="62.5" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="rbwfsHjghB3MCF1E4nQx-19" value="&lt;b style=&quot;font-family: &amp;quot;Helvetica Neue&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;H.Medication Delivery&lt;/font&gt;&lt;/b&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-11" vertex="1">
           <mxGeometry x="830" y="33" width="150" height="80" as="geometry" />
@@ -74,28 +49,17 @@
         <mxCell id="rbwfsHjghB3MCF1E4nQx-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="LoFIVnIxgqHAPjGkEJDm-11" source="rbwfsHjghB3MCF1E4nQx-20" target="rbwfsHjghB3MCF1E4nQx-21" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="hWOvcG9va4g8bHCoOeRZ-1" value="&lt;p style=&quot;line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;A: Pharmacy Registration&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" vertex="1" parent="LoFIVnIxgqHAPjGkEJDm-11">
-          <mxGeometry x="70" y="65" width="130" height="80" as="geometry" />
+        <mxCell id="hWOvcG9va4g8bHCoOeRZ-1" value="&lt;p style=&quot;line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;A: New Pharmacy Premise Registration&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-11" vertex="1">
+          <mxGeometry x="70" y="65" width="150" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="4C23CpQWGJzHKlfyxGKg-1" value="&lt;p style=&quot;line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;A: Pharmacy Premise License Renewal&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" vertex="1" parent="LoFIVnIxgqHAPjGkEJDm-11">
+          <mxGeometry x="270" y="65" width="160" height="95" as="geometry" />
         </mxCell>
         <mxCell id="LoFIVnIxgqHAPjGkEJDm-12" value="Pharmacy Technician" style="swimlane;html=1;startSize=20;horizontal=0;" parent="LoFIVnIxgqHAPjGkEJDm-10" vertex="1">
-          <mxGeometry x="20" y="210" width="1450" height="170" as="geometry" />
+          <mxGeometry x="20" y="210" width="1450" height="220" as="geometry" />
         </mxCell>
         <mxCell id="rbwfsHjghB3MCF1E4nQx-25" value="&lt;b style=&quot;font-family: &amp;quot;Helvetica Neue&amp;quot;;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;F. Medication Preparation and Dispensing&lt;/font&gt;&lt;/b&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-12" vertex="1">
-          <mxGeometry x="430" y="40" width="150" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="pY2IG1z-wTK03OjL8tBm-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;dashed=1;" parent="LoFIVnIxgqHAPjGkEJDm-10" source="pY2IG1z-wTK03OjL8tBm-11" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="530" y="340" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="725" y="360" />
-              <mxPoint x="530" y="360" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="pY2IG1z-wTK03OjL8tBm-28" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="pY2IG1z-wTK03OjL8tBm-26" vertex="1" connectable="0">
-          <mxGeometry x="-0.5467" y="-2" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
+          <mxGeometry x="580" y="40" width="150" height="90" as="geometry" />
         </mxCell>
         <mxCell id="LoFIVnIxgqHAPjGkEJDm-16" value="Health facility" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=0;startSize=20;horizontalStack=0;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="130" y="260" width="1470" height="200" as="geometry" />
@@ -156,33 +120,24 @@
           <mxGeometry x="120" y="30" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="rbwfsHjghB3MCF1E4nQx-28" value="&lt;b style=&quot;caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: Calibri, sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; text-size-adjust: auto; -webkit-text-stroke-width: 0px; text-decoration: none;&quot;&gt;L. Drug. Catalogue&lt;/b&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="rFtyr8tTAtumKJGWqgVe-2" vertex="1">
-          <mxGeometry x="350" y="30" width="120" height="80" as="geometry" />
+          <mxGeometry x="460" y="20" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="SL9IZBJ_y124oKuT5V4R-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;entryX=0.383;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="rbwfsHjghB3MCF1E4nQx-26" target="rbwfsHjghB3MCF1E4nQx-19" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1060" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xxmfTIlvp9sonFma-9C1-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;entryX=0.408;entryY=-0.04;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="k42c4vTE9eBuGUdbC--N-1" target="rbwfsHjghB3MCF1E4nQx-14" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="785" y="440" />
-              <mxPoint x="265" y="440" />
-              <mxPoint x="265" y="502" />
-            </Array>
-            <mxPoint x="265" y="490" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="MFc8TwEXoFbTMnEmnhHI-2" value="Patient" style="swimlane;html=1;startSize=20;horizontal=0;dashed=1;dashPattern=8 8;" parent="1" vertex="1">
+          <mxGeometry x="150" y="100" width="1450" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="xxmfTIlvp9sonFma-9C1-7" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="xxmfTIlvp9sonFma-9C1-6" vertex="1" connectable="0">
-          <mxGeometry x="-0.0736" y="3" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
+        <mxCell id="rbwfsHjghB3MCF1E4nQx-2" value="&lt;p style=&quot;line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;B: Self Registration&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;font-family: Calibri, sans-serif; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="MFc8TwEXoFbTMnEmnhHI-2" vertex="1">
+          <mxGeometry x="70" y="50" width="130" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="xgjKoP19137VQ2aTJFlR" name="pharmacy registration">
-    <mxGraphModel dx="1895" dy="1105" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1156" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
