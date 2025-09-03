@@ -258,7 +258,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="xgjKoP19137VQ2aTJFlR" name="a-pharmacy registration">
-    <mxGraphModel dx="2421" dy="1701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2939" dy="1991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -438,12 +438,12 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-104" value="&lt;span id=&quot;docs-internal-guid-90e6494d-7fff-451f-3478-2fb641c76356&quot; style=&quot;font-weight:normal;&quot;&gt;&lt;p style=&quot;line-height:1.2;margin-top:0pt;margin-bottom:0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;line-height:1.2;margin-top:0pt;margin-bottom:0pt;&quot; dir=&quot;ltr&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;A. ePharmacy Registration and Renewal&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-weight: 700; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=40;horizontalStack=0;whiteSpace=wrap;strokeColor=#330000;" parent="1" vertex="1">
-          <mxGeometry x="-1570" y="-790" width="3560" height="610" as="geometry">
+          <mxGeometry x="-1570" y="-790" width="1940" height="610" as="geometry">
             <mxRectangle x="200" y="120" width="300" height="70" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-105" value="ePharmacy Organization" style="swimlane;html=1;startSize=20;horizontal=0;" parent="HhBTv-T1H6MdVlkLmhRL-104" vertex="1">
-          <mxGeometry y="40" width="3560" height="570" as="geometry" />
+          <mxGeometry y="40" width="1940" height="570" as="geometry" />
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-106" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-107" target="HhBTv-T1H6MdVlkLmhRL-115" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -459,7 +459,7 @@
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-111" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-115" target="HhBTv-T1H6MdVlkLmhRL-117" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-112" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Yes&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HhBTv-T1H6MdVlkLmhRL-111" vertex="1" connectable="0">
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-112" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;New&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Registration&lt;/font&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HhBTv-T1H6MdVlkLmhRL-111" vertex="1" connectable="0">
           <mxGeometry x="-0.1389" y="1" relative="1" as="geometry">
             <mxPoint x="1" as="offset" />
           </mxGeometry>
@@ -467,21 +467,21 @@
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-115" target="HhBTv-T1H6MdVlkLmhRL-132" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="190" y="100" />
-              <mxPoint x="2465" y="100" />
+              <mxPoint x="191" y="100" />
+              <mxPoint x="1465" y="100" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-114" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;No&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HhBTv-T1H6MdVlkLmhRL-113" vertex="1" connectable="0">
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-114" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Renewal&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HhBTv-T1H6MdVlkLmhRL-113" vertex="1" connectable="0">
           <mxGeometry x="-0.2348" y="4" relative="1" as="geometry">
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-115" value="1.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-3bcd427b-7fff-c62a-c262-7b20fb6aac94&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;New Registration?&lt;/span&gt;&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="130" y="236.17" width="121" height="124" as="geometry" />
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-115" value="1. &lt;span id=&quot;docs-internal-guid-3bcd427b-7fff-c62a-c262-7b20fb6aac94&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Registration Status?&lt;/span&gt;&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
+          <mxGeometry x="125" y="236.17" width="121" height="124" as="geometry" />
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-117" value="&lt;font&gt;2.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-10d206ac-7fff-4272-c35f-0a98487cb3c9&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Complete application form &amp;amp; Upload supporting documents&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="310" y="246.84" width="180" height="102.67" as="geometry" />
+          <mxGeometry x="334" y="246.84" width="180" height="102.67" as="geometry" />
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-118" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="QUk3cd0qM35IAmcfjciq-56" target="HhBTv-T1H6MdVlkLmhRL-145" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -517,32 +517,17 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-131" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-132" target="HhBTv-T1H6MdVlkLmhRL-134" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-132" value="13.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-002e8424-7fff-2fd7-58ee-8921fe391d00&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;&lt;span id=&quot;docs-internal-guid-6ae36f9f-7fff-c955-92f3-b48dc7c347a2&quot;&gt;&lt;span style=&quot;font-size: 12pt; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline;&quot;&gt;Complete Form B&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="2400" y="273.51" width="130" height="56.49" as="geometry" />
+          <mxGeometry x="1400" y="272.21" width="130" height="56.49" as="geometry" />
         </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-133" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-134" target="HhBTv-T1H6MdVlkLmhRL-139" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-134" value="14.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-793f663f-7fff-94b7-22ff-fa90f7e85070&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Pay license fee&lt;/span&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="2580" y="264.45" width="130" height="72.01" as="geometry" />
-        </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-135" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-139" target="HhBTv-T1H6MdVlkLmhRL-141" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-136" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Yes&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HhBTv-T1H6MdVlkLmhRL-135" vertex="1" connectable="0">
-          <mxGeometry x="-0.3219" y="-3" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-139" target="HhBTv-T1H6MdVlkLmhRL-134" edge="1">
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.452;entryY=0.024;entryDx=0;entryDy=0;elbow=vertical;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-139" target="NCyg3eshgBPOZgv0vsr1-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="2842" y="140" />
-              <mxPoint x="2645" y="140" />
+              <mxPoint x="1812" y="136" />
+              <mxPoint x="1635" y="136" />
+              <mxPoint x="1635" y="258" />
             </Array>
+            <mxPoint x="1635" y="264.09000000000015" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-138" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;No&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HhBTv-T1H6MdVlkLmhRL-137" vertex="1" connectable="0">
@@ -551,16 +536,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-139" value="15.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-273d0f55-7fff-d452-f442-78cdb5f1daf7&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Payment confirmed?&lt;/span&gt;&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="2770" y="239.76" width="145" height="124" as="geometry" />
-        </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-140" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-141" target="HhBTv-T1H6MdVlkLmhRL-142" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-141" value="16.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-fdb1440b-7fff-1839-80d2-84304055d34f&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Issue license&lt;/span&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="3000" y="270.90999999999997" width="140" height="65.55" as="geometry" />
-        </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-142" value="17.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-de78008c-7fff-c52c-29c0-c3e214c9751c&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Update PCN’s national ePharmacy registry&lt;/span&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="3210" y="256.43" width="180" height="80.03" as="geometry" />
+          <mxGeometry x="1740" y="238.95999999999998" width="145" height="124" as="geometry" />
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-143" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-145" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -575,11 +551,8 @@
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-145" value="4.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-946cfbb2-7fff-5dde-c198-22983f9791dd&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;License valid?&lt;/span&gt;&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
           <mxGeometry x="800" y="235.79" width="110" height="124.21" as="geometry" />
         </mxCell>
-        <mxCell id="HhBTv-T1H6MdVlkLmhRL-146" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#F9F7ED,#FFFFCC);strokeColor=light-dark(#000000,#000000);gradientColor=none;" parent="HhBTv-T1H6MdVlkLmhRL-105" vertex="1">
-          <mxGeometry x="1670" y="210.14" width="680" height="183.24" as="geometry" />
-        </mxCell>
         <mxCell id="QUk3cd0qM35IAmcfjciq-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="HhBTv-T1H6MdVlkLmhRL-105">
-          <mxGeometry x="20" width="28" height="570" as="geometry" />
+          <mxGeometry x="20" width="20" height="570" as="geometry" />
         </mxCell>
         <mxCell id="QUk3cd0qM35IAmcfjciq-56" value="3.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-e41e53e6-7fff-e9b1-e712-6808d32931a7&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; color: rgb(0, 0, 0);&quot;&gt;Validate license (pharmacist and premises) against PCN registry&lt;/span&gt;&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=script;" vertex="1" parent="HhBTv-T1H6MdVlkLmhRL-105">
           <mxGeometry x="540" y="243.17" width="210" height="110" as="geometry" />
@@ -619,14 +592,32 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="HhBTv-T1H6MdVlkLmhRL-105" source="NCyg3eshgBPOZgv0vsr1-1" target="HhBTv-T1H6MdVlkLmhRL-139">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-1" value="14.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-793f663f-7fff-94b7-22ff-fa90f7e85070&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; color: rgb(0, 0, 0);&quot;&gt;Pay license fee&lt;/span&gt;&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=script;" vertex="1" parent="HhBTv-T1H6MdVlkLmhRL-105">
+          <mxGeometry x="1570" y="252.4" width="140" height="97.11" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-2" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;API&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="NCyg3eshgBPOZgv0vsr1-1">
+          <mxGeometry x="111.33333333333333" y="77.68800000000005" width="39.99999999999999" height="26.484545454545454" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-3" value="" style="endArrow=classic;html=1;rounded=0;startSize=7;endSize=9;strokeWidth=2;" edge="1" parent="NCyg3eshgBPOZgv0vsr1-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="115" y="93.57000000000005" as="sourcePoint" />
+            <mxPoint x="135" y="73.57000000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="HhBTv-T1H6MdVlkLmhRL-105" source="HhBTv-T1H6MdVlkLmhRL-132" target="NCyg3eshgBPOZgv0vsr1-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="QUk3cd0qM35IAmcfjciq-2" value="Registered Pharmacist" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
-          <mxGeometry x="-1650.5" y="-517.5" width="227" height="30" as="geometry" />
+          <mxGeometry x="-1655.5" y="-474.5" width="227" height="30" as="geometry" />
         </mxCell>
         <mxCell id="QUk3cd0qM35IAmcfjciq-3" value="PCN" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="-1570" y="-180" width="3590" height="430" as="geometry" />
+          <mxGeometry x="-1570" y="-180" width="1940" height="430" as="geometry" />
         </mxCell>
         <mxCell id="QUk3cd0qM35IAmcfjciq-54" value="Inspection Officer" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="QUk3cd0qM35IAmcfjciq-3">
-          <mxGeometry x="20" width="3570" height="210" as="geometry" />
+          <mxGeometry x="20" width="1920" height="210" as="geometry" />
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-147" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=light-dark(#000000,#000000);" parent="QUk3cd0qM35IAmcfjciq-54" source="HhBTv-T1H6MdVlkLmhRL-148" target="HhBTv-T1H6MdVlkLmhRL-150" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -650,7 +641,25 @@
           <mxGeometry x="830" y="75.71000000000004" width="120" height="60.66" as="geometry" />
         </mxCell>
         <mxCell id="QUk3cd0qM35IAmcfjciq-55" value="Licensing Officer" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="QUk3cd0qM35IAmcfjciq-3">
-          <mxGeometry x="20" y="210" width="3570" height="220" as="geometry" />
+          <mxGeometry x="20" y="210" width="1920" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="QUk3cd0qM35IAmcfjciq-55" source="HhBTv-T1H6MdVlkLmhRL-141" target="NCyg3eshgBPOZgv0vsr1-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-141" value="16.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-fdb1440b-7fff-1839-80d2-84304055d34f&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-emoji: normal; vertical-align: baseline; white-space-collapse: preserve;&quot;&gt;Issue license&lt;/span&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="QUk3cd0qM35IAmcfjciq-55" vertex="1">
+          <mxGeometry x="1350" y="93" width="140" height="65.55" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-6" value="17.&amp;nbsp;&lt;span id=&quot;docs-internal-guid-de78008c-7fff-c52c-29c0-c3e214c9751c&quot;&gt;&lt;span style=&quot;font-size: 12pt; font-family: Calibri, sans-serif; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; vertical-align: baseline; color: rgb(0, 0, 0);&quot;&gt;Update PCN’s national ePharmacy registry&lt;/span&gt;&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=script;" vertex="1" parent="QUk3cd0qM35IAmcfjciq-55">
+          <mxGeometry x="1590" y="82.78" width="150" height="87.22" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-9" value="" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;" vertex="1" parent="QUk3cd0qM35IAmcfjciq-55">
+          <mxGeometry x="1780" y="101" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="QUk3cd0qM35IAmcfjciq-55" source="NCyg3eshgBPOZgv0vsr1-6" target="NCyg3eshgBPOZgv0vsr1-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-11" value="End" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="QUk3cd0qM35IAmcfjciq-55">
+          <mxGeometry x="1775" y="152" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-126" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="HhBTv-T1H6MdVlkLmhRL-128" target="HhBTv-T1H6MdVlkLmhRL-148" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -667,6 +676,31 @@
         </mxCell>
         <mxCell id="HhBTv-T1H6MdVlkLmhRL-153" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HhBTv-T1H6MdVlkLmhRL-154" target="HhBTv-T1H6MdVlkLmhRL-132" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-146" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#F9F7ED,#FFFFCC);strokeColor=light-dark(#000000,#000000);gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="220" y="-1060" width="680" height="183.24" as="geometry" />
+        </mxCell>
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-135" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;dashed=1;" parent="1" source="HhBTv-T1H6MdVlkLmhRL-139" target="HhBTv-T1H6MdVlkLmhRL-141" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="243" />
+              <mxPoint x="-130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HhBTv-T1H6MdVlkLmhRL-136" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Yes&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="HhBTv-T1H6MdVlkLmhRL-135" vertex="1" connectable="0">
+          <mxGeometry x="-0.3219" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-12" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;API&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="158" y="178.118" width="39.99999999999999" height="26.484545454545454" as="geometry" />
+        </mxCell>
+        <mxCell id="NCyg3eshgBPOZgv0vsr1-13" value="" style="endArrow=classic;html=1;rounded=0;startSize=7;endSize=9;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="161.66666666666669" y="194" as="sourcePoint" />
+            <mxPoint x="181.66666666666669" y="174" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
