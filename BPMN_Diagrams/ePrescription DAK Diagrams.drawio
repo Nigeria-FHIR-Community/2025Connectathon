@@ -128,14 +128,14 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rbwfsHjghB3MCF1E4nQx-9" value="&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 17px; font-weight: 700;&quot;&gt;C2. Prescription Generation&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-17" vertex="1">
-          <mxGeometry x="335" y="60" width="145" height="80" as="geometry" />
+        <mxCell id="rbwfsHjghB3MCF1E4nQx-9" value="&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 17px; font-weight: 700;&quot;&gt;D. Prescription Generation&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-17" vertex="1">
+          <mxGeometry x="445" y="49" width="145" height="80" as="geometry" />
         </mxCell>
         <mxCell id="rbwfsHjghB3MCF1E4nQx-11" value="&lt;span style=&quot;font-family: Calibri, sans-serif; font-size: 17px; font-weight: 700;&quot;&gt;C. Client Registration&lt;/span&gt;" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;isLoopSub=1;" parent="LoFIVnIxgqHAPjGkEJDm-17" vertex="1">
-          <mxGeometry x="80" y="55" width="170" height="90" as="geometry" />
+          <mxGeometry x="190" y="44" width="170" height="90" as="geometry" />
         </mxCell>
         <mxCell id="j31GTHktSjMGyge3iwUQ-1" value="Is the prescription Accurate" style="rhombus;whiteSpace=wrap;html=1;" parent="LoFIVnIxgqHAPjGkEJDm-17" vertex="1">
-          <mxGeometry x="565" y="60" width="80" height="80" as="geometry" />
+          <mxGeometry x="675" y="49" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="j31GTHktSjMGyge3iwUQ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="LoFIVnIxgqHAPjGkEJDm-17" source="rbwfsHjghB3MCF1E4nQx-11" target="rbwfsHjghB3MCF1E4nQx-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -187,7 +187,7 @@
         <mxCell id="j31GTHktSjMGyge3iwUQ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.553;entryY=-0.024;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="j31GTHktSjMGyge3iwUQ-1" target="rbwfsHjghB3MCF1E4nQx-14" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="755" y="420" />
+              <mxPoint x="865" y="420" />
               <mxPoint x="544" y="420" />
             </Array>
           </mxGeometry>
