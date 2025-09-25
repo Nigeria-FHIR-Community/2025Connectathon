@@ -14,62 +14,90 @@
     <tbody>
         <tr>
             <td>Digital Health Interoperability Network (DHIN)</td>
-            <td>5th July 2025</td>
-            <td>First Draft</td>
+            <td>25th September 2025</td>
+            <td>First Draft for Connectathon IG</td>
             <td>0.1.0</td>
         </tr>
     </tbody>
 </table>
 
 
-# DHIN ePrescription FHIR Implementation Guide
+# DHIN 2025 Connectathon FHIR Implementation Guide
 
 ### Purpose
 
-The ePrescription Implementation Guide (IG) aims to standardize how electronic prescriptions and dispensing (ePD) processes are digitized in Nigeria. The primary purpose is to overcome existing challenges such as medication errors, poor access to essential drugs, inefficient workflows, stockouts, and fragmented data systems—all of which compromise patient safety and quality of care.
+The DHIN 2025 Connectathon Implementation Guide (IG) brings together multiple tracks under a single standards-based framework to demonstrate, test, and advance healthcare interoperability in Nigeria and across Africa.  
 
-The IG is rooted in the Standards-based, Machine-readable, Adaptable, Requirements-based, and Testable (SMART) guidelines approach. Developed through the DHIN mentorship program, this IG leverages the ePrescription Digital Adaptation Kit (DAK), ensuring that any compliant system faithfully represents the core guidelines, policies, and data content required for a robust, patient-centered, and interoperable digital PD (Prescription and Dispensing) system.
+This IG is rooted in the **WHO SMART Guidelines** approach (Standards-based, Machine-readable, Adaptable, Requirements-based, Testable). Each track leverages Digital Adaptation Kits (DAKs) and HL7 FHIR R4-based artifacts to ensure that systems can exchange health information seamlessly, securely, and in alignment with national and international best practices.
 
 ---
 
 ### Background
 
-Nigeria’s current prescription and dispensing ecosystem is largely paper-based. This has led to inefficiencies in prescriber-dispenser communication, accountability lapses, data fragmentation, and safety concerns for patients. Recognizing the potential of digital transformation, the World Health Organization introduced SMART guidelines to accelerate adoption of clinical recommendations in digital tools.
+Nigeria’s health information ecosystem is characterized by **fragmented, siloed systems** that limit continuity of care, decision-making, and efficiency. The **Digital Health Interoperability Network (DHIN)** convenes stakeholders—including regulators, providers, developers, insurers, and innovators—to design and test practical interoperability solutions through structured connectathons.  
 
-In alignment with this vision, the Digital Health Interoperability Network (DHIN), supported by multidisciplinary stakeholders, developed a comprehensive Digital Adaptation Kit (DAK) for ePrescription. The DAK defines operational, software-agnostic requirements mapped directly from existing national guidelines and is designed to support software developers, clinicians, and health administrators.
+This IG documents the machine-readable artifacts, profiles, and value sets required to implement the **2025 DHIN Connectathon tracks**:  
+
+1. **Health Insurance & Claims**  
+2. **MNCH Referral**  
+3. **ePharmacy (ePrescription & eDispensing)**  
+4. **Immunization**  
+5. **Medical Devices Communication**  
+
+Each track builds on existing DAKs, regulatory frameworks, and stakeholder-driven priorities, providing reference implementations for future production systems.
 
 ---
 
 ### Scope of the FHIR Implementation Guide
 
-This FHIR Implementation Guide addresses the following:
+This IG addresses the following cross-cutting goals:  
 
-- Modeling machine-readable artifacts that represent Nigeria's ePrescription DAK components.
-- Enabling interoperable exchange of ePrescription data across healthcare facilities, pharmacies, and health insurance systems.
-- Defining profiles, value sets, and extensions to support:
-  - Prescription generation,
-  - Medication dispensing,
-  - Billing and payment processes,
-  - Regulatory reporting,
-  - Decision-support logic,
-  - Patient counseling and follow-up.
+- Standardize **profiles, value sets, and extensions** for each track.  
+- Enable **secure interoperable data exchange** across health facilities, pharmacies, insurers, referral networks, immunization registries, and medical device platforms.  
+- Support **decision-support, regulatory compliance, and real-time data exchange** through SMART-on-FHIR and open APIs.  
+- Provide artifacts for **testing and conformance validation** during and beyond the Connectathon.  
 
-It draws from WHO and Nigeria’s regulatory guidance and applies HL7 FHIR R4 standards, enabling both intra- and inter-facility digital health communication.
+---
+
+### Track-Specific Overviews
+
+#### 1. Health Insurance & Claims  
+- **Purpose:** To digitize and streamline claim submission, adjudication, and reimbursement across HMOs, NHIS, and health providers.  
+- **Key FHIR Artifacts:** `Claim`, `ClaimResponse`, `Coverage`, `ExplanationOfBenefit`.  
+- **Value:** Reduces fraud, accelerates payments, increases transparency, and supports regulatory oversight.  
+
+#### 2. MNCH Referral  
+- **Purpose:** To enable structured, traceable referrals for Maternal, Newborn, and Child Health services.  
+- **Key FHIR Artifacts:** `ServiceRequest`, `Task`, `CarePlan`, `Communication`.  
+- **Value:** Improves care continuity, ensures timely follow-up, and reduces maternal and child mortality.  
+
+#### 3. ePharmacy (ePrescription & eDispensing)  
+- **Purpose:** To standardize electronic prescribing and dispensing workflows.  
+- **Key FHIR Artifacts:** `MedicationRequest`, `MedicationDispense`, `Organization`, `PractitionerRole`.  
+- **Value:** Prevents medication errors, improves drug availability, ensures accountability, and integrates insurance claims.  
+
+#### 4. Immunization  
+- **Purpose:** To digitize vaccine administration, reporting, and defaulter tracing in alignment with SMART Guidelines.  
+- **Key FHIR Artifacts:** `Immunization`, `Patient`, `Encounter`, `Observation`, `List`.  
+- **Value:** Strengthens vaccine traceability, supports AEFI (Adverse Events Following Immunization) monitoring, and improves coverage reporting.  
+
+#### 5. Medical Devices Communication  
+- **Purpose:** To enable integration of connected medical devices (vital signs monitors, infusion pumps, diagnostic devices) with health records.  
+- **Key FHIR Artifacts:** `Device`, `DeviceMetric`, `Observation`, `DeviceRequest`.  
+- **Value:** Facilitates remote monitoring, supports clinical decision-making, and aligns with ISO/IEEE 11073 device communication standards.  
 
 ---
 
 ### Interactions Between Priority Systems
 
-The implementation of this guide supports key interactions among various systems and stakeholders:
+- **Clinical Systems (EMRs/EHRs):** Exchange data with referral, immunization, and prescription services.  
+- **Pharmacy Systems:** Receive, dispense, and reconcile ePrescriptions and link with insurance systems.  
+- **Insurance Systems:** Verify coverage, adjudicate claims, and support financial protection mechanisms.  
+- **Medical Devices:** Send observations to clinical records for real-time monitoring and analytics.  
+- **Regulatory Systems:** Collect data for policy oversight, audits, and compliance monitoring.  
+- **Patients & Communities:** Engage through mobile applications, feedback loops, and consent-enabled access.  
 
-- **Prescriber Systems** generate and send prescriptions electronically to Pharmacy Information Systems.
-- **Pharmacy Information Systems** receive and validate ePrescriptions, process medications, and document dispensing actions.
-- **Health Insurance Systems** verify patient coverage and process reimbursement claims for dispensed medications.
-- **Regulatory Platforms** such as those managed by NAFDAC, PCN, and FMoHSW collect compliance data, monitor controlled substances, and perform digital audits.
-- **Logistics Systems** integrate inventory management and real-time stock monitoring.
-- **Patients** interact with the system through registration, counseling, and medication tracking, enabled by digital feedback loops and follow-up mechanisms.
-
-All these systems rely on the underlying FHIR-based data structures and profiles defined in this guide to communicate seamlessly and securely.
+All exchanges are defined through **FHIR R4 profiles and conformance statements** in this IG.
 
 ---
 
@@ -77,21 +105,9 @@ All these systems rely on the underlying FHIR-based data structures and profiles
 
 | Acronym | Meaning |
 |--------|---------|
+| AEFI | Adverse Event Following Immunization |
 | DAK | Digital Adaptation Kit |
-| DHI | Digital Health Interventions |
 | DHIN | Digital Health Interoperability Network |
-| ePD | Electronic Prescription and Dispensing |
-| FHIR | Fast Healthcare Interoperability Resources |
-| HMO | Health Maintenance Organization |
-| IG | Implementation Guide |
-| IT | Information Technology |
-| NHIS | National Health Insurance Scheme |
-| NIN | National Identification Number |
-| PCN | Pharmacy Council of Nigeria |
-| PD | Prescription and Dispensing |
-| PHC | Primary Healthcare Centre |
 | SMART | Standards-based, Machine-readable, Adaptable, Requirements-based, Testable |
 
 ---
-
-> For more details, refer to the Nigeria ePrescription DAK and the national prescription and pharmacy policies available through [PCN.gov.ng](https://pcn.gov.ng) and [NAFDAC.gov.ng](https://nafdac.gov.ng).

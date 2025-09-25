@@ -1,17 +1,6 @@
 #### Security and Access Control for Bundle Operations [work in progress]
 
-To ensure the integrity, privacy, and appropriate use of immunization data, all operations on the `NgImmBundle` resource must comply with Nigeria’s national health data governance principles and security standards.
-
-### Access Control Principles
-
-| **Access Level**         | **User Role**                             | **Allowed Operations**                                               |
-|--------------------------|-------------------------------------------|----------------------------------------------------------------------|
-| National Admin           | NDHI, NPHCDA Data Steward                 | All operations including `$remove-obsolete-bundles`, `$resolve-conflicts` |
-| State Immunization Officer | State Primary Health Care Board (SPHCB)  | `$submit-ngimm-bundle`, `$export-ngimm-bundle`, `$validate-ngimm-bundle` |
-| LGA Immunization Officer | LGA Immunization Desk                     | `$submit-ngimm-bundle`, `$get-patient-history`, `$generate-summary` |
-| Facility Immunization Staff | PHC/Health Facility EMR User            | `$submit-ngimm-bundle`, `$validate-ngimm-bundle`, `$get-next-dose-schedule` |
-| Mobile Outreach Team     | Verified Field Devices (Online/Offline)  | `$submit-ngimm-bundle`, `$generate-summary`, `$sync-ngimm-bundle`   |
-| System Integration API   | Trusted System Clients                    | `$validate-ngimm-bundle`, `$submit-ngimm-bundle`, `$export-ngimm-bundle` |
+To ensure the integrity, privacy, and appropriate use of health data, all operations on the `NgBundle` resource must comply with Nigeria’s national health data governance principles and security standards.
 
 ### Authentication & Authorization
 
@@ -31,10 +20,10 @@ To ensure the integrity, privacy, and appropriate use of immunization data, all 
 
 ### Operation-Specific Safeguards
 
-- `$submit-ngimm-bundle`: MUST validate using `$validate-ngimm-bundle` before committing to the server.
+- `$submit-ng-bundle`: MUST validate using `$validate-ng-bundle` before committing to the server.
 - `$remove-obsolete-bundles`: REQUIRES elevated privileges (admin role) to execute.
 - `$resolve-conflicts`: SHOULD trigger a manual review workflow or return a conflict report before automated resolution.
-- `$export-ngimm-bundle`: SHOULD support export logging, throttling, and encryption of large payloads.
+- `$export-ng-bundle`: SHOULD support export logging, throttling, and encryption of large payloads.
 
 ---
 

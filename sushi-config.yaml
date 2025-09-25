@@ -3,21 +3,21 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: fhir.dhinePrescription
-canonical: https://dhin-hie.org/ePrescription
-name: DHIN-ePrescription-FHIR-IG
-title: DHIN ePrescription FHIR IG
-description: DHIN ePrescription FHIR IG
+id: fhir.dhin2025Connectathon
+canonical: https://dhin-hie.org/2025Connectathon
+name: DHIN-2025Connectathon-FHIR-IG
+title: DHIN 2025Connectathon FHIR IG
+description: DHIN 2025Connectathon Testing FHIR IG
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
-releaseLabel: ci-build
+releaseLabel: draft
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: https://dhin-hie.org/ig
-  url: https://dhin-hie.org/ig
+  name: https://dhin-hie.org
+  url: https://www.dhin-hie.org/2025Connectathon
   email: info@dhin-hie.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -46,18 +46,6 @@ publisher:
 pages:
   index.md:
     title: Home
-  business-requirements.md:
-    title: Requirement Specifications
-  generic-personas.md:
-    title: Personas
-  user-scenarios.md:
-    title: User Scenarios
-  business-processes.md:
-    title: Workflows
-  functional-requirements.md:
-    title: Functional Requirements
-  non-functional-requirements.md:
-    title: Non-Functional Requirements
   privacy-security.md:
     title: Privacy and Security
 
