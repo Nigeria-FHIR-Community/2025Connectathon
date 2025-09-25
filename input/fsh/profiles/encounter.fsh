@@ -1,19 +1,19 @@
-Profile: NgePEncounter
+Profile: NgEncounter
 Parent: Encounter
-Title: "NG-eP Encounter"
-Id: ng-ep-encounter 
-Description: "A profile for encounters in the Nigerian  prescription guide, used to document prescription visits and related healthcare interactions."
+Title: "NG Encounter"
+Id: nigeria-encounter 
+Description: "A profile for encounters in the Nigerian used to health visits and related healthcare interactions."
 * ^version = "1.0.0"
 * ^status = #active
 * ^publisher = "DHIN"
-* status ^short = "Status of the prescription encounter"
+* status ^short = "Status of the encounter"
 * subject 1..1 MS
-* subject only Reference(NgePPatient)
+* subject only Reference(NgPatient)
 * participant 1..* MS
-* participant.individual only Reference(NgePPractitioner) 
+* participant.individual only Reference(NgPractitioner) 
 * location 1..1 MS
-* location.location only Reference(NgePLocation)
+* location.location only Reference(NgLocation)
 * serviceProvider 1..1 MS
-* serviceProvider only Reference(NgePOrganization)
+* serviceProvider only Reference(NgOrganization)
 
 
