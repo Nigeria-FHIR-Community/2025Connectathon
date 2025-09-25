@@ -1,7 +1,7 @@
 
-Profile: NgePPractitioner
+Profile: NgPractitioner
 Parent: Practitioner
-Title: "NG-ep Practitioner"
+Title: "NG Practitioner"
 Description: "Profile for a Nigerian Practitioner" 
 * identifier 0..* MS
 * identifier.system 1..1
@@ -22,7 +22,7 @@ Description: "Profile for a Nigerian Practitioner"
 * telecom.system ^short = "The contact communication information e.g. nkiru@test.com | 08092299999"
 * birthDate MS 
 * birthDate ^short = "The date of birth of the healthcare professional"
-* qualification.issuer only Reference(NgePOrganization)
+* qualification.issuer only Reference(NgOrganization)
 * qualification.issuer ^short = "The regulating organization that issue the qualification"
 * qualification.period 0..1
 * qualification.period ^short = "The time duration this qualification is valid"

@@ -1,0 +1,49 @@
+Profile: NgImmunization
+Parent: Immunization
+Title: "NG-Imm Immunization"
+Description: "Nigerian Profile for Immunization resource."
+
+* identifier 0..1
+* vaccineCode from NGVaccineLocalVS 
+* vaccineCode ^short = "Vaccine Product Administered"
+* statusReason from http://hl7.org/fhir/ValueSet/immunization-status-reason (extensible)
+* statusReason ^short = "Reason immunization was not done (or was missed)"
+* status MS
+* status from http://hl7.org/fhir/ValueSet/immunization-status (required)
+* status ^short = "Status of Immunization e.g. completed| entered-in-error | not-done"
+* manufacturer only Reference(NgOrganization)
+* manufacturer ^short = "Manufacturer description and identity"
+* patient only Reference(NgPatient)
+* protocolApplied 0..* MS
+* protocolApplied.targetDisease from http://hl7.org/fhir/ValueSet/immunization-target-disease (example)
+* protocolApplied.targetDisease ^short = "Vaccine preventable disease being targeted" 
+* lotNumber 1..1 MS
+* lotNumber ^short = "Vaccine batch number"
+* expirationDate 1..1 MS
+* expirationDate ^short = "Vaccine expiration date"
+* doseQuantity 1..1 MS
+* doseQuantity ^short = "Amount of vaccine administered"
+* site from http://hl7.org/fhir/ValueSet/immunization-site (preferred)
+* site ^short = "Body site vaccine was administered"
+* route from http://hl7.org/fhir/ValueSet/immunization-route (preferred)
+* route ^short = "How vaccine entered body"
+* performer 0..* MS //Who performed event
+* performer.function from http://hl7.org/fhir/ValueSet/immunization-function (extensible)
+* performer.function ^short = "Designation of reporting officer" //What type of performance was done
+* performer.actor only Reference (NgPractitioner)
+* performer.actor ^short = "Information of reporting officer" //Individual or organization who was performing
+* occurrence[x] only dateTime
+* reaction.date 0..1 
+* reaction.reported 0..1
+* reaction.detail only Reference(NgRUObservation)
+
+
+
+// Immunization Extensions
+ 
+/* * extension contains NGPrimaryVaccineStatus named primaryVaccineStatus 0..1 MS */
+
+* extension contains NGContraindications named contraindications 0..* MS
+* extension contains NGContraindicated named contraindicated 0..* MS
+* protocolApplied.extension contains NextDoseDate named nextDoseDate 0..1 MS
+ 

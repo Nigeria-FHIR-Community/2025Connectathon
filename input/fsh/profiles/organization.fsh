@@ -1,8 +1,8 @@
-Profile: NgePOrganization
+Profile: NgOrganization
 Parent: Organization
-Id: ng-ep-organization 
-Title: "NG-eP Organization"
-Description: "An organization profile representing healthcare facilities responsible for immunization services or other types of organizations."
+Id: ng-organization 
+Title: "NG Organization"
+Description: "An organization profile representing healthcare facilities responsible for health services or other types of organizations."
 
 
 * identifier 1..* MS
@@ -22,7 +22,7 @@ Description: "An organization profile representing healthcare facilities respons
 * telecom.system ^short = "The organization type of contact detail"
 * telecom.value 1..1
 * telecom.value ^short = "The organization contact detail"
-* partOf only Reference(NgePOrganization)
+* partOf only Reference(NgOrganization)
 * partOf ^short = "The Organization which this organization forms a part"
 
 * address 1..* MS
