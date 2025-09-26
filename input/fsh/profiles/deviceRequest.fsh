@@ -24,7 +24,7 @@ Description: "Minimal DeviceRequest profile for the 2025 Connectathon."
 
 // Value set bindings (built-ins)
 * status from http://hl7.org/fhir/ValueSet/request-status (required)
-* intent from http://hl7.org/fhir/ValueSet/request-inten (required)
+* intent from http://hl7.org/fhir/ValueSet/request-intent (required)
 
 
 // -----------------------------
