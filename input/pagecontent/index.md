@@ -1,4 +1,4 @@
-# Nigeria Immunization FHIR Implementation Guide (IG)
+<img src="input/images/dhin-favicon.ico" alt="DHIN logo" width="15"/>
 
 #### Revision History
 
@@ -13,180 +13,106 @@
     </thead>
     <tbody>
         <tr>
-            <td>Nigeria Primary Healthcare Development Agency</td>
-            <td>14th June 2025</td>
-            <td>Third Draft</td>
-            <td>0.3.0</td>
+            <td>Digital Health Interoperability Network (DHIN)</td>
+            <td>25th September 2025</td>
+            <td>First Draft for Connectathon IG</td>
+            <td>0.1.0</td>
         </tr>
     </tbody>
 </table>
 
 
+# DHIN 2025 Connectathon FHIR Implementation Guide
+
 ### Purpose
 
-This Nigeria Immunization FHIR Implementation Guide (IG) is designed to support the country's adoption of the WHO SMART Guidelines for Immunization by developing a Digital Adaptation Kit (DAK) that aligns with both national and global immunization strategies.
+The DHIN 2025 Connectathon Implementation Guide (IG) brings together multiple tracks under a single standards-based framework to demonstrate, test, and advance healthcare interoperability in Nigeria and across Africa.  
 
-This initiative aims to strengthen immunization data management, enhance interoperability, and improve data-driven decision-making by developing standardized, contextually relevant digital solutions. As part of this effort, the IG ensures that the Electronic Immunization Registry (EIR) is interoperable, scalable, and aligned with global health data exchange standards, particularly leveraging FHIR (Fast Healthcare Interoperability Resources) to facilitate seamless data sharing across systems.
+This IG is rooted in the **WHO SMART Guidelines** approach (Standards-based, Machine-readable, Adaptable, Requirements-based, Testable). Each track leverages Digital Adaptation Kits (DAKs) and HL7 FHIR R4-based artifacts to ensure that systems can exchange health information seamlessly, securely, and in alignment with national and international best practices.
+
+---
 
 ### Background
 
-Immunization is one of the most cost-effective public health interventions, yet many countries, including Nigeria, face challenges in achieving full vaccine coverage. Digital tools and data management systems are being integrated into immunization programs to improve efficiency, accuracy, and accessibility. However, the successful adoption and scaling of these systems require solutions that are country-driven, user-friendly, reliable, and contextually relevant.
+Nigeria’s health information ecosystem is characterized by **fragmented, siloed systems** that limit continuity of care, decision-making, and efficiency. The **Digital Health Interoperability Network (DHIN)** convenes stakeholders—including regulators, providers, developers, insurers, and innovators—to design and test practical interoperability solutions through structured connectathons.  
 
-The WHO SMART Guidelines provide a standardized framework for developing and implementing interoperable, evidence-based, and scalable digital health solutions. This is particularly crucial for immunization, where timely and accurate data supports vaccine coverage tracking, identification of zero-dose children, and equitable service delivery. A key component of this approach is the Digital Adaptation Kit (DAK), which includes health interventions, workflows, core data elements, decision support logic, and other technical components necessary for effective immunization service management.
+This IG documents the machine-readable artifacts, profiles, and value sets required to implement the **2025 DHIN Connectathon tracks**:  
 
-Nigeria has faced challenges such as data quality issues, fragmented systems, and disparities in access to immunization services. To address these, the country is aligning with the SMART Guidelines methodology and national health strategies like the National Immunization Strategy (NIS) and Immunization Agenda 2030 (IA2030). This initiative aims to enhance data interoperability, decision-making, and service delivery through the adoption of FHIR-based digital systems.
+1. **Health Insurance & Claims**  
+2. **MNCH Referral**  
+3. **ePharmacy (ePrescription & eDispensing)**  
+4. **Immunization**  
+5. **Medical Devices Communication**  
 
-A User Requirement Gathering (URG) process is critical in developing Nigeria’s Immunization DAK. This process ensures that the digital immunization system is effective, adaptable, and user-friendly by engaging key stakeholders—health workers, program managers, and data specialists—to define essential system functionalities.
+Each track builds on existing DAKs, regulatory frameworks, and stakeholder-driven priorities, providing reference implementations for future production systems.
 
-This FHIR Implementation Guide (IG) serves as a blueprint for Nigeria’s interoperable, scalable, and standardized immunization data system, ensuring seamless integration with national and global health initiatives.
+---
 
-###  Scope of the FHIR IG
+### Scope of the FHIR Implementation Guide
 
-This section defines how different systems interact within Nigeria’s immunization ecosystem, ensuring seamless data exchange, interoperability, and alignment with national and global health standards.
+This IG addresses the following cross-cutting goals:  
 
+- Standardize **profiles, value sets, and extensions** for each track.  
+- Enable **secure interoperable data exchange** across health facilities, pharmacies, insurers, referral networks, immunization registries, and medical device platforms.  
+- Support **decision-support, regulatory compliance, and real-time data exchange** through SMART-on-FHIR and open APIs.  
+- Provide artifacts for **testing and conformance validation** during and beyond the Connectathon.  
 
-### Interaction Between Systems
+---
 
-#### Description of System Interactions
- 
-The Nigeria Immunization FHIR Implementation Guide (IG) establishes the technical framework for data exchange between key immunization-related systems. These interactions ensure  seamless interoperability, accurate data capture, and improved decision-making in Nigeria's immunization ecosystem.
+### Track-Specific Overviews
 
-    
-#### Key Systems and Their Roles
+#### 1. Health Insurance & Claims  
+- **Purpose:** To digitize and streamline claim submission, adjudication, and reimbursement across HMOs, NHIS, and health providers.  
+- **Key FHIR Artifacts:** `Claim`, `ClaimResponse`, `Coverage`, `ExplanationOfBenefit`.  
+- **Value:** Reduces fraud, accelerates payments, increases transparency, and supports regulatory oversight. 
+- **Bundles:** bundle-hmo-hospital, bundle-hmo-insurer, bundle-patient-hospital, bundle-patient-insurer.
 
-<section>
-   <p> Standalone Electronic Immunization Registries (EIRs) or Immunization modules in Hospital EMRs</p>
-        <ul>
-            <li>Capture, store, and followup on vaccination records for individuals.</li>
-            <li>Interact with health facility systems and national immunization databases.</li>
-        </ul>
-    <p>Health Facility Registry (HFR)</p>   
-         <ul>
-            <li>Record patient encounters and immunization services provided.</li>
-            <li>Share immunization event data with EIRs and decision-support systems.</li>
-        </ul>
-    <p>Health Workforce Registry (HWR)</p>   
-         <ul>
-            <li>Through this implementation guide update and read from national or state database of healthcare providers.</li>
-            <li>Validate routine immunization service providers</li>
-        </ul>
+#### 2. MNCH Referral  
+- **Purpose:** To enable structured, traceable referrals for Maternal, Newborn, and Child Health services.  
+- **Key FHIR Artifacts:** `ServiceRequest`, `Task`, `CarePlan`, `Communication`.  
+- **Value:** Improves care continuity, ensures timely follow-up, and reduces maternal and child mortality.
+- **Bundles:** bundle-referral-communication, bundle-referral-initiation, bundle-referral-response, bundle-referral-tracking.  
 
-     <p>National Health Information Systems (NHIS) & DHIS2</p>   
-         <ul>
-            <li>Aggregate immunization data for reporting and policy decision-making.</li>
-            <li>Interact with EIRs for real-time immunization coverage monitoring.</li>
-        </ul> 
-     <p>Civil Registration & Vital Statistics (CRVS)</p>   
-         <ul>
-            <li>Exchange birth and death records to support vaccination planning.</li>
-        </ul>
-     <p> Decision Support & Analytics Platforms</p>   
-         <ul>
-            <li>Provide alerts, reminders, and dashboards for vaccination tracking.</li>
-            <li>Integrate with AI-driven insights to identify zero-dose children </li>
-        </ul>               
-</section>
+#### 3. ePharmacy (ePrescription & eDispensing)  
+- **Purpose:** To standardize electronic prescribing and dispensing workflows.  
+- **Key FHIR Artifacts:** `MedicationRequest`, `MedicationDispense`, `Organization`, `PractitionerRole`.  
+- **Value:** Prevents medication errors, improves drug availability, ensures accountability, and integrates insurance claims.  
+- **Bundles:** bundle-coverage-enquiry, bundle-prescription, and bundle-dispense-notification.
 
-#### FHIR-Based Data Exchange
+#### 4. Immunization  
+- **Purpose:** To digitize vaccine administration, reporting, and defaulter tracing in alignment with SMART Guidelines.  
+- **Key FHIR Artifacts:** `Immunization`, `Patient`, `Encounter`, `Observation`, `List`.  
+- **Value:** Strengthens vaccine traceability, supports AEFI (Adverse Events Following Immunization) monitoring, and improves coverage reporting. 
+- **Bundles:** bundle-client-registration, bundle-report-aefi, bundle-register-facility, bundle-update-client.
 
+#### 5. Medical Devices Communication  
+- **Purpose:** To enable integration of connected medical devices (vital signs monitors, infusion pumps, diagnostic devices) with health records.  
+- **Key FHIR Artifacts:** `Device`, `DeviceMetric`, `Observation`, `DeviceRequest`.  
+- **Value:** Facilitates remote monitoring, supports clinical decision-making, and aligns with ISO/IEEE 11073 device communication standards.  
+- **Bundles:** bundle-device-audit, bundle-device-observation, bundle-device-provenance, bundle-device-registration, bundle-device-task-execution
 
-This IG defines FHIR-based interactions using standardized resources such as:
+---
 
-<ul>
-    <li>Patient – Identifying individuals across systems.</li>
-    <li>Immunization – Recording administered vaccines.</li>
-    <li>Encounter – Documenting immunization visits.</li>
-    <li>Observation – Capturing adverse events and immunization status.</li>
-    <li>SupplyDelivery – Tracking vaccine inventory.</li>
-</ul>
+### Interactions Between Priority Systems
 
+- **Clinical Systems (EMRs/EHRs):** Exchange data with referral, immunization, and prescription services.  
+- **Pharmacy Systems:** Receive, dispense, and reconcile ePrescriptions and link with insurance systems.  
+- **Insurance Systems:** Verify coverage, adjudicate claims, and support financial protection mechanisms.  
+- **Medical Devices:** Send observations to clinical records for real-time monitoring and analytics.  
+- **Regulatory Systems:** Collect data for policy oversight, audits, and compliance monitoring.  
+- **Patients & Communities:** Engage through mobile applications, feedback loops, and consent-enabled access.  
 
+All exchanges are defined through **FHIR R4 profiles and conformance statements** in this IG.
 
-### Concepts
- <table class="table table-hover table-bordered table-striped">
-    <thead>
-        <tr>
- 
-      <th>SN</th>
-      <th>Acronym</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1.</td>
-      <td>AEFI</td>
-      <td>Adverse Event Following Immunization</td>
-    </tr>
-    <tr>
-      <td>2.</td>
-      <td>BCG</td>
-      <td>Bacille Calmette-Guérin</td>
-    </tr>
-    <tr>
-      <td>3.</td>
-      <td>DAK</td>
-      <td>Digital Adaptation Kit</td>
-    </tr>
-    <tr>
-      <td>4.</td>
-      <td>DPT</td>
-      <td>Diphtheria, Pertussis, Tetanus</td>
-    </tr>
-    <tr>
-      <td>5.</td>
-      <td>EIR</td>
-      <td>Electronic Immunization Registry</td>
-    </tr>
-    <tr>
-      <td>6.</td>
-      <td>EPI</td>
-      <td>Expanded Program on Immunization</td>
-    </tr>
-    <tr>
-      <td>7.</td>
-      <td>FMoHSW</td>
-      <td>Federal Ministry of Health and Social Welfare</td>
-    </tr>
-    <tr>
-      <td>8.</td>
-      <td>Hep B</td>
-      <td>Hepatitis B Vaccine</td>
-    </tr>
-    <tr>
-      <td>9.</td>
-      <td>HPV</td>
-      <td>Human Papilloma Virus</td>
-    </tr>
-    <tr>
-      <td>10.</td>
-      <td>IPV</td>
-      <td>Inactivated Polio Vaccine</td>
-    </tr>
-    <tr>
-      <td>11.</td>
-      <td>NPHCDA</td>
-      <td>National Primary Healthcare Development Agency</td>
-    </tr>
-    <tr>
-      <td>12.</td>
-      <td>OPV</td>
-      <td>Oral Polio Vaccine</td>
-    </tr>
-    <tr>
-      <td>13.</td>
-      <td>SMART</td>
-      <td>Standards-based, Machine-readable, Adaptive, Requirements-based, Testable</td>
-    </tr>
-    <tr>
-      <td>14.</td>
-      <td>SRS</td>
-      <td>Software Requirements Specification</td>
-    </tr>
-    <tr>
-      <td>15.</td>
-      <td>WHO</td>
-      <td>World Health Organization</td>
-    </tr>
-  </tbody>
+---
 
+### Acronyms
+
+| Acronym | Meaning |
+|--------|---------|
+| AEFI | Adverse Event Following Immunization |
+| DAK | Digital Adaptation Kit |
+| DHIN | Digital Health Interoperability Network |
+| SMART | Standards-based, Machine-readable, Adaptable, Requirements-based, Testable |
+
+---

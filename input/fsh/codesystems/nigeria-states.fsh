@@ -1,13 +1,13 @@
-CodeSystem: NigeriaStatesCS
+CodeSystem: NGStatesCS
 Id: nigeria-states
-Title: "Administrative States in Nigeria"
+Title: "NG States in Nigeria CS"
 Description: "This CodeSystem defines ward codes and names mapped to their respective States in Nigeria."
-* ^url = "http://nphcda.gov.ng/ig/fhir/CodeSystem/ng-states"
+* ^url = "https://www.dhin-hie.org/ig/fhir/CodeSystem/nigeria-states"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
-* ^publisher = "NPHCDA"
+* ^publisher = "DHIN"
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 
 // States in Nigeria and their codes

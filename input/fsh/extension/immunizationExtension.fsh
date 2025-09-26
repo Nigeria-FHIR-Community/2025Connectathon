@@ -1,0 +1,42 @@
+/* Extension: NGPrimaryVaccineStatus
+Id: primary-vaccine-status
+Title: "NG-Imm Primary VaccineStatus"
+Description: "Indicates whether the immunization patient has completed the full primary vaccine series"
+* ^context[0].type = #element
+* ^context[0].expression = "Immunization"
+* value[x] only CodeableConcept
+* valueCodeableConcept from NGPrimaryVaccineStatusVS (required)
+* valueCodeableConcept ^short = "Status of primary series (e.g., completed, not completed)" */
+
+
+
+
+Extension: NGContraindicated
+Id: contraindicated
+Title: "NG Immunization Contraindicated"
+Description: "Indicates whether the immunization was contraindicated"
+* ^context[0].type = #element
+* ^context[0].expression = "Immunization"
+* value[x] only boolean 
+* valueBoolean ^short = "Indicates whether the immunization was contraindicated or not" 
+
+
+Extension: NGContraindications
+Id: contraindications
+Title: "NG Vaccine Contraindications"
+Description: "Indicates specific situations in which it is not recommended to administer certain vaccines (e.g severe AEFI, History of Anaphylactic reactions, Symptomatic HIV infection)"
+* ^context[0].type = #element
+* ^context[0].expression = "Immunization"
+* value[x] only CodeableConcept
+* valueCodeableConcept from NGContraindicationVS (extensible)
+* valueCodeableConcept ^short = "Contraindications to immunization"
+
+
+Extension: NextDoseDate
+Id: next-dose-date
+Title: "NG Next Dose Date"
+Description: "The recommended due date for the next vaccine dose in the schedule."
+* ^context[0].type = #element
+* ^context[0].expression = "Immunization"
+* value[x] only date 
+* valueDate ^short = "Recommended date for the next immunization dose"

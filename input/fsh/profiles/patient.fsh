@@ -1,67 +1,148 @@
-
-Profile: NgImmPatient
+Profile: NgPatient
 Parent: Patient
-Description: "Nigeria Immunization Patient Profile"
+Title: "NG Patient"
+Description: "Nigeria 2025 Connectathon Patient Profile"
 
 
-* identifier.value 1..1 MS
-* identifier.value ^short = "The actual ID value (eg. NIN35635556)"
-* identifier.system 1..1 MS
-* identifier.system ^short = "The organization website that assign the ID being entered (eg. https://nimc.gov.ng)"
-* name 1..* MS
+* meta.lastUpdated 1..1 MS
+* meta.lastUpdated ^short = "The date and time when the client record was created or last updated."
+* identifier 1..* MS
+* identifier ^short = "The identifier set given to a Client at different points (can be the National ID, the Hospital specific MRN, Connectathon number, or even phone number)"
+
+// STEP 1: Declare the slice
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "type.coding.code"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.ordered = false
+
+// STEP 2: Declare the slice
+* identifier contains 
+    NationalIDNo 0..1 MS and 
+    MedicalRecordsNumber 0..1 MS and  
+    ConnectathonRecordsNumber 0..1 MS and 
+    BirthCertificateNo 0..1 MS and 
+    PhoneNumber 0..1 MS and
+    InsuranceNumber 0..1 MS
+
+// STEP 3: Add constraints to the slice
+* identifier[NationalIDNo].value 1..1
+* identifier[NationalIDNo].value ^short = "The NIN number of the client which is a unique 11 digit number"
+* identifier[NationalIDNo].system = "https://nimc.org/nin"
+* identifier[NationalIDNo].system ^short = "NIMC's identifier in the system"
+* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.code = #NIN
+* identifier[NationalIDNo].type.coding.display = "National Identity Number of Client or Caregiver"
+
+
+// A small CodeSystem for identifier types (you can reference your own canonical)
+* identifier[MedicalRecordsNumber].value 1..1
+* identifier[MedicalRecordsNumber].value ^short = "The specific medical number value given the client at a health institution"
+* identifier[MedicalRecordsNumber].system 0..1
+* identifier[MedicalRecordsNumber].system ^short = "The institution issuing the MRN number (e.g., Asokoro Hospital)"
+* identifier[MedicalRecordsNumber].system ^definition = "The URI system that identifies the assigning authority for the medical record number."
+* identifier[MedicalRecordsNumber].system ^example[0].label = "Example MRN system"
+* identifier[MedicalRecordsNumber].system ^example[0].valueUri = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.code = #MRN
+* identifier[MedicalRecordsNumber].type.coding.display = "Medical Record Number"
+
+* identifier[BirthCertificateNo].value 1..1
+* identifier[BirthCertificateNo].value ^short = "The client's birth certificate number"
+* identifier[BirthCertificateNo].system 0..1
+* identifier[BirthCertificateNo].system ^short = "The institution generating the birth certificate number (e.g., NPC)"
+* identifier[BirthCertificateNo].system ^definition = "The URI system identifying the authority that assigns the birth certificate number."
+* identifier[BirthCertificateNo].system ^example[0].label = "Example Birth Certificate number system"
+* identifier[BirthCertificateNo].system ^example[0].valueUri = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].type.coding.system = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].type.coding.code = #BIRTHCERT
+* identifier[BirthCertificateNo].type.coding.display = "Birth Certificate Number"
+
+
+* identifier[PhoneNumber].value 1..1
+* identifier[PhoneNumber].value ^short = "Client's phone number which is 11 digits"
+* identifier[PhoneNumber].system 0..1
+* identifier[PhoneNumber].system ^short = "The provider of the phone number (e.g., MTN)"
+* identifier[PhoneNumber].system ^definition = "The URI system identifying the provider of the phone number."
+* identifier[PhoneNumber].system ^example[0].label = "Example Phone Number system"
+* identifier[PhoneNumber].system ^example[0].valueUri = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].type.coding.display = "Primary Mobile Phone Number of the Client or CareGiver"
+
+
+* identifier[InsuranceNumber].value 1..1
+* identifier[InsuranceNumber].value ^short = "The actual insurance number generated at state, national or HMO authorities"
+* identifier[InsuranceNumber].system 0..1
+* identifier[InsuranceNumber].system ^short = "The generating institution e.g., State, NHIA, or HMO"
+* identifier[InsuranceNumber].system ^definition = "The URI system identifying the provider of the insurance number."
+* identifier[InsuranceNumber].system ^example[0].label = "Example Insurance system"
+* identifier[InsuranceNumber].system ^example[0].valueUri = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].type.coding.system = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].type.coding.code = #INSUR
+* identifier[InsuranceNumber].type.coding.display = "The Insurance or HMO number of the client"
+
+
+
+// OTHER Demographics
+
+
+* name 1..1 MS
 * name.given 1..* 
-* name.given ^short = "The other names of the Immunization client"
+* name.given ^short = "The other names of the client like the Firstname and Middle names if applicable"
 * name.family 1..1
-* name.family ^short = "The surname or family name of the Immunization client"
-//* gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
-// Bind gender to your custom AdministrativeGender value set
-* gender from NigeriaGenderVS (required)
-* gender ^short = "The sex of the Immunization client"
+* name.family ^short = "The surname or family name of the client"
+* gender from NGGenderVS (required)
+* gender ^short = "The sex of the client"
+* active 0..1 
+* active ^short = "Whether this client's record is in active use"
 * birthDate 0..1 MS
-* birthDate ^short = "The date of birth of the Immunization client in the form dd-mm-yyy"
-* address.line 0..1 MS
-* address.line ^short = "The house number number, stree, village, setttement, and name where the Client lives"
+* birthDate ^short = "The date of birth of the client in the form dd-mm-yyy"
+* active 0..1
+* active ^short = "Indicates whether this client's record is in active use or not"
+* address 0..* MS
+* address.line 0..1 
+* address.line ^short = "The house number, street, and name where the client lives"
 * address.city 0..1  
-* address.city ^short = "The city used where the client lives in the state"
-* address.district from NigeriaLGAsVS (required)
+* address.city ^short = "The city, village, town or settlement where the client lives"
+* address.district from NGLGAsVS (required)
 * address.district ^short = "The FHIR name is district, used as Nigeria LGA in this profile"
-* address.district ^definition = "Full detailed definition for the address district field as Local Government Area"
-* address.state from NigeriaStatesVS (required)
+* address.state from NGStatesVS (required)
 * address.state ^short = "The name of the state where the client resides in Nigeria"
-* contact.name.given 0..* MS
-* contact.name.given ^short = "The first name of the Client's primary Caregiver, can be a parent or Guardian"
-* contact.name.family 0..1 MS
-* contact.name.family ^short = "The surname (family) name of the Client's primary Caregiver, can be a parent or Guardian"
-* contact.telecom.system 0..1 MS
-* contact.telecom.system ^short = "The primary means to contact the Client's primary Caregiver or Guardian"
-* contact.telecom.value 0..1 MS
-* contact.telecom.value ^short = "The primary means to value(phone no. or email address) the Client's primary Caregiver or Guardian"
-* contact.relationship.text 0..1 MS
-* contact.relationship.text ^short = "The relationship of the Client with the primary Caregiver or Guardian (eg. Parent)"
+* contact 0..* MS
+* contact ^short = "The contact information of the client's primary Caregiver, can be a Parent or Guardian"
+* contact.name.given 0..* 
+* contact.name.given ^short = "The first name of the client's primary Caregiver, can be a Parent or Guardian"
+* contact.name.family 0..1 
+* contact.name.family ^short = "The surname (family) name of the client's primary Caregiver, can be a Parent or Guardian"
+* contact.telecom 0..* MS
+* contact.telecom.system 0..1 
+* contact.telecom.system ^short = "The primary means to contact the client's primary Caregiver or Guardian"
+* contact.telecom.value 0..1 
+* contact.telecom.value ^short = "The primary phone/email of the client's primary Caregiver or Guardian"
+* contact.relationship.text from NGRelationshipsVS (extensible)
+* contact.relationship.text ^short = "The relationship of the client with the primary Caregiver or Guardian (eg. Parent)"
 * contact.address.line 0..1 MS
-* contact.address.line ^short = "The line address of the Client's primary Caregiver or Guardian"
+* contact.address.line ^short = "The line address of the client's primary Caregiver or Guardian"
 * contact.address.city 0..1
-* contact.address.city ^short = "The city where the Client's primary Caregiver or Guardian lives"
-* contact.address.district from NigeriaLGAsVS (required)
-* contact.address.district ^short = "The LGA where the Client's primary Caregiver or Guardian lives"
-* contact.address.state from NigeriaStatesVS (required)
-* contact.address.state ^short = "The State in Nigeria where the Client's primary Caregiver or Guardian lives"
-* link.other only Reference(NgImmSiblingRelatedPerson)
+* contact.address.city ^short = "The city, town or settlement where the client's primary Caregiver or Guardian lives"
+* contact.address.district from NGLGAsVS (required)
+* contact.address.district ^short = "The LGA where the client's primary Caregiver or Guardian lives"
+* contact.address.state from NGStatesVS (required)
+* contact.address.state ^short = "The State in Nigeria where the client's primary Caregiver or Guardian lives"
+
+
+* link 0..1
+* link.other ^short = "This link provides reference to the client's related persons"
+* link.other only Reference(NgRelatedPerson)
+* link.type ^short = "The type of Link (eg. reference) client's related persons"
+* link.type 1..1
+
 
 
 // Include the extensions
-* address.extension contains NigeriaAdministrativeWard named administrativeWard 0..1 MS
-//* contact.address.extension[NigeriaAdministrativeWard].valueCodeableConcept from NigeriaWardsVS (required)
-* contact.address.extension contains NigeriaAdministrativeWard named administrativeWard 0..1 MS
-* extension contains BirthWeight named birthWeight 0..1 MS
-* extension contains HIVStatus named hivStatus 0..1 MS
-* extension contains PregnancyStatus named pregnancyStatus 0..1 MS
-* extension contains AgeInWeeks named ageInWeeks 0..1 MS
-* extension contains AgeInMonths named ageInMonths 0..1 MS
-* extension contains AgeInYears named ageInYears 0..1 MS
-* extension contains CreatedDate named createdDate 0..1 MS
+* address.extension contains NGAdministrativeWard named administrativeWard 0..1 MS
+* contact.address.extension contains NGAdministrativeWard named administrativeWard 0..1 MS
 
-// Hide dataelements
 
 * name.use 0..0 
 * identifier.use 0..0
@@ -71,6 +152,141 @@ Description: "Nigeria Immunization Patient Profile"
 * contact.address.use 0..0
 * implicitRules 0..0
 * modifierExtension 0..0
-* active 0..0
 * contact.modifierExtension 0..0
 * link.modifierExtension 0..0
+
+
+
+
+// Examples
+
+
+// ==============================================
+// NgPatient-001 — MNCH Referral (pregnant client)
+// ==============================================
+Instance: NgPatient-001
+InstanceOf: NgPatient
+Usage: #example
+Title: "Example Ng Patient (MNCH Referral)"
+Description: "Adult female referred for ANC; Lagos State, Ikeja LGA."
+* meta.lastUpdated = 2025-11-04T08:30:00Z
+// Identifiers (sliced)
+* identifier[NationalIDNo].system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.code = #NIN
+* identifier[NationalIDNo].value = "23456789012"
+* identifier[MedicalRecordsNumber].system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.code = #MRN
+* identifier[MedicalRecordsNumber].value = "ASO-2025-0098"
+* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].value = "08051234567"
+// Demographics
+* active = true
+* name.family = "Adebayo"
+* name.given[0] = "Kemi"
+* gender = #female
+* birthDate = 1995-02-14
+* address[0].line = "15 Ajayi Street"
+* address[0].city = "Ikeja"
+* address[0].district = "Ikeja"
+* address[0].state = "Lagos"
+// Caregiver contact
+* contact[0].name.family = "Adebayo"
+* contact[0].name.given[0] = "Funke"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "+2348059988776"
+* contact[0].relationship.text = "Mother"
+* contact[0].address.city = "Ikeja"
+* contact[0].address.district = "Ikeja"
+* contact[0].address.state = "Lagos"
+
+
+// ==============================================
+// NgPatient-002 — ePharmacy & Claims (insured)
+// ==============================================
+Instance: NgPatient-002
+InstanceOf: NgPatient
+Usage: #example
+Title: "Example Ng Patient (ePharmacy & Claims)"
+Description: "Adult male on chronic meds; insured with NHIA; Kano Municipal LGA."
+* meta.lastUpdated = 2025-11-04T09:10:00Z
+// Identifiers (sliced)
+* identifier[NationalIDNo].system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.code = #NIN
+* identifier[NationalIDNo].value = "12345678901"
+* identifier[MedicalRecordsNumber].system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.code = #MRN
+* identifier[MedicalRecordsNumber].value = "KNH-2025-33445"
+* identifier[InsuranceNumber].system = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].type.coding.system = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].type.coding.code = #INSUR
+* identifier[InsuranceNumber].value = "NHIA-0011223344"
+* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].value = "08031234567"
+// Demographics
+* active = true
+* name.family = "Abdullahi"
+* name.given[0] = "Musa"
+* gender = #male
+* birthDate = 1987-07-06
+* address[0].line = "No. 8 Lafia Road"
+* address[0].city = "Kano"
+* address[0].district = "Kano Municipal"
+* address[0].state = "Kano"
+// Contact
+* contact[0].name.family = "Abdullahi"
+* contact[0].name.given[0] = "Zainab"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "+2348031112233"
+* contact[0].relationship.text = "Sister"
+* contact[0].address.city = "Kano"
+* contact[0].address.district = "Kano Municipal"
+* contact[0].address.state = "Kano"
+
+
+// ==============================================
+// NgPatient-003 — Childhood Immunization (under-5)
+// ==============================================
+Instance: NgPatient-003
+InstanceOf: NgPatient
+Usage: #example
+Title: "Example Ng Patient (Immunization)"
+Description: "Male child presenting for routine vaccination; FCT AMAC."
+* meta.lastUpdated = 2025-11-04T11:45:00Z
+// Identifiers (sliced)
+* identifier[BirthCertificateNo].system = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].type.coding.system = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].type.coding.code = #BIRTHCERT
+* identifier[BirthCertificateNo].value = "NPC-FCT-2019-004321"
+* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].value = "08123456789"
+// Demographics
+* active = true
+* name.family = "Bala"
+* name.given[0] = "Suleiman"
+* gender = #male
+* birthDate = 2019-09-05
+* address[0].line = "Plot 7, Mabushi"
+* address[0].city = "Abuja"
+* address[0].district = "Abuja Municipal Area Council"
+* address[0].state = "Federal Capital Territory (FCT)"
+// Caregiver contact
+* contact[0].name.family = "Bala"
+* contact[0].name.given[0] = "Aisha"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "+2348122223344"
+* contact[0].relationship.text = "Mother"
+* contact[0].address.city = "Abuja"
+* contact[0].address.district = "Abuja Municipal Area Council"
+* contact[0].address.state = "Federal Capital Territory (FCT)"
+
+

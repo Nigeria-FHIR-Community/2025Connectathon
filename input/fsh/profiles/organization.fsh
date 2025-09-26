@@ -1,47 +1,129 @@
-Profile: NEIROrganization
+Profile: NgOrganization
 Parent: Organization
-Id: neir-organization 
-Description: "An organization profile for the Nigerian Electronic Immunization Registry (NEIR), representing healthcare facilities responsible for immunization services."
+Id: ng-organization 
+Title: "NG Organization"
+Description: "An organization profile representing healthcare facilities responsible for health services or other types of organizations."
 
 
 * identifier 1..* MS
 * identifier.system 1..1
+* identifier.system ^short = "The facility type regulator or identifity provider if not health facility (E.g. HERFAMA in Lagos State)"
 * identifier.value 1..1
+* identifier.value ^short = "The facility or organization uniqe identifier"
 * active 1..1 MS
+* active ^short = "Boolean to indicate if institution is active or inactive"
 * name 1..1 MS
+* name ^short = "The name of the organization or health facility"
 * type 1..*
-* type from http://terminology.hl7.org/ValueSet/organization-type (extensible)
+* type from NGFacilityTypeVS (required)
+* type ^short = "The type of the organization or health facility"
 * telecom 0..*
 * telecom.system 1..1
+* telecom.system ^short = "The organization type of contact detail"
 * telecom.value 1..1
-* telecom.use 0..1
+* telecom.value ^short = "The organization contact detail"
+* partOf only Reference(NgOrganization)
+* partOf ^short = "The Organization which this organization forms a part"
+
 * address 1..* MS
 * address.line 1..*
+* address.line ^short = "The organization contact address line"
 * address.city 1..1
-* address.state 1..1
-* address.postalCode 0..1
-* address.country 1..1
+* address.city ^short = "The organization contact address city, town or settlement"
+* address.district from NGLGAsVS
+* address.district ^short = "The organization contact address LGA"
+* address.state from NGStatesVS
+* address.state ^short = "The organization contact address state"
+
+* extension contains NGOrganizationOwner named NGOrganizationOwner 0..1 MS
 
 
+// Hide these
+* telecom.use 0..0
 
-Instance: organization-example
-InstanceOf: NEIROrganization
+
+// EXAMPLES 
+// ==============================================
+// 1) Asokoro District Hospital (Public, Hospital)
+// ==============================================
+Instance: NgOrganization-001
+InstanceOf: NgOrganization
 Usage: #example
-Title: "NEIR Lagos Clinic"
-
-* identifier.system = "https://neir.gov.ng/facility-ids"
-* identifier.value = "LAG-12345"
+Title: "Example Asokoro District Hospital"
+Description: "Public secondary hospital in FCT (AMAC)."
+* identifier[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value = "HCF-45231"
 * active = true
-* name = "NEIR Lagos Clinic"
-* type = http://terminology.hl7.org/CodeSystem/organization-type#prov "Healthcare Provider"
+* name = "Asokoro District Hospital"
+* type[0].coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type[0].coding.code = #hospital
+* type[0].coding.display = "Secondary Hospital"
+* type[0].text = "Secondary Hospital"
 * telecom[0].system = #phone
-* telecom[0].value = "+234-802-123-4567"
-* telecom[0].use = #work
+* telecom[0].value = "+234-800-111-2222"
 * telecom[1].system = #email
-* telecom[1].value = "contact@neir-lagos.ng"
-* telecom[1].use = #work
-* address.line = "15 Broad Street"
-* address.city = "Lagos"
-* address.state = "Lagos State"
-* address.postalCode = "101001"
-* address.country = "Nigeria"
+* telecom[1].value = "info@asokorodh.example.ng"
+* address[0].line[0] = "Plot 12, Yakubu Gowon Crescent, Asokoro"
+* address[0].city = "Abuja"
+* address[0].district = "Abuja Municipal Area Council"
+* address[0].state = "Federal Capital Territory (FCT)"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].code = #public
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].display = "Public Health Institution Location"
+
+
+// ==============================================
+// 2) Kano Central Hospital Pharmacy (Private dept)
+// ==============================================
+Instance: NgOrganization-002
+InstanceOf: NgOrganization
+Usage: #example
+Title: "Example Kano Central Hospital Pharmacy"
+Description: "Pharmacy department serving outpatient dispensing; Kano Municipal."
+* identifier[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value = "HCF-12346"
+* active = true
+* name = "Kano Central Hospital Pharmacy"
+* type[0].coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type[0].coding.code = #hospital
+* type[0].coding.display = "Secondary Hospital"
+* type[0].text = "Hospital Department"
+* telecom[0].system = #phone
+* telecom[0].value = "+234-803-555-7788"
+* telecom[1].system = #email
+* telecom[1].value = "pharmacy@kanocentral.example.ng"
+* address[0].line[0] = "No. 8 Lafia Road"
+* address[0].city = "Kano"
+* address[0].district = "Kano Municipal"
+* address[0].state = "Kano"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].code = #private
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].display = "Private Health Institution Location"
+
+
+// ==============================================
+// 3) Gwagwalada Model PHC (Public, PHC L2)
+// ==============================================
+Instance: NgOrganization-003
+InstanceOf: NgOrganization
+Usage: #example
+Title: "Example Gwagwalada Model PHC"
+Description: "Public PHC facility in FCT Gwagwalada Area Council."
+* identifier[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value = "HCF-12347"
+* active = true
+* name = "Gwagwalada Model PHC"
+* type[0].coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type[0].coding.code = #phc-center-l2
+* type[0].coding.display = "PHC Center Level 2"
+* type[0].text = "Primary Health Care Centre (Level 2)"
+* telecom[0].system = #phone
+* telecom[0].value = "+234-812-000-4455"
+* address[0].line[0] = "Opposite Central Market"
+* address[0].city = "Gwagwalada"
+* address[0].district = "Gwagwalada Area Council"
+* address[0].state = "Federal Capital Territory (FCT)"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].code = #public
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].display = "Public Health Institution Location"
+

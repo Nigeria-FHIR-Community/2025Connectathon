@@ -1,45 +1,73 @@
-Profile: NEIRDefaulterTracingRequest
+Profile: NgServiceRequest
 Parent: ServiceRequest
-Description: "Service Request for defaulter tracing"
+Title: "NG ServiceRequest"
+Description: "Minimal ServiceRequest profile for the 2025 Connectathon (referrals and orders)."
 
-* identifier 0..1
-* basedOn 
-* status MS
-* category 1..1 MS
-* category from NEIRServiceRequestVS
-* category ^short = "Category of the request e.g Defaulter Tracing | Laboratory procedure | Imaging | Counselling | Education |Surgical procedure"
-* priority
-* subject MS
-* subject.display 1..1
-* subject.reference 1..1
-* authoredOn MS
-* requester MS
-* requester.display 1..1
-* requester.reference 1..1
+// Core, practical constraints
+* status 1..1 MS
+* intent 1..1 MS
+* code 1..1 MS
+* subject 1..1 MS
+* subject only Reference(NgPatient)
+* authoredOn 0..1
+* occurrence[x] 0..1
+* requester 0..1
+* requester only Reference(NgPractitioner or NgPractitionerRole or NgOrganization)
+* performerType 0..1
+* performer 0..*
+* performer only Reference(NgPractitioner or NgPractitionerRole or NgOrganization or NgHealthcareService)
+* reasonCode 0..*
+* reasonReference 0..*
+* reasonReference only Reference(NgCondition or NgObservation)
+* supportingInfo 0..*
+* priority 0..1
 
-Instance: service-request-example
-InstanceOf: ServiceRequest
-Usage: #example 
-Description: "An example of a service request"
+// Value set bindings (built-ins)
+* status from RequestStatus (required)
+* intent from RequestIntent (required)
+* priority from RequestPriority (required)
+
+// EXAMPLES
+
+// ==================================================================
+// 1) MNCH referral — Obstetric Ultrasound for NgPatient-002 (pregnant)
+// ==================================================================
+Instance: NgServiceRequest-001
+InstanceOf: NgServiceRequest
+Usage: #example
+Title: "Example Ng ServiceRequest (Obstetric Ultrasound)"
+Description: "Ultrasound order for pregnant client."
 * status = #active
 * intent = #order
-* subject = Reference(Patient/patient-example)
+* code.text = "Obstetric ultrasound"
+* subject = Reference(Patient/NgPatient-002)
+* authoredOn = "2025-11-03T10:15:00+01:00"
+* occurrenceDateTime = "2025-11-10T09:00:00+01:00"
+* requester = Reference(NgPractitioner/NgPractitioner-001)
+* performer[0] = Reference(NgOrganization/NgOrganization-002)
+* priority = #urgent
+// Reason references are constrained to NgCondition or NgObservation
+* reasonReference[0] = Reference(NgObservation/NgObservation-003) // pregnancy status obs
+* supportingInfo[0] = Reference(NgObservation/NgObservation-003)
 
-
-Instance: neir-defaulter-tracing-request-example
-InstanceOf: NEIRDefaulterTracingRequest
-Usage: #example 
-Description: "An example of a defaulter tracing request"
-* identifier.system = "https://nigerian.org/fhir/serviceRequest"
-* identifier.use = #official
-* identifier.value = "123456"
-* basedOn = Reference(ServiceRequest/service-request-example)
+// ==================================================================
+// 2) ePharmacy/chronic care — Fasting Blood Glucose for NgPatient-001
+// ==================================================================
+Instance: NgServiceRequest-002
+InstanceOf: NgServiceRequest
+Usage: #example
+Title: "Example Ng ServiceRequest (Fasting Blood Glucose)"
+Description: "Lab order for diabetes follow-up."
 * status = #active
 * intent = #order
-* category = #NGR-001
+* code.text = "Fasting blood glucose"
+* subject = Reference(NgPatient/NgPatient-001)
+* authoredOn = "2025-11-04T08:30:00+01:00"
+* occurrenceDateTime = "2025-11-05T07:30:00+01:00"
+* requester = Reference(NgPractitioner/NgPractitioner-002)
+* performerType.text = "Laboratory service"
+* performer[0] = Reference(NgOrganization/NgOrganization-GwagwaladaPHC)
 * priority = #routine
-* subject.display = "John Doe"
-* subject = Reference(Patient/patient-example)
-* authoredOn = "2025-03-13"
-* requester.display = "John Doe"
-* requester = Reference(Practitioner/practitioner-example)
+* reasonCode[0].text = "Diabetes mellitus follow-up"
+* supportingInfo[0] = Reference(NgMedicationRequest/NgMedicationRequest-003) // insulin therapy context
+
