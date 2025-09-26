@@ -2,7 +2,7 @@ CodeSystem: NGStatesCS
 Id: nigeria-states
 Title: "NG States in Nigeria CS"
 Description: "This CodeSystem defines ward codes and names mapped to their respective States in Nigeria."
-* ^url = "https://www.dhin-hie.org/ig/fhir/CodeSystem/nigeria-states"
+* ^url = "https://sandbox.dhin-hie.org/ig/fhir/CodeSystem/nigeria-states"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true

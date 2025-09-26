@@ -4,10 +4,10 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: 2025Connectathon
-canonical: https://www.dhin-hie.org
+canonical: https://sandbox.dhin-hie.org/ig
 name: DHIN-2025Connectathon-FHIR-IG
 title: DHIN 2025Connectathon FHIR IG
-description: DHIN 2025Connectathon Testing FHIR IG
+description: DHIN 2025 Connectathon Testing FHIR IG
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
