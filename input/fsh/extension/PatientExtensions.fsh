@@ -5,20 +5,20 @@
 
 Extension: NGAdministrativeWard
 Id: nigeria-administrative-ward
-Title: "NG-eP Administrative Wards "
+Title: "NG Administrative Wards "
 Description: "Captures the administrative ward within a geographic address "
 * ^context[0].type = #element
 * ^context[0].expression = "Address"
 * ^status = #active
-* ^publisher = "NPHCDA"
+* ^publisher = "DHIN"
 * value[x] only CodeableConcept
-* valueCodeableConcept from NGWardsVS (example)
+* valueCodeableConcept from NGWardsVS (preferred)
 
 
 
 Extension: NGBirthWeight
 Id:  birth-weight
-Title:  "NG-eP Weight at birth"
+Title:  "NG Weight at birth"
 Description: "Weight  of the Immunization Client at birth"
 * ^context[0].type = #element
 * ^context[0].expression = "Patient"

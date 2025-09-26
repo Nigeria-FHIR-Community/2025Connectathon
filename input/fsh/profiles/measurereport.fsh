@@ -1,8 +1,8 @@
-Profile: NgePMeasureReport
+Profile: NgMeasureReport
 Parent: MeasureReport
 Id: measure-report-profile 
-Title: "NG-ep MeasureReport"
-Description: "Nigeria ePrescription Measure Report Profile"
+Title: "NG MeasureReport"
+Description: "Nigeria Measure Report Profile"
 
 
 * identifier.value 1..1 MS
@@ -15,14 +15,14 @@ Description: "Nigeria ePrescription Measure Report Profile"
 //* measure ^short = "The indicator or measure definition which is being reported on (for example: Dropout rate, defaulters, etc)"
 * date 1..1 MS
 * date ^short = "The date and time on which the report was generated"
-* reporter only Reference(NgePPractitioner)
+* reporter only Reference(NgPractitioner)
 * reporter ^short = "Indicates the organization, or location which is generating or producing the report"
 * period 1..1 MS
 * period.start 1..1 
 * period.start ^short = "The start date of the reporting period for which data in the report has been included"
 * period.end 1..1 
 * period.end ^short = "The end date of the reporting period for which data in the report has been included"
-* measure only Canonical(NgePMeasure)
+* measure only Canonical(NgMeasure)
 * measure ^short = "The measure that was calculated"
 
 * group.measureScore 0..1 MS
@@ -31,3 +31,75 @@ Description: "Nigeria ePrescription Measure Report Profile"
 * group.measureScore.unit  0..1 
 * group.measureScore.unit ^short = "The unit of  calculated score of the measure / indicator which is being reported on"
  
+
+ // EXAMPLES
+ // ==============================================
+// 1) MeasureReport for NgMeasure-001 (eRx Dispense within 48h) — September 2025
+// ==============================================
+Instance: NgMeasureReport-001
+InstanceOf: NgMeasureReport
+Usage: #example
+Title: "Example Ng MeasureReport (DispenseWithin48h)"
+Description: "Summary report of ePrescriptions dispensed within 48 hours."
+* identifier.system = "https://www.dhin-hie.org/ig/measurereport-id"
+* identifier.value  = "erx-dispense-48h-2025-09"
+* status = #complete
+* type = #summary
+* date = "2025-10-05T08:00:00+01:00"
+* reporter = Reference(NgPractitioner/NgPractitioner-002)
+* period.start = 2025-09-01
+* period.end   = 2025-09-30
+* measure = Canonical(NgMeasure-001)
+// Minimal score
+* group[0].measureScore.value = 78
+* group[0].measureScore.unit  = "%"
+* group[0].measureScore.system = "http://unitsofmeasure.org"
+* group[0].measureScore.code  = #%
+
+
+// ==============================================
+// 2) MeasureReport for NgMeasure-002 (Counseling Documented) — October 2025
+// ==============================================
+Instance: NgMeasureReport-002
+InstanceOf: NgMeasureReport
+Usage: #example
+Title: "Example Ng MeasureReport (CounselingDocumented)"
+Description: "Summary report of dispensing events with counseling documented."
+* identifier.system = "https://www.dhin-hie.org/ig/measurereport-id"
+* identifier.value  = "erx-counseling-documented-2025-10"
+* status = #complete
+* type = #summary
+* date = "2025-11-02T09:15:00+01:00"
+* reporter = Reference(NgPractitioner/NgPractitioner-001)
+* period.start = 2025-10-01
+* period.end   = 2025-10-31
+* measure = Canonical(NgMeasure-002)
+// Minimal score
+* group[0].measureScore.value = 64
+* group[0].measureScore.unit  = "%"
+* group[0].measureScore.system = "http://unitsofmeasure.org"
+* group[0].measureScore.code  = #%
+
+
+// ==============================================
+// 3) MeasureReport for NgMeasure-003 (Claim Approval Rate) — Q3 2025
+// ==============================================
+Instance: NgMeasureReport-003
+InstanceOf: NgMeasureReport
+Usage: #example
+Title: "Example Ng MeasureReport (ClaimApprovalRate)"
+Description: "Summary report of approved claims over all submitted claims."
+* identifier.system = "https://www.dhin-hie.org/ig/measurereport-id"
+* identifier.value  = "claims-approval-rate-2025-Q3"
+* status = #complete
+* type = #summary
+* date = "2025-10-07T11:00:00+01:00"
+* reporter = Reference(NgPractitioner/NgPractitioner-003)
+* period.start = 2025-07-01
+* period.end   = 2025-09-30
+* measure = Canonical(NgMeasure-003)
+// Minimal score
+* group[0].measureScore.value = 82
+* group[0].measureScore.unit  = "%"
+* group[0].measureScore.system = "http://unitsofmeasure.org"
+* group[0].measureScore.code  = #%

@@ -3,7 +3,7 @@ Parent: Location
 Title: "NG Location"
 Id: nigeria-location 
 Description: "A profile for immunization service locations, including health facilities, outreach sites, and mobile vaccination units."
-* ^url = "http://www.dhin0hie.org/ig/StructureDefinition/nigeria-location"
+* ^url = "http://www.dhin-hie.org/ig/StructureDefinition/nigeria-location"
 * ^version = "1.0.0"
 * ^status = #active
 * status 1..1
@@ -32,4 +32,103 @@ Description: "A profile for immunization service locations, including health fac
 * partOf ^short = "Another location this organization is physically part of"
 
 
+// EXAMPLES
 
+// ==============================================
+// 1) Asokoro OPD (hospital department)
+// ==============================================
+Instance: NgLocation-001
+InstanceOf: NgLocation
+Usage: #example
+Title: "Example Asokoro OPD"
+Description: "Outpatient department at Asokoro District Hospital."
+* status = #active
+* name = "Asokoro OPD"
+* type[0].coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type[0].coding.code = #hospital
+* type[0].coding.display = "Secondary Hospital"
+* address.line = "Yakubu Gowon Crescent, Asokoro"
+* address.city = "Abuja"
+* address.district = "Abuja Municipal Area Council"
+* address.state = "Federal Capital Territory (FCT)"
+* address.country = "NG"
+* telecom[0].system = #phone
+* telecom[0].value = "+234-800-111-2222"
+* position.latitude = 9.043
+* position.longitude = 7.516
+* managingOrganization = Reference(NgOrganization/NgOrganization-001)
+
+
+// ==============================================
+// 2) Kano Central Pharmacy Counter (hospital pharmacy)
+// ==============================================
+Instance: NgLocation-002
+InstanceOf: NgLocation
+Usage: #example
+Title: "Example Kano Central Pharmacy Counter"
+Description: "Dispensing counter at Kano Central Hospital Pharmacy."
+* status = #active
+* name = "Pharmacy Counter"
+* type[0].coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type[0].coding.code = #hospital
+* type[0].coding.display = "Secondary Hospital"
+* address.line = "No. 8 Lafia Road"
+* address.city = "Kano"
+* address.district = "Kano Municipal"
+* address.state = "Kano"
+* address.country = "NG"
+* telecom[0].system = #phone
+* telecom[0].value = "+234-803-555-7788"
+* position.latitude = 12.000
+* position.longitude = 8.500
+* managingOrganization = Reference(NgOrganization/NgOrganization-002)
+
+
+// ==============================================
+// 3) Gwagwalada Immunization Room (PHC L2)
+// ==============================================
+Instance: NgLocation-003
+InstanceOf: NgLocation
+Usage: #example
+Title: "Example Gwagwalada Immunization Room"
+Description: "RI room at Gwagwalada Model PHC."
+* status = #active
+* name = "Immunization Room"
+* type[0].coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type[0].coding.code = #phc-center-l2
+* type[0].coding.display = "PHC Center Level 2"
+* address.line = "Opposite Central Market"
+* address.city = "Gwagwalada"
+* address.district = "Gwagwalada Area Council"
+* address.state = "Federal Capital Territory (FCT)"
+* address.country = "NG"
+* position.latitude = 8.939
+* position.longitude = 7.081
+* managingOrganization = Reference(NgOrganization/NgOrganization-003)
+
+
+// ==============================================
+// 4) Gurdi Outreach Site (mobile/outreach)
+// ==============================================
+Instance: NgLocation-004
+InstanceOf: NgLocation
+Usage: #example
+Title: "Example Gurdi Outreach Site"
+Description: "Periodic immunization outreach post in Abaji Area Council, FCT."
+* status = #active
+* name = "Gurdi Outreach Site"
+* type[0].coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type[0].coding.code = #outreach
+* type[0].coding.display = "Outreach Post"
+* address.line = "Primary School Field, Gurdi Ward"
+* address.city = "Gurdi"
+* address.district = "Abaji Area Council"
+* address.state = "Federal Capital Territory (FCT)"
+* address.country = "NG"
+// Optional ward extension (uses your NGAdministrativeWard)
+* address.extension[NGadministrativeWard].valueCodeableConcept.coding[0].system = "https://www.dhin-hie.org/ig/ValueSet/nigeria-wards"
+* address.extension[NGadministrativeWard].valueCodeableConcept.coding[0].code = #fc-amac-gurdi
+* address.extension[NGadministrativeWard].valueCodeableConcept.coding[0].display = "Gurdi"
+* position.latitude = 8.470
+* position.longitude = 6.950
+* managingOrganization = Reference(NgOrganization/NgOrganization-002)

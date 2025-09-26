@@ -1,39 +1,7 @@
 
-CodeSystem: NGWardsCS
-Id: nigeria-wards
-Title: "IMMZ.C.DE14 Administrative Wards CS"
-Description: "This CodeSystem IMMZ.C.DE14 defines ward codes and names mapped to their respective Local Government Areas (LGAs) in Nigeria."
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-wards"
-* ^status = #active
-* ^content = #complete
-* ^caseSensitive = true
-//* ^hierarchyMeaning = #grouped-by
-* ^publisher = "DHIN"
-* ^experimental = false
-* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
-
-// Abaji area councle wards in FCT
-* #fc-amac-abajic "Abaji central" "Abaji central"
-* #fc-amac-abajine "Abaji North East" "Abaji North East"
-* #fc-amac-abajise "Abaji South East" "Abaji South East"
-* #fc-amac-agyana "Agyana/Pandagi" "Agyana/Pandagi"
-* #fc-amac-rimba "Rimba Ebagi" "Rimba Ebagi"
-* #fc-amac-nuku "Nuku" "Nuku"
-* #fc-amac-alu "Alu Mamagi" "Alu Mamagi"
-* #fc-amac-yaba "Yaba" "Yaba"
-* #fc-amac-gurdi "Gurdi" "Gurdi"
-* #fc-amac-gawu "Gawu" "Gawu"
-
-//.... to be completed
-* #en-agwu "Agwu" "Agwu"
-
-
-
-
-
 CodeSystem: NGRelationshipsCS
 Id: nigeria-relationship
-Title: "Relationships CS"
+Title: "NG Relationships CS"
 Description: "This CodeSystem defines list of persons related to a patient, but who is not a direct target of care"
 * ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-relationship"
 * ^status = #active
@@ -66,7 +34,7 @@ Description: "This CodeSystem defines list of persons related to a patient, but 
 
 CodeSystem: NGSiblingHealthStatusCS
 Id: nigeria-sibling-health-status
-Title: "IMMZ.C.DE30 Sibling Health Status CS"
+Title: "NG Health Status CS"
 Description: "This CodeSystem IMMZ.C.DE30 defines the health of the client's sibling"
 * ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-sibling-health-status"
 * ^status = #active
@@ -87,7 +55,7 @@ Description: "This CodeSystem IMMZ.C.DE30 defines the health of the client's sib
 
 CodeSystem: NGFacilityTypeCS
 Id: nigeria-facility-type
-Title: "Facility Type CS"
+Title: "NG Facility Type CS"
 Description: "A standardized classification system used to describe the type or level of health facility within a healthcare delivery system, based on the scope of services provided, staffing, infrastructure, and administrative role."
 * ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
 * ^status = #active
@@ -108,9 +76,9 @@ Description: "A standardized classification system used to describe the type or 
 
 CodeSystem: NGOrganizationOwnerCS
 Id: nigeria-location-owner-cs
-Title: "Location Owner CS"
+Title: "NG Location Owner CS"
 Description: "This CodeSystem defines Immunization Location Owner."
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-location-owner-cs"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
 * ^publisher = "NPHCDA"
 * ^caseSensitive = false
 * ^content = #complete
@@ -127,9 +95,9 @@ Description: "This CodeSystem defines Immunization Location Owner."
 
 CodeSystem: NGClinicalStatusCS
 Id: nigeria-clinical-status 
-Title: "Adverse Event Clinical Status CS"
+Title: "NG Adverse Event CS"
 Description: "A classification system that represents the current clinical status of an individual who experienced an Adverse Event Following Immunization (AEFI), based on medical observation, investigation, or follow-up assessment."
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-clinical-status"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-clinical-status"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
@@ -144,9 +112,9 @@ Description: "A classification system that represents the current clinical statu
 
 CodeSystem: NGSessionTypeCS
 Id: nigeria-immunization-session-type
-Title: "Immunization Session types CS"
+Title: "NG Immunization Session types CS"
 Description: "Type of session for immunization Could be in a fixed facility, outreach or mobile."
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-immunization-session-type"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-immunization-session-type"
 * ^status = #active
 //* ^hierarchyMeaning = #is-a
 * ^caseSensitive = false
@@ -162,9 +130,9 @@ Description: "Type of session for immunization Could be in a fixed facility, out
 
 CodeSystem: NGImmContraindicationCS
 Id: nigeria-immunization-contraindication
-Title: "IMMZ.D.DE6 Vaccine contraindications CS"
+Title: "NG Vaccine contraindications CS"
 Description: "A set of standardized codes used to represent clinical conditions, diagnoses, or circumstances that serve as contraindications to the administration of one or more vaccines."
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-immunization-contraindication"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-immunization-contraindication"
 * ^status = #active
 //* ^hierarchyMeaning = #is-a
 * ^experimental = false
@@ -182,9 +150,9 @@ Description: "A set of standardized codes used to represent clinical conditions,
 
 CodeSystem: NGPregnancyStatusCS
 Id: nigeria-pregnancy-status
-Title: "Client Pregnancy status CS"
+Title: "NG Client Pregnancy Status CS"
 Description: "This CodeSystem defines list of options for Pregnancy status of a Client"
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-pregnancy-status"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-pregnancy-status"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
@@ -204,9 +172,9 @@ Description: "This CodeSystem defines list of options for Pregnancy status of a 
 
 CodeSystem: NGIdentifierCS
 Id: patient-identifier-cs
-Title: "Client Identifier CS"
+Title: "NG Client Identifier CS"
 Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/patient-identifier-cs"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = false
@@ -227,9 +195,9 @@ Description: "This CodeSystem defines list of options for uniquely Identifting a
 
 CodeSystem: NGMDCNCS
 Id: nigeria-mdcn
-Title: "Practitioner Identifier CS"
+Title: "NG Practitioner Identifier CS"
 Description: "This CodeSystem IMMZ.C.DE14 defines placeholder codes to manage physician identifiers in Nigeria."
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-mdcn"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
@@ -253,9 +221,9 @@ Description: "This CodeSystem IMMZ.C.DE14 defines placeholder codes to manage ph
 
 CodeSystem: NGFacilityIdentifierCS
 Id: nigeria-facility-registry
-Title: "IMMZ.A.DE1 Facility Identifier CS"
+Title: "NG Facility Identifier CS"
 Description: "This CodeSystem IMMZ.A.DE1 defines placeholder codes to manage Facility identifiers in Nigeria."
-* ^url = "https://www.dhin-hie.org/ig/immunization/CodeSystem/nigeria-facility-registry"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
@@ -275,3 +243,85 @@ Description: "This CodeSystem IMMZ.A.DE1 defines placeholder codes to manage Fac
 //.... to be completed
 
 
+
+
+
+
+
+CodeSystem: NgCarePlanCategoryCS
+Id: ng-careplan-category-cs
+Title: "NG CarePlan Category Codes"
+Description: "Categories for CarePlan.category aligned to DHIN 2025 Connectathon tracks."
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/ng-careplan-category-cs"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* ^hierarchyMeaning = #grouped-by
+* ^publisher = "FMoHSW"
+* ^version = "0.1.0"
+* ^experimental = false
+* #general "General care plan" "Cross-cutting plan not tied to a single track."
+* #mnch "MNCH" "Maternal, newborn & child health plan."
+* #immunization "Immunization" "Vaccination and defaulter-tracing plan."
+* #pharmacy "Pharmacy/ePharmacy" "Medication adherence/dispense plan."
+* #claims "Insurance & Claims" "Financial protection and claims-related plan."
+* #devices "Medical Devices" "Connected/home-monitoring device plan."
+* #chronic "Chronic disease" "Hypertension, diabetes, etc."
+
+
+
+
+CodeSystem: NgCarePlanActivityCS
+Id: ng-careplan-activity-cs
+Title: "NG CarePlan Activity Codes"
+Description: "Activities for CarePlan.activity.detail.code aligned to DHIN 2025 Connectathon tracks."
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/ng-careplan-activity-cs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^caseSensitive = true
+* ^content = #complete
+* #anc-counsel "ANC Counseling" "Antenatal education/counseling."
+* #bp-monitor "BP Monitoring" "Blood pressure monitoring at home."
+* #immunize "Immunization Administration" "Administer scheduled vaccine."
+* #defaulter-trace "Defaulter Tracing" "Outreach to missed immunization clients."
+* #rx-counsel "Medication Counseling" "Explain regimen and side effects."
+* #med-dispense "Medication Dispense" "Dispense prescribed medication."
+* #referral-followup "Referral Follow-up" "Confirm referral attended."
+* #device-setup "Device Setup" "Configure device and train patient."
+* #device-check "Device Check/Calibration" "Validate device performance."
+* #claim-submit "Claim Submission" "Submit claim to payer."
+* #claim-reconcile "Claim Reconciliation" "Match payments to claims."
+
+
+CodeSystem: NgDeviceMetricCategoryCS
+Id: ng-device-metric-category-cs
+Title: "NG DeviceMetric Category Codes"
+Description: "Local mirror of DeviceMetric.category. Consider using 'http://terminology.hl7.org/CodeSystem/metric-category' in production."
+* ^status = #active
+* ^version = "0.1.0"
+* ^caseSensitive = true
+* ^content = #complete
+* #measurement "Measurement" "Metric represents a measured value from a device."
+* #setting "Setting" "Metric represents a device setting that affects behavior."
+* #calculation "Calculation" "Metric represents a calculated/derived value."
+* #unspecified "Unspecified" "Metric category is not specified."
+
+
+
+
+CodeSystem: NGHivStatusCS
+Id: nigeria-hiv-status
+Title: "NG Client HIV status CS"
+Description: "This CodeSystem IMMZ.C.DE31 defines list of options for HIV status of a Client"
+* ^url = "http://nphcda.gov.ng/ig/CodeSystem/nigeria-hiv-status"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = true
+* ^experimental = false
+//* ^hierarchyMeaning = #is-a
+* ^publisher = "NPHCDA"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+// The CodeSystem for Client's HIV Status
+* #positive	"Positive" "The Client is HIV positive"
+* #negative 	"Negative" "The Client is HIV Negative"
+* #unknown	"Unknown" "The Client does not know their HIV status"

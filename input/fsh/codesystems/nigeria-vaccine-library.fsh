@@ -121,7 +121,7 @@ Description: "Locally defined vaccine codes used for data capture and UI labels.
 Instance: NGVaccineLocal-to-ICD11
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Local Vaccine Codes → ICD-11"
+Title: "NG Local Vaccine Codes → ICD-11"
 Description: "Maps local dose-labelled DE codes to ICD-11 vaccine concepts (antigen/product level)."
 * url = $cmLocalToICD11
 * name = "Local-icd11"
@@ -254,7 +254,7 @@ Description: "Maps local dose-labelled DE codes to ICD-11 vaccine concepts (anti
 Instance: NGVaccineLocal-to-SNOMED
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "Local Vaccine Codes → SNOMED CT"
+Title: "NG Local Vaccine Codes → SNOMED CT"
 Description: "Maps local dose-labelled DE codes to SNOMED CT vaccine concepts (antigen/product level)."
 * url = $cmLocalToSCT
 * status = #active

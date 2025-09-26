@@ -1,6 +1,6 @@
 Profile: NgImmunization
 Parent: Immunization
-Title: "NG-Imm Immunization"
+Title: "NG Immunization"
 Description: "Nigerian Profile for Immunization resource."
 
 * identifier 0..1
@@ -35,7 +35,7 @@ Description: "Nigerian Profile for Immunization resource."
 * occurrence[x] only dateTime
 * reaction.date 0..1 
 * reaction.reported 0..1
-* reaction.detail only Reference(NgRUObservation)
+* reaction.detail only Reference(NgObservation)
 
 
 
@@ -47,3 +47,84 @@ Description: "Nigerian Profile for Immunization resource."
 * extension contains NGContraindicated named contraindicated 0..* MS
 * protocolApplied.extension contains NextDoseDate named nextDoseDate 0..1 MS
  
+
+
+ // EXAMPLES
+
+ // ==============================================
+// NgImmunization-001 — Pentavalent 1 for child (Gwagwalada PHC)
+// ==============================================
+Instance: NgImmunization-001
+InstanceOf: NgImmunization
+Usage: #example
+Title: "Example Ng Immunization (Pentavalent 1)"
+Description: "Pentavalent 1 administered to NgPatient-003 at Gwagwalada PHC."
+* status = #completed
+* vaccineCode = NGVaccineLocalCS#IMMZ.Z.DE4 "Pentavalent 1"
+* patient = Reference(NgPatient/NgPatient-003)
+* occurrenceDateTime = 2025-09-10T10:00:00+01:00
+* lotNumber = "PENTA25-0001"
+* expirationDate = 2026-06-30
+* doseQuantity.value = 0.5
+* doseQuantity.system = "http://unitsofmeasure.org"
+* doseQuantity.code = #mL
+* doseQuantity.unit = "mL"
+* manufacturer = Reference(NgOrganization/NgOrganization-001)
+* performer[0].actor = Reference(NgPractitioner/NgPractitioner-003)
+// Optional, text-only to avoid code mismatches
+* site.text = "Left thigh"
+* route.text = "Intramuscular"
+// Show use of NextDoseDate extension (via protocolApplied)
+* protocolApplied[0].extension[nextDoseDate].valueDate = 2025-10-08
+* protocolApplied[0].doseNumberPositiveInt = 4
+
+
+// ==============================================
+// NgImmunization-002 — Rotavirus 1 (oral) for child (Gwagwalada PHC)
+// ==============================================
+Instance: NgImmunization-002
+InstanceOf: NgImmunization
+Usage: #example
+Title: "Example Ng Immunization (Rotavirus 1)"
+Description: "Rotavirus 1 administered orally to NgPatient-003."
+* status = #completed
+* vaccineCode = NGVaccineLocalCS#IMMZ.Z.DE7 "Rotavirus 1"
+* patient = Reference(NgPatient/NgPatient-003)
+* occurrenceDateTime = 2025-09-10T10:05:00+01:00
+* lotNumber = "ROTA25-0045"
+* expirationDate = 2026-04-30
+* doseQuantity.value = 2
+* doseQuantity.system = "http://unitsofmeasure.org"
+* doseQuantity.code = #mL
+* doseQuantity.unit = "mL"
+* manufacturer = Reference(NgOrganization/NgOrganization-003)
+* performer[0].actor = Reference(NgPractitioner/NgPractitioner-003)
+* route.text = "Oral"
+// Optional next dose reminder
+* protocolApplied[0].extension[nextDoseDate].valueDate = 2025-10-10
+* protocolApplied[0].doseNumberPositiveInt = 1
+
+
+// ==============================================
+// NgImmunization-003 — Tetanus-Diphtheria for adult (Asokoro Hospital)
+// ==============================================
+Instance: NgImmunization-003
+InstanceOf: NgImmunization
+Usage: #example
+Title: "Example Ng Immunization (Tetanus Diphtheria)"
+Description: "Td dose administered to NgPatient-001 at Asokoro District Hospital."
+* status = #completed
+* vaccineCode = NGVaccineLocalCS#IMMZ.Z.DE28 "Tetanus Diphtheria"
+* patient = Reference(NgPatient/NgPatient-001)
+* occurrenceDateTime = 2025-11-04T09:10:00+01:00
+* lotNumber = "TD25-0300"
+* expirationDate = 2027-12-31
+* doseQuantity.value = 0.5
+* doseQuantity.system = "http://unitsofmeasure.org"
+* doseQuantity.code = #mL
+* doseQuantity.unit = "mL"
+* manufacturer = Reference(NgOrganization/NgOrganization-001)
+* performer[0].actor = Reference(NgPractitioner/NgPractitioner-001)
+* site.text = "Left deltoid"
+* route.text = "Intramuscular"
+* protocolApplied[0].doseNumberString = "two"

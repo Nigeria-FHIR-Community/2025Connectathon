@@ -64,27 +64,32 @@ This IG addresses the following cross-cutting goals:
 #### 1. Health Insurance & Claims  
 - **Purpose:** To digitize and streamline claim submission, adjudication, and reimbursement across HMOs, NHIS, and health providers.  
 - **Key FHIR Artifacts:** `Claim`, `ClaimResponse`, `Coverage`, `ExplanationOfBenefit`.  
-- **Value:** Reduces fraud, accelerates payments, increases transparency, and supports regulatory oversight.  
+- **Value:** Reduces fraud, accelerates payments, increases transparency, and supports regulatory oversight. 
+- **Bundles:** bundle-hmo-hospital, bundle-hmo-insurer, bundle-patient-hospital, bundle-patient-insurer.
 
 #### 2. MNCH Referral  
 - **Purpose:** To enable structured, traceable referrals for Maternal, Newborn, and Child Health services.  
 - **Key FHIR Artifacts:** `ServiceRequest`, `Task`, `CarePlan`, `Communication`.  
-- **Value:** Improves care continuity, ensures timely follow-up, and reduces maternal and child mortality.  
+- **Value:** Improves care continuity, ensures timely follow-up, and reduces maternal and child mortality.
+- **Bundles:** bundle-referral-communication, bundle-referral-initiation, bundle-referral-response, bundle-referral-tracking.  
 
 #### 3. ePharmacy (ePrescription & eDispensing)  
 - **Purpose:** To standardize electronic prescribing and dispensing workflows.  
 - **Key FHIR Artifacts:** `MedicationRequest`, `MedicationDispense`, `Organization`, `PractitionerRole`.  
 - **Value:** Prevents medication errors, improves drug availability, ensures accountability, and integrates insurance claims.  
+- **Bundles:** bundle-coverage-enquiry, bundle-prescription, and bundle-dispense-notification.
 
 #### 4. Immunization  
 - **Purpose:** To digitize vaccine administration, reporting, and defaulter tracing in alignment with SMART Guidelines.  
 - **Key FHIR Artifacts:** `Immunization`, `Patient`, `Encounter`, `Observation`, `List`.  
-- **Value:** Strengthens vaccine traceability, supports AEFI (Adverse Events Following Immunization) monitoring, and improves coverage reporting.  
+- **Value:** Strengthens vaccine traceability, supports AEFI (Adverse Events Following Immunization) monitoring, and improves coverage reporting. 
+- **Bundles:** bundle-client-registration, bundle-report-aefi, bundle-register-facility, bundle-update-client.
 
 #### 5. Medical Devices Communication  
 - **Purpose:** To enable integration of connected medical devices (vital signs monitors, infusion pumps, diagnostic devices) with health records.  
 - **Key FHIR Artifacts:** `Device`, `DeviceMetric`, `Observation`, `DeviceRequest`.  
 - **Value:** Facilitates remote monitoring, supports clinical decision-making, and aligns with ISO/IEEE 11073 device communication standards.  
+- **Bundles:** bundle-device-audit, bundle-device-observation, bundle-device-provenance, bundle-device-registration, bundle-device-task-execution
 
 ---
 

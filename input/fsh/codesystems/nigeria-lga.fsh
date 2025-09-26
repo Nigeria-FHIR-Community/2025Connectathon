@@ -1,6 +1,6 @@
 CodeSystem: NGLGAsCS
 Id: nigeria-lgas
-Title: "NG-eP LGAs in Nigeria CS"
+Title: "NG LGAs in Nigeria CS"
 Description: "This CodeSystem defines LGA codes and names mapped to their respective States in Nigeria."
 * ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-lgas"
 * ^status = #active

@@ -1,6 +1,6 @@
 Extension: NGOrganizationOwner
 Id: organozation-owner
-Title: "NG-eP owner of health institution"
+Title: "NG Owner of Facility"
 Description: "An extension to define the owner of the health institution"
 * ^context[0].type = #element
 * ^context[0].expression = "Organization"

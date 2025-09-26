@@ -1,7 +1,7 @@
 Profile: NgObservation
 Parent: Observation
 Id: NgObservation
-Title: "NG-Imm ClientRegistUpdate-Observations"
+Title: "NG Observations"
 Description: "A composite Observation profile capturing state of health, underlying conditions, HIV status, ages in weeks/months/years during client registration."
 
 * status 1..1
@@ -74,3 +74,82 @@ Description: "A composite Observation profile capturing state of health, underly
 * component[ageInYears].valueQuantity.system = $ucum
 * component[ageInYears].valueQuantity.code = #yr
 * component[ageInYears].valueQuantity.unit = "year"
+
+
+// EXAMPLES 
+
+// ==============================================
+// NgObservation-001 — MNCH Referral (Pregnant)
+// ==============================================
+Instance: NgObservation-001
+InstanceOf: NgObservation
+Usage: #example
+Title: "Example Observation (MNCH Referral)"
+Description: "Pregnancy & HIV status with age in years for NgPatient-001."
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = http://loinc.org#30525-0 "Age"
+* subject = Reference(Patient/NgPatient-001)
+* effectiveDateTime = 2025-11-04T10:00:00Z
+
+// Components (use named slices only)
+* component[ageInYears].valueQuantity.value = 30
+* component[ageInYears].valueQuantity.system = "http://unitsofmeasure.org"
+* component[ageInYears].valueQuantity.code = #yr
+* component[ageInYears].valueQuantity.unit = "year"
+
+* component[pregnancyStatus].valueCodeableConcept.coding[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-pregnancy-status"
+* component[pregnancyStatus].valueCodeableConcept.coding[0].code = #pregnant
+* component[pregnancyStatus].valueCodeableConcept.coding[0].display = "Pregnant"
+
+* component[hivStatus].valueCodeableConcept.coding[0].system = "http://nphcda.gov.ng/ig/CodeSystem/nigeria-hiv-status"
+* component[hivStatus].valueCodeableConcept.coding[0].code = #unknown
+* component[hivStatus].valueCodeableConcept.coding[0].display = "Unknown"
+
+
+// ==============================================
+// NgObservation-002 — ePharmacy & Claims (Adult Male)
+// ==============================================
+Instance: NgObservation-002
+InstanceOf: NgObservation
+Usage: #example
+Title: "Example Ng Observation (ePharmacy & Claims)"
+Description: "HIV status with age in years for NgPatient-002."
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = http://loinc.org#30525-0 "Age"
+* subject = Reference(Patient/NgPatient-002)
+* effectiveDateTime = 2025-11-04T10:05:00Z
+
+* component[ageInYears].valueQuantity.value = 38
+* component[ageInYears].valueQuantity.system = "http://unitsofmeasure.org"
+* component[ageInYears].valueQuantity.code = #yr
+* component[ageInYears].valueQuantity.unit = "year"
+
+* component[hivStatus].valueCodeableConcept.coding[0].system = "http://nphcda.gov.ng/ig/CodeSystem/nigeria-hiv-status"
+* component[hivStatus].valueCodeableConcept.coding[0].code = #negative
+* component[hivStatus].valueCodeableConcept.coding[0].display = "Negative"
+
+
+// ==============================================
+// NgObservation-003 — Childhood Immunization (Child)
+// ==============================================
+Instance: NgObservation-003
+InstanceOf: NgObservation
+Usage: #example
+Title: "Example Ng Observation (Childhood Immunization)"
+Description: "Age in months and birth weight for NgPatient-003."
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code = http://loinc.org#30525-0 "Age"
+* subject = Reference(Patient/NgPatient-003)
+* effectiveDateTime = 2025-11-04T10:10:00Z
+
+* component[ageInMonths].valueQuantity.value = 74
+* component[ageInMonths].valueQuantity.system = "http://unitsofmeasure.org"
+* component[ageInMonths].valueQuantity.code = #mo
+* component[ageInMonths].valueQuantity.unit = "month"
+
+* component[birthWeight].valueQuantity.value = 3200
+* component[birthWeight].valueQuantity.system = "http://unitsofmeasure.org"
+* component[birthWeight].valueQuantity.unit = "g"

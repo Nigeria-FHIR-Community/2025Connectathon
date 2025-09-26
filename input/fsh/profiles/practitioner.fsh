@@ -35,3 +35,70 @@ Description: "Profile for a Nigerian Practitioner"
 * name.use 0..0 
 
 
+
+// EXAMPLES 
+
+// ==============================================
+// NgPractitioner-001 — MNCH Referral (Obstetrician)
+// ==============================================
+Instance: NgPractitioner-001
+InstanceOf: NgPractitioner
+Usage: #example
+Title: "Example Ng Practitioner (MNCH)"
+Description: "Obstetrician supporting ANC referrals."
+* active = true
+* identifier[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value = "MDCN-45231"
+* name.family = "Adebayo"
+* name.given = "Kehinde"
+* telecom[0].system = #phone
+* telecom[0].value = "+2348030001122"
+* telecom[1].system = #email
+* telecom[1].value = "kehinde.adebayo@example.org"
+* birthDate = 1982-01-15
+* qualification[0].code.text = "Obstetrics & Gynaecology"
+* qualification[0].period.start = 2016-01-01
+
+
+// ==============================================
+// NgPractitioner-002 — ePharmacy & Claims (Pharmacist)
+// ==============================================
+Instance: NgPractitioner-002
+InstanceOf: NgPractitioner
+Usage: #example
+Title: "Example Ng Practitioner (ePharmacy & Claims)"
+Description: "Pharmacist dispensing and submitting claims."
+* active = true
+* identifier[0].system = "https://pcn.gov.ng/practice-number"
+* identifier[0].value = "PCN-2025-0099"
+* name.family = "Okeke"
+* name.given = "Nkiru"
+* telecom[0].system = #phone
+* telecom[0].value = "+2348057788990"
+* telecom[1].system = #email
+* telecom[1].value = "nkiru.okeke@pharm.example.ng"
+* birthDate = 1990-06-24
+* qualification[0].code.text = "Registered Pharmacist"
+* qualification[0].period.start = 2018-07-01
+
+
+// ==============================================
+// NgPractitioner-003 — Medical Devices (CHEW / device operator)
+// ==============================================
+Instance: NgPractitioner-003
+InstanceOf: NgPractitioner
+Usage: #example
+Title: "Example Ng Practitioner (Medical Devices)"
+Description: "CHEW operating connected vitals devices."
+* active = true
+* identifier[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value = "CHEW-12347"
+* name.family = "Garba"
+* name.given = "Hauwa"
+* telecom[0].system = #phone
+* telecom[0].value = "+2348123456677"
+* telecom[1].system = #email
+* telecom[1].value = "hauwa.garba@example.org"
+* birthDate = 1995-11-09
+* qualification[0].code.text = "Community Health Extension Worker"
+* qualification[0].period.start = 2020-03-01

@@ -1,13 +1,13 @@
 CodeSystem: NGLanguagesCS
 Id: nigeria-languages
-Title: "NG‑eP Languages in Nigeria CS"
+Title: "NG Languages in Nigeria CS"
 Description: "This CodeSystem defines codes for major languages spoken across Nigeria."
-//* ^url = "http://nphcda.gov.ng/ig/fhir/CodeSystem/ng-languages"
+* ^url = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-languages"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
-* ^publisher = "NPHCDA"
+* ^publisher = "DHIN"
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 
 // Major Languages in Nigeria

@@ -1,11 +1,10 @@
-Profile: NgImmPractitionerRole
+Profile: NgPractitionerRole
 Parent: PractitionerRole
-Id: ng-imm-practitionerrole
-Title: "NG-Imm PractitionerRole"
+Id: ng-practitionerrole
+Title: "NG PractitionerRole"
 Description: """
-Defines the role(s) of a Nigerian healthcare practitioner in the immunization context.
-Links a Practitioner to an Organization, specifies their role, contact details, 
-and periods of service, with constraints to support the Nigeria Immunization IG.
+Defines the role(s) of a Nigerian healthcare practitioner context.
+Links a Practitioner to an Organization, specifies their role.
 """
 
 * practitioner 1..1 MS
@@ -37,9 +36,51 @@ and periods of service, with constraints to support the Nigeria Immunization IG.
 
 * healthcareService 0..* MS
 * healthcareService ^short = "Services provided"
-* healthcareService ^definition = "Types of immunization or related health services delivered in this role."
+* healthcareService ^definition = "Types of related health services delivered in this role."
 
 
 // Hide data elements not needed
 * availableTime 0..0
 * notAvailable 0..0
+
+// EXAMPLES 
+// ==============================================
+// NgPractitionerRole-001 — MNCH Referral
+// ==============================================
+Instance: NgPractitionerRole-001
+InstanceOf: NgPractitionerRole
+Usage: #example
+Title: "Example Ng PractitionerRole (MNCH Referral)"
+Description: "Obstetrician role for ANC referrals."
+* practitioner = Reference(Practitioner/NgPractitioner-001)
+* organization = Reference(Organization/NgOrganization-AsokoroHospital)
+* code[0].text = "Obstetrician / ANC Clinician"
+* period.start = 2024-01-01
+
+// ==============================================
+// NgPractitionerRole-002 — ePharmacy & Claims
+// ==============================================
+Instance: NgPractitionerRole-002
+InstanceOf: NgPractitionerRole
+Usage: #example
+Title: "Example Ng PractitionerRole (ePharmacy & Claims)"
+Description: "Pharmacist dispensing medications and processing claims."
+* practitioner = Reference(NgPractitioner/NgPractitioner-002)
+* organization = Reference(NgOrganization/NgOrganization-KanoCentralPharmacy)
+* code[0].text = "Pharmacist"
+* code[1].text = "Claims Submission Officer"
+* period.start = 2022-06-01
+
+// ==============================================
+// NgPractitionerRole-003 — Medical Devices Comms
+// ==============================================
+Instance: NgPractitionerRole-003
+InstanceOf: NgPractitionerRole
+Usage: #example
+Title: "Example Ng PractitionerRole (Medical Devices)"
+Description: "CHEW operating connected vitals devices."
+* practitioner = Reference(NgPractitioner/NgPractitioner-003)
+* organization = Reference(NgOrganization/NgOrganization-GwagwaladaPHC)
+* code[0].text = "Device Operator (CHEW)"
+* code[1].text = "Community Health Extension Worker"
+* period.start = 2023-03-15

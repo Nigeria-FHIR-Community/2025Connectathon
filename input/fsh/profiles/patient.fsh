@@ -29,7 +29,7 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[NationalIDNo].value ^short = "The NIN number of the client which is a unique 11 digit number"
 * identifier[NationalIDNo].system = "https://nimc.org/nin"
 * identifier[NationalIDNo].system ^short = "NIMC's identifier in the system"
-* identifier[NationalIDNo].type.coding.system = "https://www.dhin-hie.org/ig/ValueSet/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
 * identifier[NationalIDNo].type.coding.code = #NIN
 * identifier[NationalIDNo].type.coding.display = "National Identity Number of Client or Caregiver"
 
@@ -42,7 +42,7 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[MedicalRecordsNumber].system ^definition = "The URI system that identifies the assigning authority for the medical record number."
 * identifier[MedicalRecordsNumber].system ^example[0].label = "Example MRN system"
 * identifier[MedicalRecordsNumber].system ^example[0].valueUri = "http://asokoro.org/medicalrecord-no"
-* identifier[MedicalRecordsNumber].type.coding.system = "https://www.dhin-hie.org/ig/ValueSet/patient-identifier-cs"
+* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
 * identifier[MedicalRecordsNumber].type.coding.code = #MRN
 * identifier[MedicalRecordsNumber].type.coding.display = "Medical Record Number"
 
@@ -53,7 +53,7 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[BirthCertificateNo].system ^definition = "The URI system identifying the authority that assigns the birth certificate number."
 * identifier[BirthCertificateNo].system ^example[0].label = "Example Birth Certificate number system"
 * identifier[BirthCertificateNo].system ^example[0].valueUri = "http://npc.gov.ng/birthCertificate-no"
-* identifier[BirthCertificateNo].type.coding.system = "https://www.dhin-hie.org/ig/ValueSet/patient-identifier-cs"
+* identifier[BirthCertificateNo].type.coding.system = "http://npc.gov.ng/birthCertificate-no"
 * identifier[BirthCertificateNo].type.coding.code = #BIRTHCERT
 * identifier[BirthCertificateNo].type.coding.display = "Birth Certificate Number"
 
@@ -65,7 +65,7 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[PhoneNumber].system ^definition = "The URI system identifying the provider of the phone number."
 * identifier[PhoneNumber].system ^example[0].label = "Example Phone Number system"
 * identifier[PhoneNumber].system ^example[0].valueUri = "http://mtnonline.com/phone-no"
-* identifier[PhoneNumber].type.coding.system = "https://www.dhin-hie.org/ig/ValueSet/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "Primary Mobile Phone Number of the Client or CareGiver"
 
@@ -77,7 +77,7 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[InsuranceNumber].system ^definition = "The URI system identifying the provider of the insurance number."
 * identifier[InsuranceNumber].system ^example[0].label = "Example Insurance system"
 * identifier[InsuranceNumber].system ^example[0].valueUri = "http://nhia.gov.ng/insurance-no"
-* identifier[InsuranceNumber].type.coding.system = "https://www.dhin-hie.org/ig/ValueSet/patient-identifier-cs"
+* identifier[InsuranceNumber].type.coding.system = "http://nhia.gov.ng/insurance-no"
 * identifier[InsuranceNumber].type.coding.code = #INSUR
 * identifier[InsuranceNumber].type.coding.display = "The Insurance or HMO number of the client"
 
@@ -133,7 +133,7 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 
 * link 0..1
 * link.other ^short = "This link provides reference to the client's related persons"
-* link.other only Reference(NgSiblingRelatedPerson)
+* link.other only Reference(NgRelatedPerson)
 * link.type ^short = "The type of Link (eg. reference) client's related persons"
 * link.type 1..1
 
@@ -154,3 +154,139 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * modifierExtension 0..0
 * contact.modifierExtension 0..0
 * link.modifierExtension 0..0
+
+
+
+
+// Examples
+
+
+// ==============================================
+// NgPatient-001 — MNCH Referral (pregnant client)
+// ==============================================
+Instance: NgPatient-001
+InstanceOf: NgPatient
+Usage: #example
+Title: "Example Ng Patient (MNCH Referral)"
+Description: "Adult female referred for ANC; Lagos State, Ikeja LGA."
+* meta.lastUpdated = 2025-11-04T08:30:00Z
+// Identifiers (sliced)
+* identifier[NationalIDNo].system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.code = #NIN
+* identifier[NationalIDNo].value = "23456789012"
+* identifier[MedicalRecordsNumber].system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.code = #MRN
+* identifier[MedicalRecordsNumber].value = "ASO-2025-0098"
+* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].value = "08051234567"
+// Demographics
+* active = true
+* name.family = "Adebayo"
+* name.given[0] = "Kemi"
+* gender = #female
+* birthDate = 1995-02-14
+* address[0].line = "15 Ajayi Street"
+* address[0].city = "Ikeja"
+* address[0].district = "Ikeja"
+* address[0].state = "Lagos"
+// Caregiver contact
+* contact[0].name.family = "Adebayo"
+* contact[0].name.given[0] = "Funke"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "+2348059988776"
+* contact[0].relationship.text = "Mother"
+* contact[0].address.city = "Ikeja"
+* contact[0].address.district = "Ikeja"
+* contact[0].address.state = "Lagos"
+
+
+// ==============================================
+// NgPatient-002 — ePharmacy & Claims (insured)
+// ==============================================
+Instance: NgPatient-002
+InstanceOf: NgPatient
+Usage: #example
+Title: "Example Ng Patient (ePharmacy & Claims)"
+Description: "Adult male on chronic meds; insured with NHIA; Kano Municipal LGA."
+* meta.lastUpdated = 2025-11-04T09:10:00Z
+// Identifiers (sliced)
+* identifier[NationalIDNo].system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.code = #NIN
+* identifier[NationalIDNo].value = "12345678901"
+* identifier[MedicalRecordsNumber].system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding.code = #MRN
+* identifier[MedicalRecordsNumber].value = "KNH-2025-33445"
+* identifier[InsuranceNumber].system = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].type.coding.system = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].type.coding.code = #INSUR
+* identifier[InsuranceNumber].value = "NHIA-0011223344"
+* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].value = "08031234567"
+// Demographics
+* active = true
+* name.family = "Abdullahi"
+* name.given[0] = "Musa"
+* gender = #male
+* birthDate = 1987-07-06
+* address[0].line = "No. 8 Lafia Road"
+* address[0].city = "Kano"
+* address[0].district = "Kano Municipal"
+* address[0].state = "Kano"
+// Contact
+* contact[0].name.family = "Abdullahi"
+* contact[0].name.given[0] = "Zainab"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "+2348031112233"
+* contact[0].relationship.text = "Sister"
+* contact[0].address.city = "Kano"
+* contact[0].address.district = "Kano Municipal"
+* contact[0].address.state = "Kano"
+
+
+// ==============================================
+// NgPatient-003 — Childhood Immunization (under-5)
+// ==============================================
+Instance: NgPatient-003
+InstanceOf: NgPatient
+Usage: #example
+Title: "Example Ng Patient (Immunization)"
+Description: "Male child presenting for routine vaccination; FCT AMAC."
+* meta.lastUpdated = 2025-11-04T11:45:00Z
+// Identifiers (sliced)
+* identifier[BirthCertificateNo].system = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].type.coding.system = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].type.coding.code = #BIRTHCERT
+* identifier[BirthCertificateNo].value = "NPC-FCT-2019-004321"
+* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].value = "08123456789"
+// Demographics
+* active = true
+* name.family = "Bala"
+* name.given[0] = "Suleiman"
+* gender = #male
+* birthDate = 2019-09-05
+* address[0].line = "Plot 7, Mabushi"
+* address[0].city = "Abuja"
+* address[0].district = "Abuja Municipal Area Council"
+* address[0].state = "Federal Capital Territory (FCT)"
+// Caregiver contact
+* contact[0].name.family = "Bala"
+* contact[0].name.given[0] = "Aisha"
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "+2348122223344"
+* contact[0].relationship.text = "Mother"
+* contact[0].address.city = "Abuja"
+* contact[0].address.district = "Abuja Municipal Area Council"
+* contact[0].address.state = "Federal Capital Territory (FCT)"
+
+
