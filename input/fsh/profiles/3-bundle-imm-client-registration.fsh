@@ -4,7 +4,7 @@
 Profile: NgClientRegistrationBundle
 Parent: Bundle
 Id: ng-client-registration-bundle
-Title: "NG Immunization Client Registration Bundle"
+Title: "3-NG Immunization Client Registration Bundle"
 Description: "A simple collection Bundle for registering an immunization client. Requires exactly one NgPatient and optionally includes the registering NgOrganization. Designed for low-QA use in DHIN 2025 Connectathon."
 
 // Bundle basics

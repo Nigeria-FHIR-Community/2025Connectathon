@@ -4,7 +4,7 @@
 Profile: NgPrescriptionBundle
 Parent: Bundle
 Id: ng-prescription-bundle
-Title: "NG ePharmacy Prescription Bundle"
+Title: "5-NG ePharmacy Prescription Bundle"
 Description: "Transaction bundle carrying a prescription from prescriber to pharmacy. Must include 1 Patient, 1 Practitioner, 1 Organization (prescriber org), ≥1 Medication, and ≥1 MedicationRequest. Designed to keep QA noise low for DHIN 2025 Connectathon."
 
 // Bundle basics

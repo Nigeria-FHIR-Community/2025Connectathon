@@ -4,7 +4,7 @@
 Profile: NgTransactionBundle
 Parent: Bundle
 Id: ng-transaction-bundle
-Title: "NG HMO-Hospital Transaction Bundle"
+Title: "1-NG HMO-Hospital Transaction Bundle"
 Description: "Transaction bundle that MUST contains a Coverage and a Claim entry for HMO submissions."
 
 // Bundle basics

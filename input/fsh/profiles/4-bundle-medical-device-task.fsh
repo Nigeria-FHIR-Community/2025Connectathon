@@ -4,7 +4,7 @@
 Profile: NgTaskExecutionBundle
 Parent: Bundle
 Id: ng-task-execution-bundle
-Title: "NG Device Task Execution Bundle (Chemistry Analyzer)"
+Title: "4-NG Device Task Execution Bundle (Chemistry Analyzer)"
 Description: "Collection bundle for chemistry analyzer task execution. Includes Patient, performing Organization, Device, optional DeviceMetric/DeviceRequest, one Task, and ≥1 Observation (lab results). Kept lightweight to reduce QA."
 * ^status = #active
 
