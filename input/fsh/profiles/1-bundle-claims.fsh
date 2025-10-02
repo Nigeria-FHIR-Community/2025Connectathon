@@ -1,5 +1,5 @@
 // ==============================================
-// Profile: NgTransactionBundle (regenerated)
+// Profile: NgTransactionBundle
 // ==============================================
 Profile: NgTransactionBundle
 Parent: Bundle
