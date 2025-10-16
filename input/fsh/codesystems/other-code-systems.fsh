@@ -210,9 +210,9 @@ Description: "This CodeSystem IMMZ.C.DE14 defines placeholder codes to manage ph
 * #MDCN-45231 "1"
 * #MDCN-12345 "2"
 * #MDCN-12346 "3"
-* #MDCN-12347  "4"
-* #CHEW-12346 "3"
-* #CHEW-12347  "4"
+* #MDCN-12347 "4"
+* #CHEW-12346 "5"
+* #CHEW-12347 "6"
 
 //.... to be completed
 
@@ -236,10 +236,10 @@ Description: "This CodeSystem IMMZ.A.DE1 defines placeholder codes to manage Fac
 * #HCF-45231 "1"
 * #HCF-12342 "2"
 * #HCF-12343 "3"
-* #HCF-12344  "4"
-* #HCF-12345 "3"
-* #HCF-12346  "4"
-* #HCF-12347  "5"
+* #HCF-12344 "4"
+* #HCF-12345 "5"
+* #HCF-12346 "6"
+* #HCF-12347 "7"
 //.... to be completed
 
 

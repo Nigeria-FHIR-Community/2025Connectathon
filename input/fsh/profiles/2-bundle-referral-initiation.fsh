@@ -13,10 +13,14 @@ Description: "Bundle profile for a simple referral initiation from a PHC to a se
 * entry 4..* MS
 * entry.fullUrl 1..1 MS
 * entry.resource 1..1 MS
+* entry.search ..0
+* entry.response ..0
 
-// Slice entries by the profile of the inlined resource
-* entry ^slicing.discriminator[0].type = #profile
+// Slice entries by type + profile of the inlined resource (robust slicing)
+* entry ^slicing.discriminator[0].type = #type
 * entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.discriminator[+].type = #profile
+* entry ^slicing.discriminator[=].path = "resource"
 * entry ^slicing.rules = #open
 
 // Required slices: Patient, Requesting Organization, Receiving Organization, ServiceRequest
@@ -92,18 +96,21 @@ Description: "PHC raises a ServiceRequest to refer a maternal health patient to 
 * type = #collection
 
 // -- Entries (Patient, Requesting Org, Receiving Org, ServiceRequest) --
-* entry[0].fullUrl = "urn:uuid:pat-001"
-* entry[0].resource = NgPatient-Ref-001
+// Entry: Patient (Required)
+* entry[patient].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440010"
+* entry[patient].resource = NgPatient-Ref-001
 
-* entry[+].fullUrl = "urn:uuid:org-001"
-* entry[=].resource = NgOrganization-PHC-Ref
+// Entry: Requesting Organization (PHC) (Required)
+* entry[requesterOrg].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440011"
+* entry[requesterOrg].resource = NgOrganization-PHC-Ref
 
-* entry[+].fullUrl = "urn:uuid:org-002"
-* entry[=].resource = NgOrganization-Secondary-Ref
+// Entry: Receiving Organization (Secondary Hospital) (Required)
+* entry[recipientOrg].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440012"
+* entry[recipientOrg].resource = NgOrganization-Secondary-Ref
 
-* entry[+].fullUrl = "urn:uuid:sr-001"
-* entry[=].resource = NgServiceRequest-Referral-Init-001
-
+// Entry: ServiceRequest (Required)
+* entry[serviceRequest].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440013"
+* entry[serviceRequest].resource = NgServiceRequest-Referral-Init-001
 
 
 // =========================
@@ -125,7 +132,7 @@ Title: "Referred Patient (MNCH)"
 * active = true
 * address.line[0] = "12 PHC Road"
 * address.city = "Surulere"
-* address.district = "surulere"
+* address.district = "la-surulere"
 * address.state = "LA"
 
 
@@ -137,8 +144,8 @@ Instance: NgOrganization-PHC-Ref
 InstanceOf: NgOrganization
 Usage: #inline
 Title: "Idera Maternal PHC (Requesting)"
-* identifier[0].system = "https://hfr.health.gov.ng/facility-id"
-* identifier[0].value = "HCF-98765"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value = "#HCF-45231"
 * active = true
 * name = "Idera Maternal PHC"
 * type.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
@@ -146,7 +153,7 @@ Title: "Idera Maternal PHC (Requesting)"
 * type.coding[0].display = "PHC Center Level 2"
 * address.line[0] = "12 PHC Road"
 * address.city = "Surulere"
-* address.district = "surulere"
+* address.district = "la-surulere"
 * address.state = "LA"
 
 
@@ -158,7 +165,7 @@ Instance: NgOrganization-Secondary-Ref
 InstanceOf: NgOrganization
 Usage: #inline
 Title: "General Hospital Ikeja (Receiving)"
-* identifier[0].system = "https://hfr.health.gov.ng/facility-id"
+* identifier[0].system = ""https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry""
 * identifier[0].value = "HCF-12345"
 * active = true
 * name = "General Hospital Ikeja"
@@ -167,7 +174,7 @@ Title: "General Hospital Ikeja (Receiving)"
 * type.coding[0].display = "Secondary Hospital"
 * address.line[0] = "1 Hospital Avenue"
 * address.city = "Ikeja"
-* address.district = "ikeja"
+* address.district = "#la-ikeja"
 * address.state = "LA"
 
 
@@ -175,19 +182,21 @@ Title: "General Hospital Ikeja (Receiving)"
 // =========================
 // ServiceRequest (Referral) — NgServiceRequest
 // =========================
+
 Instance: NgServiceRequest-Referral-Init-001
 InstanceOf: NgServiceRequest
 Usage: #inline
 Title: "MNCH Referral to Secondary Hospital"
 Description: "Referral for ANC complication from PHC to OB/GYN at secondary hospital."
+* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/NgServiceRequest"
 * status = #active
 * intent = #order
 * code.text = "MNCH referral (ANC complication)"
-* subject = Reference(urn:uuid:pat-001)
+* subject = Reference(urn:uuid:550e8400-e29b-41d4-a716-446655440010)
 * authoredOn = "2025-10-02"
-* requester = Reference(urn:uuid:org-001)
-* performer[0] = Reference(urn:uuid:org-002)
+* requester = Reference(urn:uuid:550e8400-e29b-41d4-a716-446655440011)
+* performer[0] = Reference(urn:uuid:550e8400-e29b-41d4-a716-446655440012)
 * priority = #urgent
 * reasonCode[0].coding[0].system = "http://snomed.info/sct"
-* reasonCode[0].coding[0].code = #387712008
+* reasonCode[0].coding[0].code = #398254007
 * reasonCode[0].coding[0].display = "Pre-eclampsia"
