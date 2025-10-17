@@ -1,117 +1,96 @@
-// ==============================================
+// ====================================================================
 // Profile: NgReferralInitiationBundle
-// ==============================================
+// ====================================================================
 Profile: NgReferralInitiationBundle
 Parent: Bundle
 Id: ng-referral-initiation-bundle
 Title: "2-NG MNCH Referral Initiation Bundle"
-Description: "Bundle profile for a simple referral initiation from a PHC to a secondary hospital. Constrains a collection Bundle to include exactly one Patient, one requesting Organization (PHC), one receiving Organization (Secondary Hospital), and one ServiceRequest. Designed to align with 'bundle-referral-initiation' example."
+Description: "Bundle profile for a simple referral initiation from a PHC to a secondary hospital."
 
-// Bundle basics
 * type 1..1 MS
 * type = #collection (exactly)
-* entry 4..* MS
+* entry 4..4 MS
 * entry.fullUrl 1..1 MS
 * entry.resource 1..1 MS
 * entry.search ..0
 * entry.response ..0
 
-// Slice entries by type + profile of the inlined resource (robust slicing)
+* obeys ngref-uuid-fullurl and ngref-uuid-sr-refs and ngref-local-subject and ngref-local-requester and ngref-local-performer
+
 * entry ^slicing.discriminator[0].type = #type
 * entry ^slicing.discriminator[0].path = "resource"
 * entry ^slicing.discriminator[+].type = #profile
 * entry ^slicing.discriminator[=].path = "resource"
-* entry ^slicing.rules = #open
+* entry ^slicing.rules = #closed
+* entry ^slicing.ordered = true
 
-// Required slices: Patient, Requesting Organization, Receiving Organization, ServiceRequest
 * entry contains
     patient 1..1 MS and
     requesterOrg 1..1 MS and
     recipientOrg 1..1 MS and
     serviceRequest 1..1 MS
 
-// Patient slice
-* entry[patient].fullUrl ^short = "Local URN UUID used by ServiceRequest.subject"
+* entry[patient].fullUrl ^short = "Local URN used by ServiceRequest.subject (e.g., urn:pat-001)"
 * entry[patient].resource only NgPatient
 
-// Requesting Organization (PHC) slice
-* entry[requesterOrg].fullUrl ^short = "Local URN UUID used by ServiceRequest.requester"
+* entry[requesterOrg].fullUrl ^short = "Local URN used by ServiceRequest.requester (e.g., urn:org-001)"
 * entry[requesterOrg].resource only NgOrganization
+* entry[requesterOrg].resource.type.coding.code = #phc-center-l2
 
-// Receiving Organization (Secondary Hospital) slice
-* entry[recipientOrg].fullUrl ^short = "Local URN UUID used by ServiceRequest.performer"
+* entry[recipientOrg].fullUrl ^short = "Local URN used by ServiceRequest.performer (e.g., urn:org-002)"
 * entry[recipientOrg].resource only NgOrganization
+* entry[recipientOrg].resource.type.coding.code = #hospital
 
-// ServiceRequest slice
 * entry[serviceRequest].resource only NgServiceRequest
-* entry[serviceRequest].fullUrl ^short = "Local URN UUID for the referral request itself"
+* entry[serviceRequest].fullUrl ^short = "Local URN for the referral request (e.g., urn:sr-001)"
 
-// --------------------
-// Invariants (soft; to reduce QA friction)
-// --------------------
-
-// Prefer URN UUID fullUrls for intra-bundle references
 Invariant: ngref-uuid-fullurl
-Description: "Entries SHOULD use URN UUID fullUrls for local intra-bundle references."
+Description: "Entries SHOULD use custom URN fullUrls like urn:pat-001, urn:org-001, etc."
 Severity: #warning
-Expression: "entry.fullUrl.all(matches('^urn:uuid:'))"
+Expression: "entry.fullUrl.all(matches('^urn:(pat|org|sr)-[0-9]+$'))"
 
-// ServiceRequest.subject/requester/performer SHOULD be local URN UUIDs
 Invariant: ngref-uuid-sr-refs
-Description: "ServiceRequest subject/requester/performer references SHOULD be local URN UUIDs."
+Description: "ServiceRequest subject/requester/performer references SHOULD be custom URNs."
 Severity: #warning
-Expression: "entry.resource.ofType(ServiceRequest).subject.reference.all(matches('^urn:uuid:')) and entry.resource.ofType(ServiceRequest).requester.reference.all(matches('^urn:uuid:')) and entry.resource.ofType(ServiceRequest).performer.reference.all(matches('^urn:uuid:'))"
+Expression: "entry.resource.ofType(ServiceRequest).subject.reference.all(matches('^urn:(pat|org|sr)-[0-9]+$')) and entry.resource.ofType(ServiceRequest).requester.reference.all(matches('^urn:(pat|org|sr)-[0-9]+$')) and entry.resource.ofType(ServiceRequest).performer.reference.all(matches('^urn:(pat|org|sr)-[0-9]+$'))"
 
-// ServiceRequest.subject MUST resolve to a Patient entry in this Bundle
 Invariant: ngref-local-subject
 Description: "ServiceRequest.subject MUST reference a Patient present in the same Bundle."
 Severity: #error
 Expression: "entry.resource.ofType(ServiceRequest).subject.reference.all($this in entry.fullUrl)"
 
-// ServiceRequest.requester MUST resolve to an Organization entry in this Bundle
 Invariant: ngref-local-requester
 Description: "ServiceRequest.requester MUST reference an Organization present in the same Bundle."
 Severity: #error
 Expression: "entry.resource.ofType(ServiceRequest).requester.reference.all($this in entry.fullUrl)"
 
-// ServiceRequest.performer SHOULD resolve to an Organization entry in this Bundle
 Invariant: ngref-local-performer
 Description: "ServiceRequest.performer SHOULD reference an Organization present in the same Bundle."
 Severity: #warning
 Expression: "entry.resource.ofType(ServiceRequest).performer.reference.all($this in entry.fullUrl)"
 
-
-
-
 // ====================================================================
-// Bundle: Referral Initiation (PHC → Secondary Hospital)
-// Simple, minimal, FSH example using URN UUID local references
+// Bundle: Referral Initiation
 // ====================================================================
-
 Instance: bundle-referral-initiation
 InstanceOf: NgReferralInitiationBundle
 Usage: #example
 Title: "Referral Initiation from PHC to Secondary Hospital"
 Description: "PHC raises a ServiceRequest to refer a maternal health patient to a secondary hospital."
+* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-referral-initiation-bundle"
 * type = #collection
 
-// -- Entries (Patient, Requesting Org, Receiving Org, ServiceRequest) --
-// Entry: Patient (Required)
-* entry[patient].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440010"
+* entry[patient].fullUrl = "urn:pat-001"
 * entry[patient].resource = NgPatient-Ref-001
 
-// Entry: Requesting Organization (PHC) (Required)
-* entry[requesterOrg].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440011"
+* entry[requesterOrg].fullUrl = "urn:org-001"
 * entry[requesterOrg].resource = NgOrganization-PHC-Ref
 
-// Entry: Receiving Organization (Secondary Hospital) (Required)
-* entry[recipientOrg].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440012"
+* entry[recipientOrg].fullUrl = "urn:org-002"
 * entry[recipientOrg].resource = NgOrganization-Secondary-Ref
 
-// Entry: ServiceRequest (Required)
-* entry[serviceRequest].fullUrl = "urn:uuid:550e8400-e29b-41d4-a716-446655440013"
+* entry[serviceRequest].fullUrl = "urn:sr-001"
 * entry[serviceRequest].resource = NgServiceRequest-Referral-Init-001
-
 
 // =========================
 // Patient (NgPatient)
@@ -120,32 +99,38 @@ Instance: NgPatient-Ref-001
 InstanceOf: NgPatient
 Usage: #inline
 Title: "Referred Patient (MNCH)"
+* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/NgPatient"
 * meta.lastUpdated = "2025-10-02T09:00:00+01:00"
-* identifier[PhoneNumber].value = "08031234567"
-* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[MedicalRecordsNumber].type.coding[0].system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].type.coding[0].code = #MRN
+* identifier[MedicalRecordsNumber].type.coding[0].display = "Medical Record Number"
+* identifier[MedicalRecordsNumber].system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].value = "PAT-2025-001"
 * identifier[PhoneNumber].type.coding[0].system = "http://mtnonline.com/phone-no"
 * identifier[PhoneNumber].type.coding[0].code = #MOBILE
 * identifier[PhoneNumber].type.coding[0].display = "Primary Mobile Phone Number of the Client or CareGiver"
+* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].value = "+2348031234567"
 * name.given[0] = "Aisha"
 * name.family = "Okafor"
 * gender = #female
 * active = true
 * address.line[0] = "12 PHC Road"
 * address.city = "Surulere"
-* address.district = "la-surulere"
-* address.state = "LA"
-
-
+* address.district = #la-surulere
+* address.state = #LA
+* address.country = "NG"
 
 // =========================
-// Requesting Organization (PHC) — NgOrganization
+// Requesting Organization (PHC)
 // =========================
 Instance: NgOrganization-PHC-Ref
 InstanceOf: NgOrganization
 Usage: #inline
 Title: "Idera Maternal PHC (Requesting)"
+* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/NgOrganization"
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
-* identifier[0].value = "#HCF-45231"
+* identifier[0].value = "HCF-98765"
 * active = true
 * name = "Idera Maternal PHC"
 * type.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
@@ -153,19 +138,19 @@ Title: "Idera Maternal PHC (Requesting)"
 * type.coding[0].display = "PHC Center Level 2"
 * address.line[0] = "12 PHC Road"
 * address.city = "Surulere"
-* address.district = "la-surulere"
-* address.state = "LA"
-
-
+* address.district = #la-surulere
+* address.state = #LA
+* address.country = "NG"
 
 // =========================
-// Receiving Organization (Secondary Hospital) — NgOrganization
+// Receiving Organization (Secondary Hospital)
 // =========================
 Instance: NgOrganization-Secondary-Ref
 InstanceOf: NgOrganization
 Usage: #inline
 Title: "General Hospital Ikeja (Receiving)"
-* identifier[0].system = ""https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry""
+* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/NgOrganization"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier[0].value = "HCF-12345"
 * active = true
 * name = "General Hospital Ikeja"
@@ -174,15 +159,13 @@ Title: "General Hospital Ikeja (Receiving)"
 * type.coding[0].display = "Secondary Hospital"
 * address.line[0] = "1 Hospital Avenue"
 * address.city = "Ikeja"
-* address.district = "#la-ikeja"
-* address.state = "LA"
-
-
+* address.district = #la-ikeja
+* address.state = #LA
+* address.country = "NG"
 
 // =========================
-// ServiceRequest (Referral) — NgServiceRequest
+// ServiceRequest (Referral)
 // =========================
-
 Instance: NgServiceRequest-Referral-Init-001
 InstanceOf: NgServiceRequest
 Usage: #inline
@@ -191,11 +174,14 @@ Description: "Referral for ANC complication from PHC to OB/GYN at secondary hosp
 * meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/NgServiceRequest"
 * status = #active
 * intent = #order
+* code.coding[0].system = "http://snomed.info/sct"
+* code.coding[0].code = #416432009
+* code.coding[0].display = "Referral to obstetrician (procedure)"
 * code.text = "MNCH referral (ANC complication)"
-* subject = Reference(urn:uuid:550e8400-e29b-41d4-a716-446655440010)
-* authoredOn = "2025-10-02"
-* requester = Reference(urn:uuid:550e8400-e29b-41d4-a716-446655440011)
-* performer[0] = Reference(urn:uuid:550e8400-e29b-41d4-a716-446655440012)
+* subject = Reference(urn:pat-001)
+* authoredOn = "2025-10-02T09:00:00+01:00"
+* requester = Reference(urn:org-001)
+* performer[0] = Reference(urn:org-002)
 * priority = #urgent
 * reasonCode[0].coding[0].system = "http://snomed.info/sct"
 * reasonCode[0].coding[0].code = #398254007

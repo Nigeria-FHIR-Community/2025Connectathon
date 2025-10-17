@@ -19,7 +19,6 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier contains 
     NationalIDNo 0..1 MS and 
     MedicalRecordsNumber 0..1 MS and  
-    ConnectathonRecordsNumber 0..1 MS and 
     BirthCertificateNo 0..1 MS and 
     PhoneNumber 0..1 MS and
     InsuranceNumber 0..1 MS
@@ -191,8 +190,8 @@ Description: "Adult female referred for ANC; Lagos State, Ikeja LGA."
 * birthDate = 1995-02-14
 * address[0].line = "15 Ajayi Street"
 * address[0].city = "Ikeja"
-* address[0].district = "Ikeja"
-* address[0].state = "Lagos"
+* address[0].district = "la-ikeja" 
+* address[0].state = "LA"
 // Caregiver contact
 * contact[0].name.family = "Adebayo"
 * contact[0].name.given[0] = "Funke"
@@ -200,8 +199,8 @@ Description: "Adult female referred for ANC; Lagos State, Ikeja LGA."
 * contact[0].telecom[0].value = "+2348059988776"
 * contact[0].relationship.text = "Mother"
 * contact[0].address.city = "Ikeja"
-* contact[0].address.district = "Ikeja"
-* contact[0].address.state = "Lagos"
+* contact[0].address.district = "la-ikeja"
+* contact[0].address.state = "LA"
 
 
 // ==============================================
@@ -238,8 +237,8 @@ Description: "Adult male on chronic meds; insured with NHIA; Kano Municipal LGA.
 * birthDate = 1987-07-06
 * address[0].line = "No. 8 Lafia Road"
 * address[0].city = "Kano"
-* address[0].district = "Kano Municipal"
-* address[0].state = "Kano"
+* address[0].district = "kn-kano-municipal"
+* address[0].state = "KN"
 // Contact
 * contact[0].name.family = "Abdullahi"
 * contact[0].name.given[0] = "Zainab"
@@ -247,8 +246,8 @@ Description: "Adult male on chronic meds; insured with NHIA; Kano Municipal LGA.
 * contact[0].telecom[0].value = "+2348031112233"
 * contact[0].relationship.text = "Sister"
 * contact[0].address.city = "Kano"
-* contact[0].address.district = "Kano Municipal"
-* contact[0].address.state = "Kano"
+* contact[0].address.district = "kn-kano-municipal"
+* contact[0].address.state = "KN"
 
 
 // ==============================================
@@ -277,8 +276,8 @@ Description: "Male child presenting for routine vaccination; FCT AMAC."
 * birthDate = 2019-09-05
 * address[0].line = "Plot 7, Mabushi"
 * address[0].city = "Abuja"
-* address[0].district = "Abuja Municipal Area Council"
-* address[0].state = "Federal Capital Territory (FCT)"
+* address[0].district = "fc-municipal"
+* address[0].state = "FC"
 // Caregiver contact
 * contact[0].name.family = "Bala"
 * contact[0].name.given[0] = "Aisha"
@@ -286,7 +285,7 @@ Description: "Male child presenting for routine vaccination; FCT AMAC."
 * contact[0].telecom[0].value = "+2348122223344"
 * contact[0].relationship.text = "Mother"
 * contact[0].address.city = "Abuja"
-* contact[0].address.district = "Abuja Municipal Area Council"
-* contact[0].address.state = "Federal Capital Territory (FCT)"
+* contact[0].address.district = "fc-municipal"
+* contact[0].address.state = "FC"
 
 
