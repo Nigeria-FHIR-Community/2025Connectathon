@@ -149,7 +149,10 @@ Instance: NgOrganization-Secondary-Ref
 InstanceOf: NgOrganization
 Usage: #inline
 Title: "General Hospital Ikeja (Receiving)"
+<<<<<<< HEAD
 * meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/NgOrganization"
+=======
+>>>>>>> 791a93abf8d6b0e63e3085e66257e0f1639534f1
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier[0].value = "HCF-12345"
 * active = true
