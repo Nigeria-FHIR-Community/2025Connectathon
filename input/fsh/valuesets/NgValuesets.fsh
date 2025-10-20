@@ -189,7 +189,7 @@ Description: "All ICD11 vaccine codes (DE1–DE29)."
 * ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-vaccine-icd11-vs"
 * ^experimental = false
 * ^status = #active
-* include codes from system $icd11
+* include codes from system NGVaccineLibraryICD11CS
 
 
 // SNOMED ValueSet
@@ -200,7 +200,7 @@ Description: "All SNOMED vaccine codes (DE1–DE29)."
 * ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-vaccine-sct-vs"
 * ^experimental = false
 * ^status = #active
-* include codes from system $sct
+* include codes from system NGVaccineLibrarySNOMEDCS
 
 
 
@@ -223,15 +223,16 @@ Description: "ValueSet for CarePlan.activity.detail.code (demo)."
 * ^status = #active
 * include codes from system NgCarePlanActivityCS
 
-ValueSet: NgDeviceMetricCategoryVS
+/* ValueSet: NgDeviceMetricCategoryVS
 Id: ng-device-metric-category-vs
 Title: "NG DeviceMetric Category VS"
 Description: "ValueSet for DeviceMetric.category."
 * ^status = #active
 * ^version = "0.1.0"
+* ^experimental = false
 // Prefer the official THO CS; include local CS for flexibility
 * include codes from system http://terminology.hl7.org/CodeSystem/metric-category
-* include codes from system NgDeviceMetricCategoryCS
+* include codes from system NgDeviceMetricCategoryCS */
 
 
 ValueSet: NGDeviceIdentifierVS
@@ -257,9 +258,23 @@ Description: "ValueSet including local provenance activity codes (anonymize, de-
 * ^experimental = false
 * ^publisher = "FMoHSW / DHIN 2025 Connectathon"
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
-
-/* Pull all codes from the CodeSystem */
+//Pull all codes from the CodeSystem
 * include codes from system NgProvenanceActivityCS
+
+
+
+ValueSet: NgBundleIdentifierVS
+Id: ng-bundle-identifier-vs
+Title: "NG Bundle Identifier Codes"
+Description: "ValueSet including all local bundle identifier codes for DHIN 2025 Connectathon use cases (immunization, MNCH referral, claims, device data, etc.)."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-bundle-identifier-vs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^experimental = false
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+// Pull all codes from the CodeSystem
+* include codes from  system NgBundleIdentifierCS
 
 
 

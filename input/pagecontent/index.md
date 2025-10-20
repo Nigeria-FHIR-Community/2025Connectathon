@@ -1,7 +1,6 @@
 
 
 #### Revision History
-<div><img src="input/images/dhin-favicon.ico" width="50"/></div>
 
 <table class="table table-hover table-bordered table-striped">
     <thead>

@@ -381,3 +381,31 @@ Description: "Local CodeSystem defining provenance activity codes for data lifec
 * #NULLIFY "Nullify" "Activity that invalidates or renders data non-usable without deleting the record."
 * #LA "Legally Authenticated" "Activity confirming legal authentication of a record (e.g., signed or witnessed by authorized person)."
 
+
+
+
+CodeSystem: NgBundleIdentifierCS
+Id: ng-bundle-identifier-cs
+Title: "NG Bundle Identifier Codes"
+Description: "Local CodeSystem defining standard bundle identifiers for DHIN 2025 Connectathon use cases, including claim transactions, immunization submissions, MNCH referrals, and device data exchanges."
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-bundle-identifier-cs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^caseSensitive = false
+* ^content = #complete
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^experimental = false
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+
+// -------------------- Bundle Identifier Codes --------------------
+* #BND-0001 "Immunization Submission Bundle" "Bundle containing patient, encounter, and immunization resources for reporting vaccination events."
+* #BND-0002 "MNCH Referral Bundle" "Bundle for maternal and child health referral workflows between facilities."
+* #BND-0003 "Claims Transaction Bundle" "Bundle for HMO–hospital claims submission containing Coverage and Claim entries."
+* #BND-0004 "Pharmacy Dispense Bundle" "Bundle for dispensing medication under ePharmacy workflows."
+* #BND-0005 "Lab Result Bundle" "Bundle containing DiagnosticReport and Observation results transmitted from analyzer or LIMS."
+* #BND-0006 "Device Task Execution Bundle" "Bundle used for recording medical device metrics and related task execution details."
+* #BND-0007 "AEFI Reporting Bundle" "Bundle for Adverse Event Following Immunization (AEFI) reports with patient, encounter, and observation details."
+* #BND-0008 "Defaulter Tracing Bundle" "Bundle for tracking and updating missed immunization or follow-up cases."
+* #BND-0009 "CarePlan Synchronization Bundle" "Bundle for synchronizing patient care plans across connected systems."
+* #BND-0010 "Document Exchange Bundle" "Bundle representing a signed clinical document or summary shared between organizations."
+

@@ -7,7 +7,6 @@ Transaction bundle for Nigerian HMO-Hospital claims submissions. This bundle MUS
 a Coverage and a Claim entry, representing the minimum dataset required for claims processing.
 Designed for supporting cross-organizational healthcare claims processing in Nigeria's DHIN ecosystem.
 """
-
 * ^version = "1.0.0"
 * ^date = "2025-10-15"
 * ^publisher = "DHIN 2025 Connectathon"
@@ -29,18 +28,17 @@ Designed for supporting cross-organizational healthcare claims processing in Nig
 * entry ^definition = "An entry resource included in the claims transaction bundle. Must contain at least one Coverage and one Claim."
 * entry ^comment = "Must contain at least one Coverage resource and one Claim resource. Additional supporting resources (Patient, Practitioner, Organization, etc.) may be included as needed."
 
-* entry ^slicing.discriminator[0].type = #type
+* entry ^slicing.discriminator[0].type = #profile
 * entry ^slicing.discriminator[=].path = "resource"
 * entry ^slicing.discriminator[+].type = #profile
 * entry ^slicing.discriminator[=].path = "resource"
 * entry ^slicing.rules = #open
 * entry ^short = "Entry resource in the bundle"
 * entry ^definition = "An entry resource included in the bundle resource."
-* entry ^comment = "Must contain the transaction and a Patient resource."
+* entry ^comment = "Must contain the Claims and Coverage resource."
 * entry.fullUrl 1.. 
 * entry.search ..0
-* entry.request ..0
-* entry.response ..0
+
 
 * entry contains
     coverage 1..1 MS and
@@ -48,13 +46,10 @@ Designed for supporting cross-organizational healthcare claims processing in Nig
 
 * entry[coverage].resource 1..1
 * entry[coverage].resource only NgCoverage
-* entry[coverage].request.method = #POST
-* entry[coverage].request.url = "Coverage"
 
 * entry[claim].resource 1..1
 * entry[claim].resource only NgClaim
-* entry[claim].request.method = #POST
-* entry[claim].request.url = "Claim"
+
 
 
 
@@ -74,11 +69,12 @@ Usage: #example
 /* --- Coverage entry (POST /Coverage) --- */
 * entry[coverage].fullUrl = "urn:uuid:7e6d5f40-2d3b-4a0e-9d2a-1e3e3f6a8b9c"
 
+* entry[coverage].resource.resourceType = "Coverage"
 * entry[coverage].resource.status = #active
-* entry[coverage].resource.type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-type"
-* entry[coverage].resource.type.coding[0].code = #EHCPOL
-* entry[coverage].resource.beneficiary = Reference(NgPatient/patient-001)
-* entry[coverage].resource.payor[0] = Reference(NgOrganization/organization-001)
+* entry[coverage].resource.type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
+* entry[coverage].resource.type.coding[0].code = #televisit
+* entry[coverage].resource.beneficiary = Reference(NgPatient-001)
+* entry[coverage].resource.payor[0] = Reference(NgOrganization-001)
 * entry[coverage].resource.period.start = "2025-01-01"
 * entry[coverage].resource.period.end = "2025-12-31"
 * entry[coverage].resource.class[0].type = http://terminology.hl7.org/CodeSystem/coverage-class#plan
@@ -87,13 +83,14 @@ Usage: #example
 
 /* --- Claim entry (POST /Claim) --- */
 * entry[claim].fullUrl = "urn:uuid:5f4a6c21-3b9a-4c82-9a55-2b1d5e7f0c12"
+* entry[claim].resource.resourceType = "Claim"
 * entry[claim].resource.status = #active
 * entry[claim].resource.type = http://terminology.hl7.org/CodeSystem/claim-type#professional
 * entry[claim].resource.use = #claim
 * entry[claim].resource.created = "2025-10-15T09:25:00+01:00"
-* entry[claim].resource.patient = Reference(NgPatient/patient-001)
-* entry[claim].resource.insurer = Reference(NgOrganization/organization-hmo)
-* entry[claim].resource.provider = Reference(NgOrganization/org-hospital)
+* entry[claim].resource.patient = Reference(NgPatient-001)
+* entry[claim].resource.insurer = Reference(NgOrganization-002)
+* entry[claim].resource.provider = Reference(NgOrganization-001)
 * entry[claim].resource.priority = #urgent
 
 /* Insurance link to the Coverage entry via local (UUID) reference */

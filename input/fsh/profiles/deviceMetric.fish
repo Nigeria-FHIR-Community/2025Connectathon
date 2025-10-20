@@ -13,7 +13,7 @@ Description: "Minimal DeviceMetric profile for the 2025 Connectathon (medical de
 * measurementPeriod 0..1
 
 // Bindings
-* category from http://hl7.org/fhir/ValueSet/metric-category (required) // built-in ValueSet
+* category from NgDeviceMetricCategoryVS (required) // built-in ValueSet
 * type from http://hl7.org/fhir/ValueSet/devicemetric-type (preferred) // placeholder binding to LOINC
 
 
@@ -27,7 +27,7 @@ Title: "Example NG DeviceMetric"
 Description: "A minimal DeviceMetric example."
 * type.text = "Oxygen saturation"
 * unit.text = #4
-* category = #measurement
 * measurementPeriod.repeat.frequency = 1
 * measurementPeriod.repeat.period = 1
 * measurementPeriod.repeat.periodUnit = #s
+* category = http://hl7.org/fhir/metric-category#measurement
