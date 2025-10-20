@@ -7,6 +7,7 @@ Description: "This CodeSystem defines codes for major languages spoken across Ni
 * ^content = #complete
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
+* ^experimental = false
 * ^publisher = "DHIN"
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 

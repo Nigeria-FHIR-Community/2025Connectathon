@@ -6,16 +6,12 @@ Description: "A composite Observation profile capturing state of health, underly
 
 * status 1..1
 * status = #final
-
 * category 1..1
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
-
 * code 1..1
 * code = $loinc#30525-0 "Age"        // Use LOINC Age as the main analyte
-
 * subject 1..1
 * subject only Reference(NgPatient)
-
 * effective[x] 1..1
 
 // Force age to be expressed via components (not Observation.value[x])
@@ -55,24 +51,18 @@ Description: "A composite Observation profile capturing state of health, underly
 
 
 // ---- ageInWeeks ----
-* component[ageInWeeks].code = $ngAgeComp#age-in-weeks "Age in weeks"
+* component[ageInWeeks].code = $ngAgeComp#wk "Age in weeks"
 * component[ageInWeeks].value[x] only Quantity
-* component[ageInWeeks].valueQuantity.system = $ucum
-* component[ageInWeeks].valueQuantity.code = #wk
 * component[ageInWeeks].valueQuantity.unit = "week"
 
 // ---- ageInMonths ----
-* component[ageInMonths].code = $ngAgeComp#age-in-months "Age in months"
+* component[ageInMonths].code = $ngAgeComp#mn "Months (mo)"
 * component[ageInMonths].value[x] only Quantity
-* component[ageInMonths].valueQuantity.system = $ucum
-* component[ageInMonths].valueQuantity.code = #mo
 * component[ageInMonths].valueQuantity.unit = "month"
 
 // ---- ageInYears ----
-* component[ageInYears].code = $ngAgeComp#age-in-years "Age in years"
+* component[ageInYears].code = $ngAgeComp#yr "Years (y)"
 * component[ageInYears].value[x] only Quantity
-* component[ageInYears].valueQuantity.system = $ucum
-* component[ageInYears].valueQuantity.code = #yr
 * component[ageInYears].valueQuantity.unit = "year"
 
 
@@ -89,20 +79,20 @@ Description: "Pregnancy & HIV status with age in years for NgPatient-001."
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#30525-0 "Age"
-* subject = Reference(Patient/NgPatient-001)
+* subject = Reference(NgPatient-001)
 * effectiveDateTime = 2025-11-04T10:00:00Z
+* performer = Reference(NgPractitioner-001)
 
 // Components (use named slices only)
 * component[ageInYears].valueQuantity.value = 30
 * component[ageInYears].valueQuantity.system = "http://unitsofmeasure.org"
-* component[ageInYears].valueQuantity.code = #yr
 * component[ageInYears].valueQuantity.unit = "year"
 
-* component[pregnancyStatus].valueCodeableConcept.coding[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-pregnancy-status"
+* component[pregnancyStatus].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-pregnancy-status"
 * component[pregnancyStatus].valueCodeableConcept.coding[0].code = #pregnant
 * component[pregnancyStatus].valueCodeableConcept.coding[0].display = "Pregnant"
 
-* component[hivStatus].valueCodeableConcept.coding[0].system = "http://nphcda.gov.ng/ig/CodeSystem/nigeria-hiv-status"
+* component[hivStatus].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-hiv-status"
 * component[hivStatus].valueCodeableConcept.coding[0].code = #unknown
 * component[hivStatus].valueCodeableConcept.coding[0].display = "Unknown"
 
@@ -118,15 +108,16 @@ Description: "HIV status with age in years for NgPatient-002."
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#30525-0 "Age"
-* subject = Reference(Patient/NgPatient-002)
+* subject = Reference(NgPatient-002)
 * effectiveDateTime = 2025-11-04T10:05:00Z
+* performer = Reference(NgPractitioner-002)
 
 * component[ageInYears].valueQuantity.value = 38
 * component[ageInYears].valueQuantity.system = "http://unitsofmeasure.org"
-* component[ageInYears].valueQuantity.code = #yr
+//* component[ageInYears].valueQuantity.code = #yr
 * component[ageInYears].valueQuantity.unit = "year"
 
-* component[hivStatus].valueCodeableConcept.coding[0].system = "http://nphcda.gov.ng/ig/CodeSystem/nigeria-hiv-status"
+* component[hivStatus].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-hiv-status"
 * component[hivStatus].valueCodeableConcept.coding[0].code = #negative
 * component[hivStatus].valueCodeableConcept.coding[0].display = "Negative"
 
@@ -142,12 +133,13 @@ Description: "Age in months and birth weight for NgPatient-003."
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#30525-0 "Age"
-* subject = Reference(Patient/NgPatient-003)
+* subject = Reference(NgPatient-003)
 * effectiveDateTime = 2025-11-04T10:10:00Z
+* performer = Reference(NgPractitioner-001)
 
 * component[ageInMonths].valueQuantity.value = 74
 * component[ageInMonths].valueQuantity.system = "http://unitsofmeasure.org"
-* component[ageInMonths].valueQuantity.code = #mo
+//* component[ageInMonths].valueQuantity.code = #mo
 * component[ageInMonths].valueQuantity.unit = "month"
 
 * component[birthWeight].valueQuantity.value = 3200

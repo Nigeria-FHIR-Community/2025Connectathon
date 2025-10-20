@@ -32,11 +32,11 @@ Description: "EOB for fully approved pharmacy claim."
 * outcome = #complete
 * created = 2025-11-04T12:46:00Z
 
-* patient = Reference(NgPatient/NgPatient-002)
-* insurer = Reference(NgOrganization/NgOrganization-002)
-* provider = Reference(NgOrganization/NgOrganization-001)
+* patient = Reference(NgPatient-002)
+* insurer = Reference(NgOrganization-002)
+* provider = Reference(NgOrganization-001)
 * claim = Reference(Claim/NgClaim-001)
-* claimResponse = Reference(NgClaimResponse/NgClaimResponse-001)
+* claimResponse = Reference(NgClaimResponse-001)
 
 // Optional benefit period (plan year)
 * benefitPeriod.start = 2025-01-01
@@ -44,7 +44,7 @@ Description: "EOB for fully approved pharmacy claim."
 
 // Insurance used for this adjudication
 * insurance[0].focal = true
-* insurance[0].coverage = Reference(NgCoverage/NgCoverage-001)
+* insurance[0].coverage = Reference(NgCoverage-001)
 
 // Totals and payment (mirrors ClaimResponse)
 * total[0].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit "Benefit Amount"
@@ -71,11 +71,11 @@ Description: "EOB documenting partial approval and member copay."
 * outcome = #partial
 * created = 2025-11-04T12:51:00Z
 
-* patient = Reference(NgPatient/NgPatient-002)
-* insurer = Reference(NgOrganization/NHIA)
-* provider = Reference(NgOrganization/NgOrganization-KanoCentralPharmacy)
-* claim = Reference(NgClaim/NgClaim-001)
-* claimResponse = Reference(NgClaimResponse/NgClaimResponse-002)
+* patient = Reference(NgPatient-002)
+* insurer = Reference(NgOrganization-001)
+* provider = Reference(NgOrganization-001)
+* claim = Reference(NgClaim-001)
+* claimResponse = Reference(NgClaimResponse-002)
 
 // Optional benefit period (plan year)
 * benefitPeriod.start = 2025-01-01
@@ -83,7 +83,7 @@ Description: "EOB documenting partial approval and member copay."
 
 // Insurance used for this adjudication
 * insurance[0].focal = true
-* insurance[0].coverage = Reference(NgCoverage/NgCoverage-001)
+* insurance[0].coverage = Reference(NgCoverage-001)
 
 // Totals and payment (mirrors ClaimResponse)
 * total[0].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit "Benefit Amount"

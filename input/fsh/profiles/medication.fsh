@@ -20,8 +20,8 @@ InstanceOf: NgMedication
 Usage: #example
 Title: "Example Ng Medication (Amoxicillin 500 mg Capsule)"
 Description: "Amoxicillin hard gelatin capsule, 500 mg."
-* identifier.system = "https://www.dhin-hie.org/ig/medication-id"
-* identifier.value  = "AMX500CAP"
+* identifier.system = $ngVacCS
+* identifier.value  = #IMMZ.Z.DE5  "Oral Polio Vaccine (OPV 1)"
 * code.text = "Amoxicillin 500 mg capsule"
 * form.text = "Capsule"
 // Ingredient strength: 500 mg per 1 (unitless)
@@ -46,8 +46,8 @@ InstanceOf: NgMedication
 Usage: #example
 Title: "Example Ng Medication (Paracetamol Oral Suspension 250 mg/5 mL)"
 Description: "Paracetamol (Acetaminophen) oral suspension, pediatric."
-* identifier.system = "https://www.dhin-hie.org/ig/medication-id"
-* identifier.value  = "PCM250-5ML-SUSP"
+* identifier.system = $ngVacCS
+* identifier.value  = #IMMZ.Z.DE5  "Oral Polio Vaccine (OPV 1)"
 * code.text = "Paracetamol oral suspension 250 mg/5 mL"
 * form.text = "Oral Suspension"
 // Ingredient strength: 250 mg per 5 mL
@@ -71,8 +71,8 @@ InstanceOf: NgMedication
 Usage: #example
 Title: "Example Ng Medication (Insulin 100 IU/mL Injection)"
 Description: "Short-acting insulin solution for injection."
-* identifier.system = "https://www.dhin-hie.org/ig/medication-id"
-* identifier.value  = "INS-100IU-ML"
+* identifier.system = $ngVacCS
+* identifier.value  = #IMMZ.Z.DE5  "Oral Polio Vaccine (OPV 1)"
 * code.text = "Insulin (short-acting) 100 IU/mL"
 * form.text = "Injection Solution"
 // Ingredient strength: 100 International Units per 1 mL

@@ -35,7 +35,7 @@ InstanceOf: NgRelatedPerson
 Usage: #example
 Title: "Example Ng RelatedPerson (Brother)"
 Description: "Older brother of NgPatient-003."
-* patient = Reference(NgPatient/NgPatient-003)
+* patient = Reference(NgPatient-003)
 * name[0].given[0] = "Ibrahim"
 * name[0].family = "Abdullahi"
 * gender = #male
@@ -54,7 +54,7 @@ InstanceOf: NgRelatedPerson
 Usage: #example
 Title: "Example Ng RelatedPerson (Sister)"
 Description: "Younger sister of NgPatient-003."
-* patient = Reference(NgPatient/NgPatient-003)
+* patient = Reference(NgPatient-003)
 * name[0].given[0] = "Maryam"
 * name[0].family = "Abdullahi"
 * gender = #female
@@ -73,7 +73,7 @@ InstanceOf: NgRelatedPerson
 Usage: #example
 Title: "Example Ng RelatedPerson (Brother)"
 Description: "Brother of NgPatient-001."
-* patient = Reference(NgPatient/NgPatient-001)
+* patient = Reference(NgPatient-001)
 * name[0].given[0] = "Chinedu"
 * name[0].family = "Okafor"
 * gender = #male

@@ -29,10 +29,10 @@ Title: "Example Ng Encounter (MNCH ANC)"
 Description: "Antenatal care visit at Asokoro District Hospital."
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
-* subject = Reference(NgPatient/NgPatient-001)
-* participant[0].individual = Reference(NgPractitioner/NgPractitioner-001)
-* location.location = Reference(NgLocation/NgLocation-002)
-* serviceProvider = Reference(NgOrganization/NgOrganization-003)
+* subject = Reference(NgPatient-001)
+* participant[0].individual = Reference(NgPractitioner-001)
+* location.location = Reference(NgLocation-002)
+* serviceProvider = Reference(NgOrganization-003)
 * period.start = 2025-11-04T09:00:00Z
 * period.end   = 2025-11-04T09:35:00Z
 
@@ -47,10 +47,10 @@ Title: "Example Ng Encounter (ePharmacy Dispense)"
 Description: "Outpatient pharmacy encounter at Kano Central Hospital Pharmacy."
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
-* subject = Reference(NgPatient/NgPatient-002)
-* participant[0].individual = Reference(NgPractitioner/NgPractitioner-002)
-* location.location = Reference(NgLocation/NgLocation-003)
-* serviceProvider = Reference(NgOrganization/NgOrganization-002)
+* subject = Reference(NgPatient-002)
+* participant[0].individual = Reference(NgPractitioner-002)
+* location.location = Reference(NgLocation-003)
+* serviceProvider = Reference(NgOrganization-002)
 * period.start = 2025-11-04T12:15:00Z
 * period.end   = 2025-11-04T12:25:00Z
 
@@ -65,10 +65,10 @@ Title: "Example Ng Encounter (Immunization Visit)"
 Description: "RI session at Gwagwalada Model PHC."
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
-* subject = Reference(NgPatient/NgPatient-003)
-* participant[0].individual = Reference(NgPractitioner/NgPractitioner-003)
-* location.location = Reference(NgLocation/NgLocation-002)
-* serviceProvider = Reference(NgOrganization/NgOrganization-001)
+* subject = Reference(NgPatient-003)
+* participant[0].individual = Reference(NgPractitioner-003)
+* location.location = Reference(NgLocation-002)
+* serviceProvider = Reference(NgOrganization-001)
 * period.start = 2025-11-04T10:05:00Z
 * period.end   = 2025-11-04T10:20:00Z
 

@@ -27,10 +27,10 @@ Description: "Full approval of pharmacy claim for NgPatient-002."
 * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/claim-type"
 * type.coding[0].code = #pharmacy
 * use = #claim
-* patient = Reference(NgPatient/NgPatient-002)
+* patient = Reference(NgPatient-002)
 * created = 2025-11-04T12:45:00Z
-* insurer = Reference(NgOrganization/NgOrganization-001)
-* request = Reference(NgClaim/NgClaim-001)
+* insurer = Reference(NgOrganization-001)
+* request = Reference(NgClaim-001)
 * outcome = #complete
 * disposition = "Approved in full."
 
@@ -50,7 +50,7 @@ Description: "Full approval of pharmacy claim for NgPatient-002."
 * payment.amount.value = 15000
 * payment.amount.currency = #NGN
 * payment.date = 2025-11-05
-* payment.type = #capitation
+* payment.type = http://terminology.hl7.org/CodeSystem/ex-paymenttype#complete
 
 
 // ==============================================
@@ -65,10 +65,10 @@ Description: "Partial approval; copay applied per plan rules."
 * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/claim-type"
 * type.coding[0].code = #pharmacy
 * use = #claim
-* patient = Reference(Patient/NgPatient-002)
+* patient = Reference(NgPatient-002)
 * created = 2025-11-04T12:50:00Z
-* insurer = Reference(Organization/NHIA)
-* request = Reference(Claim/NgClaim-001)
+* insurer = Reference(NgOrganization-001)
+* request = Reference(NgClaim-001)
 * outcome = #partial
 * disposition = "Partially approved; copay applied."
 
@@ -94,5 +94,5 @@ Description: "Partial approval; copay applied per plan rules."
 * payment.amount.value = 12000
 * payment.amount.currency = #NGN
 * payment.date = 2025-11-05
-* payment.type = #copay
+* payment.type = http://terminology.hl7.org/CodeSystem/ex-paymenttype#partial
 

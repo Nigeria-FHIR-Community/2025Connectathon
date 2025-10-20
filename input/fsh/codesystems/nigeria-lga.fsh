@@ -8,6 +8,7 @@ Description: "This CodeSystem defines LGA codes and names mapped to their respec
 * ^caseSensitive = true
 * ^hierarchyMeaning = #grouped-by
 * ^publisher = "NPHCDA"
+* ^experimental = false
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 
 // LGAs in Nigeria and their codes
@@ -78,7 +79,7 @@ Description: "This CodeSystem defines LGA codes and names mapped to their respec
 * #ak-nsit-ibom "nsit Ibom" "Nsit Ibom LGA"
 * #ak-nsit-ubium "nsit ubiom" "Nsit Ubiom LGA"
 * #ak-obot-akara "obot akara" "Obot Akara LGA"
-* #ak-okobo "okobo" " okobo LGA"
+* #ak-okobo "okobo" "okobo LGA"
 * #ak-onna "onna" "Onna LGA"
 * #ak-oron "oron" "Oron LGA"
 * #ak-oruk-anam "oruk anam" "Oruk Anam LGA"

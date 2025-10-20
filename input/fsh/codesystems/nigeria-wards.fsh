@@ -2,10 +2,11 @@ CodeSystem: NGWardsCS
 Id: nigeria-wards
 Title: "NG Administrative Wards CS"
 Description: "This CodeSystem defines ward codes and names mapped to their respective Local Government Areas (LGAs) in Nigeria."
-* ^url = "http://sandbox.dhin-hie.org/ig/CodeSystem/ng-administrative-ward"
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-wards"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
+* ^experimental = false
 * ^hierarchyMeaning = #grouped-by
 * ^publisher = "DHIN"
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"

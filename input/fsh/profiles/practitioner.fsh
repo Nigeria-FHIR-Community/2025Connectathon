@@ -47,8 +47,8 @@ Usage: #example
 Title: "Example Ng Practitioner (MNCH)"
 Description: "Obstetrician supporting ANC referrals."
 * active = true
-* identifier[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
-* identifier[0].value = "MDCN-45231"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value = #MDCN-45231
 * name.family = "Adebayo"
 * name.given = "Kehinde"
 * telecom[0].system = #phone
@@ -70,7 +70,7 @@ Title: "Example Ng Practitioner (ePharmacy & Claims)"
 Description: "Pharmacist dispensing and submitting claims."
 * active = true
 * identifier[0].system = "https://pcn.gov.ng/practice-number"
-* identifier[0].value = "PCN-2025-0099"
+* identifier[0].value = #PCN-45231
 * name.family = "Okeke"
 * name.given = "Nkiru"
 * telecom[0].system = #phone
@@ -91,8 +91,8 @@ Usage: #example
 Title: "Example Ng Practitioner (Medical Devices)"
 Description: "CHEW operating connected vitals devices."
 * active = true
-* identifier[0].system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
-* identifier[0].value = "CHEW-12347"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value = #CHEW-12347
 * name.family = "Garba"
 * name.given = "Hauwa"
 * telecom[0].system = #phone

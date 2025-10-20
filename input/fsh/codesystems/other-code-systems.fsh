@@ -190,6 +190,92 @@ Description: "This CodeSystem defines list of options for uniquely Identifting a
 * #BIRTHCERT "birthcert" "Birth certificate number"
 * #IMMNO "immunizationo" "Immunization Number"
 
+CodeSystem: NGIdentifierCS2
+Id: patient-identifier-cs2
+Title: "NG Client Identifier CS"
+Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
+* ^url = "https://nimc.org/nin"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
+* ^hierarchyMeaning = #is-a
+* ^publisher = "DHIN"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* #NIN	"nin" "National Identity Number"
+
+
+CodeSystem: NGIdentifierCS3
+Id: patient-identifier-cs3
+Title: "NG Client Identifier CS"
+Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
+* ^url = "http://asokoro.org/medicalrecord-no"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
+* ^hierarchyMeaning = #is-a
+* ^publisher = "DHIN"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* #MRN	"mrn" "Medical Record Number"
+* #IMMNO "immunizationo" "Immunization Number"
+
+
+CodeSystem: NGIdentifierCS4
+Id: patient-identifier-cs4
+Title: "NG Client Identifier CS"
+Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
+* ^url = "http://mtnonline.com/phone-no"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
+* ^hierarchyMeaning = #is-a
+* ^publisher = "DHIN"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* #MOBILE	"mobile" "Phone Number"
+
+
+CodeSystem: NGIdentifierCS5
+Id: patient-identifier-cs5
+Title: "NG Client Identifier CS"
+Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
+* ^url = "http://nhia.gov.ng/insurance-no"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
+* ^hierarchyMeaning = #is-a
+* ^publisher = "DHIN"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* #MOBILE	"mobile" "Phone Number"
+* #INSUR "insurance no" "Insurance or HMO number"
+
+CodeSystem: NGIdentifierCS6
+Id: patient-identifier-cs6
+Title: "NG Client Identifier CS"
+Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
+* ^url = "http://npc.gov.ng/birthCertificate-no"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* ^experimental = false
+* ^hierarchyMeaning = #is-a
+* ^publisher = "DHIN"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* #BIRTHCERT "birthcert" "Birth certificate number"
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -219,6 +305,29 @@ Description: "This CodeSystem IMMZ.C.DE14 defines placeholder codes to manage ph
 
 
 
+CodeSystem: NGPCNCS
+Id: nigeria-pcn
+Title: "NG Practitioner Identifier CS"
+Description: "This CodeSystem defines placeholder codes to manage Pharmcists' identifiers in Nigeria."
+* ^url = "https://pcn.gov.ng/practice-number"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = true
+* ^hierarchyMeaning = #grouped-by
+* ^experimental = false
+* ^publisher = "DHIN"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+// Sample Codes for testing
+* #PCN-45231 "1"
+* #PCN-12345 "2"
+
+
+
+
+
+
+
+
 CodeSystem: NGFacilityIdentifierCS
 Id: nigeria-facility-registry
 Title: "NG Facility Identifier CS"
@@ -240,6 +349,8 @@ Description: "This CodeSystem IMMZ.A.DE1 defines placeholder codes to manage Fac
 * #HCF-12345 "5"
 * #HCF-12346 "6"
 * #HCF-12347 "7"
+* #CLM-2025-0001 "Claims Institution"
+* #NHIA-0011223344 "Insurance Organization"
 //.... to be completed
 
 
@@ -280,6 +391,7 @@ Description: "Activities for CarePlan.activity.detail.code aligned to DHIN 2025 
 * ^version = "0.1.0"
 * ^caseSensitive = true
 * ^content = #complete
+* ^experimental = false
 * #anc-counsel "ANC Counseling" "Antenatal education/counseling."
 * #bp-monitor "BP Monitoring" "Blood pressure monitoring at home."
 * #immunize "Immunization Administration" "Administer scheduled vaccine."
@@ -301,6 +413,7 @@ Description: "Local mirror of DeviceMetric.category. Consider using 'http://term
 * ^version = "0.1.0"
 * ^caseSensitive = true
 * ^content = #complete
+* ^experimental = false
 * #measurement "Measurement" "Metric represents a measured value from a device."
 * #setting "Setting" "Metric represents a device setting that affects behavior."
 * #calculation "Calculation" "Metric represents a calculated/derived value."
@@ -313,7 +426,8 @@ CodeSystem: NGHivStatusCS
 Id: nigeria-hiv-status
 Title: "NG Client HIV status CS"
 Description: "This CodeSystem IMMZ.C.DE31 defines list of options for HIV status of a Client"
-* ^url = "http://nphcda.gov.ng/ig/CodeSystem/nigeria-hiv-status"
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-hiv-status"
+
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
@@ -325,3 +439,6 @@ Description: "This CodeSystem IMMZ.C.DE31 defines list of options for HIV status
 * #positive	"Positive" "The Client is HIV positive"
 * #negative 	"Negative" "The Client is HIV Negative"
 * #unknown	"Unknown" "The Client does not know their HIV status"
+
+
+

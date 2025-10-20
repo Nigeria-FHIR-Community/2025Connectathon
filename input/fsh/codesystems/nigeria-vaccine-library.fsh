@@ -124,12 +124,12 @@ Usage: #definition
 Title: "NG Local Vaccine Codes → ICD-11"
 Description: "Maps local dose-labelled DE codes to ICD-11 vaccine concepts (antigen/product level)."
 * url = $cmLocalToICD11
-* name = "Local-icd11"
+* name = "Local_icd11"
 * experimental = false
 * status = #active
-* sourceUri = $ngVacLocalVS
+* sourceUri = $ngVacVS
 * targetUri = $ngicd11VS
-* group[0].source = $ngVacLocalVS
+* group[0].source = $ngVacVS
 * group[0].target = $ngicd11VS
 
 // BCG
@@ -258,10 +258,10 @@ Title: "NG Local Vaccine Codes → SNOMED CT"
 Description: "Maps local dose-labelled DE codes to SNOMED CT vaccine concepts (antigen/product level)."
 * url = $cmLocalToSCT
 * status = #active
-* name = "Local-Snomed"
-* sourceUri = $ngVacLocalVS
+* name = "Local_Snomed"
+* sourceUri = $ngVacVS
 * targetUri = $ngsctVS
-* group[0].source = $ngVacLocalVS
+* group[0].source = $ngVacVS
 * group[0].target = $ngsctVS
 * experimental = false
 

@@ -23,12 +23,12 @@ Usage: #example
 Title: "Example Ng Coverage (NHIA Self Coverage)"
 Description: "Active NHIA coverage for NgPatient-002."
 * status = #active
-* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-type"
-* type.coding[0].code = #EHCPOL
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
+* type.coding[0].code = #emergency
 * type.text = "NHIA Plan A"
-* subscriber = Reference(Patient/NgPatient-002)
-* beneficiary = Reference(Patient/NgPatient-002)
-* payor[0] = Reference(Organization/NHIA)
+* subscriber = Reference(NgPatient-002)
+* beneficiary = Reference(NgPatient-002)
+* payor[0] = Reference(NgOrganization-001)
 * period.start = 2025-01-01
 * period.end   = 2025-12-31
 
@@ -43,11 +43,11 @@ Usage: #example
 Title: "Example Ng Coverage (NHIA Dependent Coverage)"
 Description: "Active NHIA dependent coverage for NgPatient-003; subscriber is NgPatient-002."
 * status = #active
-* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-type"
-* type.coding[0].code = #EHCPOL
+* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
+* type.coding[0].code = #televisit
 * type.text = "NHIA Family Plan"
-* subscriber = Reference(NgPatient/NgPatient-002)
-* beneficiary = Reference(NgPatient/NgPatient-003)
-* payor[0] = Reference(NgOrganization/NgOrganization-002)
+* subscriber = Reference(NgPatient-002)
+* beneficiary = Reference(NgPatient-003)
+* payor[0] = Reference(NgOrganization-002)
 * period.start = 2025-01-01
 * period.end   = 2025-12-31

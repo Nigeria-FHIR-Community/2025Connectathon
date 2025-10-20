@@ -163,7 +163,7 @@ Id: ng-facility-identifier-cs
 Title: "NG Clinical Status VS"
 Description: "The outcome of the reaction"
 * ^status = #active
-* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-facility-identifier-cs"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-facility-identifier-vs"
 * ^experimental = false
 * include codes from system NGFacilityIdentifierCS
 
@@ -173,7 +173,7 @@ ValueSet: NGVaccineLocalVS
 Id: ng-vaccine-local-vs
 Title: "NG Vaccine Local ValueSet"
 Description: "All local vaccine codes (DE1–DE29)."
-* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-vaccine-local-vs"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/vaccine-library"
 * ^experimental = false
 * ^status = #active
 * include codes from system NGVaccineLocalCS
@@ -231,3 +231,124 @@ Description: "ValueSet for DeviceMetric.category."
 // Prefer the official THO CS; include local CS for flexibility
 * include codes from system http://terminology.hl7.org/CodeSystem/metric-category
 * include codes from system NgDeviceMetricCategoryCS
+
+
+ValueSet: NGDeviceIdentifierVS
+Id: nigeria-device-identifier-vs
+Title: "NG Electromechanical Medical Device Identifier VS"
+Description: "ValueSet selecting the 50 hypothetical electromechanical medical device identifiers (leaf concepts only) from NGDeviceIdentifierCS. Excludes category/group nodes."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-device-identifier"
+* ^status = #active
+* ^version = "1.0.0"
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^experimental = false
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* include codes from system NGDeviceIdentifierCS
+
+
+
+// ===========================================================
+// 1) All medications (full CodeSystem passthrough)
+// ===========================================================
+ValueSet: NgATCAllMedicationsVS
+Id: ng-atc-all-medications-vs
+Title: "NG Local ATC — All Medications"
+Description: "All local ATC-style medication codes used across MNCH referral, claims, prescription, and immunization."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-all-medications-vs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^experimental = false
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* include codes from system NgATCLocalMedicationCS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* // ===========================================================
+// 2) Immunization (EPI) — Vaccines (J07-*)
+// ===========================================================
+ValueSet: NgATCVaccinesVS
+Id: ng-atc-vaccines-vs
+Title: "NG Local ATC — Vaccines (EPI)"
+Description: "Subset of local ATC codes for routine immunization vaccines (EPI)."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-vaccines-vs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^experimental = false
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* compose.include.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-atc-medication-cs"
+* compose.include.filter.property = "code"
+* compose.include.filter.op = #regex
+* compose.include.filter.value = "^J07-"
+
+// ===========================================================
+// 3) Core MNCH Rx/Dispense set (common outpatient therapeutics)
+//    J01- (antibiotics), A07- (diarrhea), N02- (analgesic), R03- (airways),
+//    P01-/P02- (malaria/deworming), G03- (FP), A10- (diabetes in pregnancy)
+// ===========================================================
+ValueSet: NgATCMNCHCoreRxVS
+Id: ng-atc-mnch-core-rx-vs
+Title: "NG Local ATC — MNCH Core Prescription/Dispense"
+Description: "Common MNCH outpatient therapeutics for prescription/dispense and claims."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-mnch-core-rx-vs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^experimental = false
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* compose.include.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-atc-medication-cs"
+* compose.include.filter[0].property = "code"
+* compose.include.filter[0].op = #regex
+* compose.include.filter[0].value = "^(J01-|A07-|N02-|R03-|P01-|P02-|G03-|A10-)"
+
+// ===========================================================
+// 4) Antenatal supplements & antianemics (A11-, A12-, B03-)
+// ===========================================================
+ValueSet: NgATCAntenatalSupplementsVS
+Id: ng-atc-antenatal-supplements-vs
+Title: "NG Local ATC — Antenatal Supplements & Antianemics"
+Description: "Antenatal vitamins, iron/folate, calcium, and antianemics for MNCH referral/prescription."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-antenatal-supplements-vs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^experimental = false
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* compose.include.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-atc-medication-cs"
+* compose.include.filter.property = "code"
+* compose.include.filter.op = #regex
+* compose.include.filter.value = "^(A11-|A12-|B03-)"
+
+// ===========================================================
+// 5) Claims bundles / kits (combined line items)
+//    Match local bundle codes ending with -KIT or -COMB
+// ===========================================================
+ValueSet: NgATCClaimsBundlesVS
+Id: ng-atc-claims-bundles-vs
+Title: "NG Local ATC — Claims Bundles/Kits"
+Description: "Local bundle/kit concepts for claims (e.g., ORS+Zinc, Ampicillin+Gentamicin regimen)."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-claims-bundles-vs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^experimental = false
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+* compose.include.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-atc-medication-cs"
+* compose.include.filter.property = "code"
+* compose.include.filter.op = #regex
+* compose.include.filter.value = "(-KIT$|-COMB$)"
+
+ */

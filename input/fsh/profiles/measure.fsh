@@ -28,13 +28,12 @@ Description: "A profile on the Measure resource used to define indicators within
 * date ^short = "The date this measure profile or version was published."
 * publisher 0..1 MS
 * publisher ^short = "The organization or person responsible for publishing the measure."
-* group 1..* MS
-* group.population 2..* MS
-* group.population.code 1..1
+* group 0..* MS
+* group.population 0..* MS
+* group.population.code 0..1
 * group.population.code ^short = "The type of population for the measure (e.g., numerator, denominator, initial-population)."
-* group.population.description 1..1 MS
+* group.population.description 0..1 MS
 * group.population.description ^short = "Description of the population involved in the indicator."
-
 
 * library 0..1 MS
 * library ^short = "Reference to the logic library (e.g., CQL or ELM) defining computation rules for the measure."
@@ -50,9 +49,10 @@ InstanceOf: NgMeasure
 Usage: #example
 Title: "Example Ng Measure (Dispense within 48h)"
 Description: "Proportion of ePrescriptions dispensed within 48 hours of prescription."
-* identifier.system = "https://www.dhin-hie.org/ig/measure-id"
-* identifier.value  = "erx-dispense-48h"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value  = #HCF-12341
 * status = #active
+* experimental = false
 * name = "DispenseWithin48h"
 * title = "eRx Dispense within 48 Hours"
 * description = "Measures the proportion of electronic prescriptions dispensed within 48 hours."
@@ -89,9 +89,10 @@ InstanceOf: NgMeasure
 Usage: #example
 Title: "Example Ng Measure (Counseling Documented)"
 Description: "Proportion of dispensations with counseling documented."
-* identifier.system = "https://www.dhin-hie.org/ig/measure-id"
-* identifier.value  = "erx-counseling-documented"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value  = #HCF-12343
 * status = #active
+* experimental = false
 * name = "CounselingDocumented"
 * title = "Medication Counseling Documented"
 * description = "Measures documentation of patient counseling during dispensing events."
@@ -126,9 +127,10 @@ InstanceOf: NgMeasure
 Usage: #example
 Title: "Example Ng Measure (Claim Approval Rate)"
 Description: "Proportion of submitted claims that are approved."
-* identifier.system = "https://www.dhin-hie.org/ig/measure-id"
-* identifier.value  = "claims-approval-rate"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value  = #HCF-12345
 * status = #active
+* experimental = false
 * name = "ClaimApprovalRate"
 * title = "Claim Approval Rate"
 * description = "Measures the proportion of claims adjudicated as approved out of all submitted claims."

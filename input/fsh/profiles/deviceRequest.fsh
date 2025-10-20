@@ -37,11 +37,11 @@ Title: "Example NG DeviceRequest"
 Description: "A minimal DeviceRequest for a pulse oximeter for home monitoring."
 * status = #active
 * intent = #order
-* codeReference = Reference(NgDevice/NgDevice-001) // or use codeCodeableConcept.text
-* subject = Reference(NgPatient/NgPatient-001)
+* codeReference = Reference(NgDevice-001) // or use codeCodeableConcept.text
+* subject = Reference(NgPatient-001)
 * occurrenceDateTime = 2025-11-12T09:00:00Z
-* requester = Reference(NgPractitioner/NgPractitioner-001)
-* performer = Reference(NgOrganization/NgOrganization-001)
-* reasonCode[+] = http://snomed.info/sct#301867009 "Monitoring of oxygen saturation"
-* insurance[+] = Reference(NgCoverage/NgCoverage-001)
+* requester = Reference(NgPractitioner-001)
+* performer = Reference(NgOrganization-001)
+* reasonCode[+] = http://snomed.info/sct#250774007 "Inspired oxygen concentration"
+* insurance[+] = Reference(NgCoverage-001)
 * note[0].text = "Provide patient education on device use."

@@ -9,7 +9,7 @@ Description: "A MedicationRequest profile with some of core elements for demonst
 * eventHistory MS
 * basedOn MS
 * intent MS
-* groupIdentifier MS
+* groupIdentifier 0..1
 * subject MS
 * instantiatesCanonical MS
 * courseOfTherapyType MS
@@ -35,10 +35,9 @@ InstanceOf: NgMedicationRequest
 Usage: #example
 Title: "Example Ng MedicationRequest (Amoxicillin)"
 Description: "Order for Amoxicillin 500 mg capsule x30."
-* identifier.system = "https://www.dhin-hie.org/ig/prescription-id"
-* identifier.value  = "RX-2025-0001"
-* groupIdentifier.system = "https://www.dhin-hie.org/ig/prescription-group"
-* groupIdentifier.value  = "GRP-2025-1001"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-all-medications-vs"
+* identifier.value  = #J01-AMOX-CAP
+
 
 * status = #active
 * intent = #order
@@ -46,12 +45,12 @@ Description: "Order for Amoxicillin 500 mg capsule x30."
 * category[0].coding[0].code = #outpatient
 * reportedBoolean = false
 
-* subject = Reference(NgPatient/NgPatient-002)
-* medicationReference = Reference(NgMedication/NgMedication-001)
-* requester = Reference(NgPractitioner/NgPractitioner-002)
+* subject = Reference(NgPatient-002)
+* medicationReference = Reference(NgMedication-001)
+* requester = Reference(NgPractitioner-002)
 
 * reasonCode[0].text = "Acute bacterial sinusitis"
-* supportingInformation[0] = Reference(NgObservation/NgObservation-001) // optional but MS-friendly
+* supportingInformation[0] = Reference(NgObservation-001) // optional but MS-friendly
 
 * courseOfTherapyType.text = "Acute (10 days)"
 * dosageInstruction[0].text = "Take 1 capsule orally every 8 hours for 10 days."
@@ -74,10 +73,9 @@ InstanceOf: NgMedicationRequest
 Usage: #example
 Title: "Example Ng MedicationRequest (Paracetamol Suspension)"
 Description: "Order for Paracetamol 250 mg/5 mL, 100 mL."
-* identifier.system = "https://www.dhin-hie.org/ig/prescription-id"
-* identifier.value  = "RX-2025-0002"
-* groupIdentifier.system = "https://www.dhin-hie.org/ig/prescription-group"
-* groupIdentifier.value  = "GRP-2025-2001"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-all-medications-vs"
+* identifier.value  = #N02-PARA-SYR
+
 
 * status = #active
 * intent = #order
@@ -85,9 +83,9 @@ Description: "Order for Paracetamol 250 mg/5 mL, 100 mL."
 * category[0].coding[0].code = #outpatient
 * reportedBoolean = false
 
-* subject = Reference(NgPatient/NgPatient-003)
-* medicationReference = Reference(NgMedication/NgMedication-002)
-* requester = Reference(NgPractitioner/NgPractitioner-003)
+* subject = Reference(NgPatient-003)
+* medicationReference = Reference(NgMedication-002)
+* requester = Reference(NgPractitioner-003)
 
 * reasonCode[0].text = "Fever"
 * courseOfTherapyType.text = "Symptomatic short course"
@@ -101,7 +99,7 @@ Description: "Order for Paracetamol 250 mg/5 mL, 100 mL."
 * dispenseRequest.expectedSupplyDuration.unit  = "days"
 * dispenseRequest.expectedSupplyDuration.system = "http://unitsofmeasure.org"
 * dispenseRequest.expectedSupplyDuration.code  = #d
-* dispenseRequest.performer = Reference(NgOrganization/NgOrganization-003)
+* dispenseRequest.performer = Reference(NgOrganization-001)
 
 
 // ==============================================
@@ -112,10 +110,10 @@ InstanceOf: NgMedicationRequest
 Usage: #example
 Title: "Example MedicationRequest (Insulin 100 IU/mL)"
 Description: "Order for Insulin 100 IU/mL vial, ongoing therapy."
-* identifier.system = "https://www.dhin-hie.org/ig/prescription-id"
-* identifier.value  = "RX-2025-0003"
-* groupIdentifier.system = "https://www.dhin-hie.org/ig/prescription-group"
-* groupIdentifier.value  = "GRP-2025-3001"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-all-medications-vs"
+* identifier.value  = #A10-INSULIN-NPH
+//* groupIdentifier.system = "https://www.dhin-hie.org/ig/prescription-group"
+//* groupIdentifier.value  = "GRP-2025-3001"
 
 * status = #active
 * intent = #order
@@ -123,9 +121,9 @@ Description: "Order for Insulin 100 IU/mL vial, ongoing therapy."
 * category[0].coding[0].code = #community
 * reportedBoolean = false
 
-* subject = Reference(NgPatient/NgPatient-001)
-* medicationReference = Reference(NgMedication/NgMedication-003)
-* requester = Reference(NgPractitioner/NgPractitioner-001)
+* subject = Reference(NgPatient-001)
+* medicationReference = Reference(NgMedication-003)
+* requester = Reference(NgPractitioner-001)
 
 * reasonCode[0].text = "Type 1 diabetes mellitus"
 * courseOfTherapyType.text = "Long-term (chronic) therapy"
@@ -140,4 +138,4 @@ Description: "Order for Insulin 100 IU/mL vial, ongoing therapy."
 * dispenseRequest.expectedSupplyDuration.unit  = "days"
 * dispenseRequest.expectedSupplyDuration.system = "http://unitsofmeasure.org"
 * dispenseRequest.expectedSupplyDuration.code  = #d
-* dispenseRequest.performer = Reference(NgOrganization/NgOrganization-002)
+* dispenseRequest.performer = Reference(NgOrganization-002)

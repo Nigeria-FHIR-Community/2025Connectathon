@@ -30,7 +30,9 @@ Description: "Nigeria Measure Report Profile"
 * group.measureScore.value ^short = "The calculated score of the measure / indicator which is being reported on"
 * group.measureScore.unit  0..1 
 * group.measureScore.unit ^short = "The unit of  calculated score of the measure / indicator which is being reported on"
- 
+* group.population 0..1
+* group.population ^short = "The population "
+
 
  // EXAMPLES
  // ==============================================
@@ -41,20 +43,21 @@ InstanceOf: NgMeasureReport
 Usage: #example
 Title: "Example Ng MeasureReport (DispenseWithin48h)"
 Description: "Summary report of ePrescriptions dispensed within 48 hours."
-* identifier.system = "https://www.dhin-hie.org/ig/measurereport-id"
-* identifier.value  = "erx-dispense-48h-2025-09"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value  = #HCF-12345
 * status = #complete
 * type = #summary
 * date = "2025-10-05T08:00:00+01:00"
-* reporter = Reference(NgPractitioner/NgPractitioner-002)
+* reporter = Reference(NgPractitioner-002)
 * period.start = 2025-09-01
 * period.end   = 2025-09-30
 * measure = Canonical(NgMeasure-001)
 // Minimal score
-* group[0].measureScore.value = 78
-* group[0].measureScore.unit  = "%"
+* group[0].measureScore.value = 0.78
 * group[0].measureScore.system = "http://unitsofmeasure.org"
-* group[0].measureScore.code  = #%
+* group[0].measureScore.code  = #numerator
+* group[0].population[0].code = http://terminology.hl7.org/CodeSystem/measure-population#initial-population
+* group[0].population[0].count = 23433
 
 
 // ==============================================
@@ -65,18 +68,17 @@ InstanceOf: NgMeasureReport
 Usage: #example
 Title: "Example Ng MeasureReport (CounselingDocumented)"
 Description: "Summary report of dispensing events with counseling documented."
-* identifier.system = "https://www.dhin-hie.org/ig/measurereport-id"
-* identifier.value  = "erx-counseling-documented-2025-10"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value  = #HCF-12343
 * status = #complete
 * type = #summary
 * date = "2025-11-02T09:15:00+01:00"
-* reporter = Reference(NgPractitioner/NgPractitioner-001)
+* reporter = Reference(NgPractitioner-001)
 * period.start = 2025-10-01
 * period.end   = 2025-10-31
 * measure = Canonical(NgMeasure-002)
 // Minimal score
-* group[0].measureScore.value = 64
-* group[0].measureScore.unit  = "%"
+* group[0].measureScore.value = 0.64
 * group[0].measureScore.system = "http://unitsofmeasure.org"
 * group[0].measureScore.code  = #%
 
@@ -89,17 +91,16 @@ InstanceOf: NgMeasureReport
 Usage: #example
 Title: "Example Ng MeasureReport (ClaimApprovalRate)"
 Description: "Summary report of approved claims over all submitted claims."
-* identifier.system = "https://www.dhin-hie.org/ig/measurereport-id"
-* identifier.value  = "claims-approval-rate-2025-Q3"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value  = #HCF-12344
 * status = #complete
 * type = #summary
 * date = "2025-10-07T11:00:00+01:00"
-* reporter = Reference(NgPractitioner/NgPractitioner-003)
+* reporter = Reference(NgPractitioner-003)
 * period.start = 2025-07-01
 * period.end   = 2025-09-30
 * measure = Canonical(NgMeasure-003)
 // Minimal score
-* group[0].measureScore.value = 82
-* group[0].measureScore.unit  = "%"
+* group[0].measureScore.value = 0.82
 * group[0].measureScore.system = "http://unitsofmeasure.org"
 * group[0].measureScore.code  = #%

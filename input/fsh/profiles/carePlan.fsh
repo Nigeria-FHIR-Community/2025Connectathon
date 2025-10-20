@@ -33,9 +33,9 @@ Title: "Example NG CarePlan"
 Description: "Minimal example of a CarePlan using NgCarePlan."
 * status = #active
 * intent = #plan
-* subject = Reference(NgPatient/NgPatient-001)
+* subject = Reference(NgPatient-001)
 * category[+] = NgCarePlanCategoryCS#mnch "MNCH"
 * period.start = 2025-11-11
 * period.end = 2025-12-31
-* goal = Reference(NgGoal/NgGoal-001)
+* goal = Reference(NgGoal-001)
 

@@ -42,11 +42,11 @@ Description: "Minimal Task to coordinate a referral based on a ServiceRequest."
 * status = #in-progress
 * intent = #order
 * code.text = "Coordinate referral"
-* focus = Reference(NgServiceRequest/NgServiceRequest-001)
-* for = Reference(NgPatient/NgPatient-001)
+* focus = Reference(NgServiceRequest-001)
+* for = Reference(NgPatient-001)
 * authoredOn = 2025-11-11T10:00:00Z
-* requester = Reference(NgPractitioner/NgPractitioner-001)
-* owner = Reference(NgPractitionerRole/NgPractitionerRole-001)
+* requester = Reference(NgPractitioner-001)
+* owner = Reference(NgPractitionerRole-001)
 * priority = #routine
 * input[0].type.text = "Notes"
 * input[0].valueString = "Patient contacted; appointment set for 12 Nov 2025."

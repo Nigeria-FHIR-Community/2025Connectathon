@@ -43,10 +43,10 @@ InstanceOf: NgProvenance
 Usage: #example
 Title: "Provenance for MNCH Referral Creation"
 Description: "Provenance indicating that a practitioner authored the MNCH referral request."
-* target[0] = Reference(NgServiceRequest/NgServiceRequest-Referral-Init-001)
+* target[0] = Reference(NgServiceRequest-001)
 * recorded = "2025-10-02T09:35:00+01:00"
 * activity.coding[0].system = "http://terminology.hl7.org/CodeSystem/provenance-activity-type"
 * activity.coding[0].code = #create
 * activity.coding[0].display = "create"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
-* agent[0].who = Reference(NgPractitioner/NgPractitioner-AishaLawal)
+* agent[0].who = Reference(NgPractitioner-002)

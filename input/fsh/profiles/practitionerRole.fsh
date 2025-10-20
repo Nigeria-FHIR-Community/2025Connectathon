@@ -52,8 +52,8 @@ InstanceOf: NgPractitionerRole
 Usage: #example
 Title: "Example Ng PractitionerRole (MNCH Referral)"
 Description: "Obstetrician role for ANC referrals."
-* practitioner = Reference(Practitioner/NgPractitioner-001)
-* organization = Reference(Organization/NgOrganization-AsokoroHospital)
+* practitioner = Reference(NgPractitioner-001)
+* organization = Reference(NgOrganization-001)
 * code[0].text = "Obstetrician / ANC Clinician"
 * period.start = 2024-01-01
 
@@ -65,8 +65,8 @@ InstanceOf: NgPractitionerRole
 Usage: #example
 Title: "Example Ng PractitionerRole (ePharmacy & Claims)"
 Description: "Pharmacist dispensing medications and processing claims."
-* practitioner = Reference(NgPractitioner/NgPractitioner-002)
-* organization = Reference(NgOrganization/NgOrganization-KanoCentralPharmacy)
+* practitioner = Reference(NgPractitioner-002)
+* organization = Reference(NgOrganization-001)
 * code[0].text = "Pharmacist"
 * code[1].text = "Claims Submission Officer"
 * period.start = 2022-06-01
@@ -79,8 +79,8 @@ InstanceOf: NgPractitionerRole
 Usage: #example
 Title: "Example Ng PractitionerRole (Medical Devices)"
 Description: "CHEW operating connected vitals devices."
-* practitioner = Reference(NgPractitioner/NgPractitioner-003)
-* organization = Reference(NgOrganization/NgOrganization-GwagwaladaPHC)
+* practitioner = Reference(NgPractitioner-003)
+* organization = Reference(NgOrganization-001)
 * code[0].text = "Device Operator (CHEW)"
 * code[1].text = "Community Health Extension Worker"
 * period.start = 2023-03-15

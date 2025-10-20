@@ -29,7 +29,6 @@ Description: "Minimal HealthcareService profile for the 2025 Connectathon (servi
 * notAvailable 0..*
 * availabilityExceptions 0..1
 * endpoint 0..*
-* endpoint only Reference(Endpoint)
 
 // Light terminology hints (non-restrictive)
 * category from http://hl7.org/fhir/ValueSet/service-category (preferred)
@@ -46,11 +45,11 @@ Usage: #example
 Title: "Example NG HealthcareService"
 Description: "Minimal healthcare service (ANC clinic)."
 * active = true
-* providedBy = Reference(NgOrganization/NgOrganization-001)
+* providedBy = Reference(NgOrganization-001)
 * name = "Asokoro District Hospital ANC Clinic"
 * category[0].text = "Maternal health"
 * type[0].text = "Antenatal care"
-* location[0] = Reference(NgLocation/NgLocation-001)
+* location[0] = Reference(NgLocation-001)
 * telecom[0].system = #phone
 * telecom[0].value = "+234-800-123-4567"
 * availableTime[0].daysOfWeek[0] = #mon
@@ -58,4 +57,4 @@ Description: "Minimal healthcare service (ANC clinic)."
 * availableTime[0].availableStartTime = "08:00:00"
 * availableTime[0].availableEndTime = "16:00:00"
 * appointmentRequired = true
-* endpoint[0] = Reference(NgEndpoint/NgEndpoint-001)
+

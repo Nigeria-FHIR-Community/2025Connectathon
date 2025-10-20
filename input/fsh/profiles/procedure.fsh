@@ -37,7 +37,7 @@ Description: "Minimal Procedure profile for the 2025 Connectathon."
 // Terminology bindings (R4 canonicals)
 * status from http://hl7.org/fhir/ValueSet/event-status (required)
 * category from http://hl7.org/fhir/ValueSet/procedure-category (preferred)
-* code from http://snomed.info/sct (example)
+* code from http://hl7.org/fhir/ValueSet/procedure-code (example)
 * bodySite from http://hl7.org/fhir/ValueSet/body-site (example)
 
 
@@ -55,11 +55,11 @@ Description: "Cesarean section for obstructed labor."
 * code.coding[0].system = "http://snomed.info/sct"
 * code.coding[0].code = #11466000
 * code.coding[0].display = "Cesarean section"
-* subject = Reference(NgPatient/NgPatient-001)
-* encounter = Reference(NgEncounter/NgEncounter-001)
+* subject = Reference(NgPatient-001)
+* encounter = Reference(NgEncounter-001)
 * performedDateTime = 2025-11-27T10:30:00Z
 * reasonCode[0].text = "Obstructed labor"
-* performer[0].actor = Reference(NgPractitioner/NgPractitioner-001)
-* location = Reference(NgLocation/NgLocation-001)
+* performer[0].actor = Reference(NgPractitioner-001)
+* location = Reference(NgLocation-001)
 * outcome.text = "Mother and baby stable"
-* usedReference[0] = Reference(NgDevice/NgDevice-001)
+* usedReference[0] = Reference(NgDevice-001)

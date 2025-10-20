@@ -36,14 +36,14 @@ Usage: #example
 Title: "Example Ng MedicationDispense (Amoxicillin 500 mg CAPS x30)"
 Description: "Completed outpatient dispensing."
 * status = #completed
-* medicationReference = Reference(NgMedication/NgMedication-001)
-* subject = Reference(NgPatient/NgPatient-002)
+* medicationReference = Reference(NgMedication-001)
+* subject = Reference(NgPatient-002)
 * quantity.value = 30
 * quantity.unit = "1"
 * quantity.system = "http://unitsofmeasure.org"
 * quantity.code = #1
 * whenHandedOver = 2025-11-04T12:20:00+01:00
-* performer[0].actor = Reference(Practitioner/NgPractitioner-002)
+* performer[0].actor = Reference(NgPractitioner-002)
 * dosageInstruction[0].text = "Take 1 capsule orally every 8 hours for 10 days."
 * note[0].text = "Dispensed after coverage verification."
 
@@ -57,14 +57,14 @@ Usage: #example
 Title: "Example Ng MedicationDispense (Paracetamol 250 mg/5 mL, 100 mL)"
 Description: "Completed pediatric dispensing."
 * status = #completed
-* medicationReference = Reference(Medication/NgMedication-002)
+* medicationReference = Reference(NgMedication-002)
 * subject = Reference(Patient/NgPatient-003)
 * quantity.value = 100
 * quantity.unit = "mL"
 * quantity.system = "http://unitsofmeasure.org"
 * quantity.code = #mL
 * whenHandedOver = 2025-11-04T12:25:00+01:00
-* performer[0].actor = Reference(Practitioner/NgPractitioner-003)
+* performer[0].actor = Reference(NgPractitioner-003)
 * dosageInstruction[0].text = "5 mL orally every 6 hours as needed for fever."
 * note[0].text = "Shake well before use."
 
@@ -85,6 +85,6 @@ Description: "Completed insulin dispensing."
 * quantity.system = "http://unitsofmeasure.org"
 * quantity.code = #mL
 * whenHandedOver = 2025-11-04T12:40:00+01:00
-* performer[0].actor = Reference(Practitioner/NgPractitioner-001)
+* performer[0].actor = Reference(NgPractitioner-001)
 * dosageInstruction[0].text = "Inject 10 units subcutaneously before breakfast daily."
 * note[0].text = "Keep refrigerated. Do not freeze."

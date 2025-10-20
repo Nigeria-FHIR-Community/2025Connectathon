@@ -21,7 +21,7 @@ Description: "Minimal Goal profile for the 2025 Connectathon."
 
 * target 0..* MS
 * target.measure 0..1
-* target.measure from http://loinc.org (example)
+* target.measure from http://hl7.org/fhir/ValueSet/observation-codes (example)
 * target.detail[x] 0..1
 * target.due[x] 0..1
 
@@ -42,14 +42,14 @@ Description: "Patient goal to control systolic BP within 6 weeks."
 * achievementStatus.coding[0].system = "http://terminology.hl7.org/CodeSystem/goal-achievement"
 * achievementStatus.coding[0].code = #improving
 * description.text = "Control systolic blood pressure"
-* subject = Reference(NgPatient/NgPatient-001)
+* subject = Reference(NgPatient-001)
 * startDate = 2025-11-11
 * priority.coding[0].system = "http://terminology.hl7.org/CodeSystem/goal-priority"
 * priority.coding[0].code = #high-priority
 * category[0].text = "Chronic disease management"
 * target[0].measure.coding[0].system = "http://loinc.org"
-* target[0].measure.coding[0].code = #8480-6
-* target[0].measure.coding[0].display = "Systolic blood pressure"
+* target[0].measure.coding[0].code = #10889-4
+* target[0].measure.coding[0].display = "Bisacodyl [Mass/mass] in Stool"
 * target[0].detailQuantity.value = 120
 * target[0].detailQuantity.unit = "mmHg"
 * target[0].dueDate = 2025-12-23

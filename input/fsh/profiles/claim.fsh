@@ -58,17 +58,17 @@ Description: "Pharmacy claim submitted by Kano Central Hospital Pharmacy for NgP
 * created = 2025-11-04T12:30:00Z
 
 // Parties
-* patient = Reference(NgPatient/NgPatient-002)
-* provider = Reference(NgOrganization/NgOrganization-001)
+* patient = Reference(NgPatient-002)
+* provider = Reference(NgOrganization-001)
 
 // Optional business identifier
-* identifier[0].system = "https://claims.example.ng/ids"
-* identifier[0].value  = "CLM-2025-0001"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value  = #CLM-2025-0001
 
 // Payee (provider is the pharmacist)
 * payee.type.coding[0].system = "http://terminology.hl7.org/CodeSystem/payeetype"
 * payee.type.coding[0].code   = #provider
-* payee.party = Reference(NgPractitioner/NgPractitioner-002)
+* payee.party = Reference(NgPractitioner-002)
 
 // Priority
 * priority.coding[0].system = "http://terminology.hl7.org/CodeSystem/processpriority"
@@ -94,9 +94,9 @@ Description: "Pharmacy claim submitted by Kano Central Hospital Pharmacy for NgP
 
 // Insurance
 * insurance[0].focal = true
-* insurance[0].identifier.system = "http://nhia.gov.ng/insurance-no"
-* insurance[0].identifier.value  = "NHIA-0011223344"
-* insurance[0].coverage = Reference(NgCoverage/NgCoverage-001)
+* insurance[0].identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* insurance[0].identifier.value  = #NHIA-0011223344
+* insurance[0].coverage = Reference(NgCoverage-001)
 * insurance[0].preAuthRef[0] = "PA-2025-ABC123"
 * insurance[0].businessArrangement = "NHIA-PlanA-2025"
 * insurance[0].sequence = 654

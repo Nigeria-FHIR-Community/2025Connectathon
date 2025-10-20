@@ -33,15 +33,15 @@ Instance: NgDevice-001
 InstanceOf: NgDevice
 Usage: #example
 Title: "Example NG Device"
-Description: "A minimal example Device."
+Description: "An example Device."
 * status = #active
 * type.text = "Pulse oximeter"
-* identifier[0].system = "http://dhin.org.ng/devices"
-* identifier[0].value = "POX-001"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-device-identifier"
+* identifier[0].value = #VS-002
 * serialNumber = "SN-12345"
 * manufacturer = "Acme Medtech"
-* deviceName[0].name = "Acme Oxi-100"
-* deviceName[0].type = #model-name
-* owner = Reference(NgOrganization/NgOrganization-001)
-* patient = Reference(NgPatient/NgOrganization-001)
-* location = Reference(NgLocation/NgOrganization-001)
+* deviceName[0].name = "POX-210"
+* deviceName[0].type = #user-friendly-name
+* owner = Reference(NgOrganization-001)
+* patient = Reference(NgPatient-001)
+* location = Reference(NgLocation-001)

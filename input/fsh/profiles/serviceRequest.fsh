@@ -40,15 +40,15 @@ Description: "Ultrasound order for pregnant client."
 * status = #active
 * intent = #order
 * code.text = "Obstetric ultrasound"
-* subject = Reference(Patient/NgPatient-002)
+* subject = Reference(NgPatient-002)
 * authoredOn = "2025-11-03T10:15:00+01:00"
 * occurrenceDateTime = "2025-11-10T09:00:00+01:00"
-* requester = Reference(NgPractitioner/NgPractitioner-001)
-* performer[0] = Reference(NgOrganization/NgOrganization-002)
+* requester = Reference(NgPractitioner-001)
+* performer[0] = Reference(NgOrganization-002)
 * priority = #urgent
 // Reason references are constrained to NgCondition or NgObservation
-* reasonReference[0] = Reference(NgObservation/NgObservation-003) // pregnancy status obs
-* supportingInfo[0] = Reference(NgObservation/NgObservation-003)
+* reasonReference[0] = Reference(NgObservation-003) // pregnancy status obs
+* supportingInfo[0] = Reference(NgObservation-003)
 
 // ==================================================================
 // 2) ePharmacy/chronic care — Fasting Blood Glucose for NgPatient-001
@@ -64,10 +64,10 @@ Description: "Lab order for diabetes follow-up."
 * subject = Reference(NgPatient/NgPatient-001)
 * authoredOn = "2025-11-04T08:30:00+01:00"
 * occurrenceDateTime = "2025-11-05T07:30:00+01:00"
-* requester = Reference(NgPractitioner/NgPractitioner-002)
+* requester = Reference(NgPractitioner-002)
 * performerType.text = "Laboratory service"
-* performer[0] = Reference(NgOrganization/NgOrganization-GwagwaladaPHC)
+* performer[0] = Reference(NgOrganization/NgOrganization-001)
 * priority = #routine
 * reasonCode[0].text = "Diabetes mellitus follow-up"
-* supportingInfo[0] = Reference(NgMedicationRequest/NgMedicationRequest-003) // insulin therapy context
+* supportingInfo[0] = Reference(NgMedicationRequest-003) // insulin therapy context
 
