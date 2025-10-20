@@ -16,12 +16,12 @@ Description: "Minimal provenance profile for DHIN 2025 Connectathon. Captures wh
 
 * activity 0..1 MS
 * activity ^short = "High-level activity (e.g., create/update/delete)"
-* activity from http://terminology.hl7.org/CodeSystem/provenance-activity-type (extensible)
+* activity from https://sandbox.dhin-hie.org/ig/ValueSet/ng-provenance-activity-vs (extensible)
 
 * agent 1..* MS
 * agent ^short = "Actor(s) responsible for the activity"
 * agent.type 0..1
-* agent.type from http://terminology.hl7.org/CodeSystem/provenance-participant-type (extensible)
+* agent.type from http://hl7.org/fhir/ValueSet/provenance-agent-type (extensible)
 * agent.who 1..1
 * agent.who only Reference(NgPractitioner or NgPractitionerRole or NgOrganization)
 * agent.onBehalfOf 0..1
@@ -38,15 +38,15 @@ Description: "Minimal provenance profile for DHIN 2025 Connectathon. Captures wh
 // - Targets a ServiceRequest example created earlier
 // - Agent is a Practitioner example created earlier
 // ==============================================
-Instance: NgProvenance-ReferralCreate-001
+Instance: NgProvenance-001
 InstanceOf: NgProvenance
 Usage: #example
 Title: "Provenance for MNCH Referral Creation"
 Description: "Provenance indicating that a practitioner authored the MNCH referral request."
 * target[0] = Reference(NgServiceRequest-001)
 * recorded = "2025-10-02T09:35:00+01:00"
-* activity.coding[0].system = "http://terminology.hl7.org/CodeSystem/provenance-activity-type"
-* activity.coding[0].code = #create
+* activity.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-provenance-activity-cs"
+* activity.coding[0].code = #CREATE
 * activity.coding[0].display = "create"
 * agent[0].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
 * agent[0].who = Reference(NgPractitioner-002)

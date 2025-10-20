@@ -69,7 +69,7 @@ Usage: #example
 Title: "Example Ng Practitioner (ePharmacy & Claims)"
 Description: "Pharmacist dispensing and submitting claims."
 * active = true
-* identifier[0].system = "https://pcn.gov.ng/practice-number"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-pcn"
 * identifier[0].value = #PCN-45231
 * name.family = "Okeke"
 * name.given = "Nkiru"

@@ -5,7 +5,7 @@
 
 Extension: NGAdministrativeWard
 Id: nigeria-administrative-ward
-Title: "NG Administrative Wards "
+Title: "NG Administrative Wards"
 Description: "Captures the administrative ward within a geographic address "
 * ^context[0].type = #element
 * ^context[0].expression = "Address"

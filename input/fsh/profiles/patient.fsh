@@ -26,9 +26,9 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 // STEP 3: Add constraints to the slice
 * identifier[NationalIDNo].value 1..1
 * identifier[NationalIDNo].value ^short = "The NIN number of the client which is a unique 11 digit number"
-* identifier[NationalIDNo].system = "https://nimc.org/nin"
-* identifier[NationalIDNo].system ^short = "NIMC's identifier in the system"
-* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].system ^short = "NIMC's identifier in the system autheticated to https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[NationalIDNo].type.coding.code = #NIN
 * identifier[NationalIDNo].type.coding.display = "National Identity Number of Client or Caregiver"
 
@@ -37,11 +37,11 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[MedicalRecordsNumber].value 1..1
 * identifier[MedicalRecordsNumber].value ^short = "The specific medical number value given the client at a health institution"
 * identifier[MedicalRecordsNumber].system 0..1
-* identifier[MedicalRecordsNumber].system ^short = "The institution issuing the MRN number (e.g., Asokoro Hospital)"
+* identifier[MedicalRecordsNumber].system ^short = "The institution issuing the MRN number (e.g., Asokoro Hospital) validated at http://asokoro.org/medicalrecord-no"
 * identifier[MedicalRecordsNumber].system ^definition = "The URI system that identifies the assigning authority for the medical record number."
 * identifier[MedicalRecordsNumber].system ^example[0].label = "Example MRN system"
-* identifier[MedicalRecordsNumber].system ^example[0].valueUri = "http://asokoro.org/medicalrecord-no"
-* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[MedicalRecordsNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[MedicalRecordsNumber].type.coding.code = #MRN
 * identifier[MedicalRecordsNumber].type.coding.display = "Medical Record Number"
 
@@ -49,10 +49,10 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[BirthCertificateNo].value ^short = "The client's birth certificate number"
 * identifier[BirthCertificateNo].system 0..1
 * identifier[BirthCertificateNo].system ^short = "The institution generating the birth certificate number (e.g., NPC)"
-* identifier[BirthCertificateNo].system ^definition = "The URI system identifying the authority that assigns the birth certificate number."
+* identifier[BirthCertificateNo].system ^definition = "The URI system identifying the authority that assigns the birth certificate number validated at http://npc.gov.ng/birthCertificate-no."
 * identifier[BirthCertificateNo].system ^example[0].label = "Example Birth Certificate number system"
-* identifier[BirthCertificateNo].system ^example[0].valueUri = "http://npc.gov.ng/birthCertificate-no"
-* identifier[BirthCertificateNo].type.coding.system = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[BirthCertificateNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[BirthCertificateNo].type.coding.code = #BIRTHCERT
 * identifier[BirthCertificateNo].type.coding.display = "Birth Certificate Number"
 
@@ -61,10 +61,10 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[PhoneNumber].value ^short = "Client's phone number which is 11 digits"
 * identifier[PhoneNumber].system 0..1
 * identifier[PhoneNumber].system ^short = "The provider of the phone number (e.g., MTN)"
-* identifier[PhoneNumber].system ^definition = "The URI system identifying the provider of the phone number."
+* identifier[PhoneNumber].system ^definition = "The URI system identifying the provider of the phone number validated at http://mtnonline.com/phone-no."
 * identifier[PhoneNumber].system ^example[0].label = "Example Phone Number system"
-* identifier[PhoneNumber].system ^example[0].valueUri = "http://mtnonline.com/phone-no"
-* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "Primary Mobile Phone Number of the Client or CareGiver"
 
@@ -73,10 +73,10 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[InsuranceNumber].value ^short = "The actual insurance number generated at state, national or HMO authorities"
 * identifier[InsuranceNumber].system 0..1
 * identifier[InsuranceNumber].system ^short = "The generating institution e.g., State, NHIA, or HMO"
-* identifier[InsuranceNumber].system ^definition = "The URI system identifying the provider of the insurance number."
+* identifier[InsuranceNumber].system ^definition = "The URI system identifying the provider of the insurance number validated at http://nhia.gov.ng/insurance-no."
 * identifier[InsuranceNumber].system ^example[0].label = "Example Insurance system"
-* identifier[InsuranceNumber].system ^example[0].valueUri = "http://nhia.gov.ng/insurance-no"
-* identifier[InsuranceNumber].type.coding.system = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[InsuranceNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[InsuranceNumber].type.coding.code = #INSUR
 * identifier[InsuranceNumber].type.coding.display = "The Insurance or HMO number of the client"
 
@@ -170,16 +170,16 @@ Title: "Example Ng Patient (MNCH Referral)"
 Description: "Adult female referred for ANC; Lagos State, Ikeja LGA."
 * meta.lastUpdated = 2025-11-04T08:30:00Z
 // Identifiers (sliced)
-* identifier[NationalIDNo].system = "https://nimc.org/nin"
-* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[NationalIDNo].type.coding.code = #NIN
 * identifier[NationalIDNo].value = "23456789012"
-* identifier[MedicalRecordsNumber].system = "http://asokoro.org/medicalrecord-no"
-* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[MedicalRecordsNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[MedicalRecordsNumber].type.coding.code = #MRN
 * identifier[MedicalRecordsNumber].value = "ASO-2025-0098"
-* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
-* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].value = "08051234567"
 // Demographics
@@ -213,20 +213,20 @@ Title: "Example Ng Patient (ePharmacy & Claims)"
 Description: "Adult male on chronic meds; insured with NHIA; Kano Municipal LGA."
 * meta.lastUpdated = 2025-11-04T09:10:00Z
 // Identifiers (sliced)
-* identifier[NationalIDNo].system = "https://nimc.org/nin"
-* identifier[NationalIDNo].type.coding.system = "https://nimc.org/nin"
+* identifier[NationalIDNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[NationalIDNo].type.coding.code = #NIN
 * identifier[NationalIDNo].value = "12345678901"
-* identifier[MedicalRecordsNumber].system = "http://asokoro.org/medicalrecord-no"
-* identifier[MedicalRecordsNumber].type.coding.system = "http://asokoro.org/medicalrecord-no"
+* identifier[MedicalRecordsNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[MedicalRecordsNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[MedicalRecordsNumber].type.coding.code = #MRN
 * identifier[MedicalRecordsNumber].value = "KNH-2025-33445"
-* identifier[InsuranceNumber].system = "http://nhia.gov.ng/insurance-no"
-* identifier[InsuranceNumber].type.coding.system = "http://nhia.gov.ng/insurance-no"
+* identifier[InsuranceNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[InsuranceNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[InsuranceNumber].type.coding.code = #INSUR
 * identifier[InsuranceNumber].value = "NHIA-0011223344"
-* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
-* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].value = "08031234567"
 // Demographics
@@ -260,12 +260,12 @@ Title: "Example Ng Patient (Immunization)"
 Description: "Male child presenting for routine vaccination; FCT AMAC."
 * meta.lastUpdated = 2025-11-04T11:45:00Z
 // Identifiers (sliced)
-* identifier[BirthCertificateNo].system = "http://npc.gov.ng/birthCertificate-no"
-* identifier[BirthCertificateNo].type.coding.system = "http://npc.gov.ng/birthCertificate-no"
+* identifier[BirthCertificateNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[BirthCertificateNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[BirthCertificateNo].type.coding.code = #BIRTHCERT
 * identifier[BirthCertificateNo].value = "NPC-FCT-2019-004321"
-* identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
-* identifier[PhoneNumber].type.coding.system = "http://mtnonline.com/phone-no"
+* identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].value = "08123456789"
 // Demographics

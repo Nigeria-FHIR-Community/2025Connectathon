@@ -45,10 +45,10 @@ Description: "This CodeSystem IMMZ.C.DE30 defines the health of the client's sib
 * ^publisher = "DHIN"
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 // The CodeSystem for Sibling Health Status
-* #DE40	"Alive" "Sibling referenced is still alive"
-* #DE41	"Dead" "Sibling referenced is dead"
-* #DE42	"well" "Sibling reference is alive and well"
-* #DE43 "underlying disease" "Referenced Sibling has an underlying disease"
+* #ALIVE	"Alive" "Sibling referenced is still alive"
+* #DEAD	"Dead" "Sibling referenced is dead"
+* #WELL	"well" "Sibling reference is alive and well"
+* #ILL "underlying disease" "Referenced Sibling has an underlying disease"
 
 
 
@@ -66,12 +66,12 @@ Description: "A standardized classification system used to describe the type or 
 * ^content = #complete
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 // The CodeSystem for Grouping different Facility types
-* #outreach	"Outreach Post" "A temporary or mobile health service site established to deliver essential healthcare to underserved or remote populations."
-* #phc-center-l1	"PHC Center Level 1" "A basic primary healthcare facility providing preventive and promotive services, often staffed by community health workers."
-* #phc-center-l2    "PHC Center Level 2" "A primary healthcare facility with limited diagnostic and treatment services, typically staffed by nurses, CHEWs, or junior medical personnel."
-* #phc-center-l3    "PHC Center Level 3" "An advanced primary healthcare facility offering comprehensive outpatient care, minor/light procedures, and referral support, often with a resident medical officer."
-* #hospital	"Secondary Hospital" "A referral facility providing specialized care, inpatient services, and emergency response, staffed by medical officers and specialists."
-* #tertiary	"Tertiary Facility" "A highly specialized hospital offering advanced diagnostic, therapeutic, and surgical care, often affiliated with teaching or research institutions."
+* #outreach "Outreach Post" "A temporary or mobile health service site established to deliver essential healthcare to underserved or remote populations."
+* #phc-center-l1 "PHC Center Level 1" "A basic primary healthcare facility providing preventive and promotive services, often staffed by community health workers."
+* #phc-center-l2 "PHC Center Level 2" "A primary healthcare facility with limited diagnostic and treatment services, typically staffed by nurses, CHEWs, or junior medical personnel."
+* #phc-center-l3 "PHC Center Level 3" "An advanced primary healthcare facility offering comprehensive outpatient care, minor/light procedures, and referral support, often with a resident medical officer."
+* #hospital "Secondary Hospital" "A referral facility providing specialized care, inpatient services, and emergency response, staffed by medical officers and specialists."
+* #tertiary "Tertiary Facility" "A highly specialized hospital offering advanced diagnostic, therapeutic, and surgical care, often affiliated with teaching or research institutions."
 
 
 CodeSystem: NGOrganizationOwnerCS
@@ -190,94 +190,6 @@ Description: "This CodeSystem defines list of options for uniquely Identifting a
 * #BIRTHCERT "birthcert" "Birth certificate number"
 * #IMMNO "immunizationo" "Immunization Number"
 
-CodeSystem: NGIdentifierCS2
-Id: patient-identifier-cs2
-Title: "NG Client Identifier CS"
-Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
-* ^url = "https://nimc.org/nin"
-* ^status = #active
-* ^content = #complete
-* ^caseSensitive = false
-* ^experimental = false
-* ^hierarchyMeaning = #is-a
-* ^publisher = "DHIN"
-* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
-* #NIN	"nin" "National Identity Number"
-
-
-CodeSystem: NGIdentifierCS3
-Id: patient-identifier-cs3
-Title: "NG Client Identifier CS"
-Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
-* ^url = "http://asokoro.org/medicalrecord-no"
-* ^status = #active
-* ^content = #complete
-* ^caseSensitive = false
-* ^experimental = false
-* ^hierarchyMeaning = #is-a
-* ^publisher = "DHIN"
-* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
-* #MRN	"mrn" "Medical Record Number"
-* #IMMNO "immunizationo" "Immunization Number"
-
-
-CodeSystem: NGIdentifierCS4
-Id: patient-identifier-cs4
-Title: "NG Client Identifier CS"
-Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
-* ^url = "http://mtnonline.com/phone-no"
-* ^status = #active
-* ^content = #complete
-* ^caseSensitive = false
-* ^experimental = false
-* ^hierarchyMeaning = #is-a
-* ^publisher = "DHIN"
-* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
-* #MOBILE	"mobile" "Phone Number"
-
-
-CodeSystem: NGIdentifierCS5
-Id: patient-identifier-cs5
-Title: "NG Client Identifier CS"
-Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
-* ^url = "http://nhia.gov.ng/insurance-no"
-* ^status = #active
-* ^content = #complete
-* ^caseSensitive = false
-* ^experimental = false
-* ^hierarchyMeaning = #is-a
-* ^publisher = "DHIN"
-* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
-* #MOBILE	"mobile" "Phone Number"
-* #INSUR "insurance no" "Insurance or HMO number"
-
-CodeSystem: NGIdentifierCS6
-Id: patient-identifier-cs6
-Title: "NG Client Identifier CS"
-Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
-* ^url = "http://npc.gov.ng/birthCertificate-no"
-* ^status = #active
-* ^content = #complete
-* ^caseSensitive = false
-* ^experimental = false
-* ^hierarchyMeaning = #is-a
-* ^publisher = "DHIN"
-* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
-* #BIRTHCERT "birthcert" "Birth certificate number"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 CodeSystem: NGMDCNCS
 Id: nigeria-mdcn
@@ -308,8 +220,8 @@ Description: "This CodeSystem IMMZ.C.DE14 defines placeholder codes to manage ph
 CodeSystem: NGPCNCS
 Id: nigeria-pcn
 Title: "NG Practitioner Identifier CS"
-Description: "This CodeSystem defines placeholder codes to manage Pharmcists' identifiers in Nigeria."
-* ^url = "https://pcn.gov.ng/practice-number"
+Description: "This CodeSystem defines placeholder codes to manage Pharmcists' identifiers in Nigeria validated at  https://pcn.gov.ng/practice-number."
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-pcn"
 * ^status = #active
 * ^content = #complete
 * ^caseSensitive = true
@@ -351,6 +263,7 @@ Description: "This CodeSystem IMMZ.A.DE1 defines placeholder codes to manage Fac
 * #HCF-12347 "7"
 * #CLM-2025-0001 "Claims Institution"
 * #NHIA-0011223344 "Insurance Organization"
+* #HOSPITAL1234 "Hospital ID example"
 //.... to be completed
 
 
@@ -441,4 +354,30 @@ Description: "This CodeSystem IMMZ.C.DE31 defines list of options for HIV status
 * #unknown	"Unknown" "The Client does not know their HIV status"
 
 
+
+CodeSystem: NgProvenanceActivityCS
+Id: ng-provenance-activity-cs
+Title: "NG Provenance Activity Codes"
+Description: "Local CodeSystem defining provenance activity codes for data lifecycle operations such as anonymization, de-identification, labeling, creation, and deletion, aligned to DHIN 2025 Connectathon artifacts."
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-provenance-activity-cs"
+* ^status = #active
+* ^content = #complete
+* ^caseSensitive = false
+* ^hierarchyMeaning = #grouped-by
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^version = "0.1.0"
+* ^experimental = false
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+
+// -------------------- Provenance Activity Codes --------------------
+* #ANONY "Anonymize" "Activity that removes all personally identifiable information (PII) to prevent re-identification."
+* #DEID "De-identify" "Activity that removes or obfuscates personal identifiers while retaining data usability."
+* #MASK "Mask" "Activity that hides or replaces specific data elements with placeholder values."
+* #LABEL "Assign Security Label" "Activity that applies confidentiality, sensitivity, or purpose-of-use labels to data."
+* #PSEUD "Pseudonymize" "Activity that replaces direct identifiers with pseudonyms that can be re-linked under controlled conditions."
+* #CREATE "Create" "Activity representing the creation of new data or resource instance."
+* #DELETE "Delete" "Activity representing deletion or removal of a data record."
+* #APPEND "Append" "Activity representing addition of new information to an existing resource or record."
+* #NULLIFY "Nullify" "Activity that invalidates or renders data non-usable without deleting the record."
+* #LA "Legally Authenticated" "Activity confirming legal authentication of a record (e.g., signed or witnessed by authorized person)."
 

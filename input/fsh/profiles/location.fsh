@@ -3,7 +3,7 @@ Parent: Location
 Title: "NG Location"
 Id: nigeria-location 
 Description: "A profile for immunization service locations, including health facilities, outreach sites, and mobile vaccination units."
-* ^url = "http://www.dhin-hie.org/ig/StructureDefinition/nigeria-location"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/nigeria-location"
 * ^version = "1.0.0"
 * ^status = #active
 * status 1..1

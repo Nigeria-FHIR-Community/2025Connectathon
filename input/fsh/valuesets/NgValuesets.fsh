@@ -5,7 +5,7 @@ Title: "NG Gender or Sex VS"
 Description: "A subset of the administrative gender codes including only 'male' and 'female'"
 * ^status = #active
 * ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-gender-vs"
-* ^experimental = true
+* ^experimental = false
 * include codes from system http://hl7.org/fhir/administrative-gender where code = "male"
 * include codes from system http://hl7.org/fhir/administrative-gender where code = "female"
 
@@ -66,6 +66,7 @@ Id: nigeria-hiv-status
 Title: "NG Client HIV Status VS"
 Description: "Client HIV Status"
 * ^status = #active
+* ^experimental = false
 * ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-hiv-status"
 * include codes from system NGHivStatusCS
 
@@ -159,7 +160,7 @@ Description: "The outcome of the reaction"
 
 //. Facility Registry
 ValueSet: NGFacilityIdentifierVS
-Id: ng-facility-identifier-cs
+Id: ng-facility-identifier-vs
 Title: "NG Clinical Status VS"
 Description: "The outcome of the reaction"
 * ^status = #active
@@ -173,7 +174,7 @@ ValueSet: NGVaccineLocalVS
 Id: ng-vaccine-local-vs
 Title: "NG Vaccine Local ValueSet"
 Description: "All local vaccine codes (DE1–DE29)."
-* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/vaccine-library"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-vaccine-local-vs"
 * ^experimental = false
 * ^status = #active
 * include codes from system NGVaccineLocalCS
@@ -237,13 +238,31 @@ ValueSet: NGDeviceIdentifierVS
 Id: nigeria-device-identifier-vs
 Title: "NG Electromechanical Medical Device Identifier VS"
 Description: "ValueSet selecting the 50 hypothetical electromechanical medical device identifiers (leaf concepts only) from NGDeviceIdentifierCS. Excludes category/group nodes."
-* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-device-identifier"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-device-identifier-vs"
 * ^status = #active
 * ^version = "1.0.0"
 * ^publisher = "FMoHSW / DHIN 2025 Connectathon"
 * ^experimental = false
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 * include codes from system NGDeviceIdentifierCS
+
+
+ValueSet: NgProvenanceActivityVS
+Id: ng-provenance-activity-vs
+Title: "NG Provenance Activity Codes"
+Description: "ValueSet including local provenance activity codes (anonymize, de-identify, mask, label, pseudonymize, create, delete, append, nullify, legally authenticated) for DHIN 2025 Connectathon."
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-provenance-activity-vs"
+* ^status = #active
+* ^version = "0.1.0"
+* ^experimental = false
+* ^publisher = "FMoHSW / DHIN 2025 Connectathon"
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+
+/* Pull all codes from the CodeSystem */
+* include codes from system NgProvenanceActivityCS
+
+
+
 
 
 

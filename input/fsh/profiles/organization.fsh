@@ -51,8 +51,8 @@ InstanceOf: NgOrganization
 Usage: #example
 Title: "Example Asokoro District Hospital"
 Description: "Public secondary hospital in FCT (AMAC)."
-* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
-* identifier[0].value = "HCF-45231"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value = #HOSPITAL1234
 * active = true
 * name = "Asokoro District Hospital"
 * type[0].coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
@@ -67,7 +67,7 @@ Description: "Public secondary hospital in FCT (AMAC)."
 * address[0].city = "Abuja"
 * address[0].district = #fc-municipal
 * address[0].state = #FC
-* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-location-owner"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
 * extension[NGOrganizationOwner].valueCodeableConcept.coding[0].code = #public
 * extension[NGOrganizationOwner].valueCodeableConcept.coding[0].display = "Public Health Institution Location"
 
@@ -80,8 +80,8 @@ InstanceOf: NgOrganization
 Usage: #example
 Title: "Example Kano Central Hospital Pharmacy"
 Description: "Pharmacy department serving outpatient dispensing; Kano Municipal."
-* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-facility-identifier-vs"
-* identifier[0].value = "HCF-12346"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value = #HCF-12347
 * active = true
 * name = "Kano Central Hospital Pharmacy"
 * type[0].coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
@@ -96,7 +96,7 @@ Description: "Pharmacy department serving outpatient dispensing; Kano Municipal.
 * address[0].city = "Kabo"
 * address[0].district = #kn-kabo
 * address[0].state = #KN
-* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-location-owner"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
 * extension[NGOrganizationOwner].valueCodeableConcept.coding[0].code = #private
 * extension[NGOrganizationOwner].valueCodeableConcept.coding[0].display = "Private Health Institution Location"
 
@@ -109,11 +109,11 @@ InstanceOf: NgOrganization
 Usage: #example
 Title: "Example Gwagwalada Model PHC"
 Description: "Public PHC facility in FCT Gwagwalada Area Council."
-* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-facility-identifier-vs"
-* identifier[0].value = #HCF-12347
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier[0].value = #CLM-2025-0001
 * active = true
 * name = "Gwagwalada Model PHC"
-* type[0].coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-types"
+* type[0].coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
 * type[0].coding.code = #phc-center-l2
 * type[0].coding.display = "PHC Center Level 2"
 * type[0].text = "Primary Health Care Centre (Level 2)"
@@ -123,7 +123,7 @@ Description: "Public PHC facility in FCT Gwagwalada Area Council."
 * address[0].city = "Gwagwalada"
 * address[0].district = #fc-gwagwalada
 * address[0].state = #FC
-* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-location-owner"
+* extension[NGOrganizationOwner].valueCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
 * extension[NGOrganizationOwner].valueCodeableConcept.coding[0].code = #public
 * extension[NGOrganizationOwner].valueCodeableConcept.coding[0].display = "Public Health Institution Location"
 

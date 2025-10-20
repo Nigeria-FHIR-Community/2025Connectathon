@@ -29,20 +29,20 @@ Description: "A composite Observation profile capturing state of health, underly
 
 
 // Component: Pregnancy Status
-* component contains pregnancyStatus 0..1
+* component contains pregnancyStatus 0..1 MS
 * component[pregnancyStatus].code = $loinc#82810-3 "Pregnancy status"
 * component[pregnancyStatus].valueCodeableConcept 1..1 MS
 * component[pregnancyStatus].valueCodeableConcept from NGPregnancyStatusVS (extensible)
 
 // Component: HIV Status
-* component contains hivStatus 0..1
+* component contains hivStatus 0..1 MS
 * component[hivStatus].code = $sct#278977008 "HIV status"
 * component[hivStatus].valueCodeableConcept 1..1 MS
 * component[hivStatus].valueCodeableConcept from NGHivStatusVS (extensible)
 
 
 // Weight at Birth
-* component contains birthWeight 0..1
+* component contains birthWeight 0..1 MS
 * component[birthWeight].code = $loinc#8339-4 "Birth weight Measured"
 * component[birthWeight].valueQuantity 1..1
 * component[birthWeight].valueQuantity.unit = "g"
@@ -51,7 +51,7 @@ Description: "A composite Observation profile capturing state of health, underly
 
 
 // ---- ageInWeeks ----
-* component[ageInWeeks].code = $ngAgeComp#wk "Age in weeks"
+* component[ageInWeeks].code = $ngAgeComp#wk "Weeks (wk)"
 * component[ageInWeeks].value[x] only Quantity
 * component[ageInWeeks].valueQuantity.unit = "week"
 
