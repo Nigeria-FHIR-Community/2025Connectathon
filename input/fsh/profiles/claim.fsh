@@ -42,7 +42,7 @@ Description: "A profile representing submitted claims from providers to payers."
 
 
 // ==============================================
-// Claim Example — Pharmacy item for NgPatient-002
+// 1. Claim Example — Pharmacy item for NgPatient-002
 // ==============================================
 Instance: NgClaim-001
 InstanceOf: NgClaim
@@ -106,3 +106,80 @@ Description: "Pharmacy claim submitted by Kano Central Hospital Pharmacy for NgP
 * total.currency = #NGN
 
 
+
+
+// ============================================================================
+// 2) HMO → Insurer
+// ============================================================================
+Instance: bundle-hmo-insurance
+InstanceOf: NgTransactionBundle
+Title: "Example — HMO → Insurer Claims Transaction"
+Usage: #example
+
+* type = #transaction
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-bundle-identifier-cs"
+* identifier.value = "BND-0011"
+* timestamp = "2025-10-16T08:00:00+01:00"
+
+// Coverage
+* entry[coverage].fullUrl = "urn:uuid:0b1a1a2d-6a53-4e4a-a5f4-b8d7f6d9e011"
+* entry[coverage].resource = NgCoverage-001
+* entry[coverage].request.method = #POST
+
+// Claim (links to above coverage by local UUID)
+* entry[claim].fullUrl = "urn:uuid:1c2b3c4d-7e65-4f70-9ab2-5f3a1c9d2f12"
+* entry[claim].resource = NgClaim-001
+* entry[claim].resource.insurance[0].coverage = Reference(urn:uuid:0b1a1a2d-6a53-4e4a-a5f4-b8d7f6d9e011)
+* entry[claim].request.method = #POST
+
+
+
+// ============================================================================
+// 3) Patient → Hospital
+// ============================================================================
+Instance: bundle-patient-hospital
+InstanceOf: NgTransactionBundle
+Title: "Example — Patient → Hospital Claims Transaction"
+Usage: #example
+
+* type = #transaction
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-bundle-identifier-cs"
+* identifier.value = "BND-0012"
+* timestamp = "2025-10-16T09:15:00+01:00"
+
+// Coverage
+* entry[coverage].fullUrl = "urn:uuid:23de45a1-8b77-4a1f-9a2b-4c5d6e7f8013"
+* entry[coverage].resource = NgCoverage-001
+* entry[coverage].request.method = #POST
+
+// Claim (links to above coverage by local UUID)
+* entry[claim].fullUrl = "urn:uuid:34ef56b2-9c88-4b20-8c3d-5e6f7a8b9014"
+* entry[claim].resource = NgClaim-001
+* entry[claim].resource.insurance[0].coverage = Reference(urn:uuid:23de45a1-8b77-4a1f-9a2b-4c5d6e7f8013)
+* entry[claim].request.method = #POST
+
+
+
+// ============================================================================
+// 4) Patient → Insurer
+// ============================================================================
+Instance: bundle-patient-insurer
+InstanceOf: NgTransactionBundle
+Title: "Example — Patient → Insurer Claims Transaction"
+Usage: #example
+
+* type = #transaction
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-bundle-identifier-cs"
+* identifier.value = "BND-0013"
+* timestamp = "2025-10-16T10:40:00+01:00"
+
+// Coverage
+* entry[coverage].fullUrl = "urn:uuid:45f067c3-ad99-41d2-86e5-6f7a8b9c0015"
+* entry[coverage].resource = NgCoverage-001
+* entry[coverage].request.method = #POST
+
+// Claim (links to above coverage by local UUID)
+* entry[claim].fullUrl = "urn:uuid:56a178d4-bebb-4c33-95f6-7a8b9c0d1016"
+* entry[claim].resource = NgClaim-001
+* entry[claim].resource.insurance[0].coverage = Reference(urn:uuid:45f067c3-ad99-41d2-86e5-6f7a8b9c0015)
+* entry[claim].request.method = #POST

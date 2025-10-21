@@ -83,3 +83,10 @@ Usage: #example
 * entry[claim].resource.insurance[0].coverage = Reference(urn:uuid:7e6d5f40-2d3b-4a0e-9d2a-1e3e3f6a8b9c)
 // (Optional request block for transaction processing)
 * entry[claim].request.method = #POST
+
+
+
+
+
+
+

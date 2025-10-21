@@ -48,11 +48,11 @@ Description: "Locally defined vaccine codes used for data capture and UI labels.
 
 // 2) Master “library” ValueSet (ICD-11)
 CodeSystem: NGVaccineLibraryICD11CS
-Id: ng-vaccine-icd11-cs
+Id: ng-vaccine-icd-cs
 Title: "NG IMMZ.D.DE4 ICD11 Vaccine Library"
 Description: "ICD11 code Immunization.vaccineCode. Dose/order is not encoded in codes; use protocolApplied.doseNumber[x]."
 * ^status = #active
-* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-vaccine-icd11-cs"
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-vaccine-icd-cs"
 * ^experimental = false
 * ^publisher = "DHIN"
 * ^caseSensitive = true
@@ -71,7 +71,7 @@ Description: "ICD11 code Immunization.vaccineCode. Dose/order is not encoded in 
 * #XM9QP0 "Human papillomavirus vaccines"
 
 
-// 3) Master “library” ValueSet (SNOMED CT)
+// 3) Master “library” CodeSystem (SNOMED CT)
 CodeSystem: NGVaccineLibrarySNOMEDCS
 Id: ng-vaccine-library-snomed-cs
 Title: "NG IMMZ.D.DE4 Vaccine Library (SNOMED CT)"
@@ -104,7 +104,7 @@ Description: "SNOMED-CT code Immunization.vaccineCode. Dose/order is not encoded
 Instance: NGVaccineLocal-to-ICD11
 InstanceOf: ConceptMap
 Usage: #definition
-Title: "NG Local Vaccine Codes → ICD-11"
+Title: "NG Local Vaccine Codes ICD"
 Description: "Maps local dose-labelled DE codes to ICD-11 vaccine concepts (antigen/product level)."
 * url = $cmLocalToICD11
 * name = "Local_icd11"
@@ -112,8 +112,8 @@ Description: "Maps local dose-labelled DE codes to ICD-11 vaccine concepts (anti
 * status = #active
 * sourceUri = $ngVacVS
 * targetUri = $ngicd11VS
-* group[0].source = $ngVacVS
-* group[0].target = $ngicd11VS
+* group[0].source = $ngVacCS //$ngVacVS
+* group[0].target = $ngicd11CS //$ngicd11VS
 
 // BCG
 * group[0].element[0].code = #IMMZ.Z.DE1
@@ -197,7 +197,7 @@ Description: "Maps local dose-labelled DE codes to ICD-11 vaccine concepts (anti
 // Yellow Fever
 * group[0].element[19].code = #IMMZ.Z.DE23
 * group[0].element[19].target.code = #XM0N24
-* group[0].element[19].target.display = "Yellow fever vaccines"
+* group[0].element[19].target.display = "Yellow fever vaccine"
 * group[0].element[19].target.equivalence = #equivalent
 
 // Meningitis (Meningococcal)
@@ -244,8 +244,8 @@ Description: "Maps local dose-labelled DE codes to SNOMED CT vaccine concepts (a
 * name = "Local_Snomed"
 * sourceUri = $ngVacVS
 * targetUri = $ngsctVS
-* group[0].source = $ngVacVS
-* group[0].target = $ngsctVS
+* group[0].source = $ngVacCS
+* group[0].target = $ngsnomedCS
 * experimental = false
 
 // BCG

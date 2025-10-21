@@ -183,10 +183,10 @@ Description: "All local vaccine codes (DE1–DE29)."
 
 // ICD11 ValueSet
 ValueSet: NGVaccineICDVS
-Id: ng-vaccine-icd11-vs
+Id: ng-vaccine-icd-vs
 Title: "NG Vaccine ICD ValueSet"
 Description: "All ICD11 vaccine codes (DE1–DE29)."
-* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-vaccine-icd11-vs"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-vaccine-icd-vs"
 * ^experimental = false
 * ^status = #active
 * include codes from system NGVaccineLibraryICD11CS
