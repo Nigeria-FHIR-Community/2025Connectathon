@@ -130,7 +130,7 @@ Usage: #example
 * entry[referral].resource.status = #active
 * entry[referral].resource.intent = #order
 * entry[referral].resource.code.text = "MNCH referral initiation — suspected pre-eclampsia"
-* entry[referral].resource.subject = Reference(NgPatient-001)
+* entry[referral].resource.subject = Reference(urn:uuid:90b1c2d3-4e56-47f8-8a90-abc123def024)
 * entry[referral].resource.requester = Reference(NgPractitioner-002)
 * entry[referral].resource.performer[0] = Reference(NgOrganization-001)
 * entry[referral].request.method = #POST
@@ -164,7 +164,7 @@ Usage: #example
 
 // Patient
 * entry[patient].fullUrl = "urn:uuid:c3d4e5f6-7182-4b93-ac04-de45f6789027"
-* entry[patient].resource = NgPatient-001
+* entry[patient].resource = NgPatient-003
 * entry[patient].request.method = #POST
 
 // Referral (ServiceRequest)
