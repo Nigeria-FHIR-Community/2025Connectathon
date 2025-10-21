@@ -73,10 +73,10 @@ Description: "ICD11 code Immunization.vaccineCode. Dose/order is not encoded in 
 
 // 3) Master “library” CodeSystem (SNOMED CT)
 CodeSystem: NGVaccineLibrarySNOMEDCS
-Id: ng-vaccine-library-snomed-cs
+Id: ng-vaccine-local-to-snomed-cs
 Title: "NG IMMZ.D.DE4 Vaccine Library (SNOMED CT)"
 Description: "SNOMED-CT code Immunization.vaccineCode. Dose/order is not encoded in codes; use protocolApplied.doseNumber[x]."
-* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-vaccine-library-snomed-cs"
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-vaccine-local-to-snomed-cs"
 * ^status = #active
 * ^experimental = false
 * ^publisher = "DHIN"
@@ -86,13 +86,13 @@ Description: "SNOMED-CT code Immunization.vaccineCode. Dose/order is not encoded
 * #1861000221106 "BCG vaccine"
 * #871822003 "Hepatitis B vaccine"
 * #293117006 "Poliomyelitis vaccine"
-* #409568008 "Pentavalent DTP-HepB-Hib vaccine"
+* #409568008 "DTP-HepB-Hib vaccine"
 * #1052328007 "Pneumococcal conjugate vaccine"
 * #871761004 "Rotavirus vaccine"
 * #871817003 "Measles and rubella vaccine"
 * #871717007 "Yellow fever vaccine"
 * #219088009 "Meningococcal vaccine"
-* #871826000 "Tetanus and diphtheria vaccine"
+* #871826000 "Tetanus-diphtheria vaccine"
 * #911000221103 "Human papillomavirus vaccine"
 
 
