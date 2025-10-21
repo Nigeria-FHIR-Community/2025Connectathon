@@ -5,12 +5,11 @@ Profile: NgPrescriptionBundle
 Parent: Bundle
 Id: ng-prescription-bundle
 Title: "NG Prescription Information Sharing Bundle"
-Description: """
-Transaction bundle for electronic prescription sharing between prescribers (hospitals/clinics) and dispensers (pharmacies).
+Description: "Transaction bundle for electronic prescription sharing between prescribers (hospitals/clinics) and dispensers (pharmacies).
 This bundle MUST contain a Patient and a MedicationRequest (the prescription order).
 Optional entries such as MedicationDispense, Practitioner, Organization, or Task
-may be included to support the dispensing process and tracking.
-"""
+may be included to support the dispensing process and tracking."
+
 * ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-prescription-bundle"
 * ^version = "1.0.0"
 * ^status = #active
@@ -114,9 +113,9 @@ Usage: #example
 * entry[prescription].resource = NgMedicationRequest-001
 * entry[prescription].resource.status = #active
 * entry[prescription].resource.intent = #order
-* entry[prescription].resource.subject = Reference(urn:uuid:1a2b3c4d-1111-4e5f-8a90-123456789abc)
+* entry[prescription].resource.subject = Reference(urn:uuid:6e8b1c2d-1a23-4bcd-95ef-0a1b2c3d4e21)
 * entry[prescription].resource.authoredOn = "2025-10-17T09:40:00+01:00"
-* entry[prescription].resource.requester = Reference(NgOrganization-001)
+* entry[prescription].resource.requester = Reference(urn:uuid:4d5e6f7a-4444-7080-adc3-456789abcdef)
 * entry[prescription].resource.recorder = Reference(NgPractitioner-001)
 * entry[prescription].resource.dosageInstruction[0].text = "Take one capsule by mouth three times daily for 5 days."
 * entry[prescription].resource.dispenseRequest.quantity.value = 15
@@ -145,8 +144,8 @@ Usage: #example
 * entry[task].resource.status = #requested
 * entry[task].resource.intent = #order
 * entry[task].resource.code.text = "Dispense prescribed medication"
-* entry[task].resource.for = Reference(urn:uuid:1a2b3c4d-1111-4e5f-8a90-123456789abc)
-* entry[task].resource.focus = Reference(urn:uuid:2b3c4d5e-2222-5f60-9ab1-23456789abcd)
+* entry[task].resource.for = Reference(urn:uuid:6e8b1c2d-1a23-4bcd-95ef-0a1b2c3d4e21)
+* entry[task].resource.focus = Reference(NgServiceRequest-001)
 * entry[task].resource.authoredOn = "2025-10-17T09:43:00+01:00"
 * entry[task].resource.requester = Reference(NgOrganization-001)
 * entry[task].resource.owner = Reference(NgOrganization-002)

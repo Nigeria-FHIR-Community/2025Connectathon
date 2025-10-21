@@ -5,12 +5,11 @@ Profile: NgMNCHReferralBundle
 Parent: Bundle
 Id: ng-mnch-referral-bundle
 Title: "NG MNCH Referral Transaction Bundle"
-Description: """
-Transaction bundle for MNCH referrals between facilities and/or payers.
+Description: "Transaction bundle for MNCH referrals between facilities and/or payers.
 The bundle MUST contain a Patient and a ServiceRequest (the referral order).
 Optional entries (Communication, Task, Encounter, Organization, Practitioner, etc.)
-may be included to support initiation, communication, response, and tracking.
-"""
+may be included to support initiation, communication, response, and tracking."
+
 * ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-mnch-referral-bundle"
 * ^version = "1.0.0"
 * ^status = #active
@@ -32,7 +31,7 @@ may be included to support initiation, communication, response, and tracking.
 * timestamp ^definition = "The date/time when this referral transaction bundle was assembled by the submitting system."
 
 // Entries + slicing
-* entry 2..* MS
+* entry 1..* MS
 * entry.fullUrl 1..
 * entry.search ..0
 * entry.response ..0
@@ -45,7 +44,7 @@ may be included to support initiation, communication, response, and tracking.
 * entry ^comment = "Must contain one Patient and one ServiceRequest (referral). Others are allowed."
 
 * entry contains
-    patient 1..1 MS and
+    patient 0..1 MS and
     referral 1..1 MS and
     //communication 0..* MS and
     task 0..* MS

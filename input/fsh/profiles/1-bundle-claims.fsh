@@ -2,11 +2,9 @@ Profile: NgTransactionBundle
 Parent: Bundle
 Id: ng-transaction-bundle
 Title: "1-NG HMO-Hospital Transaction Bundle"
-Description: """
-Transaction bundle for Nigerian HMO-Hospital claims submissions. This bundle MUST contain 
+Description: "Transaction bundle for Nigerian HMO-Hospital claims submissions. This bundle MUST contain 
 a Coverage and a Claim entry, representing the minimum dataset required for claims processing.
-Designed for supporting cross-organizational healthcare claims processing in Nigeria's DHIN ecosystem.
-"""
+Designed for supporting cross-organizational healthcare claims processing in Nigeria's DHIN ecosystem."
 * ^version = "1.0.0"
 * ^date = "2025-10-15"
 * ^publisher = "DHIN 2025 Connectathon"
