@@ -288,4 +288,10 @@ Description: "Male child presenting for routine vaccination; FCT AMAC."
 * contact[0].address.district = "fc-municipal"
 * contact[0].address.state = "FC"
 
-
+/* 
+Instance: ClaimPatient
+InstanceOf: NgPatient
+Usage: #example
+* name.text = "John Doe"
+* gender = #male
+* birthDate = "1980-01-01"  */

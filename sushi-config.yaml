@@ -19,6 +19,8 @@ publisher:
   name: DHIN
   url: https://www.dhin-hie.org
   email: info@dhin-hie.org
+dependencies:
+  hl7.fhir.r4.core: 4.0.1
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced

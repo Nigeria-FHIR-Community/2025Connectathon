@@ -6,39 +6,30 @@ Description: "A profile representing submitted claims from providers to payers."
 
 * identifier 0..*
 * identifier ^short = "Business Identifier for claim"
-* status 1..1 MS
-* type 1..1 MS
-* use 1..1 MS
+* status from http://hl7.org/fhir/ValueSet/fm-status
+* type from http://hl7.org/fhir/ValueSet/claim-type (required)
+* use from http://hl7.org/fhir/ValueSet/claim-use (required)
 * use ^short = "what the claim is for (Required - claim | preauthorization | predetermination)"
 * patient only Reference(NgPatient)
 * patient ^short = "The recipient of the products and services"
 * created 1..1 MS
-* provider 1..1 MS
+* provider only Reference(NgOrganization)
 * provider ^short = "The party responsible for the claim"
-* prescription 0..1
-* payee 0..1 
-* payee ^short = "Recipient of benefits payable"
-* payee.type 1..1
-* payee.party only Reference(NgPractitioner)
-* priority 1..1
-* procedure 0..*
+* insurer only Reference(NgOrganization)
+* priority from http://hl7.org/fhir/ValueSet/process-priority
+* diagnosis 0..* 
+* diagnosis.sequence 1..1
+* diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10
+* procedure 0..* 
 * procedure.sequence 1..1
-* procedure.procedureReference only Reference(NgProcedure)
-* diagnosis 0..* MS
-* diagnosis.onAdmission 0..1
-* diagnosis.packageCode 0..1
-* diagnosis.type 0..1
-* item 1..* MS
-* insurance 1..* MS
+* procedure.procedure[x] from http://hl7.org/fhir/ValueSet/icd-10-procedures
+* insurance 1..*
+* insurance.sequence 1..1
 * insurance.focal 1..1
-* insurance.identifier 0..1
-* insurance.identifier ^short = "Pre-assigned insurance number"
-* insurance.coverage 1..1
-* insurance.preAuthRef 0..*
-* insurance.claimResponse only Reference(NgClaimResponse)
-* insurance.businessArrangement 0..1
-
-// EXAMPLES 
+* insurance.coverage only Reference(NgCoverage)
+* item 1..* MS
+* item.sequence 1..1
+* item.productOrService from http://hl7.org/fhir/ValueSet/service-uscls 
 
 
 // ==============================================
@@ -112,7 +103,7 @@ Description: "Pharmacy claim submitted by Kano Central Hospital Pharmacy for NgP
 // 2) HMO → Insurer
 // ============================================================================
 Instance: bundle-hmo-insurance
-InstanceOf: NgTransactionBundle
+InstanceOf: NGClaimEligibilityCheckBundle
 Title: "Example — HMO → Insurer Claims Transaction"
 Usage: #example
 
@@ -138,7 +129,7 @@ Usage: #example
 // 3) Patient → Hospital
 // ============================================================================
 Instance: bundle-patient-hospital
-InstanceOf: NgTransactionBundle
+InstanceOf: NGClaimEligibilityCheckBundle
 Title: "Example — Patient → Hospital Claims Transaction"
 Usage: #example
 
@@ -164,7 +155,7 @@ Usage: #example
 // 4) Patient → Insurer
 // ============================================================================
 Instance: bundle-patient-insurer
-InstanceOf: NgTransactionBundle
+InstanceOf: NGClaimEligibilityCheckBundle
 Title: "Example — Patient → Insurer Claims Transaction"
 Usage: #example
 

@@ -4,14 +4,27 @@ Id: ng-claimresponse
 Title: "NG ClaimResponse"
 Description: "A profile representing responses from insurers regarding submitted claims."
 
-* status 1..1 MS
-* type 1..1 MS
-* use 1..1 MS
-* patient 1..1 MS
+* identifier 0..1
+* status from http://hl7.org/fhir/ValueSet/fm-status 
+* type from http://hl7.org/fhir/ValueSet/claim-type (required)
+* use from http://hl7.org/fhir/ValueSet/claim-use (required)
+* patient only Reference(NgPatient)
 * created 1..1 MS
-* insurer 1..1 MS
-* outcome 1..1 MS
+* insurer only Reference(NgOrganization)
+* requestor only Reference(NgOrganization)
+* request only Reference(NgClaim)
+* outcome from http://hl7.org/fhir/ValueSet/remittance-outcome
+* disposition 0..1
+* preAuthRef 0..1
 * item 0..* MS
+* item.itemSequence
+* item.adjudication 1..*
+* item.adjudication.category from http://hl7.org/fhir/ValueSet/adjudication
+* item.adjudication.reason 0..1
+* item.adjudication.amount 0..1
+* item.adjudication.value 0..1
+
+
 
 
 // EXAMPLES 
@@ -33,6 +46,7 @@ Description: "Full approval of pharmacy claim for NgPatient-002."
 * request = Reference(NgClaim-001)
 * outcome = #complete
 * disposition = "Approved in full."
+* preAuthRef = "1234"
 
 // Item adjudication (matches Claim item sequence 1)
 * item[0].itemSequence = 1
@@ -71,6 +85,7 @@ Description: "Partial approval; copay applied per plan rules."
 * request = Reference(NgClaim-001)
 * outcome = #partial
 * disposition = "Partially approved; copay applied."
+* preAuthRef = "5678"
 
 // Item adjudication
 * item[0].itemSequence = 1

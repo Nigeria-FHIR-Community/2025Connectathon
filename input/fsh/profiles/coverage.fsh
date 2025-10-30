@@ -4,12 +4,15 @@ Id: ng-claim-coverage
 Title: "NG Claim Coverage"
 Description: "A profile capturing a patient's insurance coverage details."
 
-* status 1..1 MS
-* type 1..1 MS
-* subscriber 0..1 MS
-* beneficiary 1..1 MS
-* payor 1..1 MS
+* status from http://hl7.org/fhir/ValueSet/fm-status
+* identifier 0..* MS
+* type from http://hl7.org/fhir/ValueSet/coverage-type
+* subscriber only Reference(NgPatient)
+* subscriberId 0..1 MS
+* beneficiary only Reference(NgPatient)
 * period 0..1
+* payor only Reference(NgOrganization)
+
 
 
 
