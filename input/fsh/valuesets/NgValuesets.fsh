@@ -299,6 +299,48 @@ Description: "All local ATC-style medication codes used across MNCH referral, cl
 
 
 
+ValueSet: NgProviderOrgTypeVS
+Id: ng-provider-org-type-vs
+Title: "NG Provider Organization Types"
+Description: "Organization types for healthcare providers"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-provider-org-type-vs"
+* ^experimental = false
+* ^status = #active
+* include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "prov"
+
+
+ValueSet: NgInsurerOrgTypeVS
+Id: ng-insurer-org-type-vs
+Title: "NG Insurer Organization Types"
+Description: "Organization types for insurance payers/HMOs"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-insurer-org-type-vs"
+* ^experimental = false
+* ^status = #active
+* include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "ins"
+
+
+
+
+
+
+
+
+
+// ValueSet: NgOrganizationTypeVS
+// Id: ng-org-type-vs
+// Title: "NG Organization Type"
+// Description: "A general organization type grouping"
+// * ^status = #active
+// * ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-org-type-vs"
+// * ^experimental = false
+// * include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "prov"
+// * include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "ins"
+// * include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "pay"
+// * include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "govt"
+// * include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "crs"
+// * include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "edu"
+
+
 
 
 

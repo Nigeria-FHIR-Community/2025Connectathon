@@ -264,6 +264,7 @@ Description: "This CodeSystem IMMZ.A.DE1 defines placeholder codes to manage Fac
 * #CLM-2025-0001 "Claims Institution"
 * #NHIA-0011223344 "Insurance Organization"
 * #HOSPITAL1234 "Hospital ID example"
+* #HMO876653 "Cool HMO"
 //.... to be completed
 
 

@@ -14,8 +14,7 @@ Description: "An organization profile representing healthcare facilities respons
 * active ^short = "Boolean to indicate if institution is active or inactive"
 * name 1..1 MS
 * name ^short = "The name of the organization or health facility"
-* type 1..*
-* type from NGFacilityTypeVS (required)
+* type 1..* MS
 * type ^short = "The type of the organization or health facility"
 * telecom 0..*
 * telecom.system 1..1
@@ -129,3 +128,24 @@ Description: "Public PHC facility in FCT Gwagwalada Area Council."
 
 
 
+
+
+
+
+// Create these sub organization profiles
+
+Profile: NgProviderOrganization
+Parent: NgOrganization
+Id: ng-provider-organization
+Title: "NG Provider Organization"
+Description: "Organization profile for healthcare providers (hospitals, clinics)"
+* type 1..* MS
+* type from NgProviderOrgTypeVS (required)
+
+Profile: NgInsurerOrganization
+Parent: NgOrganization
+Id: ng-insurer-organization
+Title: "NG Insurer Organization"
+Description: "Organization profile for insurance payers/HMOs"
+* type 1..* MS
+* type from NgInsurerOrgTypeVS (required)

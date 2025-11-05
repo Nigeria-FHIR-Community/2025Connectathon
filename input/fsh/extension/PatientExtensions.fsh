@@ -16,11 +16,11 @@ Description: "Captures the administrative ward within a geographic address "
 
 
 
-Extension: NGBirthWeight
-Id:  birth-weight
-Title:  "NG Weight at birth"
-Description: "Weight  of the Immunization Client at birth"
-* ^context[0].type = #element
-* ^context[0].expression = "Patient"
-* value[x] only decimal
+// Extension: NGBirthWeight
+// Id:  birth-weight
+// Title:  "NG Weight at birth"
+// Description: "Weight  of the Immunization Client at birth"
+// * ^context[0].type = #element
+// * ^context[0].expression = "Patient"
+// * value[x] only decimal
 

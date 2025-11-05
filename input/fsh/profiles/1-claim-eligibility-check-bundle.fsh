@@ -51,22 +51,23 @@ CoverageEligibilityRequest/Response with minimal constraints to reduce QA noise.
 * entry[practitioner].resource only NgPractitioner
 
 // ---- Hospital/Provider Organization ----
-* entry[providerOrg].resource only NgOrganization
+* entry[providerOrg].resource only NgProviderOrganization
+
 
 // ---- CoverageEligibilityRequest (REQUEST bundle) ----
-* entry[cerRequest].resource only CoverageEligibilityRequest
-// When present in a transaction request, typical REST directives:
+* entry[cerRequest].resource only NgCoverageEligibilityRequest
 * entry[cerRequest].request.method ^short = "POST for transaction requests"
-* entry[cerRequest].request.url ^short    = "CoverageEligibilityRequest"
+* entry[cerRequest].request.url ^short    = "NgCoverageEligibilityRequest"
 
 // ---- Insurer Organization (RESPONSE bundle) ----
-* entry[insurerOrg].resource only NgOrganization
+* entry[insurerOrg].resource only NgInsurerOrganization
+
 
 // ---- Coverage (returned by insurer) ----
 * entry[coverage].resource only NgCoverage
 
 // ---- CoverageEligibilityResponse (RESPONSE bundle) ----
-* entry[cerResponse].resource only CoverageEligibilityResponse
+* entry[cerResponse].resource only NgCoverageEligibilityResponse
 
 // -------------------- Helpful soft invariants (warnings) --------------------
 // Limit bundle.type to the two intended codes
@@ -77,15 +78,15 @@ Expression: "type in ('transaction'|'collection')"
 
 // If it's a transaction request, suggest presence of CER and HTTP requests
 Invariant: ngelig-request-shape
-Description: "If type = 'transaction', bundle SHOULD include a CoverageEligibilityRequest and each entry SHOULD carry a request.method/url."
+Description: "If type = 'transaction', bundle SHOULD include a NgCoverageEligibilityRequest and each entry SHOULD carry a request.method/url."
 Severity: #warning
-Expression: "(type != 'transaction') or (entry.resource.ofType(CoverageEligibilityRequest).exists() and entry.request.exists())"
+Expression: "(type != 'transaction') or (entry.resource.ofType(NgCoverageEligibilityRequest).exists() and entry.request.exists())"
 
 // If it's a collection response, suggest presence of CER response and Coverage
 Invariant: ngelig-response-shape
-Description: "If type = 'collection', bundle SHOULD include a CoverageEligibilityResponse and a Coverage resource."
+Description: "If type = 'collection', bundle SHOULD include a NgCoverageEligibilityResponse and a NgCoverage resource."
 Severity: #warning
-Expression: "(type != 'collection') or (entry.resource.ofType(CoverageEligibilityResponse).exists() and entry.resource.ofType(Coverage).exists())"
+Expression: "(type != 'collection') or (entry.resource.ofType(NgCoverageEligibilityResponse).exists() and entry.resource.ofType(NgCoverage).exists())"
 
 // Encourage URN UUIDs for intra-bundle references
 Invariant: ngelig-urn-uuids
@@ -103,27 +104,27 @@ Expression: "entry.fullUrl.all(matches('^urn:uuid:'))"
 // ---------------------------------------------------------------
 // REQUEST BUNDLE (transaction)
 // ---------------------------------------------------------------
-Instance: EligibilityCheck-Request
-InstanceOf: Bundle
+Instance: NgEligibilityCheck-Request
+InstanceOf: NgEligibilityCheckBundle //modified to fix linkages
 Usage: #example
 Title: "Eligibility Check - Request (Transaction)"
 Description: "Hospital requests HMO eligibility for a patient."
 * type = #transaction
 
 // Patient -------------------------------------------------------
-* entry[0].fullUrl = "urn:uuid:pat-elig-001"
+* entry[0].fullUrl = "urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Elig-001
 
 // Practitioner (ordering/attending) ----------------------------
-* entry[+].fullUrl = "urn:uuid:prac-elig-001"
+* entry[+].fullUrl = "urn:uuid:bbbcccdd-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgPractitioner-Elig-001
 
 // Hospital Organization (provider) -----------------------------
-* entry[+].fullUrl = "urn:uuid:org-hospital-001"
+* entry[+].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Hospital-001
 
 // Eligibility Request ------------------------------------------
-* entry[+].fullUrl = "urn:uuid:cer-req-001"
+* entry[+].fullUrl = "urn:uuid:dddeeeff-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = CER-Request-001
 
 // Transaction methods/urls -------------------------------------
@@ -140,40 +141,41 @@ Description: "Hospital requests HMO eligibility for a patient."
 // ---------------------------------------------------------------
 // RESPONSE BUNDLE (collection)
 // ---------------------------------------------------------------
-Instance: EligibilityCheck-Response
-InstanceOf: Bundle
+Instance: NgEligibilityCheck-Response
+InstanceOf: NgEligibilityCheckBundle
 Usage: #example
 Title: "Eligibility Check - Response (Collection)"
 Description: "Insurer's response indicating coverage and eligibility outcome."
 * type = #collection
 
 // Patient echo (optional but helpful for correlation) ----------
-* entry[0].fullUrl = "urn:uuid:pat-elig-001"
+* entry[0].fullUrl = "urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Elig-001
 
 // Insurer Organization -----------------------------------------
-* entry[+].fullUrl = "urn:uuid:org-insurer-001"
+* entry[+].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Insurer-001
 
 // Coverage (the 'converge' -> Coverage) ------------------------
-* entry[+].fullUrl = "urn:uuid:cov-elig-001"
+* entry[+].fullUrl = "urn:uuid:fffaaabb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgCoverage-Elig-001
 
 // Eligibility Response -----------------------------------------
-* entry[+].fullUrl = "urn:uuid:cer-resp-001"
+* entry[+].fullUrl = "urn:uuid:abababab-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = CER-Response-001
 
 
 
 // ===============================================================
-// Inline Resources (kept minimal & aligned to your profiles)
+// Inline Resources
 // ===============================================================
 
 // -------------------- NgPatient (requires meta.lastUpdated) ----
 Instance: NgPatient-Elig-001
 InstanceOf: NgPatient
-Usage: #inline
+Usage: #example
 Title: "Eligibility Patient"
+Description: "A Patient whose service eligibility is being sorth."
 * meta.lastUpdated = "2025-10-15T09:00:00+01:00"
 * identifier[PhoneNumber].value = "08031112222"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
@@ -193,8 +195,9 @@ Title: "Eligibility Patient"
 // -------------------- NgPractitioner ---------------------------
 Instance: NgPractitioner-Elig-001
 InstanceOf: NgPractitioner
-Usage: #inline
+Usage: #example
 Title: "Attending Practitioner"
+Description: "A Healthcare provider checking for a given Patient's eligibility for service."
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
 * identifier[0].value = "MDCN-45231"
 * active = true
@@ -206,16 +209,17 @@ Title: "Attending Practitioner"
 
 // -------------------- NgOrganization (Hospital) ----------------
 Instance: NgOrganization-Hospital-001
-InstanceOf: NgOrganization
-Usage: #inline
+InstanceOf: NgProviderOrganization
+Usage: #example
 Title: "City General Hospital"
+Description: "A Hospital organization where a Patient has gone for service."
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "CLM-2025-0001"
 * active = true
 * name = "City General Hospital"
-* type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
-* type.coding.code = #hospital
-* type.coding.display = "Secondary Hospital"
+* type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
+* type.coding.code = #prov
+* type.coding.display = "Healthcare Provider"
 * telecom[0].system = #phone
 * telecom[0].value = "01-445-7788"
 * address.line[0] = "25 Hospital Way"
@@ -225,16 +229,17 @@ Title: "City General Hospital"
 
 // -------------------- CoverageEligibilityRequest (base) --------
 Instance: CER-Request-001
-InstanceOf: CoverageEligibilityRequest
-Usage: #inline
+InstanceOf: NgCoverageEligibilityRequest
+Usage: #example
 Title: "Eligibility Request - HMO Benefits"
+Description: "The request sent to a HMO from a Hospital."
 * status = #active
 * purpose[0] = #benefits
-* patient = Reference(urn:uuid:pat-elig-001)
+* patient = Reference(urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-15T09:05:00+01:00"
 // Provider can be Practitioner or Organization; include both contextually
-* provider = Reference(urn:uuid:prac-elig-001)
-* insurer = Reference(urn:uuid:org-insurer-001)
+* provider = Reference(urn:uuid:bbbcccdd-e5f6-4789-a123-456789abcdef)
+* insurer = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
 // Optional facility context (requestor organization)
 * facility = Reference(NgLocation-001)
 * item.category.coding.system = "http://terminology.hl7.org/CodeSystem/ex-benefitcategory"
@@ -244,33 +249,37 @@ Title: "Eligibility Request - HMO Benefits"
 // -------------------- NgCoverage (returned by insurer) ---------
 Instance: NgCoverage-Elig-001
 InstanceOf: NgCoverage
-Usage: #inline
+Usage: #example
 Title: "Coverage - Harmony HMO (Active)"
+Description: "The Coverage of a Patient."
 * status = #active
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #EHCPOL     // health insurance policy
 * type.coding.display = "extended healthcare"
-* beneficiary = Reference(urn:uuid:pat-elig-001)
-* payor[0] = Reference(urn:uuid:org-insurer-001)
+* beneficiary = Reference(urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef)
+* payor[0] = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
 * period.start = "2025-01-01"
 * period.end = "2025-12-31"
 
 // -------------------- CoverageEligibilityResponse (base) --------
 Instance: CER-Response-001
-InstanceOf: CoverageEligibilityResponse
-Usage: #inline
+InstanceOf: NgCoverageEligibilityResponse
+Usage: #example
 Title: "Eligibility Response - Approved"
+Description: "The response sent from HMO to Hospital to confirm eligibility or not."
 * status = #active
 * purpose[0] = #benefits
-* patient = Reference(urn:uuid:pat-elig-001)
+* patient = Reference(urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-15T09:06:30+01:00"
-* insurer = Reference(urn:uuid:org-insurer-001)
+* insurer = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
 * outcome = #complete
-* request = Reference(urn:uuid:cer-req-001)
+* request = Reference(urn:uuid:dddeeeff-e5f6-4789-a123-456789abcdef)
 * disposition = "Eligible for covered services per active policy."
-* insurance[0].coverage = Reference(urn:uuid:cov-elig-001)
+* insurance[0].coverage = Reference(urn:uuid:fffaaabb-e5f6-4789-a123-456789abcdef)
 * insurance[0].inforce = true
 // Optional: add a simple item/category note for clarity
 * insurance[0].item[0].category.text = "Outpatient"
+* insurance[0].item[0].category.coding = http://terminology.hl7.org/CodeSystem/ex-benefitcategory#1
 * insurance[0].item[0].benefit[0].type.text = "vision-exam"
+* insurance[0].item[0].benefit[0].type.coding = http://terminology.hl7.org/CodeSystem/benefit-type#copay
 * insurance[0].item[0].benefit[0].allowedUnsignedInt = 1
