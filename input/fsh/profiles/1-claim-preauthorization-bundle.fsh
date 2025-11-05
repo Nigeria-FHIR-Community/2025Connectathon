@@ -4,7 +4,7 @@
 Profile: NgPreAuthorizationBundle
 Parent: Bundle
 Id: ng-preauthorization-bundle
-Title: "NG Pre-Authorization Bundle (Request or Response)"
+Title: "2-NG Pre-Authorization Bundle (Request or Response)"
 Description: """
 One bundle profile that supports both:
 - Pre-Authorization Request (type=transaction): Patient, Practitioner, Provider Org, Insurer Org, Coverage, and a Claim (use=preauthorization)
@@ -152,7 +152,7 @@ Title: "PreAuth Patient"
 * identifier[PhoneNumber].system = "http://mtnonline.com/phone-no"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
-* identifier[PhoneNumber].type.coding.display = "Primary Mobile Phone Number of the Client or CareGiver"
+* identifier[PhoneNumber].type.coding.display = "mobile"
 * name.given[0] = "Chinedu"
 * name.family = "Okeke"
 * gender = #male
@@ -253,7 +253,7 @@ Title: "Coverage - PrimeCare HMO (Active)"
 Instance: NgClaim-PreAuth-001
 InstanceOf: NgClaim
 Usage: #inline
-Title: "Pre-Authorization Claim"
+Title: "2-Pre-Authorization Claim"
 * status = #active
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/claim-type"
 * type.coding.code = #institutional

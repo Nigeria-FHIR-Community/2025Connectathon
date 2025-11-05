@@ -29,7 +29,7 @@ Description: "A profile representing submitted claims from providers to payers."
 * insurance.coverage only Reference(NgCoverage)
 * item 1..* MS
 * item.sequence 1..1
-* item.productOrService from http://hl7.org/fhir/ValueSet/service-uscls 
+* item.productOrService from http://hl7.org/fhir/ValueSet/service-uscls
 
 
 // ==============================================
@@ -65,23 +65,17 @@ Description: "Pharmacy claim submitted by Kano Central Hospital Pharmacy for NgP
 * priority.coding[0].system = "http://terminology.hl7.org/CodeSystem/processpriority"
 * priority.coding[0].code = #normal
 
-// Diagnosis (links to item via diagnosisSequence)
-* diagnosis[0].sequence = 1
-* diagnosis[0].diagnosisCodeableConcept.coding[0].system = "http://snomed.info/sct"
-* diagnosis[0].diagnosisCodeableConcept.coding[0].code = #59621000
-* diagnosis[0].diagnosisCodeableConcept.coding[0].display = "Essential hypertension"
+
 
 // Line item (30 capsules of amoxicillin as an example)
 * item[0].sequence = 1
-* item[0].productOrService.coding[0].system = "http://www.whocc.no/atc"
-* item[0].productOrService.coding[0].code = #J01CA04
-* item[0].productOrService.coding[0].display = "Amoxicillin"
 * item[0].quantity.value = 30
 * item[0].unitPrice.value = 500
 * item[0].unitPrice.currency = #NGN
 * item[0].net.value = 15000
 * item[0].net.currency = #NGN
 * item[0].diagnosisSequence[0] = 1
+* item[0].productOrService = http://terminology.hl7.org/CodeSystem/ex-USCLS#1101
 
 // Insurance
 * insurance[0].focal = true

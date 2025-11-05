@@ -4,7 +4,7 @@
 Profile: NgReimbursementReconciliationBundle
 Parent: Bundle
 Id: ng-reimbursement-reconciliation-bundle
-Title: "NG Reimbursement Reconciliation Transaction Bundle"
+Title: "3-NG Reimbursement Reconciliation Transaction Bundle"
 Description: "Transaction bundle for payer-issued reimbursement reconciliation to a provider. MUST contain exactly one PaymentReconciliation and the payer/provider Organizations."
 
 * ^status = #active

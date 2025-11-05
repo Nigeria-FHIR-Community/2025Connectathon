@@ -5,7 +5,7 @@
 Profile: NgEligibilityCheckBundle
 Parent: Bundle
 Id: ng-eligibility-check-bundle
-Title: "NG Eligibility Check Bundle (Request/Response)"
+Title: "1-NG Eligibility Check Bundle (Request/Response)"
 Description: """
 Single Bundle profile that supports BOTH:
   • Transaction request from a hospital to an HMO (type = transaction)
@@ -179,7 +179,7 @@ Title: "Eligibility Patient"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
-* identifier[PhoneNumber].type.coding.display = "Primary Mobile Phone Number of the Client or CareGiver"
+* identifier[PhoneNumber].type.coding.display = "mobile"
 * name.given[0] = "Aisha"
 * name.family = "Bello"
 * gender = #female
@@ -187,7 +187,7 @@ Title: "Eligibility Patient"
 * birthDate = "1990-04-21"
 * address.line[0] = "12 PHC Road"
 * address.city = "Garki"
-* address.district = "abuja-municipal"
+* address.district = "fc-municipal"
 * address.state = "FC"
 
 // -------------------- NgPractitioner ---------------------------
@@ -195,8 +195,8 @@ Instance: NgPractitioner-Elig-001
 InstanceOf: NgPractitioner
 Usage: #inline
 Title: "Attending Practitioner"
-* identifier[0].system = "https://mdcn.gov.ng/practitioner-id"
-* identifier[0].value = "MDCN-009988"
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value = "MDCN-45231"
 * active = true
 * name.given = "Nkiru"
 * name.family = "Okafor"
@@ -209,18 +209,18 @@ Instance: NgOrganization-Hospital-001
 InstanceOf: NgOrganization
 Usage: #inline
 Title: "City General Hospital"
-* identifier.system = "https://hfr.health.gov.ng/facility-id"
-* identifier.value = "HCF-56789"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value = "CLM-2025-0001"
 * active = true
 * name = "City General Hospital"
-* type.coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
 * type.coding.code = #hospital
 * type.coding.display = "Secondary Hospital"
 * telecom[0].system = #phone
 * telecom[0].value = "01-445-7788"
 * address.line[0] = "25 Hospital Way"
 * address.city = "Garki"
-* address.district = "abuja-municipal"
+* address.district = "fc-municipal"
 * address.state = "FC"
 
 // -------------------- CoverageEligibilityRequest (base) --------
@@ -236,7 +236,9 @@ Title: "Eligibility Request - HMO Benefits"
 * provider = Reference(urn:uuid:prac-elig-001)
 * insurer = Reference(urn:uuid:org-insurer-001)
 // Optional facility context (requestor organization)
-* facility = Reference(urn:uuid:org-hospital-001)
+* facility = Reference(NgLocation-001)
+* item.category.coding.system = "http://terminology.hl7.org/CodeSystem/ex-benefitcategory"
+* item.category.coding.code = #1
 
 
 // -------------------- NgCoverage (returned by insurer) ---------
@@ -270,5 +272,5 @@ Title: "Eligibility Response - Approved"
 * insurance[0].inforce = true
 // Optional: add a simple item/category note for clarity
 * insurance[0].item[0].category.text = "Outpatient"
-* insurance[0].item[0].benefit[0].type.text = "Consultation"
+* insurance[0].item[0].benefit[0].type.text = "vision-exam"
 * insurance[0].item[0].benefit[0].allowedUnsignedInt = 1

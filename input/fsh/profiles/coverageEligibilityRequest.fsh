@@ -12,4 +12,4 @@ Description: "A profile verifying a patient's active insurance coverage and cove
 * provider only Reference(NgPractitioner)
 * insurer only Reference(NgOrganization)
 * insurance.coverage only Reference(NgCoverage)
-* item.category from http://terminology.hl7.org/CodeSystem/ex-benefitcategory
+* item.category from http://hl7.org/fhir/ValueSet/ex-benefitcategory

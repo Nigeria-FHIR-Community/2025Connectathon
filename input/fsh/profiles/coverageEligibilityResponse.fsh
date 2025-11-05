@@ -6,7 +6,7 @@ Description: "Profile defining the response from an HMO to an eligibilty request
 
 * identifier 0..* MS
 * status from http://hl7.org/fhir/ValueSet/fm-status
-* purpose from http://hl7.org/fhir/eligibilityresponse-purpose
+* purpose from http://hl7.org/fhir/ValueSet/eligibilityresponse-purpose
 * patient only Reference(NgPatient)
 * created 1..1 MS
 * requestor only Reference(NgOrganization)
@@ -22,4 +22,4 @@ Description: "Profile defining the response from an HMO to an eligibilty request
 * insurance.item 0..*
 * insurance.item.category from http://hl7.org/fhir/ValueSet/ex-benefitcategory
 * insurance.item.benefit 0..* MS
-* insurance.item.benefit.type from http://terminology.hl7.org/CodeSystem/benefit-type 
+* insurance.item.benefit.type from http://hl7.org/fhir/ValueSet/benefit-type 

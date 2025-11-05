@@ -26,9 +26,9 @@ Usage: #example
 Title: "Example Ng Coverage (NHIA Self Coverage)"
 Description: "Active NHIA coverage for NgPatient-002."
 * status = #active
-* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
-* type.coding[0].code = #emergency
-* type.text = "NHIA Plan A"
+// * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
+// * type.coding[0].code = #emergency
+//* type.text = "NHIA Plan A"
 * subscriber = Reference(NgPatient-002)
 * beneficiary = Reference(NgPatient-002)
 * payor[0] = Reference(NgOrganization-001)
@@ -46,9 +46,9 @@ Usage: #example
 Title: "Example Ng Coverage (NHIA Dependent Coverage)"
 Description: "Active NHIA dependent coverage for NgPatient-003; subscriber is NgPatient-002."
 * status = #active
-* type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
-* type.coding[0].code = #televisit
-* type.text = "NHIA Family Plan"
+// * type.coding[0].system = "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
+// * type.coding[0].code = #televisit
+// * type.text = "NHIA Family Plan"
 * subscriber = Reference(NgPatient-002)
 * beneficiary = Reference(NgPatient-003)
 * payor[0] = Reference(NgOrganization-002)

@@ -3,24 +3,25 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: 2025Connectathon
+id: org.dhin-hie.sandbox
 canonical: https://sandbox.dhin-hie.org/ig
 name: DHIN-2025Connectathon-FHIR-IG
 title: DHIN 2025Connectathon FHIR IG
 description: DHIN 2025 Connectathon Testing FHIR IG
 status: draft # draft | active | retired | unknown
-version: 0.1.0
+version: 0.2.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
-releaseLabel: draft
+releaseLabel: ci-build
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-# jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+
+jurisdiction: urn:iso:std:iso:3166#NG "Nigeria"
 publisher:
   name: DHIN
   url: https://www.dhin-hie.org
   email: info@dhin-hie.org
-dependencies:
-  hl7.fhir.r4.core: 4.0.1
+#dependencies:
+#  hl7.fhir.r4.core: 4.0.1
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced

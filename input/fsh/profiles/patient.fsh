@@ -66,7 +66,7 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[PhoneNumber].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
-* identifier[PhoneNumber].type.coding.display = "Primary Mobile Phone Number of the Client or CareGiver"
+* identifier[PhoneNumber].type.coding.display = "mobile"
 
 
 * identifier[InsuranceNumber].value 1..1
