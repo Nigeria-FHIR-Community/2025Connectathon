@@ -147,7 +147,6 @@ Instance: NgPatient-PreAuth-001
 InstanceOf: NgPatient
 Usage: #inline
 Title: "PreAuth Patient"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-patient"
 * meta.lastUpdated = "2025-10-20T10:15:00+01:00"
 * identifier[PhoneNumber].value = "08034561234"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
@@ -169,7 +168,6 @@ Instance: NgPractitioner-PreAuth-001
 InstanceOf: NgPractitioner
 Usage: #inline
 Title: "Requesting Clinician"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-practitioner"
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
 * identifier[0].value = "MDCN-12345"
 * active = true
@@ -184,7 +182,6 @@ Instance: NgOrganization-Provider-001
 InstanceOf: NgProviderOrganization
 Usage: #inline
 Title: "Unity District Hospital"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-provider-organization"
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "HCF-12342"
 * active = true
@@ -207,7 +204,6 @@ Instance: NgOrganization-Insurer-001
 InstanceOf: NgInsurerOrganization
 Usage: #inline
 Title: "Harmony Health Maintenance Organization - HMO"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-insurer-organization" 
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "NHIA-0011223344"
 * active = true
@@ -227,7 +223,6 @@ Instance: NgOrganization-Insurer-002
 InstanceOf: NgInsurerOrganization
 Usage: #inline
 Title: "PrimeCare HMO"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-insurer-organization" 
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "HMO876653"
 * active = true
@@ -247,7 +242,6 @@ Instance: NgCoverage-PreAuth-001
 InstanceOf: NgCoverage
 Usage: #inline
 Title: "Coverage - PrimeCare HMO (Active)"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-coverage"
 * status = #active
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #EHCPOL
@@ -262,7 +256,6 @@ Instance: NgClaim-PreAuth-001
 InstanceOf: NgClaim
 Usage: #inline
 Title: "2-Pre-Authorization Claim"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-claim" 
 * status = #active
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/claim-type"
 * type.coding.code = #institutional
@@ -290,7 +283,6 @@ Instance: NgClaimResponse-PreAuth-001
 InstanceOf: NgClaimResponse
 Usage: #inline
 Title: "Pre-Authorization Decision"
-* meta.profile = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-claim-response" 
 * status = #active
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/claim-type"
 * type.coding.code = #institutional
