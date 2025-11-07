@@ -5,7 +5,7 @@
 Profile: NgEligibilityCheckBundle
 Parent: Bundle
 Id: ng-eligibility-check-bundle
-Title: "1-NG Eligibility Check Bundle (Request/Response)"
+Title: "1-NGClaim 1 Eligibility Check Bundle (Request/Response)"
 Description: """
 Single Bundle profile that supports BOTH:
   • Transaction request from a hospital to an HMO (type = transaction)

@@ -4,7 +4,7 @@
 Profile: NgMNCHReferralBundle
 Parent: Bundle
 Id: ng-mnch-referral-bundle
-Title: "NG MNCH Referral Transaction Bundle"
+Title: "3-NGReferral MNCH Transaction Bundle"
 Description: "Transaction bundle for MNCH referrals between facilities and/or payers.
 The bundle MUST contain a Patient and a ServiceRequest (the referral order).
 Optional entries (Communication, Task, Encounter, Organization, Practitioner, etc.)
@@ -75,7 +75,7 @@ Instance: bundle-referral
 InstanceOf: NgMNCHReferralBundle
 Title: "MNCH Referral — Communication"
 Usage: #example
-
+Description: "EXAMPLE: MNCH Referral + Patient + a Communication message referencing the referral"
 * type = #transaction
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-bundle-identifier-cs"
 * identifier.value = "BND-0021"
@@ -111,6 +111,7 @@ Usage: #example
 Instance: bundle-referral-initiation
 InstanceOf: NgMNCHReferralBundle
 Title: "MNCH Referral — Initiation"
+Description: "EXAMPLE: MNCH Referral Initiation"
 Usage: #example
 
 * type = #transaction
@@ -154,6 +155,7 @@ Usage: #example
 Instance: bundle-referral-response
 InstanceOf: NgMNCHReferralBundle
 Title: "MNCH Referral — Response (Acceptance)"
+Description: "EXAMPLE: MNCH Referral Response"
 Usage: #example
 
 * type = #transaction

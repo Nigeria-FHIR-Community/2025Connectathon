@@ -79,7 +79,8 @@ Id: nigeria-location-owner-cs
 Title: "NG Location Owner CS"
 Description: "This CodeSystem defines Immunization Location Owner."
 * ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
-* ^publisher = "NPHCDA"
+* ^publisher = "DHIN"
+* ^status = #active
 * ^caseSensitive = false
 * ^content = #complete
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"

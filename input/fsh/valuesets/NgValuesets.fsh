@@ -319,6 +319,16 @@ Description: "Organization types for insurance payers/HMOs"
 * include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "ins"
 
 
+ValueSet: NgPharmacyOrganizationVS
+Id: ng-pharmacy-org-type-vs
+Title: "NG Pharmacy Organization Types"
+Description: "Organization types for Pharmacies"
+* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-pharmacy-org-type-vs"
+* ^experimental = false
+* ^status = #active
+* include codes from system http://terminology.hl7.org/CodeSystem/organization-type where code = "cg"
+
+
 
 
 

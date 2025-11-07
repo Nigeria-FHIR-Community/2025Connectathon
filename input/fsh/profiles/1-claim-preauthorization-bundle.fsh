@@ -4,7 +4,7 @@
 Profile: NgPreAuthorizationBundle
 Parent: Bundle
 Id: ng-preauthorization-bundle
-Title: "2-NG Pre-Authorization Bundle (Request or Response)"
+Title: "1-NGClaim 2 Pre-Authorization Bundle (Request or Response)"
 Description: """
 One bundle profile that supports both:
 - Pre-Authorization Request (type=transaction): Patient, Practitioner, Provider Org, Insurer Org, Coverage, and a Claim (use=preauthorization)

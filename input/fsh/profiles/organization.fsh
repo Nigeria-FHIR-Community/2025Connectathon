@@ -41,6 +41,13 @@ Description: "An organization profile representing healthcare facilities respons
 * telecom.use 0..0
 
 
+
+
+
+
+
+
+
 // EXAMPLES 
 // ==============================================
 // 1) Asokoro District Hospital (Public, Hospital)
@@ -149,3 +156,12 @@ Title: "NG Insurer Organization"
 Description: "Organization profile for insurance payers/HMOs"
 * type 1..* MS
 * type from NgInsurerOrgTypeVS (required)
+
+
+Profile: NgPharmacyOrganization
+Parent: NgOrganization
+Id: ng-pharmacy-organization
+Title: "NG Pharmacy Organization"
+Description: "Organization profile for pharmacies and dispensing facilities"
+* type 1..* MS
+* type from NgPharmacyOrganizationVS (required)

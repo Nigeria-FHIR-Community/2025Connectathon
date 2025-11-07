@@ -33,9 +33,11 @@ Description: "Nigerian Profile for Immunization resource."
 * performer.actor only Reference (NgPractitioner)
 * performer.actor ^short = "Information of reporting officer" //Individual or organization who was performing
 * occurrence[x] only dateTime
+* reaction 0..5 MS
 * reaction.date 0..1 
 * reaction.reported 0..1
 * reaction.detail only Reference(NgObservation)
+* location only Reference(NgLocation)
 
 
 
