@@ -79,7 +79,19 @@ pages:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 # menu:
 #   Home: index.html
-#   Artifacts: artifacts.html
+#   Artifacts: 
+#     Profiles: artifacts.html
+#     Extensions: artifacts.html
+#     Value Sets: artifacts.html
+#     Code System: artifacts.html
+#   Support:
+#     FHIR Spec: http://hl7.org/fhir/R4/index.html
+#     Downloads: downloads.html
+#     Dependencies: dependency-table.html  # Add this
+#     Globals: globals-table.html          # Add this
+#     IP Statements: ip-statements.html    # Add this
+
+
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

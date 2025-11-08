@@ -89,7 +89,7 @@ Description: "Patient presents prescription at pharmacy for dispensing."
 * entry[=].request.url = "Practitioner"
 
 // Pharmacy Organization
-* entry[+].fullUrl = "urn:uuid:ddd33344-f6e5-4789-b234-567890bcdef1"
+* entry[+].fullUrl = "urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1"
 * entry[=].resource = NgOrganization-Pharmacy-Disp-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "Organization"
@@ -150,7 +150,7 @@ Description: "Pharmacy confirms medication dispensing with actual quantities and
 * entry[=].resource = NgOrganization-Pharmacy-Disp-001
 
 // Medication 1: Metformin (echo)
-* entry[+].fullUrl = "urn:uuid:eee44455-f6e5-4789-b234-567890bcdef1"
+* entry[+].fullUrl = "urn:uuid:bbb77788-f6e5-4789-b234-567890bcdef1"
 * entry[=].resource = NgMedication-Metformin-001
 
 // Medication 2: Atorvastatin (echo)
@@ -161,12 +161,16 @@ Description: "Pharmacy confirms medication dispensing with actual quantities and
 * entry[+].fullUrl = "urn:uuid:aaa66677-f6e5-4789-b234-567890bcdef1"
 * entry[=].resource = NgMedication-Amlodipine-001
 
+// MedicationRequest 1: Amlodipine
+* entry[+].fullUrl = "urn:uuid:ddd99900-f6e5-4789-b234-567890bcdef1"
+* entry[=].resource = NgMedicationRequest-Amlodipine-001
+
 // MedicationDispense 1: Metformin
-* entry[+].fullUrl = "urn:uuid:eee00011-f6e5-4789-b234-567890bcdef1"
+* entry[+].fullUrl = "urn:uuid:ccc88899-f6e5-4789-b234-567890bcdef1"
 * entry[=].resource = NgMedicationDispense-Metformin-001
 
 // MedicationDispense 2: Atorvastatin
-* entry[+].fullUrl = "urn:uuid:fff11122-f6e5-4789-b234-567890bcdef1"
+* entry[+].fullUrl = "urn:uuid:ddd99901-f6e5-4789-b234-567890bcdef1"
 * entry[=].resource = NgMedicationDispense-Atorvastatin-001
 
 // MedicationDispense 3: Amlodipine
@@ -338,7 +342,7 @@ Title: "Prescription for Metformin"
 * medicationReference = Reference(urn:uuid:eee44455-f6e5-4789-b234-567890bcdef1)
 * subject = Reference(urn:uuid:bbb11122-f6e5-4789-b234-567890bcdef1)
 * authoredOn = "2025-10-29T08:00:00+01:00"
-* requester = Reference(urn:uuid:ccc22233-f6e5-4789-b234-567890bcdef1)
+* requester = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * reasonCode[0].text = "Type 2 Diabetes Mellitus"
 * dosageInstruction[0].text = "Take 1 tablet twice daily with meals for 90 days"
 * dosageInstruction[0].timing.repeat.frequency = 2
@@ -376,7 +380,7 @@ Title: "Prescription for Atorvastatin"
 * medicationReference = Reference(urn:uuid:fff55566-f6e5-4789-b234-567890bcdef1)
 * subject = Reference(urn:uuid:bbb11122-f6e5-4789-b234-567890bcdef1)
 * authoredOn = "2025-10-29T08:00:00+01:00"
-* requester = Reference(urn:uuid:ccc22233-f6e5-4789-b234-567890bcdef1)
+* requester = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * reasonCode[0].text = "Hyperlipidemia"
 * dosageInstruction[0].text = "Take 1 tablet once daily at bedtime for 90 days"
 * dosageInstruction[0].timing.repeat.frequency = 1
@@ -414,7 +418,7 @@ Title: "Prescription for Amlodipine"
 * medicationReference = Reference(urn:uuid:aaa66677-f6e5-4789-b234-567890bcdef1)
 * subject = Reference(urn:uuid:bbb11122-f6e5-4789-b234-567890bcdef1)
 * authoredOn = "2025-10-29T08:00:00+01:00"
-* requester = Reference(urn:uuid:ccc22233-f6e5-4789-b234-567890bcdef1)
+* requester = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * reasonCode[0].text = "Hypertension"
 * dosageInstruction[0].text = "Take 1 tablet once daily in the morning for 90 days"
 * dosageInstruction[0].timing.repeat.frequency = 1
@@ -450,11 +454,11 @@ Title: "Dispensed - Metformin 90-day supply"
 * status = #completed
 * medicationReference = Reference(urn:uuid:eee44455-f6e5-4789-b234-567890bcdef1)
 * subject = Reference(urn:uuid:bbb11122-f6e5-4789-b234-567890bcdef1)
-* performer[0].actor = Reference(urn:uuid:ccc22233-f6e5-4789-b234-567890bcdef1)
+* performer[0].actor = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * performer[0].function.coding.system = "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function"
 * performer[0].function.coding.code = #finalchecker
 * performer[0].function.coding.display = "Final Checker"
-* authorizingPrescription[0] = Reference(urn:uuid:bbb77788-f6e5-4789-b234-567890bcdef1)
+* authorizingPrescription[0] = Reference(urn:uuid:ddd99900-f6e5-4789-b234-567890bcdef1)
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #FF
 * type.coding.display = "First Fill"
@@ -494,11 +498,11 @@ Title: "Dispensed - Atorvastatin 90-day supply"
 * status = #completed
 * medicationReference = Reference(urn:uuid:fff55566-f6e5-4789-b234-567890bcdef1)
 * subject = Reference(urn:uuid:bbb11122-f6e5-4789-b234-567890bcdef1)
-* performer[0].actor = Reference(urn:uuid:ccc22233-f6e5-4789-b234-567890bcdef1)
+* performer[0].actor = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * performer[0].function.coding.system = "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function"
 * performer[0].function.coding.code = #finalchecker
 * performer[0].function.coding.display = "Final Checker"
-* authorizingPrescription[0] = Reference(urn:uuid:ccc88899-f6e5-4789-b234-567890bcdef1)
+* authorizingPrescription[0] = Reference(urn:uuid:ddd99900-f6e5-4789-b234-567890bcdef1)
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #FF
 * type.coding.display = "First Fill"
@@ -538,7 +542,7 @@ Title: "Dispensed - Amlodipine 90-day supply"
 * status = #completed
 * medicationReference = Reference(urn:uuid:aaa66677-f6e5-4789-b234-567890bcdef1)
 * subject = Reference(urn:uuid:bbb11122-f6e5-4789-b234-567890bcdef1)
-* performer[0].actor = Reference(urn:uuid:ddd33344-f6e5-4789-b234-567890bcdef1)
+* performer[0].actor = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * performer[0].function.coding.system = "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function"
 * performer[0].function.coding.code = #finalchecker
 * performer[0].function.coding.display = "Final Checker"
@@ -587,7 +591,7 @@ Title: "Pharmacy Invoice - Chronic Disease Medications"
 * participant[0].role.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
 * participant[0].role.coding.code = #PRF
 * participant[0].role.coding.display = "performer"
-* participant[0].actor = Reference(urn:uuid:ccc22233-f6e5-4789-b234-567890bcdef1)
+* participant[0].actor = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * issuer = Reference(urn:uuid:ddd33341-f6e5-4789-b234-567890bcdef1)
 * date = "2025-10-29"
 

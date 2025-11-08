@@ -200,6 +200,7 @@ Usage: #example
 Instance: bundle-referral-tracking
 InstanceOf: NgMNCHReferralBundle
 Title: "MNCH Referral — Tracking (In Progress)"
+Description: "EXAMPLE: MNCH Referral Tracking"
 Usage: #example
 
 * type = #transaction

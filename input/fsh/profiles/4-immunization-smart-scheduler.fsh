@@ -65,26 +65,36 @@ Description: "Books an immunization appointment and carries a next-dose recommen
 // ---------------- Patient -------------------------------------- 
 * entry[0].fullUrl = "urn:uuid:992211bb-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-IMMSS-001
+* entry[0].request.method = #POST
+* entry[0].request.url = "Patient"
 
 
 // ---------------- Organization (Facility owner) ----------------
 * entry[+].fullUrl = "urn:uuid:9922aabb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-IMMSS-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
 
 
 // ---------------- Location (Clinic room / vaccination point) ---
 * entry[+].fullUrl = "urn:uuid:99ee11bb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgLocation-IMMSS-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "Location"
 
 
 // ---------------- Appointment (the booking) --------------------
 * entry[+].fullUrl = "urn:uuid:ff2211bb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = Appointment-IMMSS-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "Appointment"
 
 
 // ---------------- ImmunizationRecommendation (optional) --------
 * entry[+].fullUrl = "urn:uuid:ddd211bb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = ImmRec-IMMSS-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "ImmunizationRecommendation"
 
 
 
@@ -164,7 +174,7 @@ Title: "Immunization Appointment – Musa"
 * participant[0].type[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
 * participant[0].type[0].coding[0].code = #PART
 * participant[0].status = #accepted
-* participant[0].actor = Reference(urn:uuid:1b12aabb-e5f6-4789-a123-456789abcdef)
+* participant[0].actor = Reference(urn:uuid:992211bb-e5f6-4789-a123-456789abcdef)
 * participant[1].type[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
 * participant[1].type[0].coding[0].code = #BBY
 * participant[1].status = #accepted
@@ -172,7 +182,7 @@ Title: "Immunization Appointment – Musa"
 * participant[2].type[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
 * participant[2].type[0].coding[0].code = #CST
 * participant[2].status = #accepted
-* participant[2].actor = Reference(urn:uuid:1b12aabb-e5f6-4789-a123-456789abcdef)
+* participant[2].actor = Reference(urn:uuid:992211bb-e5f6-4789-a123-456789abcdef)
 * minutesDuration = 15
 * priority = 5
 
@@ -181,7 +191,7 @@ Instance: ImmRec-IMMSS-001
 InstanceOf: ImmunizationRecommendation
 Usage: #inline
 Title: "Next-Dose Recommendation"
-* patient = Reference(NgPatient-IMMSS-001)
+* patient = Reference(urn:uuid:992211bb-e5f6-4789-a123-456789abcdef)
 * date = "2025-11-06"
 * recommendation[0].forecastStatus.coding[0].system = "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
 * recommendation[0].forecastStatus.coding[0].code = #due

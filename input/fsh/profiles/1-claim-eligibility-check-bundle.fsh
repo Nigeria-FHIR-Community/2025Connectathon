@@ -152,6 +152,10 @@ Description: "Insurer's response indicating coverage and eligibility outcome."
 * entry[0].fullUrl = "urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Elig-001
 
+// Practitioner (ordering/attending) ----------------------------
+* entry[+].fullUrl = "urn:uuid:bbbcccdd-e5f6-4789-a123-456789abcdef"
+* entry[=].resource = NgPractitioner-Elig-001
+
 // Insurer Organization -----------------------------------------
 * entry[+].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Insurer-001
@@ -159,6 +163,10 @@ Description: "Insurer's response indicating coverage and eligibility outcome."
 // Coverage (the 'converge' -> Coverage) ------------------------
 * entry[+].fullUrl = "urn:uuid:fffaaabb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgCoverage-Elig-001
+
+// Eligibility Request ------------------------------------------
+* entry[+].fullUrl = "urn:uuid:dddeeeff-e5f6-4789-a123-456789abcdef"
+* entry[=].resource = CER-Request-001
 
 // Eligibility Response -----------------------------------------
 * entry[+].fullUrl = "urn:uuid:abababab-e5f6-4789-a123-456789abcdef"

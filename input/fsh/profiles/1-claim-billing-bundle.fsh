@@ -66,32 +66,38 @@ Description: "Hospital submits claim to HMO for services already rendered to pat
 // Patient
 * entry[0].fullUrl = "urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Claim-001
-
+* entry[0].request.method = #POST
+* entry[0].request.url = "Patient"
 
 // Practitioner
 * entry[+].fullUrl = "urn:uuid:bbb22233-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgPractitioner-Claim-001
-
+* entry[=].request.method = #POST
+* entry[=].request.url = "Practitioner"
 
 // Provider Organization (Hospital)
 * entry[+].fullUrl = "urn:uuid:ccc33344-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Provider-Claim-001
-
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
 
 // Insurer Organization (HMO)
 * entry[+].fullUrl = "urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Insurer-Claim-001
-
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
 
 // Coverage
 * entry[+].fullUrl = "urn:uuid:eee55566-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgCoverage-Claim-001
-
+* entry[=].request.method = #POST
+* entry[=].request.url = "Coverage"
 
 // Claim (use = claim)
 * entry[+].fullUrl = "urn:uuid:fff66677-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgClaim-Claim-001
-
+* entry[=].request.method = #POST
+* entry[=].request.url = "Claim"
 
 
 // ===============================================================
@@ -102,27 +108,37 @@ InstanceOf: NgClaimSubmissionBundle
 Usage: #example
 Title: "Claim Submission - Response (Collection)"
 Description: "HMO response with adjudication, approved amounts, and payment details."
-* type = #collection
+* type = #transaction
 
 // Patient (echo)
 * entry[0].fullUrl = "urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Claim-001
+* entry[0].request.method = #POST
+* entry[0].request.url = "Patient"
 
 // Insurer (payer)
 * entry[+].fullUrl = "urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Insurer-Claim-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
 
 // Coverage (echo)
 * entry[+].fullUrl = "urn:uuid:eee55566-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgCoverage-Claim-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "Coverage"
 
 // ClaimResponse (adjudication)
 * entry[+].fullUrl = "urn:uuid:aaa77788-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgClaimResponse-Claim-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "ClaimResponse"
 
 // ExplanationOfBenefit (optional, detailed breakdown)
 * entry[+].fullUrl = "urn:uuid:bbb88899-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgEOB-Claim-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "ExplanationOfBenefit"
 
 
 // ===============================================================
@@ -376,7 +392,7 @@ Title: "EOB - Detailed Benefit Explanation"
 * patient = Reference(urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-26T09:15:00+01:00"
 * insurer = Reference(urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef)
-* provider = Reference(urn:uuid:ccc33344-e5f6-4789-a123-456789abcdef)
+* provider = Reference(urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef)
 * outcome = #partial
 * insurance[0].focal = true
 * insurance[0].coverage = Reference(urn:uuid:eee55566-e5f6-4789-a123-456789abcdef)

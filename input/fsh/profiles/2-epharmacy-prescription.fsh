@@ -215,6 +215,7 @@ Instance: NgPractitioner-Rx-001
 InstanceOf: NgPractitioner
 Usage: #example
 Title: "Prescribing Physician - Dr. Oluwaseun Bakare"
+Description: "Prescribing Physician - Dr. Oluwaseun Bakare"
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
 * identifier[0].value = "MDCN-98765"
 * active = true
@@ -563,7 +564,7 @@ Title: "Dispensed - Amoxicillin"
 * status = #completed
 * medicationReference = Reference(urn:uuid:ddd66655-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
-* performer[0].actor = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
+* performer[0].actor = Reference(urn:uuid:aaa00011-e5f6-4789-a123-456789abcdef)
 * authorizingPrescription[0] = Reference(urn:uuid:aaa33322-e5f6-4789-a123-456789abcdef)
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #FF
@@ -598,7 +599,7 @@ Title: "Dispensed - Ibuprofen"
 * status = #completed
 * medicationReference = Reference(urn:uuid:eee55544-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
-* performer[0].actor = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
+* performer[0].actor = Reference(urn:uuid:aaa00011-e5f6-4789-a123-456789abcdef)
 * authorizingPrescription[0] = Reference(urn:uuid:bbb22211-e5f6-4789-a123-456789abcdef)
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #FF
@@ -638,7 +639,7 @@ Title: "Dispensed - Vitamin B Complex"
 * status = #completed
 * medicationReference = Reference(urn:uuid:fff44433-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
-* performer[0].actor = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
+* performer[0].actor = Reference(urn:uuid:aaa00011-e5f6-4789-a123-456789abcdef)
 * authorizingPrescription[0] = Reference(urn:uuid:ccc11100-e5f6-4789-a123-456789abcdef)
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #FF

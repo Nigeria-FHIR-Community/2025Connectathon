@@ -32,8 +32,7 @@ Description: "Minimal transaction bundle to report an AEFI with Patient, Immuniz
     location 0..1 and
     encounter 0..1 and
     immunization 1..1 MS and
-    observation 0..* and
-    adverseEvent 1..1 MS
+    observation 0..*
 
 // Resource restrictions
 * entry[patient].resource only NgPatient
@@ -235,10 +234,10 @@ Title: "Hepatitise B Dose"
 // Title: "Fever 38.8 °C"
 // * status = #final
 // * category[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/observation-category"
-// * category[0].coding[0].code = #vital-signs
+// * category[0].coding[0].code = #social-history
 // * code.coding[0].system = "http://loinc.org"
-// * code.coding[0].code = #8310-5
-// * code.coding[0].display = "Body temperature"
+// * code.coding[0].code = #30525-0
+// * code.coding[0].display = "Age"
 // * subject = Reference(urn:uuid:1212aabb-e5f6-4789-a123-456789abcdef)
 // * effectiveDateTime = "2025-11-05T20:30:00+01:00"
 // * valueQuantity.value = 38.8
