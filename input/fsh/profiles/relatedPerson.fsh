@@ -82,3 +82,39 @@ Description: "Brother of NgPatient-001."
 * relationship[0].coding[0].code = #BROTHER
 * relationship[0].coding[0].display = "Brother"
 * relationship[0].text = "Brother"
+
+
+
+// ======================================================================
+// ISO 25237 – Pseudonymized RelatedPerson (NgRelatedPerson)
+// Controls applied:
+// 1) Suppressed direct identifiers (legal name) → neutral alias.
+// 2) Kept relationship role (not direct identifier).
+// 3) Coarsened birthDate (YYYY-01-01 policy).
+// 4) Linked to the pseudonymized Patient instance.
+// ======================================================================
+
+Instance: NgRelatedPerson-003-Pseudo
+InstanceOf: NgRelatedPerson
+Usage: #example
+Title: "Pseudonymized Ng RelatedPerson (Brother)"
+Description: "ISO 25237-compliant pseudonymization of NgRelatedPerson-003; direct identifiers suppressed, linkage via pseudonymized patient."
+
+// Link to pseudonymized patient (assumes NgPatient-001-Pseudo exists)
+* patient = Reference(NgPatient-001-Pseudo)
+
+// Neutral alias for name (profile requires given 1..*, family 0..1)
+* name[0].given[0] = "Alias-01"
+* name[0].family = "Relative"
+
+// Required gender retained (bound to NGGenderVS)
+* gender = #male
+
+// Coarsened birthDate (original 1990-01-20 → 1990-01-01)
+* birthDate = 1990-01-01
+
+// Relationship role is non-identifying and retained
+* relationship[0].coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-relationship"
+* relationship[0].coding[0].code = #BROTHER
+* relationship[0].coding[0].display = "Brother"
+* relationship[0].text = "Brother"

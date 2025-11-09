@@ -190,6 +190,7 @@ Description: "This CodeSystem defines list of options for uniquely Identifting a
 * #INSUR "insurance no" "Insurance or HMO number"
 * #BIRTHCERT "birthcert" "Birth certificate number"
 * #IMMNO "immunizationo" "Immunization Number"
+* #PSEUDONYM "Pseudonymized Identifier" "Pseudonymized patient data"
 
 
 CodeSystem: NGMDCNCS
@@ -206,12 +207,13 @@ Description: "This CodeSystem IMMZ.C.DE14 defines placeholder codes to manage ph
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 
 // Sample Codes for testing
-* #MDCN-45231 "1"
-* #MDCN-12345 "2"
-* #MDCN-12346 "3"
-* #MDCN-12347 "4"
-* #CHEW-12346 "5"
-* #CHEW-12347 "6"
+* #MDCN-45231 "First Doctor"
+* #MDCN-12345 "Second Doctor"
+* #MDCN-12346 "Old Doctor"
+* #MDCN-12347 "Young Doctor"
+* #CHEW-12346 "Baby Doctor"
+* #CHEW-12347 "Dentist"
+* #PRSN-9C4E-7B12-OB01 "Pseudonymized Doctor"
 
 //.... to be completed
 

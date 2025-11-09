@@ -21,7 +21,8 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
     MedicalRecordsNumber 0..1 MS and  
     BirthCertificateNo 0..1 MS and 
     PhoneNumber 0..1 MS and
-    InsuranceNumber 0..1 MS
+    InsuranceNumber 0..1 MS and
+    Pseudonym 0..1 MS
 
 // STEP 3: Add constraints to the slice
 * identifier[NationalIDNo].value 1..1
@@ -80,6 +81,18 @@ Description: "Nigeria 2025 Connectathon Patient Profile"
 * identifier[InsuranceNumber].type.coding.code = #INSUR
 * identifier[InsuranceNumber].type.coding.display = "The Insurance or HMO number of the client"
 
+
+
+* identifier[Pseudonym].value 1..1
+* identifier[Pseudonym].value ^short = "The actual one-way phsedonymized Patient number generated at state or national authorities"
+* identifier[Pseudonym].system 0..1
+* identifier[Pseudonym].system ^short = "The generating institution e.g., NIMC"
+* identifier[Pseudonym].system ^definition = "The URI system identifying the provider of the pseudo number."
+* identifier[Pseudonym].system ^example[0].label = "Pseudonymized Patient Identifier system"
+* identifier[Pseudonym].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[Pseudonym].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[Pseudonym].type.coding.code = #PSEUDONYM
+* identifier[Pseudonym].type.coding.display = "Pseudonymized Identifier"
 
 
 // OTHER Demographics
@@ -288,10 +301,45 @@ Description: "Male child presenting for routine vaccination; FCT AMAC."
 * contact[0].address.district = "fc-municipal"
 * contact[0].address.state = "FC"
 
-/* 
-Instance: ClaimPatient
+
+
+
+
+// ======================================================================
+// ISO 25237 – Pseudonymized Patient (NgPatient)
+// Approach applied:
+// 1) Direct identifiers (NIN, MRN, phone) removed and replaced with a
+//    single stable pseudonym (re-linkable under governance, not reversible
+//    without a key held outside the dataset).
+// 2) Names replaced with neutral alias; no real-world name retained.
+// 3) Address generalized (state-level only) to reduce re-identification risk.
+// 4) Birth date coarsened to first day of month (policy example); keep year.
+// 5) All caregiver contacts removed.
+// ======================================================================
+
+Instance: NgPatient-001-Pseudo
 InstanceOf: NgPatient
 Usage: #example
-* name.text = "John Doe"
-* gender = #male
-* birthDate = "1980-01-01"  */
+Title: "Pseudonymized Ng Patient (MNCH Referral)"
+Description: "NIS ISO/TR 25237-compliant pseudonymized equivalent of NgPatient-001. Direct identifiers removed; stable pseudonym retained for controlled re-linkage."
+* meta.lastUpdated = 2025-11-04T08:30:00Z
+
+// --- Single replacement identifier (stable pseudonym) ---
+* identifier[Pseudonym].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[Pseudonym].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[Pseudonym].type.coding.code = #PSEUDONYM
+* identifier[Pseudonym].type.coding.display = "Pseudonymized Identifier"
+* identifier[Pseudonym].value = "PSN-8A7F-2C19-KE95"   // example token; linkage managed off-platform
+
+// --- Minimal demographics retained ---
+* active = true
+* gender = #female
+// Coarsened DoB (policy choice): original 1995-02-14 → 1995-02-01
+* birthDate = 1995-02-01
+
+// Neutral alias (no real name)
+* name.family = "Client"
+* name.given[0] = "Female-01"
+
+// Address generalized (remove street & city; keep state only)
+* address[0].state = "LA"

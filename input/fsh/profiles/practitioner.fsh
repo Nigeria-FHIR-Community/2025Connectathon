@@ -102,3 +102,38 @@ Description: "CHEW operating connected vitals devices."
 * birthDate = 1995-11-09
 * qualification[0].code.text = "Community Health Extension Worker"
 * qualification[0].period.start = 2020-03-01
+
+
+// ======================================================================
+// NIS ISO/TR 25237 – Pseudonymized Practitioner (NgPractitioner)
+// Applied controls:
+// 1) Removed direct identifiers (MDCN #, phone, email, legal name).
+// 2) Introduced a stable pseudonym identifier for re-linkage under governance.
+// 3) Coarsened birthDate to first day of month (policy choice).
+// 4) Kept non-direct info (qualification, validity period).
+// ======================================================================
+
+Instance: NgPractitioner-001-Pseudo
+InstanceOf: NgPractitioner
+Usage: #example
+Title: "Pseudonymized Ng Practitioner (MNCH)"
+Description: "ISO 25237-compliant pseudonymization of NgPractitioner-001; direct identifiers suppressed, linkage via controlled pseudonym."
+
+* active = true
+
+// Required identifier replaced with pseudonym token
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value  = "PRSN-9C4E-7B12-OB01"
+
+// Neutral alias (profile requires given & family)
+* name.family = "Clinician"
+* name.given  = "Alias-01"
+
+// Contact points removed entirely to avoid direct contact identifiers
+
+// Coarsened DoB (original 1982-01-15 → 1982-01-01)
+* birthDate = 1982-01-01
+
+// Non-identifying professional info retained
+* qualification[0].code.text = "Obstetrics & Gynaecology"
+* qualification[0].period.start = 2016-01-01

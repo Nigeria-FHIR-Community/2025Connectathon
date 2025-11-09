@@ -28,9 +28,9 @@ Description: "A minimal transaction bundle to schedule an immunization visit wit
 * entry contains
     patient 1..1 MS and
     org 0..1 MS and
-    location 0..1 and
+    location 0..1 MS and
     appointment 1..1 MS and
-    immRec 0..1
+    immRec 0..1 MS
 
 // Resource type restrictions
 * entry[patient].resource only NgPatient

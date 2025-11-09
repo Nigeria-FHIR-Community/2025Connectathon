@@ -28,11 +28,11 @@ Description: "Minimal transaction bundle to report an AEFI with Patient, Immuniz
 * entry contains
     patient 1..1 MS and
     organization 1..1 MS and
-    practitioner 0..1 and
-    location 0..1 and
-    encounter 0..1 and
+    practitioner 0..1 MS and
+    location 0..1 MS and
+    encounter 0..1 MS and
     immunization 1..1 MS and
-    observation 0..*
+    observation 0..* MS
 
 // Resource restrictions
 * entry[patient].resource only NgPatient
