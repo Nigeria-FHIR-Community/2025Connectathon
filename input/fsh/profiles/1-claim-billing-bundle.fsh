@@ -19,7 +19,7 @@ Single Bundle profile that supports BOTH:
 * entry 2..* MS
 * entry.fullUrl 1..1 MS
 * entry.resource 1..1 MS
-* entry.request 0..1
+* entry.request 0..1 MS
 * entry.request.method 1..1
 * entry.request.url 1..1
 

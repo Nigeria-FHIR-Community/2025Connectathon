@@ -209,8 +209,8 @@ Title: "Harmony Health Maintenance Organization - HMO"
 * active = true
 * name = "Harmony HMO"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
-* type.coding.code = #pay
-* type.coding.display = "Payer"
+* type.coding.code = #ins
+* type.coding.display = "Insurance Company"
 * telecom[0].system = #phone
 * telecom[0].value = "0700-HARMONY"
 * address.line[0] = "7 Insurance Crescent"
@@ -228,8 +228,8 @@ Title: "PrimeCare HMO"
 * active = true
 * name = "PrimeCare HMO"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
-* type.coding.code = #pay
-* type.coding.display = "Payer"
+* type.coding.code = #ins
+* type.coding.display = "Insurance Company"
 * telecom[0].system = #phone
 * telecom[0].value = "0700-PRIMECARE"
 * address.line[0] = "12 Insurance Close"

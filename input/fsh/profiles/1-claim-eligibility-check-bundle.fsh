@@ -157,7 +157,7 @@ Description: "Insurer's response indicating coverage and eligibility outcome."
 * entry[=].resource = NgPractitioner-Elig-001
 
 // Insurer Organization -----------------------------------------
-* entry[+].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
+* entry[+].fullUrl = "urn:uuid:cccddde1-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Insurer-001
 
 // Coverage (the 'converge' -> Coverage) ------------------------
@@ -265,7 +265,7 @@ Description: "The Coverage of a Patient."
 * type.coding.code = #EHCPOL     // health insurance policy
 * type.coding.display = "extended healthcare"
 * beneficiary = Reference(urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef)
-* payor[0] = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
+* payor[0] = Reference(urn:uuid:cccddde1-e5f6-4789-a123-456789abcdef)
 * period.start = "2025-01-01"
 * period.end = "2025-12-31"
 
@@ -279,7 +279,7 @@ Description: "The response sent from HMO to Hospital to confirm eligibility or n
 * purpose[0] = #benefits
 * patient = Reference(urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-15T09:06:30+01:00"
-* insurer = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
+* insurer = Reference(urn:uuid:cccddde1-e5f6-4789-a123-456789abcdef)
 * outcome = #complete
 * request = Reference(urn:uuid:dddeeeff-e5f6-4789-a123-456789abcdef)
 * disposition = "Eligible for covered services per active policy."
