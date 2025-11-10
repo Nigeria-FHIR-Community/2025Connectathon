@@ -211,8 +211,8 @@ Title: "MediCare Plus HMO"
 * active = true
 * name = "MediCare Plus HMO"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
-* type.coding.code = #pay
-* type.coding.display = "Payer"
+* type.coding.code = #ins
+* type.coding.display = "Insurance Company"
 * telecom[0].system = #phone
 * telecom[0].value = "0700-MEDICARE"
 * address.line[0] = "15 Insurance Plaza"
