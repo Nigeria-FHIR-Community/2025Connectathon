@@ -1,30 +1,3 @@
-#### Revision History
-
-<table class="table table-hover table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Reason for Changes</th>
-      <th>Version</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Digital Health Interoperability Network (DHIN)</td>
-      <td>25th September 2025</td>
-      <td>First Draft for Connectathon IG</td>
-      <td>0.1.0</td>
-    </tr>
-    <tr>
-      <td>Digital Health Interoperability Network (DHIN)</td>
-      <td>10th November 2025</td>
-      <td>Added nine TestScripts (stories, steps, outcomes) for all tracks</td>
-      <td>0.2.0</td>
-    </tr>
-  </tbody>
-</table>
-
 # DHIN 2025 Connectathon FHIR Implementation Guide
 
 ## Purpose
@@ -34,7 +7,7 @@ This IG follows the **WHO SMART Guidelines** approach (Standards-based, Machine-
 ---
 
 ## Background
-Nigeria’s health information ecosystem is often **fragmented and siloed**. The **Digital Health Interoperability Network (DHIN)** in collaboration with many government and development stakeholders convenes regulators, providers, developers, insurers, and innovators to design and test practical interoperability solutions through structured connectathons.  
+Nigeria’s health information ecosystem is often fragmented and siloed. The [**Digital Health Interoperability Network (DHIN)**](https://www.dhin-hie.org) in collaboration with many government and development stakeholders convenes regulators, providers, developers, insurers, and innovators to design and test practical interoperability solutions through structured connectathons.  
 This IG documents the machine-readable artifacts, profiles, and value sets for the **2025 DHIN Connectathon tracks**:
 
 1. Health Insurance & Claims  
@@ -61,27 +34,27 @@ Each track builds on DAKs, regulatory frameworks, and stakeholder priorities—p
 
 ### 1) Health Insurance & Claims
 - **Purpose:** Digitize and streamline eligibility, pre-auth, billing, and reimbursement  
-- **Key FHIR Artifacts:** `Coverage`, `CoverageEligibilityRequest/Response`, `Claim`, `ClaimResponse`, `Invoice`, `ExplanationOfBenefit`  
+- **Key FHIR Artifacts:** [`NgCoverage`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-claim-coverage.html), `CoverageEligibilityRequest/Response`, [`NgClaim`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-claim.html), [`NgClaimResponse`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-claimresponse.html), [`NgInvoice`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-invoice.html), [`NgExplanationOfBenefit`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-explanationofbenefit.html)  
 - **Sample Bundles:** Eligibility Check, Pre-Auth, Claim Submission
 
 ### 2) MNCH Referral
 - **Purpose:** Structured, traceable referrals for MNCH services  
-- **Key Artifacts:** `ServiceRequest`, `Task`, `Communication`, `CarePlan`  
+- **Key Artifacts:** [`NgServiceRequest`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgServiceRequest.html), [`NgTask`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgTask.html), [`NgCarePlan`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgCarePlan.html)  
 - **Sample Bundles:** Referral Initiation, Referral Response, Referral Tracking
 
 ### 3) ePharmacy (ePrescription & eDispensing)
 - **Purpose:** Standardize prescribing, dispensing, and pharmacy confirmations  
-- **Key Artifacts:** `Medication`, `MedicationRequest`, `MedicationDispense`, `Invoice`  
+- **Key Artifacts:** [`Medication`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-medication.html), [`MedicationRequest`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-medication-request.html), [`MedicationDispense`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgMedicationDispense.html), [`Invoice`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-invoice.html)  
 - **Sample Bundles:** Prescription, Dispense Confirmation
 
 ### 4) Immunization
 - **Purpose:** Digitize vaccine scheduling, administration, AEFI reporting  
-- **Key Artifacts:** `Immunization`, `ImmunizationRecommendation`, `Appointment`, `Encounter`, `Observation`  
+- **Key Artifacts:** [`Immunization`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgImmunization.html), [`ImmunizationRecommendation`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-immunization-recommendation.html), [`Appointment`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-appointment.html), [`Encounter`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-nigeria-encounter.html), [`Observation`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgObservation.html)  
 - **Sample Bundles:** Client Registration, SMART Scheduler, AEFI Report
 
 ### 5) Medical Devices Communication
 - **Purpose:** Integrate connected devices (e.g., analyzers, wearables) with records  
-- **Key Artifacts:** `Device`, `DeviceMetric`, `Observation`, `Task`, `Provenance`  
+- **Key Artifacts:** [`Device`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgDevice.html), [`DeviceRequest`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgDeviceRequest.html), [`Observation`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgObservation.html), [`NgTask`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-NgTask.html), [`Provenance`](https://build.fhir.org/ig/Nigeria-FHIR-Community/2025Connectathon/StructureDefinition-ng-provenance.html)  
 - **Sample Bundles:** Device Result Submission, Wearable Data Upload
 
 ---
