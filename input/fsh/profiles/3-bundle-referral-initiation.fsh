@@ -219,7 +219,7 @@ Usage: #example
 * entry[referral].resource.status = #active
 * entry[referral].resource.intent = #order
 * entry[referral].resource.code.text = "MNCH referral — follow-up ANC visit"
-* entry[referral].resource.subject = Reference(urn:uuid:0aa1bb2c-cc33-4dd4-8ee5-ff6677889901)
+* entry[referral].resource.subject = Reference(NgPatient-001)
 * entry[referral].resource.requester = Reference(NgOrganization-001)
 * entry[referral].resource.performer[0] = Reference(NgPractitioner-001)
 * entry[referral].request.method = #POST

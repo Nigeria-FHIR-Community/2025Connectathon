@@ -327,6 +327,7 @@ Id: ng-device-metric-category-cs
 Title: "NG DeviceMetric Category Codes"
 Description: "Local mirror of DeviceMetric.category. Consider using 'http://terminology.hl7.org/CodeSystem/metric-category' in production."
 * ^status = #active
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-device-metric-category-cs"
 * ^version = "0.1.0"
 * ^caseSensitive = true
 * ^content = #complete
@@ -335,6 +336,24 @@ Description: "Local mirror of DeviceMetric.category. Consider using 'http://term
 * #setting "Setting" "Metric represents a device setting that affects behavior."
 * #calculation "Calculation" "Metric represents a calculated/derived value."
 * #unspecified "Unspecified" "Metric category is not specified."
+
+
+CodeSystem: NgDevicetypeCS
+Id: ng-device-type-cs
+Title: "NG DeviceType Codes"
+Description: "Local mirror of Device Type."
+* ^status = #active
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-device-type-cs"
+* ^version = "0.1.0"
+* ^caseSensitive = true
+* ^content = #complete
+* ^experimental = false
+* #measurement "Measurement" "Metric represents a measured value from a device."
+* #setting "Setting" "Metric represents a device setting that affects behavior."
+* #calculation "Calculation" "Metric represents a calculated/derived value."
+* #unspecified "Unspecified" "Metric category is not specified."
+* #apple "Apple Whatch"
+* #chemistryA "Chemistry Analyzer"
 
 
 

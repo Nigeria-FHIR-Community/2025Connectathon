@@ -156,9 +156,9 @@ Title: "Garki PHC"
 * identifier.value = "HCF-55667"
 * active = true
 * name = "Garki Primary Health Centre"
-* type.coding.system = "https://www.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
-* type.coding.code = #clinic
-* type.coding.display = "Primary Health Centre"
+* type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
+* type.coding.code = #phc-center-l1
+* type.coding.display = "PHC Center Level 1"
 * telecom[0].system = #phone
 * telecom[0].value = "09-111-2222"
 * address.line[0] = "12 Immunization Lane"

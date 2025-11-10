@@ -150,7 +150,7 @@ Description: "Pharmacy confirms medication dispensing with actual quantities and
 * entry[=].resource = NgOrganization-Pharmacy-Disp-001
 
 // Medication 1: Metformin (echo)
-* entry[+].fullUrl = "urn:uuid:bbb77788-f6e5-4789-b234-567890bcdef1"
+* entry[+].fullUrl = "urn:uuid:eee44455-f6e5-4789-b234-567890bcdef1"
 * entry[=].resource = NgMedication-Metformin-001
 
 // Medication 2: Atorvastatin (echo)
@@ -639,9 +639,9 @@ Title: "Pharmacy Invoice - Chronic Disease Medications"
 * lineItem[3].priceComponent[0].factor = 1
 * lineItem[3].priceComponent[0].amount.value = 500
 * lineItem[3].priceComponent[0].amount.currency = #NGN
-* lineItem[3].chargeItemCodeableConcept.coding[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/pharmacy-charge-items"
-* lineItem[3].chargeItemCodeableConcept.coding[0].code = #DISPENSE-FEE
-* lineItem[3].chargeItemCodeableConcept.coding[0].display = "Professional dispensing fee"
+* lineItem[3].chargeItemCodeableConcept.coding[0].system = "http://www.whocc.no/atc"
+* lineItem[3].chargeItemCodeableConcept.coding[0].code = #C05AA04
+* lineItem[3].chargeItemCodeableConcept.coding[0].display = "prednisolone"
 * lineItem[3].chargeItemCodeableConcept.text = "Professional dispensing fee"
 
 

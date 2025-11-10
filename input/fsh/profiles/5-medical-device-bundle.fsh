@@ -243,8 +243,8 @@ Instance: NgOrganization-AppVendor-001
 InstanceOf: NgOrganization
 Usage: #inline
 Title: "Wellness App Ltd."
-* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-cac-registry"
-* identifier.value = "RC-11223344"
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-device-type-cs"
+* identifier.value = "apple"
 * active = true
 * name = "Wellness App Ltd."
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"

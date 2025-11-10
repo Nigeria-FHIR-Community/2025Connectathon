@@ -144,6 +144,11 @@ Description: "Pharmacy response with dispense records for filled prescriptions."
 * entry[0].fullUrl = "urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Rx-001
 
+// Practitioner (Dispenser)
+* entry[+].fullUrl = "urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef"
+* entry[=].resource = NgPractitioner-Rx-001
+
+
 // Pharmacy Organization
 * entry[+].fullUrl = "urn:uuid:aaa00011-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Pharmacy-001
