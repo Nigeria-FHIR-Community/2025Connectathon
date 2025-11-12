@@ -3,6 +3,7 @@ Parent: Claim
 Id: ng-claim
 Title: "NG Claim"
 Description: "A profile representing submitted claims from providers to payers."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-claim"
 
 * identifier 0..*
 * identifier ^short = "Business Identifier for claim"

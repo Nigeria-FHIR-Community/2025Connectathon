@@ -4,6 +4,7 @@ Parent: Measure
 Id: ng-measure
 Title: "NG Measure"
 Description: "A profile on the Measure resource used to define indicators within prescription program."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-measure"
 
 * identifier 1..1 MS
 * identifier.value 1..1

@@ -6,7 +6,7 @@ Parent: Provenance
 Id: ng-provenance
 Title: "NG Lightweight Provenance"
 Description: "Minimal provenance profile for DHIN 2025 Connectathon. Captures who created/updated a resource, when, and (optionally) which activity was performed."
-
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-provenance"
 // Core constraints
 * target 1..* MS
 * target ^short = "The resource(s) for which this provenance record provides information"

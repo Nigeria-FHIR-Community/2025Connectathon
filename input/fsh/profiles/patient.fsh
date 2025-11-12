@@ -2,7 +2,8 @@ Profile: NgPatient
 Parent: Patient
 Title: "NG Patient"
 Description: "Nigeria 2025 Connectathon Patient Profile"
-
+Id: ng-patient
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-patient"
 
 * meta.lastUpdated 1..1 MS
 * meta.lastUpdated ^short = "The date and time when the client record was created or last updated."

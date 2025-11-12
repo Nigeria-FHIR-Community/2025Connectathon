@@ -3,6 +3,8 @@ Profile: NgPractitioner
 Parent: Practitioner
 Title: "NG Practitioner"
 Description: "Profile for a Nigerian Practitioner" 
+Id: ng-practitioner
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-practitioner"
 * identifier 0..* MS
 * identifier.system 1..1
 * identifier.system ^short = "The namespace for the identifier value e.g a MDCN URL"

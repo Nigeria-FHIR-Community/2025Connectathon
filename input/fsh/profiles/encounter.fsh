@@ -1,9 +1,10 @@
 Profile: NgEncounter
 Parent: Encounter
 Title: "NG Encounter"
-Id: nigeria-encounter 
+Id: ng-encounter 
 Description: "A profile for encounters in the Nigerian used to health visits and related healthcare interactions."
 * ^version = "1.0.0"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-encounter"
 * ^status = #active
 * ^publisher = "DHIN"
 * status ^short = "Status of the encounter"

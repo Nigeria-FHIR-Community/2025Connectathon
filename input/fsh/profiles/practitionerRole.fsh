@@ -1,11 +1,12 @@
 Profile: NgPractitionerRole
 Parent: PractitionerRole
-Id: ng-practitionerrole
+Id: ng-practitioner-role
 Title: "NG PractitionerRole"
 Description: """
 Defines the role(s) of a Nigerian healthcare practitioner context.
 Links a Practitioner to an Organization, specifies their role.
 """
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-practitioner-role"
 
 * practitioner 1..1 MS
 * practitioner only Reference(NgPractitioner)

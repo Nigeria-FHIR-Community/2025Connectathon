@@ -8,6 +8,7 @@ Title: "4-NG Immunization SMART Scheduler Bundle"
 Description: "A minimal transaction bundle to schedule an immunization visit with optional recommendations."
 
 * ^status = #active
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-imm-smart-scheduler-bundle"
 
 // Bundle basics
 * type 1..1 MS

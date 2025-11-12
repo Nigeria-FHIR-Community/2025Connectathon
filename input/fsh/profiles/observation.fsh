@@ -1,9 +1,9 @@
 Profile: NgObservation
 Parent: Observation
-Id: NgObservation
 Title: "NG Observations"
+Id: ng-observation
 Description: "A composite Observation profile capturing state of health, underlying conditions, HIV status, ages in weeks/months/years during client registration."
-
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-observation"
 * status 1..1
 * status = #final
 * category 1..1
@@ -130,6 +130,7 @@ InstanceOf: NgObservation
 Usage: #example
 Title: "Example Ng Observation (Childhood Immunization)"
 Description: "Age in months and birth weight for NgPatient-003."
+
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#30525-0 "Age"

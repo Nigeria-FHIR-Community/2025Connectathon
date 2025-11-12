@@ -8,6 +8,7 @@ Title: "NG Consent"
 Description: "Minimal consent profile for Nigerian implementations (e.g., NDPR / NIS ISO/TR 17975 use). Keeps constraints light to reduce QA noise."
 
 * ^status = #active
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-consent"
 
 // Core must-haves
 * status 1..1 MS

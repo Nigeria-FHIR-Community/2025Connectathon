@@ -7,6 +7,8 @@ Id: ng-invoice
 Title: "NG Invoice"
 Description: "Lightweight Invoice profile for pharmacy dispensing and payment in DHIN 2025 Connectathon."
 
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-invoice"
+
 // Keep it simple to minimize QA
 * status 1..1 MS
 * type 0..1 MS

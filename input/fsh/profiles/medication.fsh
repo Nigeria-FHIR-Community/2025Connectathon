@@ -3,7 +3,7 @@ Parent: Medication
 Id: ng-medication
 Title: "NG Medication"
 Description: "A Medication profile with some core elements for demonstration purposes."
-
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-medication"
 * identifier MS
 * form MS
 * ingredient MS

@@ -4,8 +4,9 @@
 Profile: NgMedicationDispense
 Parent: MedicationDispense
 Title: "NG MedicationDispense"
+Id: ng-medication-dispense
 Description: "Minimal MedicationDispense profile for the 2025 Connectathon (ePharmacy)."
-
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-medication-dispense"
 // Core elements 
 * status 1..1 MS
 * medication[x] 1..1 MS

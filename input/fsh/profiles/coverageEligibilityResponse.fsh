@@ -1,8 +1,9 @@
 Profile: NgCoverageEligibilityResponse
 Parent: CoverageEligibilityResponse
-Id: ng-claim-coverageeligibilityresponse
+Id: ng-coverage-eligibility-response
 Title: "NG Claim Coverage Eligibility Response"
 Description: "Profile defining the response from an HMO to an eligibilty request"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-coverage-eligibility-response"
 
 * identifier 0..* MS
 * status from http://hl7.org/fhir/ValueSet/fm-status

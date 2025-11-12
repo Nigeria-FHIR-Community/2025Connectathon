@@ -1,8 +1,9 @@
 Profile: NgClaimResponse
 Parent: ClaimResponse
-Id: ng-claimresponse
+Id: ng-claim-response
 Title: "NG ClaimResponse"
 Description: "A profile representing responses from insurers regarding submitted claims."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-claim-response"
 
 * identifier 0..1
 * status from http://hl7.org/fhir/ValueSet/fm-status 

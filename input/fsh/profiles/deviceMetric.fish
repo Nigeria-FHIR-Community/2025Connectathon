@@ -5,6 +5,7 @@ Profile: NgDeviceMetric
 Parent: DeviceMetric
 Title: "NG DeviceMetric"
 Description: "Minimal DeviceMetric profile for the 2025 Connectathon (medical device observations)."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-device-metric"
 
 // Core elements
 * type 1..1 MS

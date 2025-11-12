@@ -1,8 +1,9 @@
 Profile: NgTask
 Parent: Task
 Title: "NG Task"
+Id: ng-task
 Description: "Minimal Task profile for the 2025 Connectathon (referrals, claims, pharmacy, devices)."
-
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-task"
 // Core, practical constraints
 * status 1..1 MS
 * intent 1..1 MS

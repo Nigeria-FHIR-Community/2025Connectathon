@@ -4,8 +4,9 @@
 Profile: NgHealthcareService
 Parent: HealthcareService
 Title: "NG HealthcareService"
+Id: ng-healthcare-service
 Description: "Minimal HealthcareService profile for the 2025 Connectathon (service directory/referrals)."
-
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-healthcare-service"
 // Core, practical elements
 * name 1..1 MS
 * active 0..1 MS

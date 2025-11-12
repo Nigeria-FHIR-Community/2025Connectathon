@@ -3,6 +3,7 @@ Parent: Organization
 Id: ng-organization 
 Title: "NG Organization"
 Description: "An organization profile representing healthcare facilities responsible for health services or other types of organizations."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-organization"
 
 
 * identifier 1..* MS
@@ -146,6 +147,7 @@ Parent: NgOrganization
 Id: ng-provider-organization
 Title: "NG Provider Organization"
 Description: "Organization profile for healthcare providers (hospitals, clinics)"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-provider-organization"
 * type 1..* MS
 * type from NgProviderOrgTypeVS (required)
 
@@ -154,6 +156,7 @@ Parent: NgOrganization
 Id: ng-insurer-organization
 Title: "NG Insurer Organization"
 Description: "Organization profile for insurance payers/HMOs"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-insurer-organization"
 * type 1..* MS
 * type from NgInsurerOrgTypeVS (required)
 
@@ -163,5 +166,6 @@ Parent: NgOrganization
 Id: ng-pharmacy-organization
 Title: "NG Pharmacy Organization"
 Description: "Organization profile for pharmacies and dispensing facilities"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-pharmacy-organization"
 * type 1..* MS
 * type from NgPharmacyOrganizationVS (required)

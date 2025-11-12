@@ -3,7 +3,7 @@ Parent: MedicationRequest
 Id: ng-medication-request
 Title: "NG MedicationRequest"
 Description: "A MedicationRequest profile with some of core elements for demonstration purposes."
-
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-medication-request"
 * dosageInstruction MS
 * supportingInformation MS
 * eventHistory MS

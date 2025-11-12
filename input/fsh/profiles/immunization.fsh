@@ -2,6 +2,8 @@ Profile: NgImmunization
 Parent: Immunization
 Title: "NG Immunization"
 Description: "Nigerian Profile for Immunization resource."
+Id: ng-immunization
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-immunization"
 
 * identifier 0..1
 * vaccineCode from NGVaccineLocalVS 

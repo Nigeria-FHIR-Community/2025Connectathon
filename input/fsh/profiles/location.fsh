@@ -1,9 +1,9 @@
 Profile: NgLocation
 Parent: Location
 Title: "NG Location"
-Id: nigeria-location 
+Id: ng-location 
 Description: "A profile for immunization service locations, including health facilities, outreach sites, and mobile vaccination units."
-* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/nigeria-location"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-location"
 * ^version = "1.0.0"
 * ^status = #active
 * status 1..1
@@ -42,6 +42,7 @@ InstanceOf: NgLocation
 Usage: #example
 Title: "Example Asokoro OPD"
 Description: "Outpatient department at Asokoro District Hospital."
+
 * status = #active
 * name = "Asokoro OPD"
 * type[0].coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"

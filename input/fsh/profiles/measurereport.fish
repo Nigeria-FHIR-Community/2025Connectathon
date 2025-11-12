@@ -1,8 +1,9 @@
 Profile: NgMeasureReport
 Parent: MeasureReport
-Id: measure-report-profile 
+Id: ng-measure-report 
 Title: "NG MeasureReport"
 Description: "Nigeria Measure Report Profile"
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-measure-report"
 
 
 * identifier.value 1..1 MS

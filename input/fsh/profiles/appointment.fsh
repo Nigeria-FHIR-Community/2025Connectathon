@@ -8,6 +8,7 @@ Title: "NG Appointment"
 Description: "Minimal Appointment profile for DHIN 2025 Connectathon (e.g., immunization, ePharmacy counseling, referrals)."
 
 * ^status = #active
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-appointment"
 
 // Core, practical constraints
 * status 1..1 MS

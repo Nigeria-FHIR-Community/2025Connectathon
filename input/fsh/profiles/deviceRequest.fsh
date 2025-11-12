@@ -1,7 +1,9 @@
 Profile: NgDeviceRequest
 Parent: DeviceRequest
 Title: "NG DeviceRequest"
+Id: ng-device-request
 Description: "Minimal DeviceRequest profile for the 2025 Connectathon."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-device-request"
 
 // Core elements (kept minimal but practical)
 * status 1..1 MS

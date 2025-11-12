@@ -8,6 +8,7 @@ Title: "4-NG AEFI Report Bundle"
 Description: "Minimal transaction bundle to report an AEFI with Patient, Immunization, AdverseEvent, and supporting data."
 
 * ^status = #active
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-aefi-report-bundle"
 
 // Bundle basics
 * type 1..1 MS

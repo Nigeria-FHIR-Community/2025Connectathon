@@ -1,7 +1,9 @@
 Profile: NgDevice
 Parent: Device
 Title: "NG Device"
+Id: ng-device
 Description: "Minimal Device profile for the 2025 Connectathon (medical devices communications)."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-device"
 
 // Core elements (minimal & useful)
 * status 1..1 MS

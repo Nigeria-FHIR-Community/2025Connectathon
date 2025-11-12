@@ -1,8 +1,9 @@
 Profile: NgRelatedPerson
 Parent: RelatedPerson
 Title: "NG RelatedPerson"
-Id: related-person
+Id: ng-related-person
 Description: "Sibling or parent of the sick person."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-related-person"
 
 * patient 1..1 MS
 * patient only Reference(NgPatient)

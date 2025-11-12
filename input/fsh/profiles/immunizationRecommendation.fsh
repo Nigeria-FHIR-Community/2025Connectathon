@@ -8,6 +8,7 @@ Title: "NG ImmunizationRecommendation"
 Description: "Simple profile to convey due/overdue vaccine recommendations for a Nigerian client."
 
 * ^status = #active
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-immunization-recommendation"
 
 // Core must-supports
 * patient 1..1 MS

@@ -1,8 +1,9 @@
 Profile: NgCoverageEligibilityRequest
 Parent: CoverageEligibilityRequest
-Id: ng-claim-coverageeligibilityrequest
+Id: ng-coverage-eligibility-request
 Title: "NG Claim Coverage Eligibility Request"
 Description: "A profile verifying a patient's active insurance coverage and covered services.."
+* ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-coverage-eligibility-request"
 
 * identifier 0..* MS
 * status from http://hl7.org/fhir/ValueSet/fm-status 
