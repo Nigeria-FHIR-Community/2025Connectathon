@@ -106,6 +106,30 @@ Description: "CHEW operating connected vitals devices."
 * qualification[0].period.start = 2020-03-01
 
 
+// Dr. Aderemi in Claims Bundle
+Instance: NgPractitioner-006-Doctor
+InstanceOf: NgPractitioner
+Usage: #example
+Title: "Triage Nurse"
+Description: "Triage Nurse used in Claims check"
+
+* active = true
+// Required identifier replaced with pseudonym token
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value  = "PRSN-9C4E-7B12-OB01"
+// Neutral alias (profile requires given & family)
+* name.family = "Aderemi"
+* name.given  = "Akon"
+
+// Contact points removed entirely to avoid direct contact identifiers
+// Coarsened DoB (original 1982-01-15 → 1982-01-01)
+* birthDate = 1980-01-01
+
+// Non-identifying professional info retained
+* qualification[0].code.text = "GP"
+* qualification[0].period.start = 2010-01-01
+
+
 // ======================================================================
 // NIS ISO/TR 25237 – Pseudonymized Practitioner (NgPractitioner)
 // Applied controls:
@@ -138,4 +162,31 @@ Description: "ISO 25237-compliant pseudonymization of NgPractitioner-001; direct
 
 // Non-identifying professional info retained
 * qualification[0].code.text = "Obstetrics & Gynaecology"
+* qualification[0].period.start = 2016-01-01
+
+
+
+
+// Triage Nurse
+
+Instance: NgPractitioner-005-nurse
+InstanceOf: NgPractitioner
+Usage: #example
+Title: "Triage Nurse"
+Description: "Triage Nurse used in Claims check"
+
+* active = true
+// Required identifier replaced with pseudonym token
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value  = "PRSN-9C4E-7B12-OB01"
+// Neutral alias (profile requires given & family)
+* name.family = "Sister"
+* name.given  = "Blessing"
+
+// Contact points removed entirely to avoid direct contact identifiers
+// Coarsened DoB (original 1982-01-15 → 1982-01-01)
+* birthDate = 1981-01-01
+
+// Non-identifying professional info retained
+* qualification[0].code.text = "Nurse"
 * qualification[0].period.start = 2016-01-01

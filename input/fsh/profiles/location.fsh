@@ -6,11 +6,11 @@ Description: "A profile for immunization service locations, including health fac
 * ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-location"
 * ^version = "1.0.0"
 * ^status = #active
-* status 1..1
-* name 1..1
-* type 1..* MS
+* status 0..1
+* name 0..1
+* type 0..* MS
 * type from NGFacilityTypeVS (extensible)
-* address 1..1 MS
+* address 0..1 MS
 * address.extension contains NGAdministrativeWard named NGadministrativeWard 0..1 MS
 * address.line 0..1 MS
 * address.line ^short = "The line address of the health Location"
@@ -21,13 +21,16 @@ Description: "A profile for immunization service locations, including health fac
 * address.state from NGStatesVS (required)
 * address.state ^short = "The State in Nigeria where the location"
 * address.country = "NG" (exactly)
+
 * telecom 0..* MS
 * position 0..1
 * position.altitude 0..1
 * position.longitude 1..1 MS
 * position.latitude 1..1 MS
+* managingOrganization 0..1
 * managingOrganization only Reference(NgOrganization)
 * managingOrganization ^short = "Organization responsible for provisioning and upkeep of the location"
+* partOf 0..1
 * partOf only Reference(NgLocation)
 * partOf ^short = "Another location this organization is physically part of"
 

@@ -35,64 +35,31 @@ CoverageEligibilityRequest/Response with minimal constraints to reduce QA noise.
 
 // Named slices used across REQUEST and RESPONSE flows
 * entry contains
-    patient            0..1 MS and
+    patient            1..1 MS and
     practitioner       0..1 MS and
-    providerOrg        0..1 MS and
+    providerOrg        1..1 MS and
     cerRequest         0..1 MS and
-    insurerOrg         0..1 MS and
+    insurerOrg         1..1 MS and
     coverage           0..1 MS and
     cerResponse        0..1 MS
 
 // ---- Patient ----
 * entry[patient].resource only NgPatient
 * entry[patient].fullUrl ^short = "Prefer URN UUID (urn:uuid:...) for intra-bundle refs."
-
 // ---- Practitioner (ordering/attending) ----
 * entry[practitioner].resource only NgPractitioner
-
 // ---- Hospital/Provider Organization ----
 * entry[providerOrg].resource only NgProviderOrganization
-
-
+// ---- Insurer Organization (RESPONSE bundle) ----
+* entry[insurerOrg].resource only NgInsurerOrganization
+// ---- Coverage (returned by insurer) ----
+* entry[coverage].resource only NgCoverage
 // ---- CoverageEligibilityRequest (REQUEST bundle) ----
 * entry[cerRequest].resource only NgCoverageEligibilityRequest
 * entry[cerRequest].request.method ^short = "POST for transaction requests"
 * entry[cerRequest].request.url ^short    = "NgCoverageEligibilityRequest"
-
-// ---- Insurer Organization (RESPONSE bundle) ----
-* entry[insurerOrg].resource only NgInsurerOrganization
-
-
-// ---- Coverage (returned by insurer) ----
-* entry[coverage].resource only NgCoverage
-
 // ---- CoverageEligibilityResponse (RESPONSE bundle) ----
 * entry[cerResponse].resource only NgCoverageEligibilityResponse
-
-// -------------------- Helpful soft invariants (warnings) --------------------
-// Limit bundle.type to the two intended codes
-Invariant: ngelig-type
-Description: "Bundle.type SHOULD be either 'transaction' (request) or 'collection' (response)."
-Severity: #warning
-Expression: "type in ('transaction'|'collection')"
-
-// If it's a transaction request, suggest presence of CER and HTTP requests
-Invariant: ngelig-request-shape
-Description: "If type = 'transaction', bundle SHOULD include a NgCoverageEligibilityRequest and each entry SHOULD carry a request.method/url."
-Severity: #warning
-Expression: "(type != 'transaction') or (entry.resource.ofType(NgCoverageEligibilityRequest).exists() and entry.request.exists())"
-
-// If it's a collection response, suggest presence of CER response and Coverage
-Invariant: ngelig-response-shape
-Description: "If type = 'collection', bundle SHOULD include a NgCoverageEligibilityResponse and a NgCoverage resource."
-Severity: #warning
-Expression: "(type != 'collection') or (entry.resource.ofType(NgCoverageEligibilityResponse).exists() and entry.resource.ofType(NgCoverage).exists())"
-
-// Encourage URN UUIDs for intra-bundle references
-Invariant: ngelig-urn-uuids
-Description: "Entries SHOULD use URN UUID fullUrls for local intra-bundle references."
-Severity: #warning
-Expression: "entry.fullUrl.all(matches('^urn:uuid:'))"
 
 
 
@@ -114,28 +81,27 @@ Description: "Hospital requests HMO eligibility for a patient."
 // Patient -------------------------------------------------------
 * entry[0].fullUrl = "urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Elig-001
-
-// Practitioner (ordering/attending) ----------------------------
-* entry[+].fullUrl = "urn:uuid:bbbcccdd-e5f6-4789-a123-456789abcdef"
-* entry[=].resource = NgPractitioner-Elig-001
-
-// Hospital Organization (provider) -----------------------------
-* entry[+].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
-* entry[=].resource = NgOrganization-Hospital-001
-
-// Eligibility Request ------------------------------------------
-* entry[+].fullUrl = "urn:uuid:dddeeeff-e5f6-4789-a123-456789abcdef"
-* entry[=].resource = CER-Request-001
-
-// Transaction methods/urls -------------------------------------
 * entry[0].request.method = #POST
 * entry[0].request.url = "Patient"
+
+// Insurer Organization -----------------------------------------
+* entry[1].fullUrl = "urn:uuid:cccddde1-e5f6-4789-a123-456789abcdef"
+* entry[1].resource = NgOrganization-Insurer-001
 * entry[1].request.method = #POST
-* entry[1].request.url = "Practitioner"
+* entry[1].request.url = "NgInsurerOrganization"
+
+// Hospital Organization (provider) -----------------------------
+* entry[2].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
+* entry[2].resource = NgOrganization-Hospital-001
 * entry[2].request.method = #POST
-* entry[2].request.url = "Organization"
+* entry[2].request.url = "NgProviderOrganization"
+
+// Eligibility Request ------------------------------------------
+* entry[3].fullUrl = "urn:uuid:dddeeeff-e5f6-4789-a123-456789abcdef"
+* entry[3].resource = CER-Request-001
 * entry[3].request.method = #POST
 * entry[3].request.url = "CoverageEligibilityRequest"
+
 
 
 // ---------------------------------------------------------------
@@ -148,13 +114,17 @@ Title: "Eligibility Check - Response (Collection)"
 Description: "Insurer's response indicating coverage and eligibility outcome."
 * type = #collection
 
-// Patient echo (optional but helpful for correlation) ----------
+// Patient echo ----------
 * entry[0].fullUrl = "urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Elig-001
 
 // Practitioner (ordering/attending) ----------------------------
 * entry[+].fullUrl = "urn:uuid:bbbcccdd-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgPractitioner-Elig-001
+
+// Hospital Organization (provider) -----------------------------
+* entry[+].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
+* entry[=].resource = NgOrganization-Hospital-001
 
 // Insurer Organization -----------------------------------------
 * entry[+].fullUrl = "urn:uuid:cccddde1-e5f6-4789-a123-456789abcdef"
@@ -183,22 +153,26 @@ Instance: NgPatient-Elig-001
 InstanceOf: NgPatient
 Usage: #example
 Title: "Eligibility Patient"
-Description: "A Patient whose service eligibility is being sorth."
-* meta.lastUpdated = "2025-10-15T09:00:00+01:00"
-* identifier[PhoneNumber].value = "08031112222"
+Description: "A Patient Chika whose service eligibility is being sorth."
+* meta.lastUpdated = "2024-10-15T09:00:00+01:00"
+* identifier[PhoneNumber].value = "08031112233"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "mobile"
-* name.given[0] = "Aisha"
-* name.family = "Bello"
-* gender = #female
+* identifier[NationalIDNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.code = #NIN
+* identifier[NationalIDNo].value = "23456565514"
+* name.given[0] = "Chika"
+* name.family = "Okafor"
+* gender = #male
 * active = true
 * birthDate = "1990-04-21"
-* address.line[0] = "12 PHC Road"
-* address.city = "Garki"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* address.line[0] = "21 Industrial Area"
+* address.city = "Port Harcourt"
+* address.district = "ri-emohua"
+* address.state = "RI"
 
 // -------------------- NgPractitioner ---------------------------
 Instance: NgPractitioner-Elig-001
@@ -209,11 +183,33 @@ Description: "A Healthcare provider checking for a given Patient's eligibility f
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
 * identifier[0].value = "MDCN-45231"
 * active = true
-* name.given = "Nkiru"
-* name.family = "Okafor"
+* name.given = "Elidayo"
+* name.family = "Aderemi"
 * telecom[0].system = #phone
 * telecom[0].value = "08090001111"
 * birthDate = "1985-03-05"
+
+// -------------------- NgInsurerOrganization (Insurer) ----------------
+Instance: NgOrganization-Insurance-001
+InstanceOf: NgInsurerOrganization
+Usage: #example
+Title: "XYZ HMO"
+Description: "A Health Insurance Organization."
+* identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
+* identifier.value = "CLM-2025-0001"
+* active = true
+* name = "XYZ HMO"
+* type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
+* type.coding.code = #ins
+* type.coding.display = "Insurance Company"
+* telecom[0].system = #phone
+* telecom[0].value = "01-445-7799"
+* address.line[0] = "25 Hospital Way"
+* address.city = "Port Harcourt"
+* address.district = "ri-emohua"
+* address.state = "RI"
+
+
 
 // -------------------- NgOrganization (Hospital) ----------------
 Instance: NgOrganization-Hospital-001
@@ -231,9 +227,12 @@ Description: "A Hospital organization where a Patient has gone for service."
 * telecom[0].system = #phone
 * telecom[0].value = "01-445-7788"
 * address.line[0] = "25 Hospital Way"
-* address.city = "Garki"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* address.city = "Port Harcourt"
+* address.district = "ri-emohua"
+* address.state = "RI"
+
+
+
 
 // -------------------- CoverageEligibilityRequest (base) --------
 Instance: CER-Request-001
@@ -246,8 +245,8 @@ Description: "The request sent to a HMO from a Hospital."
 * patient = Reference(urn:uuid:aaabbbcc-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-15T09:05:00+01:00"
 // Provider can be Practitioner or Organization; include both contextually
-* provider = Reference(urn:uuid:bbbcccdd-e5f6-4789-a123-456789abcdef)
-* insurer = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
+* provider = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
+* insurer = Reference(urn:uuid:cccddde1-e5f6-4789-a123-456789abcdef)
 // Optional facility context (requestor organization)
 * facility = Reference(NgLocation-001)
 * item.category.coding.system = "http://terminology.hl7.org/CodeSystem/ex-benefitcategory"
@@ -258,8 +257,8 @@ Description: "The request sent to a HMO from a Hospital."
 Instance: NgCoverage-Elig-001
 InstanceOf: NgCoverage
 Usage: #example
-Title: "Coverage - Harmony HMO (Active)"
-Description: "The Coverage of a Patient."
+Title: "Coverage - XYZ HMO (Active)"
+Description: "The Coverage of a Patient Chika."
 * status = #active
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #EHCPOL     // health insurance policy

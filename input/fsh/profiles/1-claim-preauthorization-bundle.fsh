@@ -57,10 +57,6 @@ Description: "When a Claim is present, it SHOULD be for preauthorization."
 Severity: #warning
 Expression: "entry.resource.ofType(Claim).all(use = 'preauthorization')"
 
-Invariant: ngpra-collection-shape
-Description: "If Bundle.type = 'collection', include ≥1 ClaimResponse and ≥1 Organization."
-Severity: #error
-Expression: "(type = 'collection') implies (entry.resource.ofType(ClaimResponse).count() >= 1 and entry.resource.ofType(Organization).count() >= 1)"
 
 
 // ===============================================================
@@ -86,8 +82,8 @@ Description: "Hospital requests payer authorization before delivering a service.
 * entry[=].request.url = "Practitioner"
 
 // Provider Organization (Hospital)
-* entry[+].fullUrl = "urn:uuid:cccddde2-e5f6-4789-a123-456789abcdef"
-* entry[=].resource = NgOrganization-Provider-001
+* entry[+].fullUrl = "urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef"
+* entry[=].resource = NgOrganization-Hospital-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "Organization"
 
@@ -142,8 +138,36 @@ Description: "Payer response to pre-authorization request."
 // Inline Resources (aligned to Ng* profiles)
 // ===============================================================
 
-// -------------------- NgPatient (PhoneNumber slice aligned) ----
+
+// -------------------- NgPatient ----
 Instance: NgPatient-PreAuth-001
+InstanceOf: NgPatient
+Usage: #example
+Title: "Eligibility Patient"
+Description: "A Patient Chika whose service eligibility is being sorth."
+* meta.lastUpdated = "2024-10-15T09:00:00+01:00"
+* identifier[NationalIDNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.code = #NIN
+* identifier[NationalIDNo].value = "23456565514"
+* identifier[PhoneNumber].value = "08031112233"
+* identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.code = #MOBILE
+* identifier[PhoneNumber].type.coding.display = "mobile"
+* name.given[0] = "Chika"
+* name.family = "Okafor"
+* gender = #male
+* active = true
+* birthDate = "1990-04-21"
+* address.line[0] = "21 Industrial Area"
+* address.city = "Port Harcourt"
+* address.district = "ri-emohua"
+* address.state = "RI"
+
+
+// -------------------- NgPatient (second Patient) ----
+Instance: NgPatient-PreAuth-002
 InstanceOf: NgPatient
 Usage: #inline
 Title: "PreAuth Patient"
@@ -163,8 +187,27 @@ Title: "PreAuth Patient"
 * address.district = "fc-municipal"
 * address.state = "FC"
 
+
+
 // -------------------- NgPractitioner ---------------------------
 Instance: NgPractitioner-PreAuth-001
+InstanceOf: NgPractitioner
+Usage: #example
+Title: "Attending Practitioner (Chika)"
+Description: "A Healthcare provider checking for a given Patient's eligibility for service."
+* identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
+* identifier[0].value = "MDCN-45231"
+* active = true
+* name.given = "Elidayo"
+* name.family = "Aderemi"
+* telecom[0].system = #phone
+* telecom[0].value = "08090001111"
+* birthDate = "1985-03-05"
+
+
+
+// -------------------- NgPractitioner ---------------------------
+Instance: NgPractitioner-PreAuth-002
 InstanceOf: NgPractitioner
 Usage: #inline
 Title: "Requesting Clinician"
@@ -176,6 +219,9 @@ Title: "Requesting Clinician"
 * telecom[0].system = #phone
 * telecom[0].value = "08090002222"
 * birthDate = "1983-05-04"
+
+
+
 
 // -------------------- NgOrganization (Provider/Hospital) -------
 Instance: NgOrganization-Provider-001
@@ -202,21 +248,22 @@ Title: "Unity District Hospital"
 
 Instance: NgOrganization-Insurer-001
 InstanceOf: NgInsurerOrganization
-Usage: #inline
-Title: "Harmony Health Maintenance Organization - HMO"
+Usage: #example
+Title: "XYZ HMO"
+Description: "A Health Insurance Organization."
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
-* identifier.value = "NHIA-0011223344"
+* identifier.value = "CLM-2025-0001"
 * active = true
-* name = "Harmony HMO"
+* name = "XYZ HMO"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
 * type.coding.code = #ins
 * type.coding.display = "Insurance Company"
 * telecom[0].system = #phone
-* telecom[0].value = "0700-HARMONY"
-* address.line[0] = "7 Insurance Crescent"
-* address.city = "Victoria Island"
-* address.district = #la-eti-osa
-* address.state = "LA"
+* telecom[0].value = "01-445-7799"
+* address.line[0] = "25 Hospital Way"
+* address.city = "Port Harcourt"
+* address.district = "ri-emohua"
+* address.state = "RI"
 
 
 Instance: NgOrganization-Insurer-002
@@ -241,7 +288,7 @@ Title: "PrimeCare HMO"
 Instance: NgCoverage-PreAuth-001
 InstanceOf: NgCoverage
 Usage: #inline
-Title: "Coverage - PrimeCare HMO (Active)"
+Title: "Coverage - XYZ HMO (Active)"
 * status = #active
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #EHCPOL
@@ -263,13 +310,33 @@ Title: "2-Pre-Authorization Claim"
 * use = #preauthorization
 * patient = Reference(urn:uuid:aaabbbc2-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-20T10:20:00+01:00"
-* provider = Reference(urn:uuid:cccddde2-e5f6-4789-a123-456789abcdef)
+* provider = Reference(urn:uuid:cccdddee-e5f6-4789-a123-456789abcdef)
 // At least one item
 * item[0].sequence = 1
-* item[0].productOrService = http://terminology.hl7.org/CodeSystem/ex-USCLS#1101
+* item[0].productOrService = http://terminology.hl7.org/CodeSystem/ex-USCLS#99555
 * item[0].quantity.value = 1
-* item[0].unitPrice.value = 25000
+* item[0].unitPrice.value = 5000
 * item[0].unitPrice.currency = #NGN
+
+* item[1].sequence = 2
+* item[1].productOrService = http://terminology.hl7.org/CodeSystem/ex-USCLS#2101
+* item[1].quantity.value = 1
+* item[1].unitPrice.value = 15000
+* item[1].unitPrice.currency = #NGN
+
+* item[2].sequence = 3
+* item[2].productOrService = http://terminology.hl7.org/CodeSystem/ex-USCLS#1102
+* item[2].quantity.value = 1
+* item[2].unitPrice.value = 3000
+* item[2].unitPrice.currency = #NGN
+
+* item[3].sequence = 4
+* item[3].productOrService = http://terminology.hl7.org/CodeSystem/ex-USCLS#99555
+* item[3].quantity.value = 1
+* item[3].unitPrice.value = 2000
+* item[3].unitPrice.currency = #NGN
+
+
 // Insurance (required; focal + coverage)
 * insurance[0].focal = true
 * insurance[0].coverage = Reference(urn:uuid:dddeeef2-e5f6-4789-a123-456789abcdef)
@@ -292,8 +359,9 @@ Title: "Pre-Authorization Decision"
 * created = "2025-10-20T10:45:00+01:00"
 * insurer = Reference(urn:uuid:cccddde3-e5f6-4789-a123-456789abcdef)
 * outcome = #complete
+* preAuthRef = "Ref: CLM-2025-001234. Check status at https://truth-hmo.ng."
 * item[0].itemSequence = 1
 * item[0].adjudication[0].category.coding[0].system = "http://terminology.hl7.org/CodeSystem/adjudication"
 * item[0].adjudication[0].category.coding[0].code = #eligible
-* item[0].adjudication[0].amount.value = 25000
+* item[0].adjudication[0].amount.value = 23000
 * item[0].adjudication[0].amount.currency = #NGN

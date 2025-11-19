@@ -46,7 +46,7 @@ may be included to support initiation, communication, response, and tracking."
 * entry contains
     patient 0..1 MS and
     referral 1..1 MS and
-    //communication 0..* MS and
+    communication 0..* MS and
     task 0..* MS
 
 // Required slices
@@ -54,23 +54,22 @@ may be included to support initiation, communication, response, and tracking."
 * entry[patient].request.method = #POST
 * entry[patient].request.url = "https://sandbox.dhin-hie.org/ig/resources/NgPatient"
 
-
 * entry[referral].resource only NgServiceRequest
 * entry[referral].request.method = #POST
 * entry[referral].request.url = "https://sandbox.dhin-hie.org/ig/resources/NgServiceRequest"
 
 // Optional slices
-// * entry[communication].resource only NgCommunication
-// * entry[communication].request.method = #POST
-// * entry[communication].request.url = "https://sandbox.dhin-hie.org/ig/resources/NgCommunication"
+* entry[communication].resource only NgCommunication
+* entry[communication].request.method = #POST
+* entry[communication].request.url = "https://sandbox.dhin-hie.org/ig/resources/NgCommunication"
 
 * entry[task].resource only NgTask
 * entry[task].request.method = #POST
-* entry[task].request.url = "Task"
+* entry[task].request.url = "https://sandbox.dhin-hie.org/ig/resources/NgTask"
 
-// ============================================================================
+// =================================================================================
 // 1. EXAMPLE: Referral + Patient + a Communication message referencing the referral
-// ============================================================================
+// =================================================================================
 Instance: bundle-referral
 InstanceOf: NgMNCHReferralBundle
 Title: "MNCH Referral — Communication"
@@ -93,11 +92,10 @@ Description: "EXAMPLE: MNCH Referral + Patient + a Communication message referen
 * entry[referral].resource.intent = #order
 * entry[referral].resource.category[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/service-category"
 * entry[referral].resource.category[0].coding[0].code = #4
-* entry[referral].resource.category[0].coding[0].display = "Child Care /Kindergarten"
+* entry[referral].resource.category[0].coding[0].display = "Child Care/Kindergarten"
 * entry[referral].resource.code.text = "MNCH referral for ANC complication"
-* entry[referral].resource.subject = Reference(NgPatient-001)
-* entry[referral].resource.requester = Reference(NgPractitioner-001)
-* entry[referral].resource.performer[0] = Reference(NgOrganization-001)
+* entry[referral].resource.subject = Reference(urn:uuid:6e8b1c2d-1a23-4bcd-95ef-0a1b2c3d4e21)
+* entry[referral].resource.requester = Reference(urn:uuid:6e8b1c2d-1a23-4bcd-95ef-0a1b2c3d4e21)
 * entry[referral].request.method = #POST
 
 
@@ -131,7 +129,7 @@ Usage: #example
 * entry[referral].resource.intent = #order
 * entry[referral].resource.code.text = "MNCH referral initiation — suspected pre-eclampsia"
 * entry[referral].resource.subject = Reference(urn:uuid:90b1c2d3-4e56-47f8-8a90-abc123def024)
-* entry[referral].resource.requester = Reference(NgPractitioner-002)
+* entry[referral].resource.requester = Reference(urn:uuid:90b1c2d3-4e56-47f8-8a90-abc123def024)
 * entry[referral].resource.performer[0] = Reference(NgOrganization-001)
 * entry[referral].request.method = #POST
 
@@ -175,7 +173,7 @@ Usage: #example
 * entry[referral].resource.intent = #order
 * entry[referral].resource.code.text = "MNCH referral — fetal distress"
 * entry[referral].resource.subject = Reference(urn:uuid:c3d4e5f6-7182-4b93-ac04-de45f6789027)
-* entry[referral].resource.requester = Reference(NgPractitioner-003)
+* entry[referral].resource.requester = Reference(urn:uuid:c3d4e5f6-7182-4b93-ac04-de45f6789027)
 * entry[referral].resource.performer[0] = Reference(NgOrganization-001)
 * entry[referral].request.method = #POST
 
@@ -219,9 +217,9 @@ Usage: #example
 * entry[referral].resource.status = #active
 * entry[referral].resource.intent = #order
 * entry[referral].resource.code.text = "MNCH referral — follow-up ANC visit"
-* entry[referral].resource.subject = Reference(NgPatient-001)
-* entry[referral].resource.requester = Reference(NgOrganization-001)
-* entry[referral].resource.performer[0] = Reference(NgPractitioner-001)
+* entry[referral].resource.subject = Reference(urn:uuid:0aa1bb2c-cc33-4dd4-8ee5-ff6677889901)
+* entry[referral].resource.requester = Reference(urn:uuid:0aa1bb2c-cc33-4dd4-8ee5-ff6677889901)
+* entry[referral].resource.performer[0] = Reference(NgOrganization-001)
 * entry[referral].request.method = #POST
 
 // Task (in-progress tracking)

@@ -6,27 +6,24 @@ Description: "Minimal ServiceRequest profile for the 2025 Connectathon (referral
 * ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-service-request"
 // Core, practical constraints
 * status 1..1 MS
+* status from http://hl7.org/fhir/ValueSet/request-status (required)
 * intent 1..1 MS
-* code 1..1 MS
+* intent from http://hl7.org/fhir/ValueSet/request-intent (required)
+* code 0..1 MS
 * subject 1..1 MS
 * subject only Reference(NgPatient)
 * authoredOn 0..1
 * occurrence[x] 0..1
 * requester 0..1
-* requester only Reference(NgPractitioner or NgPractitionerRole or NgOrganization)
+* requester only Reference(NgPractitioner or NgPatient or NgOrganization)
 * performerType 0..1
 * performer 0..*
-* performer only Reference(NgPractitioner or NgPractitionerRole or NgOrganization or NgHealthcareService)
-* reasonCode 0..*
+* performer only Reference(NgPractitioner or NgOrganization)
 * reasonReference 0..*
 * reasonReference only Reference(NgCondition or NgObservation)
 * supportingInfo 0..*
 * priority 0..1
 
-// Value set bindings (built-ins)
-* status from RequestStatus (required)
-* intent from RequestIntent (required)
-* priority from RequestPriority (required)
 
 // EXAMPLES
 

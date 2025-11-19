@@ -48,21 +48,6 @@ Single Bundle profile that supports BOTH:
 
 * entry.fullUrl ^short = "Prefer URN UUID (urn:uuid:...) for intra-bundle references."
 
-// Invariants
-Invariant: ngrx-transaction-shape
-Description: "If Bundle.type = 'transaction', include ≥1 MedicationRequest and every entry has request.method & request.url."
-Severity: #error
-Expression: "(type = 'transaction') implies (entry.resource.ofType(MedicationRequest).count() >= 1 and entry.request.all(method.exists() and url.exists()))"
-
-Invariant: ngrx-collection-shape
-Description: "If Bundle.type = 'collection', include ≥1 MedicationRequest or MedicationDispense."
-Severity: #error
-Expression: "(type = 'collection') implies (entry.resource.ofType(MedicationRequest).count() >= 1 or entry.resource.ofType(MedicationDispense).count() >= 1)"
-
-Invariant: ngrx-urn-uuids
-Description: "Entries SHOULD use URN UUID fullUrls for local intra-bundle references."
-Severity: #warning
-Expression: "entry.fullUrl.all(matches('^urn:uuid:'))"
 
 
 // ===============================================================
@@ -198,22 +183,23 @@ Description: "Pharmacy response with dispense records for filled prescriptions."
 Instance: NgPatient-Rx-001
 InstanceOf: NgPatient
 Usage: #inline
-Title: "Prescription Patient - Folake Adeyemi"
+Title: "Prescription Patient - Ibrahim Yusuf"
 * meta.lastUpdated = "2025-10-28T08:00:00+01:00"
 * identifier[PhoneNumber].value = "08056789012"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "mobile"
-* name.given[0] = "Folake"
-* name.family = "Adeyemi"
-* gender = #female
+* name.given[0] = "Mallam"
+* name.given[1] = "Ibrahim"
+* name.family = "Yusuf"
+* gender = #male
 * birthDate = "1985-03-18"
 * active = true
 * address.line[0] = "88 Medication Lane"
-* address.city = "Ikeja"
-* address.district = "la-ikeja"
-* address.state = "LA"
+* address.city = "Kano City"
+* address.district = "#kn-gezawa"
+* address.state = "KN"
 
 // -------------------- NgPractitioner ---------------------------
 Instance: NgPractitioner-Rx-001

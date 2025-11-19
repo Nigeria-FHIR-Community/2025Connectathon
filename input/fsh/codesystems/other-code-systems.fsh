@@ -432,3 +432,26 @@ Description: "Local CodeSystem defining standard bundle identifiers for DHIN 202
 * #BND-0009 "CarePlan Synchronization Bundle" "Bundle for synchronizing patient care plans across connected systems."
 * #BND-0010 "Document Exchange Bundle" "Bundle representing a signed clinical document or summary shared between organizations."
 
+
+
+// CodeSystem: Eligibility Request ID
+
+CodeSystem: EligibilityRequestIdCS
+Id: eligibility-request-id
+Title: "Eligibility Request ID CodeSystem"
+Description: """
+Local codes to identify the type used for an Eligibility Request identifier.
+Intended for use in CoverageEligibilityRequest.identifier.type.
+"""
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/eligibility-request-id"
+* ^version = "0.1.0"
+* ^status = #active
+* ^experimental = false
+* ^caseSensitive = true
+* ^publisher = "Digital Health Interoperability Network (DHIN)"
+* ^content = #complete
+
+* #ELAPPROVE01 "Eligibility Approved"
+* #ELAPPROVE02 "Eligibility Response ID"
+* #PA-2025-8847 "Preauthorization Approved"
+

@@ -6,22 +6,24 @@ Id: ng-immunization
 * ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-immunization"
 
 * identifier 0..1
+* vaccineCode 1..1 MS
 * vaccineCode from NGVaccineLocalVS 
 * vaccineCode ^short = "Vaccine Product Administered"
 * statusReason from http://hl7.org/fhir/ValueSet/immunization-status-reason (extensible)
 * statusReason ^short = "Reason immunization was not done (or was missed)"
-* status MS
+* status 1..1 MS
 * status from http://hl7.org/fhir/ValueSet/immunization-status (required)
 * status ^short = "Status of Immunization e.g. completed| entered-in-error | not-done"
 * manufacturer only Reference(NgOrganization)
 * manufacturer ^short = "Manufacturer description and identity"
+* patient 1..1 MS
 * patient only Reference(NgPatient)
 * protocolApplied 0..* MS
 * protocolApplied.targetDisease from http://hl7.org/fhir/ValueSet/immunization-target-disease (example)
 * protocolApplied.targetDisease ^short = "Vaccine preventable disease being targeted" 
-* lotNumber 1..1 MS
+* lotNumber 0..1 MS
 * lotNumber ^short = "Vaccine batch number"
-* expirationDate 1..1 MS
+* expirationDate 0..1 MS
 * expirationDate ^short = "Vaccine expiration date"
 * doseQuantity 1..1 MS
 * doseQuantity ^short = "Amount of vaccine administered"
@@ -34,6 +36,7 @@ Id: ng-immunization
 * performer.function ^short = "Designation of reporting officer" //What type of performance was done
 * performer.actor only Reference (NgPractitioner)
 * performer.actor ^short = "Information of reporting officer" //Individual or organization who was performing
+* occurrence[x] 1..1 MS
 * occurrence[x] only dateTime
 * reaction 0..5 MS
 * reaction.date 0..1 
@@ -49,7 +52,7 @@ Id: ng-immunization
 
 * extension contains NGContraindications named contraindications 0..* MS
 * extension contains NGContraindicated named contraindicated 0..* MS
-* protocolApplied.extension contains NextDoseDate named nextDoseDate 0..1 MS
+* extension contains NextDoseDate named nextDoseDate 0..1 MS
  
 
 
@@ -79,8 +82,9 @@ Description: "Pentavalent 1 administered to NgPatient-003 at Gwagwalada PHC."
 * site.text = "Left thigh"
 * route.text = "Intramuscular"
 // Show use of NextDoseDate extension (via protocolApplied)
-//* protocolApplied[0].extension[nextDoseDate].valueDate = 2025-10-08
-//* protocolApplied[0].doseNumberPositiveInt = 4
+* extension[nextDoseDate].valueDate = 2024-09-10
+* extension[nextDoseDate].url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/next-dose-date"
+* protocolApplied[0].doseNumberPositiveInt = 4
 
 
 // ==============================================
@@ -129,4 +133,40 @@ Description: "Td dose administered to NgPatient-001 at Asokoro District Hospital
 * performer[0].actor = Reference(NgPractitioner-001)
 * site.text = "Left deltoid"
 * route.text = "Intramuscular"
-//* protocolApplied[0].doseNumberString = "two"
+
+
+
+
+
+// ========== Extension 1: NGContraindications (0..*) ==========
+// List of contraindications identified but immunization proceeded anyway
+// (e.g., mild contraindications that were assessed and deemed acceptable)
+
+* extension[contraindications][0].valueCodeableConcept.coding.system = "http://snomed.info/sct"
+* extension[contraindications][0].valueCodeableConcept.coding.code = #419076005
+* extension[contraindications][0].valueCodeableConcept.coding.display = "Allergic reaction (disorder)"
+* extension[contraindications][0].valueCodeableConcept.text = "Mild seasonal allergies - assessed, not a contraindication to vaccination"
+
+* extension[contraindications][1].valueCodeableConcept.coding.system = "http://snomed.info/sct"
+* extension[contraindications][1].valueCodeableConcept.coding.code = #386661006
+* extension[contraindications][1].valueCodeableConcept.coding.display = "Fever"
+* extension[contraindications][1].valueCodeableConcept.text = "Low-grade fever (37.8°C) - assessed by clinician, vaccination approved"
+
+
+// ========== Extension 2: NGContraindicated (0..1) ==========
+// Boolean flag: Was this vaccine contraindicated? (false = proceeded despite concerns)
+* extension[contraindicated].valueBoolean = false
+
+// ========== Extension 3: NextDoseDate (0..1) under protocolApplied ==========
+// When is the next dose due?
+
+* protocolApplied[0].series = "Hepatitis B Primary Series"
+* protocolApplied[0].doseNumberPositiveInt = 2
+* protocolApplied[0].seriesDosesPositiveInt = 3
+
+* protocolApplied[0].targetDisease[0].coding.system = "http://snomed.info/sct"
+* protocolApplied[0].targetDisease[0].coding.code = #66071002
+* protocolApplied[0].targetDisease[0].coding.display = "Viral hepatitis type B"
+
+* extension[nextDoseDate].valueDate = "2026-05-18"
+* extension[nextDoseDate].url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/next-dose-date"

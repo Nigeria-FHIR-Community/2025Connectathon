@@ -8,6 +8,10 @@ Description: "A profile for encounters in the Nigerian used to health visits and
 * ^status = #active
 * ^publisher = "DHIN"
 * status ^short = "Status of the encounter"
+* status 1..1 MS
+* status from http://hl7.org/fhir/ValueSet/encounter-status (required)
+* class 1..1 MS
+* class from http://terminology.hl7.org/ValueSet/v3-ActEncounterCode (required)
 * subject 1..1 MS
 * subject only Reference(NgPatient)
 * participant 1..* MS

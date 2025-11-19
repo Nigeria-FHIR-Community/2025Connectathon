@@ -1,5 +1,5 @@
 Extension: NGOrganizationOwner
-Id: organozation-owner
+Id: organization-owner
 Title: "NG Owner of Facility"
 Description: "An extension to define the owner of the health institution"
 * ^context[0].type = #element

@@ -4,11 +4,14 @@ Id: ng-medication-request
 Title: "NG MedicationRequest"
 Description: "A MedicationRequest profile with some of core elements for demonstration purposes."
 * ^url = "https://sandbox.dhin-hie.org/ig/StructureDefinition/ng-medication-request"
-* dosageInstruction MS
+* status 1..1 MS
+* status from http://hl7.org/fhir/ValueSet/medicationrequest-status (required)
+* dosageInstruction 1..1 MS
 * supportingInformation MS
 * eventHistory MS
 * basedOn MS
-* intent MS
+* intent 1..1 MS
+* intent from http://hl7.org/fhir/ValueSet/medicationrequest-intent (required)
 * groupIdentifier 0..1
 * subject MS
 * instantiatesCanonical MS
@@ -22,7 +25,9 @@ Description: "A MedicationRequest profile with some of core elements for demonst
 * reasonReference MS
 * detectedIssue MS
 * requester MS
+* subject 1..1 MS
 * subject only Reference(NgPatient)
+* medication[x] 1..1 MS
 * medication[x] only Reference(NgMedication)
 
 

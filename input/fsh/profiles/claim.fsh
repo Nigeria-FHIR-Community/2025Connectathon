@@ -16,12 +16,13 @@ Description: "A profile representing submitted claims from providers to payers."
 * created 1..1 MS
 * provider only Reference(NgOrganization)
 * provider ^short = "The party responsible for the claim"
-* insurer only Reference(NgOrganization)
+* insurer only Reference(NgOrganization or NgInsurerOrganization)
+* priority 1..1
 * priority from http://hl7.org/fhir/ValueSet/process-priority
-* diagnosis 0..* 
+* diagnosis 0..* MS
 * diagnosis.sequence 1..1
 * diagnosis.diagnosis[x] from http://hl7.org/fhir/ValueSet/icd-10
-* procedure 0..* 
+* procedure 0..* MS
 * procedure.sequence 1..1
 * procedure.procedure[x] from http://hl7.org/fhir/ValueSet/icd-10-procedures
 * insurance 1..*

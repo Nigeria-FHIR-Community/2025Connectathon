@@ -31,7 +31,7 @@ Single Bundle profile that supports BOTH:
 // Named slices
 * entry contains
     patient 1..1 MS and
-    practitioner 0..1 MS and
+//    practitioner 0..1 MS and
     providerOrg 0..1 MS and
     insurerOrg 0..1 MS and
     coverage 0..1 MS and
@@ -40,7 +40,7 @@ Single Bundle profile that supports BOTH:
     explanationOfBenefit 0..1 MS
 
 * entry[patient].resource only NgPatient
-* entry[practitioner].resource only NgPractitioner
+//* entry[practitioner].resource only NgPractitioner
 * entry[providerOrg].resource only NgProviderOrganization
 * entry[insurerOrg].resource only NgInsurerOrganization
 * entry[coverage].resource only NgCoverage
@@ -64,16 +64,16 @@ Description: "Hospital submits claim to HMO for services already rendered to pat
 * type = #transaction
 
 // Patient
-* entry[0].fullUrl = "urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef"
+* entry[0].fullUrl = "urn:uuid:aaabbbc2-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Claim-001
 * entry[0].request.method = #POST
 * entry[0].request.url = "Patient"
 
 // Practitioner
-* entry[+].fullUrl = "urn:uuid:bbb22233-e5f6-4789-a123-456789abcdef"
-* entry[=].resource = NgPractitioner-Claim-001
-* entry[=].request.method = #POST
-* entry[=].request.url = "Practitioner"
+// * entry[+].fullUrl = "urn:uuid:bbb22233-e5f6-4789-a123-456789abcdef"
+// * entry[=].resource = NgPractitioner-Claim-001
+// * entry[=].request.method = #POST
+// * entry[=].request.url = "Practitioner"
 
 // Provider Organization (Hospital)
 * entry[+].fullUrl = "urn:uuid:ccc33344-e5f6-4789-a123-456789abcdef"
@@ -111,10 +111,16 @@ Description: "HMO response with adjudication, approved amounts, and payment deta
 * type = #transaction
 
 // Patient (echo)
-* entry[0].fullUrl = "urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef"
+* entry[0].fullUrl = "urn:uuid:aaabbbc2-e5f6-4789-a123-456789abcdef"
 * entry[0].resource = NgPatient-Claim-001
 * entry[0].request.method = #POST
 * entry[0].request.url = "Patient"
+
+// Provider Organization (Hospital)
+* entry[+].fullUrl = "urn:uuid:ccc33344-e5f6-4789-a123-456789abcdef"
+* entry[=].resource = NgOrganization-Provider-Claim-001
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
 
 // Insurer (payer)
 * entry[+].fullUrl = "urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef"
@@ -229,7 +235,7 @@ Title: "Coverage - MediCare Plus (Active)"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #EHCPOL
 * type.coding.display = "extended healthcare"
-* beneficiary = Reference(urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef)
+* beneficiary = Reference(urn:uuid:aaabbbc2-e5f6-4789-a123-456789abcdef)
 * payor[0] = Reference(urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef)
 * period.start = "2025-01-01"
 * period.end = "2025-12-31"
@@ -244,7 +250,7 @@ Title: "Claim - Emergency Surgery & Hospitalization"
 * type.coding.code = #institutional
 * type.coding.display = "Institutional"
 * use = #claim
-* patient = Reference(urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef)
+* patient = Reference(urn:uuid:aaabbbc2-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-25T14:35:00+01:00"
 * provider = Reference(urn:uuid:ccc33344-e5f6-4789-a123-456789abcdef)
 * priority.coding[0].system = "http://terminology.hl7.org/CodeSystem/processpriority"
@@ -314,7 +320,7 @@ Title: "Claim Response - Partial Approval"
 * type.coding.code = #institutional
 * type.coding.display = "Institutional"
 * use = #claim
-* patient = Reference(urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef)
+* patient = Reference(urn:uuid:aaabbbc2-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-26T09:15:00+01:00"
 * insurer = Reference(urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef)
 * outcome = #partial
@@ -323,22 +329,22 @@ Title: "Claim Response - Partial Approval"
 // Item 1: Surgery - Approved
 * item[0].itemSequence = 1
 * item[0].adjudication[0].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
-* item[0].adjudication[0].amount.value = 150000
+* item[0].adjudication[0].amount.value = 5000
 * item[0].adjudication[0].amount.currency = #NGN
 * item[0].adjudication[+].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[0].adjudication[=].amount.value = 135000
+* item[0].adjudication[=].amount.value = 4500
 * item[0].adjudication[=].amount.currency = #NGN
 * item[0].adjudication[+].category = http://terminology.hl7.org/CodeSystem/adjudication#copay
-* item[0].adjudication[=].amount.value = 15000
+* item[0].adjudication[=].amount.value = 500
 * item[0].adjudication[=].amount.currency = #NGN
 
 // Item 2: Hospitalization - Approved
 * item[+].itemSequence = 2
 * item[=].adjudication[0].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
-* item[=].adjudication[0].amount.value = 60000
+* item[=].adjudication[0].amount.value = 3000
 * item[=].adjudication[0].amount.currency = #NGN
 * item[=].adjudication[+].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[=].adjudication[=].amount.value = 60000
+* item[=].adjudication[=].amount.value = 3000
 * item[=].adjudication[=].amount.currency = #NGN
 
 // Item 3: Laboratory - Approved
@@ -347,37 +353,40 @@ Title: "Claim Response - Partial Approval"
 * item[=].adjudication[0].amount.value = 15000
 * item[=].adjudication[0].amount.currency = #NGN
 * item[=].adjudication[+].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[=].adjudication[=].amount.value = 15000
+* item[=].adjudication[=].amount.value = 1500
+* item[=].adjudication[=].amount.currency = #NGN
+* item[=].adjudication[+].category = http://terminology.hl7.org/CodeSystem/adjudication#copay
+* item[=].adjudication[=].amount.value = 0
 * item[=].adjudication[=].amount.currency = #NGN
 
 // Item 4: Medications - Partially covered
 * item[+].itemSequence = 4
 * item[=].adjudication[0].category = http://terminology.hl7.org/CodeSystem/adjudication#eligible
-* item[=].adjudication[0].amount.value = 25000
+* item[=].adjudication[0].amount.value = 2000
 * item[=].adjudication[0].amount.currency = #NGN
 * item[=].adjudication[+].category = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[=].adjudication[=].amount.value = 15000
+* item[=].adjudication[=].amount.value = 2000
 * item[=].adjudication[=].amount.currency = #NGN
 * item[=].adjudication[+].category = http://terminology.hl7.org/CodeSystem/adjudication#copay
-* item[=].adjudication[=].amount.value = 10000
+* item[=].adjudication[=].amount.value = 0
 * item[=].adjudication[=].amount.currency = #NGN
 
 // Total adjudication
 * total[0].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#submitted
-* total[0].amount.value = 250000
+* total[0].amount.value = 25000
 * total[0].amount.currency = #NGN
 
 * total[+].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* total[=].amount.value = 225000
+* total[=].amount.value = 23000
 * total[=].amount.currency = #NGN
 
 * total[+].category = http://terminology.hl7.org/CodeSystem/adjudication#copay
-* total[=].amount.value = 25000
+* total[=].amount.value = 2000
 * total[=].amount.currency = #NGN
 
 // Payment
 * payment.type = http://terminology.hl7.org/CodeSystem/ex-paymenttype#complete
-* payment.amount.value = 225000
+* payment.amount.value = 25000
 * payment.amount.currency = #NGN
 * payment.date = "2025-10-30"
 
@@ -389,10 +398,10 @@ Title: "EOB - Detailed Benefit Explanation"
 * status = #active
 * type = http://terminology.hl7.org/CodeSystem/claim-type#institutional
 * use = #claim
-* patient = Reference(urn:uuid:aaa11122-e5f6-4789-a123-456789abcdef)
+* patient = Reference(urn:uuid:aaabbbc2-e5f6-4789-a123-456789abcdef)
 * created = "2025-10-26T09:15:00+01:00"
 * insurer = Reference(urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef)
-* provider = Reference(urn:uuid:ddd44455-e5f6-4789-a123-456789abcdef)
+* provider = Reference(urn:uuid:ccc33344-e5f6-4789-a123-456789abcdef)
 * outcome = #partial
 * insurance[0].focal = true
 * insurance[0].coverage = Reference(urn:uuid:eee55566-e5f6-4789-a123-456789abcdef)
@@ -402,10 +411,10 @@ Title: "EOB - Detailed Benefit Explanation"
 * item[0].productOrService.coding = http://terminology.hl7.org/CodeSystem/ex-USCLS#1205
 * item[0].servicedDate = "2025-10-22"
 * item[0].adjudication[0].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#eligible
-* item[0].adjudication[0].amount.value = 150000
+* item[0].adjudication[0].amount.value = 15000
 * item[0].adjudication[0].amount.currency = #NGN
 * item[0].adjudication[+].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[0].adjudication[=].amount.value = 135000
+* item[0].adjudication[=].amount.value = 13000
 * item[0].adjudication[=].amount.currency = #NGN
 
 * item[+].sequence = 2
@@ -413,34 +422,34 @@ Title: "EOB - Detailed Benefit Explanation"
 * item[=].servicedPeriod.start = "2025-10-22"
 * item[=].servicedPeriod.end = "2025-10-25"
 * item[=].adjudication[0].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[=].adjudication[0].amount.value = 60000
+* item[=].adjudication[0].amount.value = 6000
 * item[=].adjudication[0].amount.currency = #NGN
 
 * item[+].sequence = 3
 * item[=].productOrService.coding = http://terminology.hl7.org/CodeSystem/ex-USCLS#1101
 * item[=].servicedDate = "2025-10-22"
 * item[=].adjudication[0].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[=].adjudication[0].amount.value = 15000
+* item[=].adjudication[0].amount.value = 1500
 * item[=].adjudication[0].amount.currency = #NGN
 
 * item[+].sequence = 4
 * item[=].productOrService.coding = http://terminology.hl7.org/CodeSystem/ex-USCLS#1102
 * item[=].servicedDate = "2025-10-22"
 * item[=].adjudication[0].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* item[=].adjudication[0].amount.value = 15000
+* item[=].adjudication[0].amount.value = 1500
 * item[=].adjudication[0].amount.currency = #NGN
 
 // Totals
 * total[0].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#submitted
-* total[0].amount.value = 250000
+* total[0].amount.value = 2500
 * total[0].amount.currency = #NGN
 
 * total[+].category.coding = http://terminology.hl7.org/CodeSystem/adjudication#benefit
-* total[=].amount.value = 225000
+* total[=].amount.value = 22000
 * total[=].amount.currency = #NGN
 
 // Payment info
 * payment.type = http://terminology.hl7.org/CodeSystem/ex-paymenttype#complete
-* payment.amount.value = 225000
+* payment.amount.value = 2200
 * payment.amount.currency = #NGN
 * payment.date = "2025-10-30"
