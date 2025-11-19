@@ -54,28 +54,16 @@ Description: "Minimal transaction bundle to report an AEFI with Patient, Immuniz
 * entry[immunization].request.url ^short = "Immunization"
 * entry[observation].request.url ^short = "Observation"
 
-// Soft guidance (warnings) to keep QA low
-Invariant: ngaefi-urns
-Description: "Entries SHOULD use URN UUID fullUrls for intra-bundle references."
-Severity: #warning
-Expression: "entry.fullUrl.all(matches('^urn:uuid:'))"
-
-Invariant: ngaefi-linking
-Description: "AdverseEvent.subject SHOULD reference the in-bundle Patient and suspectEntity.instance SHOULD reference the in-bundle Immunization."
-Severity: #warning
-Expression: "entry.resource.ofType(AdverseEvent).subject.reference.all(matches('^urn:uuid:')) and entry.resource.ofType(AdverseEvent).suspectEntity.instance.reference.all(matches('^urn:uuid:'))"
-
-
 
 
 // ======================================================================
-// Example: AEFI Report — Post-Immunization Fever & Injection-site Swelling
+// Example: AEFI Report — Mild Rash after Measles-Rubella (MR)
 // ======================================================================
 Instance: NgAefiReport-001
 InstanceOf: NgAefiReportBundle
 Usage: #example
-Title: "AEFI Report – Fever and Local Swelling after Penta1"
-Description: "Hospital reports an AEFI for a child following Penta1 administration."
+Title: "AEFI Report – Mild Rash after MR (Makurdi)"
+Description: "Wadata PHC reports a mild rash AEFI for a 14-month-old after Measles-Rubella vaccine."
 
 * type = #transaction
 
@@ -97,13 +85,13 @@ Description: "Hospital reports an AEFI for a child following Penta1 administrati
 * entry[=].request.method = #POST
 * entry[=].request.url = "Practitioner"
 
-// ---------------- Location (optional clinic room) --------------
+// ---------------- Location (immunization room) --------------
 * entry[+].fullUrl = "urn:uuid:12c2aabb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgLocation-AEFI-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "Location"
 
-// ---------------- Encounter (optional) -------------------------
+// ---------------- Encounter (follow-up/triage) -------------------------
 * entry[+].fullUrl = "urn:uuid:121daabb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgEncounter-AEFI-001
 * entry[=].request.method = #POST
@@ -115,7 +103,7 @@ Description: "Hospital reports an AEFI for a child following Penta1 administrati
 * entry[=].request.method = #POST
 * entry[=].request.url = "Immunization"
 
-// ---------------- Observation (fever) --------------------------
+// ---------------- Observation (AEFI: rash) --------------------------
 * entry[+].fullUrl = "urn:uuid:12ffaabb-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgObservation-001
 * entry[=].request.method = #POST
@@ -131,78 +119,79 @@ Description: "Hospital reports an AEFI for a child following Penta1 administrati
 Instance: NgPatient-AEFI-001
 InstanceOf: NgPatient
 Usage: #inline
-Title: "Infant – Aisha Musa"
+Title: "Infant – Terfa Dooshima"
 * meta.lastUpdated = "2025-11-06T08:30:00+01:00"
 * identifier[PhoneNumber].value = "08030001111"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "mobile"
-* name.given[0] = "Aisha"
-* name.family = "Musa"
-* gender = #female
-* birthDate = "2025-06-20"
+* name.given[0] = "Terfa"
+* name.family = "Dooshima"
+* gender = #male
+* birthDate = "2024-09-06"
 * active = true
-* address.line[0] = "No. 7 PHC Close"
-* address.city = "Garki"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* address.line[0] = "Wadata PHC Road"
+* address.city = "Makurdi"
+* address.district = "be-makurdi"
+* address.state = "BE"            // Benue
+
 
 // Organization (reporting)
 Instance: NgOrganization-AEFI-001
 InstanceOf: NgOrganization
 Usage: #inline
-Title: "Garki PHC"
+Title: "Wadata PHC, Makurdi"
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "HCF-55667"
 * active = true
-* name = "Garki Primary Health Centre"
+* name = "Wadata Primary Health Centre"
 * type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-type"
 * type.coding.code = #phc-center-l1
 * type.coding.display = "PHC Center Level 1"
 * telecom[0].system = #phone
-* telecom[0].value = "09-111-2222"
-* address.line[0] = "12 Immunization Lane"
-* address.city = "Abuja"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* telecom[0].value = "0803-000-0000"
+* address.line[0] = "Wadata"
+* address.city = "Makurdi"
+* address.district = "be-makurdi"
+* address.state = "BE"
 
 // Practitioner (recorder)
 Instance: NgPractitioner-AEFI-001
 InstanceOf: NgPractitioner
 Usage: #inline
-Title: "Nurse Joy Okoye"
+Title: "Nurse Gloria Anum"
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
 * identifier[0].value = "MDCN-12347"
 * active = true
-* name.given = "Joy"
-* name.family = "Okoye"
+* name.given = "Gloria"
+* name.family = "Anum"
 * telecom[0].system = #phone
-* telecom[0].value = "08070001234"
-* birthDate = "1990-01-05"
+* telecom[0].value = "0803-555-7788"
+* birthDate = "1988-06-12"
 
 // Location
 Instance: NgLocation-AEFI-001
 InstanceOf: NgLocation
 Usage: #inline
-Title: "Garki PHC – Immunization Room"
+Title: "Wadata PHC – Immunization Room"
 * status = #active
 * name = "Immunization Room A"
 * type[0].text = "Clinic Room"
-* address.line[0] = "12 Immunization Lane"
-* address.city = "Abuja"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* address.line[0] = "Wadata"
+* address.city = "Makurdi"
+* address.district = "be-makurdi"
+* address.state = "BE"
 * address.country = "NG"
-* position.latitude = 9.033
-* position.longitude = 7.492
+* position.latitude = 7.730
+* position.longitude = 8.536
 * managingOrganization = Reference(urn:uuid:1a12aabb-e5f6-4789-a123-456789abcdef)
 
 // Encounter (optional)
 Instance: NgEncounter-AEFI-001
 InstanceOf: NgEncounter
 Usage: #inline
-Title: "AEFI Triage Visit"
+Title: "AEFI Follow-up Visit"
 * status = #finished
 * subject = Reference(urn:uuid:1212aabb-e5f6-4789-a123-456789abcdef)
 * participant[0].individual = Reference(urn:uuid:1b12aabb-e5f6-4789-a123-456789abcdef)
@@ -214,36 +203,43 @@ Title: "AEFI Triage Visit"
 Instance: NgImmunization-AEFI-001
 InstanceOf: NgImmunization
 Usage: #inline
-Title: "Hepatitise B Dose"
+Title: "Measles-Rubella (MR) Dose"
 * status = #completed
-* vaccineCode.text = "HepB birth dose"
+* vaccineCode.text = "Measles-Rubella (MR)"
 * vaccineCode.coding =  https://sandbox.dhin-hie.org/ig/CodeSystem/ng-vaccine-local#IMMZ.Z.DE2
 * patient = Reference(urn:uuid:1212aabb-e5f6-4789-a123-456789abcdef)
-* occurrenceDateTime = "2025-11-05T10:00:00+01:00"
-* lotNumber = "PENTA-LOT-2025-11-A"
-* expirationDate = "2026-05-31"
+* lotNumber = "MR-2025-04-B"
+* expirationDate = "2026-09-15"
 * doseQuantity.value = 0.5
 * doseQuantity.unit = "mL"
-* site.text = "Left anterolateral thigh"
+* doseQuantity.system = "http://unitsofmeasure.org"
+* doseQuantity.code = #mL
+* site.text = "Left deltoid"
 * route.text = "Intramuscular"
 * performer[0].actor = Reference(urn:uuid:1b12aabb-e5f6-4789-a123-456789abcdef)
+* occurrenceDateTime = 2024-07-10T10:00:00+01:00
 
-// Observation – Fever (temperature)
-// Instance: Obs-AEFI-Temp-001
-// InstanceOf: NgObservation
-// Usage: #inline
-// Title: "Fever 38.8 °C"
-// * status = #final
-// * category[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/observation-category"
-// * category[0].coding[0].code = #social-history
-// * code.coding[0].system = "http://loinc.org"
-// * code.coding[0].code = #30525-0
-// * code.coding[0].display = "Age"
-// * subject = Reference(urn:uuid:1212aabb-e5f6-4789-a123-456789abcdef)
-// * effectiveDateTime = "2025-11-05T20:30:00+01:00"
-// * valueQuantity.value = 38.8
-// * valueQuantity.unit = "°C"
-// * valueQuantity.system = "http://unitsofmeasure.org"
-// * valueQuantity.code = #Cel
+// Observation – AEFI (rash) at 23:47 same day
+Instance: NgObservation-007
+InstanceOf: NgObservation
+Usage: #inline
+Title: "AEFI – Mild maculopapular rash"
+* status = #final
+* category[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/observation-category"
+* category[0].coding[0].code = #social-history
+* category[0].coding[0].display = "Social History"
+* code.coding[0].system = "http://loinc.org"
+* code.coding[0].code = #30525-0
+* code.coding[0].display = "Age"
+* subject = Reference(urn:uuid:1212aabb-e5f6-4789-a123-456789abcdef)
+* effectiveDateTime = "2025-11-06T23:47:00+01:00"
+* performer[0] = Reference(urn:uuid:1b12aabb-e5f6-4789-a123-456789abcdef)
+* interpretation[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+* interpretation[0].coding[0].code = #N
+* interpretation[0].coding[0].display = "Normal/Expected"
+* note[0].text = "Batch MR-2025-04-B. No other reports from same batch to date. Mother counseled; WhatsApp hotline provided."
 
-
+* component[ageInYears].valueQuantity.value = 45
+* component[ageInYears].valueQuantity.system = "http://unitsofmeasure.org"
+* component[ageInYears].valueQuantity.code = #yr
+* component[ageInYears].valueQuantity.unit = "year"

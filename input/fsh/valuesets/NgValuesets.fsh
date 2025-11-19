@@ -96,14 +96,14 @@ Description: "This CodeSystem defines the health of the client's sibling"
 
 //Identifier VS
 
-ValueSet: NGIdentifierVS
-Id: patient-identifier-vs
-Title: "NG Client Identifier VS"
-Description: "This ValueSet defines list of options for uniquely Identifting a Client"
-* ^status = #active
-* ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/patient-identifier-vs"
-* ^experimental = false
-* include codes from system NGIdentifierCS
+// ValueSet: NGIdentifierVS
+// Id: patient-identifier-vs
+// Title: "NG Client Identifier VS"
+// Description: "This ValueSet defines list of options for uniquely Identifting a Client"
+// * ^status = #active
+// * ^url = "https://sandbox.dhin-hie.org/ig/ValueSet/patient-identifier-vs"
+// * ^experimental = false
+// * include codes from system NGPatientIdentifierTypeCS
 
 
 //Immunization Valuesets

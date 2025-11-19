@@ -48,8 +48,6 @@ Single Bundle profile that supports BOTH:
 
 * entry.fullUrl ^short = "Prefer URN UUID (urn:uuid:...) for intra-bundle references."
 
-
-
 // ===============================================================
 // REQUEST BUNDLE (transaction) - New Prescription
 // ===============================================================
@@ -78,42 +76,41 @@ Description: "Physician creates prescription for patient with multiple medicatio
 * entry[=].request.method = #POST
 * entry[=].request.url = "Organization"
 
-// Medication 1: Amoxicillin
+// Medication 1: Metformin 500 mg
 * entry[+].fullUrl = "urn:uuid:ddd66655-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedication-Amoxicillin-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "Medication"
 
-// Medication 2: Ibuprofen
+// Medication 2: Atorvastatin 20 mg
 * entry[+].fullUrl = "urn:uuid:eee55544-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedication-Ibuprofen-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "Medication"
 
-// Medication 3: Vitamin B Complex
+// Medication 3: Amlodipine 5 mg
 * entry[+].fullUrl = "urn:uuid:fff44433-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedication-VitaminB-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "Medication"
 
-// MedicationRequest 1: Amoxicillin prescription
+// MedicationRequest 1: Metformin
 * entry[+].fullUrl = "urn:uuid:aaa33322-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationRequest-Amoxicillin-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "MedicationRequest"
 
-// MedicationRequest 2: Ibuprofen prescription
+// MedicationRequest 2: Atorvastatin
 * entry[+].fullUrl = "urn:uuid:bbb22211-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationRequest-Ibuprofen-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "MedicationRequest"
 
-// MedicationRequest 3: Vitamin B prescription
+// MedicationRequest 3: Amlodipine
 * entry[+].fullUrl = "urn:uuid:ccc11100-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationRequest-VitaminB-001
 * entry[=].request.method = #POST
 * entry[=].request.url = "MedicationRequest"
-
 
 // ===============================================================
 // RESPONSE BUNDLE (collection) - Prescription Fulfillment
@@ -133,47 +130,45 @@ Description: "Pharmacy response with dispense records for filled prescriptions."
 * entry[+].fullUrl = "urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgPractitioner-Rx-001
 
-
 // Pharmacy Organization
 * entry[+].fullUrl = "urn:uuid:aaa00011-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgOrganization-Pharmacy-001
 
-// Medication 1: Amoxicillin (echo)
+// Medication 1: Metformin (echo)
 * entry[+].fullUrl = "urn:uuid:ddd66655-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedication-Amoxicillin-001
 
-// Medication 2: Ibuprofen (echo)
+// Medication 2: Atorvastatin (echo)
 * entry[+].fullUrl = "urn:uuid:eee55544-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedication-Ibuprofen-001
 
-// Medication 3: Vitamin B (echo)
+// Medication 3: Amlodipine (echo)
 * entry[+].fullUrl = "urn:uuid:fff44433-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedication-VitaminB-001
 
-// MedicationRequest 1: Updated with dispense reference
+// MedicationRequest 1: Updated with dispense reference (Metformin)
 * entry[+].fullUrl = "urn:uuid:aaa33322-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationRequest-Amoxicillin-001-Updated
 
-// MedicationRequest 2: Updated with dispense reference
+// MedicationRequest 2: Updated with dispense reference (Atorvastatin)
 * entry[+].fullUrl = "urn:uuid:bbb22211-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationRequest-Ibuprofen-001-Updated
 
-// MedicationRequest 3: Updated with dispense reference
+// MedicationRequest 3: Updated with dispense reference (Amlodipine)
 * entry[+].fullUrl = "urn:uuid:ccc11100-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationRequest-VitaminB-001-Updated
 
-// MedicationDispense 1: Amoxicillin dispensed
+// MedicationDispense — Metformin
 * entry[+].fullUrl = "urn:uuid:ddd11122-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationDispense-Amoxicillin-001
 
-// MedicationDispense 2: Ibuprofen dispensed
+// MedicationDispense — Atorvastatin
 * entry[+].fullUrl = "urn:uuid:eee22233-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationDispense-Ibuprofen-001
 
-// MedicationDispense 3: Vitamin B dispensed
+// MedicationDispense — Amlodipine
 * entry[+].fullUrl = "urn:uuid:fff33344-e5f6-4789-a123-456789abcdef"
 * entry[=].resource = NgMedicationDispense-VitaminB-001
-
 
 // ===============================================================
 // Inline Resources
@@ -198,7 +193,7 @@ Title: "Prescription Patient - Ibrahim Yusuf"
 * active = true
 * address.line[0] = "88 Medication Lane"
 * address.city = "Kano City"
-* address.district = "#kn-gezawa"
+* address.district = "kn-gezawa"
 * address.state = "KN"
 
 // -------------------- NgPractitioner ---------------------------
@@ -220,20 +215,20 @@ Description: "Prescribing Physician - Dr. Oluwaseun Bakare"
 Instance: NgOrganization-Provider-Rx-001
 InstanceOf: NgProviderOrganization
 Usage: #inline
-Title: "Lagos General Hospital"
+Title: "Kano General Hospital"
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "HCF-LA-8899"
 * active = true
-* name = "Lagos General Hospital"
+* name = "Kano General Hospital"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
 * type.coding.code = #prov
 * type.coding.display = "Healthcare Provider"
 * telecom[0].system = #phone
 * telecom[0].value = "01-789-4561"
 * address.line[0] = "50 Marina Road"
-* address.city = "Ikeja"
-* address.district = "la-ikeja"
-* address.state = "LA"
+* address.city = "Kano"
+* address.district = "kn-gezawa"
+* address.state = "KN"
 * extension[NGOrganizationOwner].valueCodeableConcept.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-location-owner-cs"
 * extension[NGOrganizationOwner].valueCodeableConcept.coding.code = #public
 
@@ -241,62 +236,36 @@ Title: "Lagos General Hospital"
 Instance: NgOrganization-Pharmacy-001
 InstanceOf: NgPharmacyOrganization
 Usage: #inline
-Title: "CarePlus Pharmacy"
+Title: "Medix Pharmacy"
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "PHARM-LA-5566"
 * active = true
-* name = "CarePlus Pharmacy"
+* name = "Medix Pharmacy"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
 * type.coding.code = #cg
 * type.coding.display = "Community Group"
 * telecom[0].system = #phone
 * telecom[0].value = "01-456-7890"
-* address.line[0] = "33 Pharmacy Plaza"
-* address.city = "Ikeja"
-* address.district = "la-ikeja"
-* address.state = "LA"
+* address.line[0] = "Medix Pharmacy"
+* address.city = "Zoo Road"
+* address.district = "kn-gezawa"
+* address.state = "KN"
 
-// -------------------- NgMedication 1: Amoxicillin -------------
+// -------------------- NgMedication 1: Metformin 500 mg --------
 Instance: NgMedication-Amoxicillin-001
 InstanceOf: NgMedication
 Usage: #inline
-Title: "Amoxicillin 500mg Capsules"
+Title: "Metformin 500 mg Tablets"
 * code.coding[0].system = "http://www.whocc.no/atc"
-* code.coding[0].code = #J01CA04
-* code.coding[0].display = "Amoxicillin"
-* code.text = "Amoxicillin 500mg Capsules"
+* code.coding[0].code = #A10BA02
+* code.coding[0].display = "Metformin"
+* code.text = "Metformin 500 mg Tablets"
 * status = #active
-* form.coding.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* form.coding.code = #CAP
-* form.coding.display = "Capsule"
-* amount.numerator.value = 500
-* amount.numerator.unit = "mg"
-* amount.numerator.system = "http://unitsofmeasure.org"
-* amount.numerator.code = #mg
-* amount.denominator.value = 1
-* amount.denominator.unit = "Capsule"
-* amount.denominator.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* amount.denominator.code = #CAP
-* ingredient[0].itemCodeableConcept.text = "Amoxicillin trihydrate"
-* ingredient[0].strength.numerator.value = 500
-* ingredient[0].strength.numerator.unit = "mg"
-* ingredient[0].strength.denominator.value = 1
-* ingredient[0].strength.denominator.unit = "Capsule"
-
-// -------------------- NgMedication 2: Ibuprofen ---------------
-Instance: NgMedication-Ibuprofen-001
-InstanceOf: NgMedication
-Usage: #inline
-Title: "Ibuprofen 400mg Tablets"
-* code.coding[0].system = "http://www.whocc.no/atc"
-* code.coding[0].code = #M01AE01
-* code.coding[0].display = "Ibuprofen"
-* code.text = "Ibuprofen 400mg Tablets"
-* status = #active
+* manufacturer.display = "Fidson Healthcare Plc"
 * form.coding.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * form.coding.code = #TAB
 * form.coding.display = "Tablet"
-* amount.numerator.value = 400
+* amount.numerator.value = 500
 * amount.numerator.unit = "mg"
 * amount.numerator.system = "http://unitsofmeasure.org"
 * amount.numerator.code = #mg
@@ -304,89 +273,113 @@ Title: "Ibuprofen 400mg Tablets"
 * amount.denominator.unit = "Tablet"
 * amount.denominator.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * amount.denominator.code = #TAB
-* ingredient[0].itemCodeableConcept.text = "Ibuprofen"
-* ingredient[0].strength.numerator.value = 400
+* ingredient[0].itemCodeableConcept.text = "Metformin hydrochloride"
+* ingredient[0].strength.numerator.value = 500
 * ingredient[0].strength.numerator.unit = "mg"
 * ingredient[0].strength.denominator.value = 1
 * ingredient[0].strength.denominator.unit = "Tablet"
 
-// -------------------- NgMedication 3: Vitamin B ---------------
-Instance: NgMedication-VitaminB-001
+// -------------------- NgMedication 2: Atorvastatin 20 mg ------
+Instance: NgMedication-Ibuprofen-001
 InstanceOf: NgMedication
 Usage: #inline
-Title: "Vitamin B Complex Tablets"
+Title: "Atorvastatin 20 mg Tablets (Generic)"
 * code.coding[0].system = "http://www.whocc.no/atc"
-* code.coding[0].code = #A11EA
-* code.coding[0].display = "Vitamin B-complex, plain"
-* code.text = "Vitamin B Complex Tablets"
+* code.coding[0].code = #C10AA05
+* code.coding[0].display = "Atorvastatin"
+* code.text = "Atorvastatin 20 mg Tablets"
 * status = #active
 * form.coding.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * form.coding.code = #TAB
 * form.coding.display = "Tablet"
-* ingredient[0].itemCodeableConcept.text = "Thiamine (B1)"
-* ingredient[0].strength.numerator.value = 10
+* amount.numerator.value = 20
+* amount.numerator.unit = "mg"
+* amount.numerator.system = "http://unitsofmeasure.org"
+* amount.numerator.code = #mg
+* amount.denominator.value = 1
+* amount.denominator.unit = "Tablet"
+* amount.denominator.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
+* amount.denominator.code = #TAB
+* ingredient[0].itemCodeableConcept.text = "Atorvastatin"
+* ingredient[0].strength.numerator.value = 20
 * ingredient[0].strength.numerator.unit = "mg"
 * ingredient[0].strength.denominator.value = 1
 * ingredient[0].strength.denominator.unit = "Tablet"
-* ingredient[+].itemCodeableConcept.text = "Riboflavin (B2)"
-* ingredient[=].strength.numerator.value = 10
-* ingredient[=].strength.numerator.unit = "mg"
-* ingredient[=].strength.denominator.value = 1
-* ingredient[=].strength.denominator.unit = "Tablet"
-* ingredient[+].itemCodeableConcept.text = "Niacin (B3)"
-* ingredient[=].strength.numerator.value = 50
-* ingredient[=].strength.numerator.unit = "mg"
-* ingredient[=].strength.denominator.value = 1
-* ingredient[=].strength.denominator.unit = "Tablet"
 
-// -------------------- MedicationRequest 1: Amoxicillin --------
+// -------------------- NgMedication 3: Amlodipine 5 mg ---------
+Instance: NgMedication-VitaminB-001
+InstanceOf: NgMedication
+Usage: #inline
+Title: "Amlodipine 5 mg Tablets"
+* code.coding[0].system = "http://www.whocc.no/atc"
+* code.coding[0].code = #C08CA01
+* code.coding[0].display = "Amlodipine"
+* code.text = "Amlodipine 5 mg Tablets"
+* status = #active
+* form.coding.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
+* form.coding.code = #TAB
+* form.coding.display = "Tablet"
+* amount.numerator.value = 5
+* amount.numerator.unit = "mg"
+* amount.numerator.system = "http://unitsofmeasure.org"
+* amount.numerator.code = #mg
+* amount.denominator.value = 1
+* amount.denominator.unit = "Tablet"
+* amount.denominator.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
+* amount.denominator.code = #TAB
+* ingredient[0].itemCodeableConcept.text = "Amlodipine"
+* ingredient[0].strength.numerator.value = 5
+* ingredient[0].strength.numerator.unit = "mg"
+* ingredient[0].strength.denominator.value = 1
+* ingredient[0].strength.denominator.unit = "Tablet"
+
+// -------------------- MedicationRequest 1: Metformin ----------
 Instance: NgMedicationRequest-Amoxicillin-001
 InstanceOf: NgMedicationRequest
 Usage: #inline
-Title: "Prescription for Amoxicillin"
+Title: "Prescription for Metformin 500 mg"
 * status = #active
 * intent = #order
 * medicationReference = Reference(urn:uuid:ddd66655-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
 * authoredOn = "2025-10-28T08:15:00+01:00"
 * requester = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
-* dosageInstruction[0].text = "Take 1 capsule three times daily for 7 days"
-* dosageInstruction[0].timing.repeat.frequency = 3
+* dosageInstruction[0].text = "Take 2 tablets in the morning and 2 tablets at night WITH food for 30 days"
+* dosageInstruction[0].timing.repeat.frequency = 2
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
-* dosageInstruction[0].timing.repeat.duration = 7
+* dosageInstruction[0].timing.repeat.duration = 30
 * dosageInstruction[0].timing.repeat.durationUnit = #d
 * dosageInstruction[0].route.coding.system = "http://snomed.info/sct"
 * dosageInstruction[0].route.coding.code = #26643006
 * dosageInstruction[0].route.coding.display = "Oral route"
-* dosageInstruction[0].doseAndRate[0].doseQuantity.value = 1
-* dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Capsule"
+* dosageInstruction[0].doseAndRate[0].doseQuantity.value = 2
+* dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Tablet"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* dosageInstruction[0].doseAndRate[0].doseQuantity.code = #CAP
+* dosageInstruction[0].doseAndRate[0].doseQuantity.code = #TAB
 * dispenseRequest.numberOfRepeatsAllowed = 0
-* dispenseRequest.quantity.value = 21
-* dispenseRequest.quantity.unit = "Capsule"
+* dispenseRequest.quantity.value = 120
+* dispenseRequest.quantity.unit = "Tablet"
 * dispenseRequest.quantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* dispenseRequest.quantity.code = #CAP
-* dispenseRequest.expectedSupplyDuration.value = 7
+* dispenseRequest.quantity.code = #TAB
+* dispenseRequest.expectedSupplyDuration.value = 30
 * dispenseRequest.expectedSupplyDuration.unit = "days"
 * dispenseRequest.expectedSupplyDuration.system = "http://unitsofmeasure.org"
 * dispenseRequest.expectedSupplyDuration.code = #d
 
-// -------------------- MedicationRequest 2: Ibuprofen ----------
+// -------------------- MedicationRequest 2: Atorvastatin -------
 Instance: NgMedicationRequest-Ibuprofen-001
 InstanceOf: NgMedicationRequest
 Usage: #inline
-Title: "Prescription for Ibuprofen"
+Title: "Prescription for Atorvastatin 20 mg (nightly)"
 * status = #active
 * intent = #order
 * medicationReference = Reference(urn:uuid:eee55544-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
 * authoredOn = "2025-10-28T08:15:00+01:00"
 * requester = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
-* dosageInstruction[0].text = "Take 1 tablet every 6-8 hours as needed for pain, not to exceed 3 tablets per day"
-* dosageInstruction[0].asNeededBoolean = true
-* dosageInstruction[0].timing.repeat.frequency = 3
+* dosageInstruction[0].text = "Take 1 tablet nightly; avoid grapefruit juice."
+* dosageInstruction[0].timing.repeat.frequency = 1
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
 * dosageInstruction[0].route.coding.system = "http://snomed.info/sct"
@@ -396,32 +389,28 @@ Title: "Prescription for Ibuprofen"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Tablet"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.code = #TAB
-* dosageInstruction[0].maxDosePerPeriod.numerator.value = 3
-* dosageInstruction[0].maxDosePerPeriod.numerator.unit = "Tablet"
-* dosageInstruction[0].maxDosePerPeriod.denominator.value = 1
-* dosageInstruction[0].maxDosePerPeriod.denominator.unit = "day"
 * dispenseRequest.numberOfRepeatsAllowed = 1
 * dispenseRequest.quantity.value = 30
 * dispenseRequest.quantity.unit = "Tablet"
 * dispenseRequest.quantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * dispenseRequest.quantity.code = #TAB
-* dispenseRequest.expectedSupplyDuration.value = 10
+* dispenseRequest.expectedSupplyDuration.value = 30
 * dispenseRequest.expectedSupplyDuration.unit = "days"
 * dispenseRequest.expectedSupplyDuration.system = "http://unitsofmeasure.org"
 * dispenseRequest.expectedSupplyDuration.code = #d
 
-// -------------------- MedicationRequest 3: Vitamin B ----------
+// -------------------- MedicationRequest 3: Amlodipine ---------
 Instance: NgMedicationRequest-VitaminB-001
 InstanceOf: NgMedicationRequest
 Usage: #inline
-Title: "Prescription for Vitamin B Complex"
+Title: "Prescription for Amlodipine 5 mg (morning)"
 * status = #active
 * intent = #order
 * medicationReference = Reference(urn:uuid:fff44433-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
 * authoredOn = "2025-10-28T08:15:00+01:00"
 * requester = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
-* dosageInstruction[0].text = "Take 1 tablet once daily with food for 30 days"
+* dosageInstruction[0].text = "Take 1 tablet every morning."
 * dosageInstruction[0].timing.repeat.frequency = 1
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
@@ -448,32 +437,32 @@ Title: "Prescription for Vitamin B Complex"
 Instance: NgMedicationRequest-Amoxicillin-001-Updated
 InstanceOf: NgMedicationRequest
 Usage: #inline
-Title: "Prescription for Amoxicillin (Updated)"
+Title: "Prescription for Metformin 500 mg (Updated)"
 * status = #completed
 * intent = #order
 * medicationReference = Reference(urn:uuid:ddd66655-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
 * authoredOn = "2025-10-28T08:15:00+01:00"
 * requester = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
-* dosageInstruction[0].text = "Take 1 capsule three times daily for 7 days"
-* dosageInstruction[0].timing.repeat.frequency = 3
+* dosageInstruction[0].text = "Take 2 tablets in the morning and 2 tablets at night WITH food for 30 days"
+* dosageInstruction[0].timing.repeat.frequency = 2
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
-* dosageInstruction[0].timing.repeat.duration = 7
+* dosageInstruction[0].timing.repeat.duration = 30
 * dosageInstruction[0].timing.repeat.durationUnit = #d
 * dosageInstruction[0].route.coding.system = "http://snomed.info/sct"
 * dosageInstruction[0].route.coding.code = #26643006
 * dosageInstruction[0].route.coding.display = "Oral route"
-* dosageInstruction[0].doseAndRate[0].doseQuantity.value = 1
-* dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Capsule"
+* dosageInstruction[0].doseAndRate[0].doseQuantity.value = 2
+* dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Tablet"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* dosageInstruction[0].doseAndRate[0].doseQuantity.code = #CAP
+* dosageInstruction[0].doseAndRate[0].doseQuantity.code = #TAB
 * dispenseRequest.numberOfRepeatsAllowed = 0
-* dispenseRequest.quantity.value = 21
-* dispenseRequest.quantity.unit = "Capsule"
+* dispenseRequest.quantity.value = 120
+* dispenseRequest.quantity.unit = "Tablet"
 * dispenseRequest.quantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* dispenseRequest.quantity.code = #CAP
-* dispenseRequest.expectedSupplyDuration.value = 7
+* dispenseRequest.quantity.code = #TAB
+* dispenseRequest.expectedSupplyDuration.value = 30
 * dispenseRequest.expectedSupplyDuration.unit = "days"
 * dispenseRequest.expectedSupplyDuration.system = "http://unitsofmeasure.org"
 * dispenseRequest.expectedSupplyDuration.code = #d
@@ -481,16 +470,15 @@ Title: "Prescription for Amoxicillin (Updated)"
 Instance: NgMedicationRequest-Ibuprofen-001-Updated
 InstanceOf: NgMedicationRequest
 Usage: #inline
-Title: "Prescription for Ibuprofen (Updated)"
+Title: "Prescription for Atorvastatin 20 mg (Updated)"
 * status = #completed
 * intent = #order
 * medicationReference = Reference(urn:uuid:eee55544-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
 * authoredOn = "2025-10-28T08:15:00+01:00"
 * requester = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
-* dosageInstruction[0].text = "Take 1 tablet every 6-8 hours as needed for pain, not to exceed 3 tablets per day"
-* dosageInstruction[0].asNeededBoolean = true
-* dosageInstruction[0].timing.repeat.frequency = 3
+* dosageInstruction[0].text = "Take 1 tablet nightly; avoid grapefruit juice."
+* dosageInstruction[0].timing.repeat.frequency = 1
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
 * dosageInstruction[0].route.coding.system = "http://snomed.info/sct"
@@ -500,16 +488,12 @@ Title: "Prescription for Ibuprofen (Updated)"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Tablet"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.code = #TAB
-* dosageInstruction[0].maxDosePerPeriod.numerator.value = 3
-* dosageInstruction[0].maxDosePerPeriod.numerator.unit = "Tablet"
-* dosageInstruction[0].maxDosePerPeriod.denominator.value = 1
-* dosageInstruction[0].maxDosePerPeriod.denominator.unit = "day"
 * dispenseRequest.numberOfRepeatsAllowed = 1
 * dispenseRequest.quantity.value = 30
 * dispenseRequest.quantity.unit = "Tablet"
 * dispenseRequest.quantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * dispenseRequest.quantity.code = #TAB
-* dispenseRequest.expectedSupplyDuration.value = 10
+* dispenseRequest.expectedSupplyDuration.value = 30
 * dispenseRequest.expectedSupplyDuration.unit = "days"
 * dispenseRequest.expectedSupplyDuration.system = "http://unitsofmeasure.org"
 * dispenseRequest.expectedSupplyDuration.code = #d
@@ -517,14 +501,14 @@ Title: "Prescription for Ibuprofen (Updated)"
 Instance: NgMedicationRequest-VitaminB-001-Updated
 InstanceOf: NgMedicationRequest
 Usage: #inline
-Title: "Prescription for Vitamin B Complex (Updated)"
+Title: "Prescription for Amlodipine 5 mg (Updated)"
 * status = #completed
 * intent = #order
 * medicationReference = Reference(urn:uuid:fff44433-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
 * authoredOn = "2025-10-28T08:15:00+01:00"
 * requester = Reference(urn:uuid:bbb88877-e5f6-4789-a123-456789abcdef)
-* dosageInstruction[0].text = "Take 1 tablet once daily with food for 30 days"
+* dosageInstruction[0].text = "Take 1 tablet every morning."
 * dosageInstruction[0].timing.repeat.frequency = 1
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
@@ -547,11 +531,11 @@ Title: "Prescription for Vitamin B Complex (Updated)"
 * dispenseRequest.expectedSupplyDuration.system = "http://unitsofmeasure.org"
 * dispenseRequest.expectedSupplyDuration.code = #d
 
-// -------------------- MedicationDispense 1: Amoxicillin -------
+// -------------------- MedicationDispense 1: Metformin ---------
 Instance: NgMedicationDispense-Amoxicillin-001
 InstanceOf: NgMedicationDispense
 Usage: #inline
-Title: "Dispensed - Amoxicillin"
+Title: "Dispensed - Metformin 500 mg"
 * status = #completed
 * medicationReference = Reference(urn:uuid:ddd66655-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
@@ -560,33 +544,33 @@ Title: "Dispensed - Amoxicillin"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * type.coding.code = #FF
 * type.coding.display = "First Fill"
-* quantity.value = 21
-* quantity.unit = "Capsule"
+* quantity.value = 120
+* quantity.unit = "Tablet"
 * quantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* quantity.code = #CAP
-* daysSupply.value = 7
+* quantity.code = #TAB
+* daysSupply.value = 30
 * daysSupply.unit = "days"
 * daysSupply.system = "http://unitsofmeasure.org"
 * daysSupply.code = #d
 * whenPrepared = "2025-10-28T14:30:00+01:00"
 * whenHandedOver = "2025-10-28T14:45:00+01:00"
-* dosageInstruction[0].text = "Take 1 capsule three times daily for 7 days"
-* dosageInstruction[0].timing.repeat.frequency = 3
+* dosageInstruction[0].text = "Take 2 tablets in the morning and 2 tablets at night WITH food."
+* dosageInstruction[0].timing.repeat.frequency = 2
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
 * dosageInstruction[0].route.coding.system = "http://snomed.info/sct"
 * dosageInstruction[0].route.coding.code = #26643006
 * dosageInstruction[0].route.coding.display = "Oral route"
-* dosageInstruction[0].doseAndRate[0].doseQuantity.value = 1
-* dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Capsule"
+* dosageInstruction[0].doseAndRate[0].doseQuantity.value = 2
+* dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Tablet"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
-* dosageInstruction[0].doseAndRate[0].doseQuantity.code = #CAP
+* dosageInstruction[0].doseAndRate[0].doseQuantity.code = #TAB
 
-// -------------------- MedicationDispense 2: Ibuprofen ---------
+// -------------------- MedicationDispense 2: Atorvastatin ------
 Instance: NgMedicationDispense-Ibuprofen-001
 InstanceOf: NgMedicationDispense
 Usage: #inline
-Title: "Dispensed - Ibuprofen"
+Title: "Dispensed - Atorvastatin 20 mg (Generic)"
 * status = #completed
 * medicationReference = Reference(urn:uuid:eee55544-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
@@ -599,15 +583,14 @@ Title: "Dispensed - Ibuprofen"
 * quantity.unit = "Tablet"
 * quantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * quantity.code = #TAB
-* daysSupply.value = 10
+* daysSupply.value = 30
 * daysSupply.unit = "days"
 * daysSupply.system = "http://unitsofmeasure.org"
 * daysSupply.code = #d
 * whenPrepared = "2025-10-28T14:35:00+01:00"
 * whenHandedOver = "2025-10-28T14:45:00+01:00"
-* dosageInstruction[0].text = "Take 1 tablet every 6-8 hours as needed for pain, not to exceed 3 tablets per day"
-* dosageInstruction[0].asNeededBoolean = true
-* dosageInstruction[0].timing.repeat.frequency = 3
+* dosageInstruction[0].text = "Take 1 tablet nightly; avoid grapefruit juice."
+* dosageInstruction[0].timing.repeat.frequency = 1
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
 * dosageInstruction[0].route.coding.system = "http://snomed.info/sct"
@@ -617,16 +600,13 @@ Title: "Dispensed - Ibuprofen"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Tablet"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.code = #TAB
-* dosageInstruction[0].maxDosePerPeriod.numerator.value = 3
-* dosageInstruction[0].maxDosePerPeriod.numerator.unit = "Tablet"
-* dosageInstruction[0].maxDosePerPeriod.denominator.value = 1
-* dosageInstruction[0].maxDosePerPeriod.denominator.unit = "day"
+* note[0].text = "Patient requested lower-cost generic; substituted branded with generic atorvastatin (bioequivalent)."
 
-// -------------------- MedicationDispense 3: Vitamin B ---------
+// -------------------- MedicationDispense 3: Amlodipine --------
 Instance: NgMedicationDispense-VitaminB-001
 InstanceOf: NgMedicationDispense
 Usage: #inline
-Title: "Dispensed - Vitamin B Complex"
+Title: "Dispensed - Amlodipine 5 mg"
 * status = #completed
 * medicationReference = Reference(urn:uuid:fff44433-e5f6-4789-a123-456789abcdef)
 * subject = Reference(urn:uuid:aaa99988-e5f6-4789-a123-456789abcdef)
@@ -645,12 +625,10 @@ Title: "Dispensed - Vitamin B Complex"
 * daysSupply.code = #d
 * whenPrepared = "2025-10-28T14:40:00+01:00"
 * whenHandedOver = "2025-10-28T14:45:00+01:00"
-* dosageInstruction[0].text = "Take 1 tablet once daily with food for 30 days"
+* dosageInstruction[0].text = "Take 1 tablet every morning."
 * dosageInstruction[0].timing.repeat.frequency = 1
 * dosageInstruction[0].timing.repeat.period = 1
 * dosageInstruction[0].timing.repeat.periodUnit = #d
-* dosageInstruction[0].timing.repeat.duration = 30
-* dosageInstruction[0].timing.repeat.durationUnit = #d
 * dosageInstruction[0].route.coding.system = "http://snomed.info/sct"
 * dosageInstruction[0].route.coding.code = #26643006
 * dosageInstruction[0].route.coding.display = "Oral route"
@@ -658,5 +636,3 @@ Title: "Dispensed - Vitamin B Complex"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "Tablet"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.system = "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.code = #TAB
-
-

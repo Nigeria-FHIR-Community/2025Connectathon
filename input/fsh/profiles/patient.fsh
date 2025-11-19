@@ -30,9 +30,13 @@ Id: ng-patient
 * identifier[NationalIDNo].value ^short = "The NIN number of the client which is a unique 11 digit number"
 * identifier[NationalIDNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[NationalIDNo].system ^short = "NIMC's identifier in the system autheticated to https://nimc.org/nin"
+* identifier[NationalIDNo].type.coding.system 0..1 MS
 * identifier[NationalIDNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[NationalIDNo].type.coding.code 0..1 MS
 * identifier[NationalIDNo].type.coding.code = #NIN
 * identifier[NationalIDNo].type.coding.display = "National Identity Number of Client or Caregiver"
+
+
 
 
 // A small CodeSystem for identifier types (you can reference your own canonical)
@@ -43,7 +47,9 @@ Id: ng-patient
 * identifier[MedicalRecordsNumber].system ^definition = "The URI system that identifies the assigning authority for the medical record number."
 * identifier[MedicalRecordsNumber].system ^example[0].label = "Example MRN system"
 * identifier[MedicalRecordsNumber].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[MedicalRecordsNumber].type.coding.system 0..1 MS
 * identifier[MedicalRecordsNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[MedicalRecordsNumber].type.coding.code 0..1 MS
 * identifier[MedicalRecordsNumber].type.coding.code = #MRN
 * identifier[MedicalRecordsNumber].type.coding.display = "Medical Record Number"
 
@@ -54,7 +60,9 @@ Id: ng-patient
 * identifier[BirthCertificateNo].system ^definition = "The URI system identifying the authority that assigns the birth certificate number validated at http://npc.gov.ng/birthCertificate-no."
 * identifier[BirthCertificateNo].system ^example[0].label = "Example Birth Certificate number system"
 * identifier[BirthCertificateNo].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[BirthCertificateNo].type.coding.system 0..1 MS
 * identifier[BirthCertificateNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[BirthCertificateNo].type.coding.code 0..1 MS
 * identifier[BirthCertificateNo].type.coding.code = #BIRTHCERT
 * identifier[BirthCertificateNo].type.coding.display = "Birth Certificate Number"
 
@@ -66,7 +74,9 @@ Id: ng-patient
 * identifier[PhoneNumber].system ^definition = "The URI system identifying the provider of the phone number validated at http://mtnonline.com/phone-no."
 * identifier[PhoneNumber].system ^example[0].label = "Example Phone Number system"
 * identifier[PhoneNumber].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.system 0..1 MS
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[PhoneNumber].type.coding.code 0..1 MS
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "mobile"
 
@@ -78,7 +88,9 @@ Id: ng-patient
 * identifier[InsuranceNumber].system ^definition = "The URI system identifying the provider of the insurance number validated at http://nhia.gov.ng/insurance-no."
 * identifier[InsuranceNumber].system ^example[0].label = "Example Insurance system"
 * identifier[InsuranceNumber].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[InsuranceNumber].type.coding.system 0..1 MS
 * identifier[InsuranceNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[InsuranceNumber].type.coding.code 0..1 MS
 * identifier[InsuranceNumber].type.coding.code = #INSUR
 * identifier[InsuranceNumber].type.coding.display = "The Insurance or HMO number of the client"
 
@@ -91,7 +103,9 @@ Id: ng-patient
 * identifier[Pseudonym].system ^definition = "The URI system identifying the provider of the pseudo number."
 * identifier[Pseudonym].system ^example[0].label = "Pseudonymized Patient Identifier system"
 * identifier[Pseudonym].system ^example[0].valueUri = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[Pseudonym].type.coding.system 0..1 MS
 * identifier[Pseudonym].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
+* identifier[Pseudonym].type.coding.code 0..1 MS
 * identifier[Pseudonym].type.coding.code = #PSEUDONYM
 * identifier[Pseudonym].type.coding.display = "Pseudonymized Identifier"
 

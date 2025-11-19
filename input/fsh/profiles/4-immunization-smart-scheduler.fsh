@@ -107,22 +107,22 @@ Description: "Books an immunization appointment and carries a next-dose recommen
 Instance: NgPatient-IMMSS-001
 InstanceOf: NgPatient
 Usage: #inline
-Title: "Child – Musa Danladi"
+Title: "Child – Terfa Dooshima"
 * meta.lastUpdated = "2025-11-06T08:10:00+01:00"
 * identifier[PhoneNumber].value = "08031234567"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "mobile"
-* name.given[0] = "Musa"
-* name.family = "Danladi"
+* name.given[0] = "Terfa"
+* name.family = "Dooshima"
 * gender = #male
-* birthDate = "2025-06-01"
+* birthDate = "1988-06-01"
 * active = true
-* address.line[0] = "No. 4 PHC Crescent"
-* address.city = "Garki"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* address.line[0] = "Wadata PHC Road"
+* address.city = "Makurdi"
+* address.district = "be-makurdi"
+* address.state = "BE"
 
 // Organization (facility record)
 Instance: NgOrganization-IMMSS-001
@@ -138,10 +138,10 @@ Title: "Apo Primary Health Centre"
 * type.coding.display = "PHC Center Level 1"
 * telecom[0].system = #phone
 * telecom[0].value = "09-222-7788"
-* address.line[0] = "Apo Resettlement"
-* address.city = "Abuja"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* address.line[0] = "Wadata"
+* address.city = "Makurdi"
+* address.district = "be-makurdi"
+* address.state = "BE"
 
 // Location (where the jab happens)
 Instance: NgLocation-IMMSS-001
@@ -151,10 +151,10 @@ Title: "Apo PHC – Immunization Room"
 * status = #active
 * name = "Immunization Room 1"
 * type[0].text = "Clinic Room"
-* address.line[0] = "Apo Resettlement"
-* address.city = "Abuja"
-* address.district = "fc-municipal"
-* address.state = "FC"
+* address.line[0] = "Wadata"
+* address.city = "Makurdi"
+* address.district = "be-makurdi"
+* address.state = "BE"
 * address.country = "NG"
 * position.latitude = 9.0223
 * position.longitude = 7.4974
@@ -197,10 +197,9 @@ Title: "Next-Dose Recommendation"
 * recommendation[0].forecastStatus.coding[0].system = "http://terminology.hl7.org/CodeSystem/immunization-recommendation-status"
 * recommendation[0].forecastStatus.coding[0].code = #due
 * recommendation[0].forecastStatus.text = "Dose due"
-* recommendation[0].description = "Initial newborn vaccines"
-* recommendation[0].vaccineCode[0].text = "BCG"
-* recommendation[0].vaccineCode[+].text = "OPV0"
-* recommendation[0].targetDisease[0].text = "Tuberculosis"
+* recommendation[0].description = "Schedule measles-containing vaccine (MCV2) at 15 months."
+* recommendation[0].vaccineCode[0].text = "Measles-containing vaccine (MCV2)"
+* recommendation[0].targetDisease[0].text = "Measles"
 * recommendation[0].dateCriterion[0].code.text = "recommended"
-* recommendation[0].dateCriterion[0].value = "2025-11-08"
+* recommendation[0].dateCriterion[0].value = "2025-12-06"
 * recommendation[0].supportingPatientInformation[0].display = "Birth date: 2025-06-01"

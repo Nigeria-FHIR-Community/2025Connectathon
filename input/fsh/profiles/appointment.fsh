@@ -27,7 +27,7 @@ Description: "Minimal Appointment profile for DHIN 2025 Connectathon (e.g., immu
     NgLocation
   )
 
-// Helpful shorts
+// shorts descriptions
 * status ^short = "proposed | pending | booked | arrived | fulfilled | cancelled | noshow | checked-in"
 * participant.status ^short = "accepted | declined | tentative | needs-action"
 * participant.actor ^short = "Who is involved (patient, clinician, facility, etc.)"

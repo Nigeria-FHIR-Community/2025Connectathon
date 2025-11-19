@@ -171,9 +171,9 @@ Description: "This CodeSystem defines list of options for Pregnancy status of a 
 
 
 
-CodeSystem: NGIdentifierCS
+CodeSystem: NGPatientIdentifierTypeCS
 Id: patient-identifier-cs
-Title: "NG Client Identifier CS"
+Title: "NG Patient Identifier Type CS"
 Description: "This CodeSystem defines list of options for uniquely Identifting a Client"
 * ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * ^status = #active
@@ -191,6 +191,15 @@ Description: "This CodeSystem defines list of options for uniquely Identifting a
 * #BIRTHCERT "birthcert" "Birth certificate number"
 * #IMMNO "immunizationo" "Immunization Number"
 * #PSEUDONYM "Pseudonymized Identifier" "Pseudonymized patient data"
+
+
+
+
+
+
+
+
+
 
 
 CodeSystem: NGMDCNCS
