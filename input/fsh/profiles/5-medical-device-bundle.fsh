@@ -143,49 +143,50 @@ Title: "Lab Patient (Chem)"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "mobile"
-* name.given[0] = "Ada"
-* name.family = "Eze"
-* gender = #female
-* birthDate = "1995-03-20"
+* name.given[0] = "Kunle"
+* name.family = "Okonkwo"
+* gender = #male
+* birthDate = "1973-08-15"
 * active = true
-* address.line[0] = "15 Laboratory Street"
-* address.city = "Lagos"
-* address.district = #la-agege
-* address.state = "LA"
+* address.line[0] = "Old Airport Road"
+* address.city = "Jos"
+* address.district = "pl-jos-north"
+* address.state = "PL"
 
 // -------------------- NgOrganization (Laboratory) --------------
 Instance: NgOrganization-Lab-001
 InstanceOf: NgOrganization
 Usage: #inline
-Title: "Prime Diagnostic Laboratory"
+Title: "Plateau Specialist Hospital — Clinical Chemistry Lab"
 * identifier.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier.value = "LAB-00981"
 * active = true
-* name = "Prime Diagnostic Laboratory"
+* name = "Plateau Specialist Hospital Clinical Chemistry Lab"
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
 * type.coding.code = #prov
 * type.coding.display = "Healthcare Provider"
 * telecom[0].system = #phone
 * telecom[0].value = "01-234-5678"
-* address.line[0] = "45 Diagnostic Avenue"
-* address.city = "Lagos"
-* address.district = "la-agege"
-* address.state = "LA"
+* address.line[0] = "Old Airport Road"
+* address.city = "Jos"
+* address.district = "pl-jos-north"
+* address.state = "PL"
 
 // -------------------- NgDevice (Chemistry Analyzer) ------------
 Instance: NgDevice-ChemAnalyzer-001
 InstanceOf: NgDevice
 Usage: #inline
-Title: "ACME ChemAnalyzer XS-200"
+Title: "Roche Cobas c311 Clinical Chemistry Analyzer"
 * status = #active
-* manufacturer = "ACME Diagnostics"
-* deviceName[0].name = "ChemAnalyzer XS-200"
+* manufacturer = "Roche Diagnostics"
+* deviceName[0].name = "Cobas c311 Clinical Chemistry Analyzer"
 * deviceName[0].type = #model-name
 * modelNumber = "XS-200"
 * serialNumber = "SN-CHM-2025-001"
 * type.coding.system = "http://snomed.info/sct"
 * type.coding.code = #706689003
 * type.coding.display = "Application programme software"
+* version[0].value = "CobasLink v5.2"
 
 // -------------------- NgObservation (Glucose) ------------------
 Instance: NgObservation-Glucose-001
@@ -203,40 +204,40 @@ Title: "Serum Glucose"
 * effectiveDateTime = "2025-11-06T08:45:00+01:00"
 * device = Reference(urn:uuid:cccddd33-e5f6-4789-a123-456789abcdef)
 * performer[0] = Reference(urn:uuid:bbbccc22-e5f6-4789-a123-456789abcdef)
-* referenceRange[0].low.value = 70
-* referenceRange[0].low.unit = "mg/dL"
+* referenceRange[0].low.value = 62
+* referenceRange[0].low.unit = "µmol/L"
 * referenceRange[0].low.system = "http://unitsofmeasure.org"
-* referenceRange[0].low.code = #mg/dL
-* referenceRange[0].high.value = 100
-* referenceRange[0].high.unit = "mg/dL"
+* referenceRange[0].low.code = #umol/L
+* referenceRange[0].high.value = 106
+* referenceRange[0].high.unit = "µmol/L"
 * referenceRange[0].high.system = "http://unitsofmeasure.org"
-* referenceRange[0].high.code = #mg/dL
-* referenceRange[0].text = "Normal fasting glucose range"
+* referenceRange[0].high.code = #umol/L
+* referenceRange[0].text = "Adult reference range"
 * component[ageInMonths].valueQuantity.value = 104
 * component[ageInMonths].valueQuantity.system = "http://unitsofmeasure.org"
-//* component[ageInMonths].valueQuantity.code = #mo
+* component[ageInMonths].valueQuantity.code = #mo
 * component[ageInMonths].valueQuantity.unit = "month"
 
 // -------------------- NgPatient (Wearable) ---------------------
 Instance: NgPatient-Watch-001
 InstanceOf: NgPatient
 Usage: #inline
-Title: "Wearable Patient"
+Title: "Wearable Patient - Bola Adeleke"
 * meta.lastUpdated = "2025-11-06T07:00:00+01:00"
 * identifier[PhoneNumber].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].value = "08035556666"
 * identifier[PhoneNumber].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[PhoneNumber].type.coding.code = #MOBILE
 * identifier[PhoneNumber].type.coding.display = "mobile"
-* name.given[0] = "Kunle"
-* name.family = "Ojo"
-* gender = #male
-* birthDate = "1992-01-15"
+* name.given[0] = "Bola"
+* name.family = "Adeleke"
+* gender = #female
+* birthDate = "1991-12-02"
 * active = true
-* address.line[0] = "88 Tech Boulevard"
-* address.city = "Lagos"
-* address.district = "la-ikeja"
-* address.state = "LA"
+* address.line[0] = "Rayfield"
+* address.city = "Jos"
+* address.district = "pl-jos-south"
+* address.state = "PL"
 
 // -------------------- NgOrganization (App Vendor) --------------
 Instance: NgOrganization-AppVendor-001
@@ -267,7 +268,7 @@ Title: "Apple Watch Series 8"
 * deviceName[0].name = "Apple Watch Series 8"
 * deviceName[0].type = #user-friendly-name
 * modelNumber = "Series 8"
-* serialNumber = "AW8-2025-XYZ-001"
+* serialNumber = "AW8-BOLA-2025-XYZ"
 * type.coding.system = "http://snomed.info/sct"
 * type.coding.code = #706635000
 * type.coding.display = "Telephone transmitter/receiver system"
