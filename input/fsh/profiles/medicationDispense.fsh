@@ -36,6 +36,7 @@ InstanceOf: NgMedicationDispense
 Usage: #example
 Title: "Example Ng MedicationDispense (Amoxicillin 500 mg CAPS x30)"
 Description: "Completed outpatient dispensing."
+* id = "00127455-e5f6-4789-a123-456789abcdef"
 * status = #completed
 * medicationReference = Reference(NgMedication-001)
 * subject = Reference(NgPatient-002)
@@ -80,7 +81,7 @@ Title: "Example Ng MedicationDispense (Insulin 100 IU/mL, 10 mL)"
 Description: "Completed insulin dispensing."
 * status = #completed
 * medicationCodeableConcept.text = "Insulin (short-acting) 100 IU/mL vial"
-* subject = Reference(Patient/NgPatient-001)
+* subject = Reference(NgPatient-001)
 * quantity.value = 10
 * quantity.unit = "mL"
 * quantity.system = "http://unitsofmeasure.org"

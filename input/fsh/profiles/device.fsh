@@ -36,6 +36,7 @@ InstanceOf: NgDevice
 Usage: #example
 Title: "Example NG Device"
 Description: "An example Device."
+* id = "00124456-e5f6-4789-a123-456789abcdef"
 * status = #active
 * type.text = "Pulse oximeter"
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/ValueSet/nigeria-device-identifier-vs"

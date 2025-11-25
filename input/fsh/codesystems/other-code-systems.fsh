@@ -216,15 +216,23 @@ Description: "This CodeSystem IMMZ.C.DE14 defines placeholder codes to manage ph
 * ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
 
 // Sample Codes for testing
-* #MDCN-45231 "First Doctor"
-* #MDCN-12345 "Second Doctor"
-* #MDCN-12346 "Old Doctor"
-* #MDCN-12347 "Young Doctor"
-* #CHEW-12346 "Baby Doctor"
+* #MDCN/R/45231 "First Doctor"
+* #MDCN/R/12345 "Second Doctor"
+* #MDCN/R/12346 "Old Doctor"
+* #MDCN/R/12347 "Young Doctor"
+* #CHEW-12346 "Test CHEW"
 * #CHEW-12347 "Dentist"
 * #PRSN-9C4E-7B12-OB01 "Pseudonymized Doctor"
 
+
 //.... to be completed
+// * #MDCN-45231 "First Doctor"
+// * #MDCN-12345 "Second Doctor"
+// * #MDCN-12346 "Old Doctor"
+// * #MDCN-12347 "Young Doctor"
+// * #CHEW-12346 "Baby Doctor"
+// * #CHEW-12347 "Dentist"
+// * #PRSN-9C4E-7B12-OB01 "Pseudonymized Doctor"
 
 
 
@@ -440,7 +448,7 @@ Description: "Local CodeSystem defining standard bundle identifiers for DHIN 202
 * #BND-0008 "Defaulter Tracing Bundle" "Bundle for tracking and updating missed immunization or follow-up cases."
 * #BND-0009 "CarePlan Synchronization Bundle" "Bundle for synchronizing patient care plans across connected systems."
 * #BND-0010 "Document Exchange Bundle" "Bundle representing a signed clinical document or summary shared between organizations."
-
+* #IPS-BND-0001 "Document Exchange for IPS bundle" "Bundle representing an IPS composition an its referenced resources"
 
 
 // CodeSystem: Eligibility Request ID
@@ -464,3 +472,96 @@ Intended for use in CoverageEligibilityRequest.identifier.type.
 * #ELAPPROVE02 "Eligibility Response ID"
 * #PA-2025-8847 "Preauthorization Approved"
 
+
+
+
+
+
+
+
+
+
+
+// PRODUCT OF SERVICE
+
+CodeSystem: NgClaimProductOrServiceCS
+Id: ng-claim-product-or-service-cs
+Title: "NG Claim Product/Service Codes"
+Description: "Nigeria-specific productOrService codes for DHIN claims: consultations, procedures, labs, imaging, maternity packages, bed days, drugs, consumables, devices, transport, and other common HMO/NHIA items."
+* ^url = "https://sandbox.dhin-hie.org/ig/CodeSystem/ng-claim-product-or-service-cs"
+* ^version = "1.0.0"
+* ^status = #active
+* ^caseSensitive = false
+* ^content = #complete
+* ^publisher = "DHIN 2025 Connectathon"
+* ^experimental = false
+* ^jurisdiction = urn:iso:std:iso:3166#NG "Nigeria"
+
+// ---------------- Consultations / Visits ----------------
+* #SRV-GP-INIT "General outpatient consultation (initial)" "First GP/Family Medicine visit."
+* #SRV-GP-REVIEW "General outpatient consultation (review)" "Follow-up GP visit."
+* #SRV-SPEC-INIT "Specialist consultation (initial)" "First specialist visit."
+* #SRV-SPEC-REVIEW "Specialist consultation (review)" "Follow-up specialist visit."
+* #SRV-EMER "Emergency room consultation" "Triage and emergency physician consult."
+* #SRV-TELE "Teleconsultation" "Synchronous telemedicine visit."
+
+// ---------------- Procedures / Theatre ----------------
+* #PROC-MINOR "Minor procedure (OPD)" "E.g., suturing, incision & drainage."
+* #PROC-MAJOR "Major procedure (theatre)" "Operating theatre case (non-obstetric)."
+* #PROC-ANAES "Anaesthesia fee" "Anaesthetist professional fee."
+* #PROC-THEATRE "Theatre fee" "Use of operating theatre facilities."
+* #PROC-DRESS "Wound dressing / change" "Clinic or ward-based dressing."
+
+// ---------------- Maternity / MNCH Packages ----------------
+* #MAT-ANC-PACK "Antenatal care package (per visit)" "ANC consultation & routine checks."
+* #MAT-NVD "Normal vaginal delivery (NVD) package" "Uncomplicated delivery."
+* #MAT-CS "Caesarean section (C-section) package" "Surgical delivery."
+* #MAT-PNC "Postnatal care visit" "Post-delivery follow-up visit."
+* #MAT-NB-SCREEN "Newborn screening panel" "Standard neonatal screening bundle."
+
+// ---------------- Bed Days / Ward / Critical Care ----------------
+* #BED-GEN "General ward bed-day" "24-hour inpatient stay (general ward)."
+* #BED-ICU "ICU bed-day" "Critical care day."
+* #BED-SCU "Special care baby unit day" "SCBU/NICU level care."
+* #BED-ISOL "Isolation bed-day" "Isolation ward day."
+
+// ---------------- Laboratory ----------------
+* #LAB-FBC "Full blood count (FBC)" "Haematology panel."
+* #LAB-CHEM-PAN "Chemistry panel (basic)" "Basic metabolic or chemistry set."
+* #LAB-LFT "Liver function tests (LFT)" "Liver enzyme panel."
+* #LAB-RFT "Renal function tests (RFT)" "Kidney function panel."
+* #LAB-CRP "C-reactive protein (CRP)" "Inflammatory marker."
+* #LAB-HBA1C "HbA1c" "Glycated haemoglobin test."
+* #LAB-MAL-RDT "Malaria rapid test (RDT)" "Point-of-care malaria test."
+* #LAB-URINE-ROUT "Urinalysis (routine)" "POCT or lab urinalysis."
+* #LAB-PREG "Pregnancy test (hCG)" "Qualitative hCG."
+
+// ---------------- Imaging / Diagnostics ----------------
+* #IMG-XR "X-ray (XR) single view" "One anatomical region, single view."
+* #IMG-US "Ultrasound (US) single study" "Abdominal/obstetric or other US."
+* #IMG-CT "CT scan (region)" "CT of a specified region."
+* #IMG-MRI "MRI scan (region)" "MRI of a specified region."
+* #IMG-ECHO "Echocardiography" "Cardiac ultrasound."
+* #IMG-ECG "ECG (12-lead)" "Standard electrocardiogram."
+
+// ---------------- Drugs / Vaccines / Consumables ----------------
+* #DRG-OPD "Dispensed medicines (OPD)" "Retail/outpatient drug line items."
+* #DRG-INP "Dispensed medicines (inpatient)" "Ward pharmacy drug line items."
+* #VAC-ADMIN "Vaccine administration fee" "Service fee for immunization."
+* #VAC-PROD "Vaccine product" "Vaccine dose product cost."
+* #CONS-GEN "General consumables" "Syringes, gloves, dressings, cannulas."
+* #OXY-HR "Oxygen therapy (per hour)" "Medical oxygen use."
+
+// ---------------- Devices / Rental / Home Care ----------------
+* #DEV-RENT "Device rental (short-term)" "E.g., nebulizer, suction machine."
+* #HM-CARE "Home care visit" "Home nursing/home-based care."
+
+// ---------------- Rehab / Allied Health ----------------
+* #REH-PHYSIO "Physiotherapy session" "Single physio visit."
+* #REH-OT "Occupational therapy session" "Single OT visit."
+* #REH-SPEECH "Speech therapy session" "Single speech therapy visit."
+
+// ---------------- Transport / Admin ----------------
+* #AMB-TRNS "Ambulance transport (one-way)" "Facility-to-facility or scene-to-facility."
+* #ADM-CLAIM "Administrative/claim handling fee" "Processing/admin fee per policy."
+* #ADM-CO-PAY "Co-payment" "Member co-pay amount line."

@@ -32,6 +32,7 @@ InstanceOf: NgCarePlan
 Usage: #example
 Title: "Example NG CarePlan"
 Description: "Minimal example of a CarePlan using NgCarePlan."
+* id = "00124455-e5f6-4789-a123-456789a2cdef"
 * status = #active
 * intent = #plan
 * subject = Reference(NgPatient-001)

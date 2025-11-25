@@ -191,6 +191,8 @@ Usage: #example
 Title: "Example Ng Patient (MNCH Referral)"
 Description: "Adult female referred for ANC; Lagos State, Ikeja LGA."
 * meta.lastUpdated = 2025-11-04T08:30:00Z
+* id = "00114455-e5f6-4789-a123-456789abcdef"
+
 // Identifiers (sliced)
 * identifier[NationalIDNo].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
 * identifier[NationalIDNo].type.coding.system = "https://sandbox.dhin-hie.org/ig/CodeSystem/patient-identifier-cs"
@@ -305,7 +307,7 @@ Description: "Male child presenting for routine vaccination; FCT AMAC."
 * contact[0].name.given[0] = "Aisha"
 * contact[0].telecom[0].system = #phone
 * contact[0].telecom[0].value = "+2348122223344"
-* contact[0].relationship.text = "Mother"
+* contact[0].relationship.text = "MOTHER"
 * contact[0].address.city = "Abuja"
 * contact[0].address.district = "fc-municipal"
 * contact[0].address.state = "FC"

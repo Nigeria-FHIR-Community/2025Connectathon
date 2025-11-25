@@ -58,6 +58,8 @@ InstanceOf: NgOrganization
 Usage: #example
 Title: "Example Asokoro District Hospital"
 Description: "Public secondary hospital in FCT (AMAC)."
+
+* id = "00134455-e5f6-4789-a123-456789abcdef"
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-facility-registry"
 * identifier[0].value = #HOSPITAL1234
 * active = true

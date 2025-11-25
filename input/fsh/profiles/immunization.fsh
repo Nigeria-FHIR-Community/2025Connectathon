@@ -66,6 +66,7 @@ InstanceOf: NgImmunization
 Usage: #example
 Title: "Example Ng Immunization (Pentavalent 1)"
 Description: "Pentavalent 1 administered to NgPatient-003 at Gwagwalada PHC."
+* id = "00128455-e5f6-4789-a123-456789abcdef"
 * status = #completed
 * vaccineCode = NGVaccineLocalCS#IMMZ.Z.DE4 "Pentavalent 1"
 * patient = Reference(NgPatient-003)
@@ -95,6 +96,7 @@ InstanceOf: NgImmunization
 Usage: #example
 Title: "Example Ng Immunization (Rotavirus 1)"
 Description: "Rotavirus 1 administered orally to NgPatient-003."
+* id = "00234455-e5f6-4789-a123-456789abcdef"
 * status = #completed
 * vaccineCode = NGVaccineLocalCS#IMMZ.Z.DE7 "Rotavirus 1"
 * patient = Reference(NgPatient-003)

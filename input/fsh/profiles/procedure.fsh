@@ -52,6 +52,7 @@ InstanceOf: NgProcedure
 Usage: #example
 Title: "Example NG Procedure"
 Description: "Cesarean section for obstructed labor."
+* id = "00124455-65f6-4789-a123-456789abcdef"
 * status = #completed
 * category.text = "Obstetrics procedure"
 * code.coding[0].system = "http://snomed.info/sct"

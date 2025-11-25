@@ -48,6 +48,8 @@ InstanceOf: NgPractitioner
 Usage: #example
 Title: "Example Ng Practitioner (MNCH)"
 Description: "Obstetrician supporting ANC referrals."
+
+* id = "00124455-e5f6-4789-a123-456789abcdef"
 * active = true
 * identifier[0].system = "https://sandbox.dhin-hie.org/ig/CodeSystem/nigeria-mdcn"
 * identifier[0].value = #MDCN-45231

@@ -43,6 +43,7 @@ InstanceOf: NgCondition
 Usage: #example
 Title: "Example NG Condition"
 Description: "Essential hypertension on problem list."
+* id = "00125455-e5f6-4789-a123-456789abcdef"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category[0] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item "Problem List Item"

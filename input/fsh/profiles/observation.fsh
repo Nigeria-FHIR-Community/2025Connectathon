@@ -76,6 +76,7 @@ InstanceOf: NgObservation
 Usage: #example
 Title: "Example Observation (MNCH Referral)"
 Description: "Pregnancy & HIV status with age in years for NgPatient-001."
+* id = "00124455-e5f8-4789-a123-456789abcdef"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * code = http://loinc.org#30525-0 "Age"

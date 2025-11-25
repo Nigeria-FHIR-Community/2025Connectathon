@@ -40,6 +40,7 @@ InstanceOf: NgMedicationRequest
 Usage: #example
 Title: "Example Ng MedicationRequest (Amoxicillin)"
 Description: "Order for Amoxicillin 500 mg capsule x30."
+* id = "00126455-e5f6-4789-a123-456789abcdef"
 * identifier.system = "https://sandbox.dhin-hie.org/ig/ValueSet/ng-atc-all-medications-vs"
 * identifier.value  = #J01-AMOX-CAP
 
