@@ -108,7 +108,7 @@ Ensure example references resolve (e.g., Patient/NgPatient-001, Organization/NgO
 ### License
 This project is released under the MIT License. See LICENSE for details.
 
-_Built for the DHIN 2025 Connectathon to accelerate safe, standards-based interoperability across immunization, MNCH, ePharmacy, claims, and device ecosystems in Nigeria._
+_Built for the DHIN 2025 Connectathon to accelerate safe, standards-based interoperability across immunization, MNCH, ePharmacy, claims, and device ecosystems in Nigeria. _
 ```bash
 
 
