@@ -3,7 +3,7 @@
 **Maintained by:**  Digital Health Interoperability Network (DHIN)  
 **Project Type:** HL7® FHIR® Implementation Guide  
 **Language:** FHIR Shorthand (FSH)  
-**Build Tool:** SUSHI (ShortHand Unshortens Syntax Iteratively)  
+**Build Tool:** SUSHI (ShortHand Unshortens Syntax Iteratively) 
 **License:** MIT
 
 ## Overview
